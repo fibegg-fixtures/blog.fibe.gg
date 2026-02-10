@@ -1,0 +1,71 @@
+.masthead {
+  position: relative;
+  margin: 0 0 2rem;
+  padding: 0.5rem 0 1.5rem;
+  border-bottom: 1px solid var(--ink-4);
+  animation: mast-in 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--brand-300);
+}
+.dot {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: var(--brand-400);
+  box-shadow: 0 0 8px 1px var(--brand-400);
+  animation: mast-blink 2.6s steps(1) infinite;
+}
+.title {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 4vw + 1rem, 3.4rem);
+  line-height: 1.04;
+  letter-spacing: -0.01em;
+  color: var(--fg-1);
+  margin: 0.6rem 0 0.5rem;
+}
+.tagline {
+  color: var(--fg-3);
+  font-size: 1.05rem;
+  line-height: 1.6;
+  max-width: 560px;
+  margin: 0 0 1.15rem;
+}
+.signal {
+  position: relative;
+  height: 2px;
+  border-radius: 2px;
+  overflow: hidden;
+  background: linear-gradient(90deg,
+    color-mix(in srgb, var(--brand-500) 32%, transparent),
+    color-mix(in srgb, var(--gold-500) 32%, transparent));
+}
+.scan {
+  position: absolute;
+  top: 0; left: -32%;
+  height: 100%; width: 32%;
+  background: linear-gradient(90deg, transparent, var(--brand-200), transparent);
+  animation: mast-scan 3.2s ease-in-out infinite;
+}
+@keyframes mast-scan {
+  0%   { left: -32%; }
+  100% { left: 100%; }
+}
+@keyframes mast-blink {
+  0%, 92%, 100% { opacity: 1; }
+  94%, 98% { opacity: 0.25; }
+}
+@keyframes mast-in {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .masthead { animation: none; opacity: 1; transform: none; }
+  .dot { animation: none; }
+  .scan { animation: none; left: 0; width: 100%; opacity: 0.4; }
+}

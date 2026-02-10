@@ -1,0 +1,121 @@
+.footer {
+  background-color: var(--ink-0);
+  border-top: 1px solid var(--ink-4);
+  padding: 2.5rem 0 2rem;
+}
+
+.inner {
+  display: grid;
+  gap: 1.5rem;
+  justify-items: center;
+  text-align: center;
+}
+
+.family {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: baseline;
+  gap: 0.1rem 0.15rem;
+  color: var(--fg-3);
+  font-size: 0.86rem;
+}
+
+.familyLink {
+  color: inherit !important;
+  text-decoration: none !important;
+  padding: 0.15rem 0.25rem;
+  border-radius: 3px;
+  transition: color 0.15s;
+}
+
+.familyLink:hover {
+  color: var(--fg-1) !important;
+  text-decoration: underline !important;
+}
+
+.familyLink[aria-current="page"] {
+  color: var(--fg-1) !important;
+  font-weight: 600;
+}
+
+.familySep {
+  color: var(--fg-5);
+  margin: 0 0.25rem;
+}
+
+.socialRow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.4rem;
+  flex-wrap: wrap;
+}
+
+.socialIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 6px;
+  color: var(--fg-3);
+  text-decoration: none !important;
+  transition: color 0.15s, background-color 0.15s, transform 0.15s;
+}
+
+.socialIcon:hover,
+.socialIcon:focus-visible {
+  color: var(--brand-300);
+  background-color: color-mix(in srgb, var(--brand-500) 10%, transparent);
+  transform: translateY(-1px);
+}
+
+.support {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.55rem 1rem;
+  border: 1px solid color-mix(in srgb, var(--brand-500) 22%, var(--ink-5));
+  border-radius: 6px;
+  background: linear-gradient(180deg, color-mix(in srgb, var(--brand-500) 8%, transparent), color-mix(in srgb, var(--gold-500) 5%, transparent));
+  color: var(--fg-3);
+}
+
+.flag {
+  font-size: 1.05em;
+}
+
+.supportText strong {
+  color: var(--fg-1);
+  margin-right: 0.4rem;
+}
+
+.supportSub {
+  color: var(--fg-3);
+  font-size: 0.92rem;
+}
+
+.legalRow {
+  color: var(--fg-3);
+  font-size: 0.85rem;
+}
+
+.legalLink {
+  color: inherit !important;
+  text-decoration: none !important;
+}
+
+.legalLink:hover {
+  text-decoration: underline !important;
+}
+
+.separator {
+  margin: 0 0.55rem;
+  color: var(--fg-5);
+}
+
+.copyright {
+  color: var(--fg-5);
+  font-size: 0.8rem;
+}

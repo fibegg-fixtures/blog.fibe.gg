@@ -1,0 +1,56 @@
+<svg viewBox="0 0 720 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Comparison of a managed Marquee versus a bring-your-own Marquee across provisioning, host fields, lifecycle, immutability, and the shared runtime">
+  <defs>
+    <marker id="byo-arrow" markerWidth="9" markerHeight="9" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#757d5e"/>
+    </marker>
+  </defs>
+
+  <text x="360" y="24" text-anchor="middle" fill="#f3f0e0" font-size="16" font-weight="700" font-family="IBM Plex Sans, sans-serif">Managed vs. bring-your-own Marquee</text>
+
+  <!-- Managed column -->
+  <rect x="20" y="40" width="330" height="300" rx="8" fill="#20251a" stroke="#434a35"/>
+  <rect x="20" y="40" width="330" height="34" rx="8" fill="#252a1e" stroke="#434a35"/>
+  <text x="185" y="62" text-anchor="middle" fill="#eec854" font-size="14" font-weight="700" font-family="IBM Plex Sans, sans-serif">Managed (tutorial VM)</text>
+
+  <text x="38" y="98" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">PROVISIONING</text>
+  <text x="38" y="116" fill="#c7c4ae" font-size="12.5" font-family="IBM Plex Sans, sans-serif">Scaleway VM via Terraform</text>
+  <text x="38" y="134" fill="#c7c4ae" font-size="12.5" font-family="IBM Plex Sans, sans-serif">+ Cloudflare DNS + acme-dns</text>
+
+  <text x="38" y="166" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">STATE</text>
+  <text x="38" y="184" fill="#92df62" font-size="12.5" font-family="IBM Plex Sans, sans-serif">Terraform-managed: provisioned</text>
+  <text x="38" y="202" fill="#c7c4ae" font-size="12.5" font-family="IBM Plex Sans, sans-serif">host/ssh filled in by webhook</text>
+
+  <text x="38" y="234" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">LIFECYCLE</text>
+  <text x="38" y="252" fill="#c7c4ae" font-size="12.5" font-family="IBM Plex Sans, sans-serif">Fibe creates &amp; destroys the box</text>
+  <text x="38" y="270" fill="#c7c4ae" font-size="12.5" font-family="IBM Plex Sans, sans-serif">fix-redeploy reconjures infra</text>
+
+  <text x="38" y="302" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">IMMUTABILITY</text>
+  <text x="38" y="320" fill="#c7c4ae" font-size="12.5" font-family="IBM Plex Sans, sans-serif">host/port/user/key locked</text>
+
+  <!-- BYO column -->
+  <rect x="370" y="40" width="330" height="300" rx="8" fill="#20251a" stroke="#545c42"/>
+  <rect x="370" y="40" width="330" height="34" rx="8" fill="#252a1e" stroke="#545c42"/>
+  <text x="535" y="62" text-anchor="middle" fill="#56d8c0" font-size="14" font-weight="700" font-family="IBM Plex Sans, sans-serif">Bring-your-own host</text>
+
+  <text x="388" y="98" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">PROVISIONING</text>
+  <text x="388" y="116" fill="#c7c4ae" font-size="12.5" font-family="IBM Plex Sans, sans-serif">none &#8212; you supply the box</text>
+  <text x="388" y="134" fill="#c7c4ae" font-size="12.5" font-family="IBM Plex Sans, sans-serif">host/port/user/key required</text>
+
+  <text x="388" y="166" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">STATE</text>
+  <text x="388" y="184" fill="#56d8c0" font-size="12.5" font-family="IBM Plex Sans, sans-serif">Terraform-managed: never</text>
+  <text x="388" y="202" fill="#c7c4ae" font-size="12.5" font-family="IBM Plex Sans, sans-serif">not Terraform-managed</text>
+
+  <text x="388" y="234" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">LIFECYCLE</text>
+  <text x="388" y="252" fill="#c7c4ae" font-size="12.5" font-family="IBM Plex Sans, sans-serif">you own the box; no auto-destroy</text>
+  <text x="388" y="270" fill="#c7c4ae" font-size="12.5" font-family="IBM Plex Sans, sans-serif">delete the row, host stays put</text>
+
+  <text x="388" y="302" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">IMMUTABILITY</text>
+  <text x="388" y="320" fill="#c7c4ae" font-size="12.5" font-family="IBM Plex Sans, sans-serif">editable (locked only mid-chat)</text>
+
+  <!-- Shared runtime band -->
+  <rect x="20" y="356" width="680" height="48" rx="8" fill="#252a1e" stroke="#79d44e"/>
+  <text x="360" y="376" text-anchor="middle" fill="#92df62" font-size="12.5" font-weight="700" font-family="IBM Plex Sans, sans-serif">SHARED &#183; identical for both</text>
+  <text x="360" y="394" text-anchor="middle" fill="#c7c4ae" font-size="11.5" font-family="IBM Plex Sans, sans-serif">funding gate (402) &#183; rsync to host &#183; docker compose up &#183; Traefik routing &#183; Playguard healing</text>
+
+  <line x1="360" y1="190" x2="376" y2="190" stroke="#757d5e" stroke-width="1.5" marker-end="url(#byo-arrow)"/>
+</svg>

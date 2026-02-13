@@ -1,0 +1,51 @@
+<svg viewBox="0 0 760 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The launch chain: an editable Template publishes an immutable Template Version, a Playspec binds that version with variable values and a chosen Marquee, and launching the Playspec produces a running Playground with a live URL">
+  <defs>
+    <marker id="chainArrow" markerWidth="11" markerHeight="11" refX="8" refY="5" orient="auto">
+      <path d="M0,0 L9,5 L0,10 z" fill="#79d44e"/>
+    </marker>
+  </defs>
+
+  <text x="380" y="30" text-anchor="middle" fill="#f3f0e0" font-size="16" font-weight="700" font-family="IBM Plex Sans, sans-serif">From recipe to running URL</text>
+
+  <!-- Template -->
+  <rect x="24" y="60" width="160" height="118" rx="8" fill="#252a1e" stroke="#eec854"/>
+  <text x="104" y="88" text-anchor="middle" fill="#f5da79" font-size="14" font-weight="700" font-family="JetBrains Mono, monospace">Template</text>
+  <text x="104" y="112" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">your editable recipe</text>
+  <text x="104" y="130" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">(compose + labels)</text>
+  <text x="104" y="156" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">edit, iterate, fork</text>
+
+  <!-- Template Version -->
+  <rect x="222" y="60" width="160" height="118" rx="8" fill="#20251a" stroke="#545c42"/>
+  <text x="302" y="88" text-anchor="middle" fill="#f3f0e0" font-size="13" font-weight="700" font-family="JetBrains Mono, monospace">Template Version</text>
+  <text x="302" y="112" text-anchor="middle" fill="#56d8c0" font-size="11" font-family="IBM Plex Sans, sans-serif">frozen snapshot</text>
+  <text x="302" y="130" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">body + variables</text>
+  <text x="302" y="156" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">immutable, has an id</text>
+
+  <!-- Playspec -->
+  <rect x="420" y="60" width="160" height="118" rx="8" fill="#20251a" stroke="#545c42"/>
+  <text x="500" y="88" text-anchor="middle" fill="#f3f0e0" font-size="14" font-weight="700" font-family="JetBrains Mono, monospace">Playspec</text>
+  <text x="500" y="112" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">a configured launch</text>
+  <text x="500" y="130" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">version + var values</text>
+  <text x="500" y="156" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">re-launchable</text>
+
+  <!-- Playground -->
+  <rect x="618" y="60" width="118" height="118" rx="8" fill="#252a1e" stroke="#79d44e"/>
+  <text x="677" y="88" text-anchor="middle" fill="#92df62" font-size="14" font-weight="700" font-family="JetBrains Mono, monospace">Playground</text>
+  <text x="677" y="112" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">running on a</text>
+  <text x="677" y="130" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">Marquee</text>
+  <text x="677" y="156" text-anchor="middle" fill="#abe87f" font-size="11" font-family="IBM Plex Sans, sans-serif">live URL + logs</text>
+
+  <!-- arrows -->
+  <line x1="186" y1="119" x2="218" y2="119" stroke="#79d44e" stroke-width="2.5" marker-end="url(#chainArrow)"/>
+  <line x1="384" y1="119" x2="416" y2="119" stroke="#79d44e" stroke-width="2.5" marker-end="url(#chainArrow)"/>
+  <line x1="582" y1="119" x2="614" y2="119" stroke="#79d44e" stroke-width="2.5" marker-end="url(#chainArrow)"/>
+
+  <text x="202" y="110" text-anchor="middle" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">publish</text>
+  <text x="400" y="110" text-anchor="middle" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">bind</text>
+  <text x="598" y="110" text-anchor="middle" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">launch</text>
+
+  <!-- footnote band -->
+  <rect x="24" y="208" width="712" height="64" rx="6" fill="#20251a" stroke="#434a35"/>
+  <text x="40" y="232" fill="#c7c4ae" font-size="12" font-family="IBM Plex Sans, sans-serif">You pick the Marquee at launch &#183; the Version is what makes a launch reproducible &#183; one Template</text>
+  <text x="40" y="252" fill="#c7c4ae" font-size="12" font-family="IBM Plex Sans, sans-serif">can back many Playspecs &#183; a one-off run can skip the Template and launch from raw Compose.</text>
+</svg>

@@ -1,0 +1,36 @@
+<svg viewBox="0 0 760 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="What Fibe adds once you label a service: HTTPS routing through Traefik with a wildcard cert, lifecycle management on the Marquee, and host isolation so you delete host ports and container_name. Three panels each pair a Compose chore you delete with what Fibe handles instead">
+  <text x="380" y="30" text-anchor="middle" fill="#f3f0e0" font-size="16" font-weight="700" font-family="IBM Plex Sans, sans-serif">Add the label, delete the plumbing</text>
+
+  <!-- panel 1: routing + TLS -->
+  <rect x="24" y="52" width="226" height="168" rx="8" fill="#252a1e" stroke="#79d44e"/>
+  <text x="137" y="80" text-anchor="middle" fill="#92df62" font-size="14" font-weight="700" font-family="JetBrains Mono, monospace">Routing &amp; TLS</text>
+  <text x="44" y="108" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">you delete</text>
+  <text x="44" y="126" fill="#f08760" font-size="12" font-family="JetBrains Mono, monospace">ports: ["8080:80"]</text>
+  <line x1="44" y1="140" x2="230" y2="140" stroke="#434a35" stroke-width="1"/>
+  <text x="44" y="160" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">Fibe gives you</text>
+  <text x="44" y="180" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">Traefik HTTP routing</text>
+  <text x="44" y="198" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">wildcard HTTPS cert</text>
+  <text x="44" y="214" fill="#abe87f" font-size="11" font-family="JetBrains Mono, monospace">https://site.your-host</text>
+
+  <!-- panel 2: lifecycle -->
+  <rect x="267" y="52" width="226" height="168" rx="8" fill="#252a1e" stroke="#79d44e"/>
+  <text x="380" y="80" text-anchor="middle" fill="#92df62" font-size="14" font-weight="700" font-family="JetBrains Mono, monospace">Lifecycle</text>
+  <text x="287" y="108" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">you delete</text>
+  <text x="287" y="126" fill="#f08760" font-size="12" font-family="JetBrains Mono, monospace">restart loops, ssh-ing in</text>
+  <line x1="287" y1="140" x2="473" y2="140" stroke="#434a35" stroke-width="1"/>
+  <text x="287" y="160" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">Fibe gives you</text>
+  <text x="287" y="180" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">start / stop / logs / term</text>
+  <text x="287" y="198" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">from the browser</text>
+  <text x="287" y="214" fill="#abe87f" font-size="11" font-family="IBM Plex Sans, sans-serif">rebuild on new version</text>
+
+  <!-- panel 3: isolation -->
+  <rect x="510" y="52" width="226" height="168" rx="8" fill="#252a1e" stroke="#79d44e"/>
+  <text x="623" y="80" text-anchor="middle" fill="#92df62" font-size="14" font-weight="700" font-family="JetBrains Mono, monospace">Host isolation</text>
+  <text x="530" y="108" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">you delete</text>
+  <text x="530" y="126" fill="#f08760" font-size="12" font-family="JetBrains Mono, monospace">container_name: my-web</text>
+  <line x1="530" y1="140" x2="716" y2="140" stroke="#434a35" stroke-width="1"/>
+  <text x="530" y="160" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">Fibe gives you</text>
+  <text x="530" y="180" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">unique project names</text>
+  <text x="530" y="198" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">many Playgrounds, one</text>
+  <text x="530" y="214" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">Marquee, no collisions</text>
+</svg>

@@ -1,0 +1,71 @@
+<svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Bounded retry loop for slot allocation: pick the lowest free slot, save, and on a unique-constraint collision try the next slot up to a fixed maximum number of times">
+  <defs>
+    <marker id="sr-arrow" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 Z" fill="#757d5e"/>
+    </marker>
+    <marker id="sr-arrow-em" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 Z" fill="#f08760"/>
+    </marker>
+    <marker id="sr-arrow-gr" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 Z" fill="#5cb43a"/>
+    </marker>
+  </defs>
+
+  <text x="360" y="28" text-anchor="middle" fill="#f3f0e0" font-size="17" font-weight="700" font-family="IBM Plex Sans, sans-serif">Slot allocation: optimistic pick, bounded retry</text>
+
+  <!-- step: pick slot -->
+  <rect x="252" y="48" width="216" height="50" rx="6" fill="#252a1e" stroke="#545c42"/>
+  <text x="360" y="69" text-anchor="middle" fill="#f3f0e0" font-size="12" font-family="IBM Plex Sans, sans-serif">pick the lowest free slot</text>
+  <text x="360" y="87" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">lowest index not already taken</text>
+
+  <!-- step: save under lock -->
+  <rect x="252" y="128" width="216" height="50" rx="6" fill="#252a1e" stroke="#545c42"/>
+  <text x="360" y="149" text-anchor="middle" fill="#f3f0e0" font-size="12" font-family="IBM Plex Sans, sans-serif">save inside the Marquee lock</text>
+  <text x="360" y="167" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">assign slot, Docker project, subdomain</text>
+
+  <!-- decision -->
+  <polygon points="360,208 470,254 360,300 250,254" fill="#20251a" stroke="#434a35"/>
+  <text x="360" y="250" text-anchor="middle" fill="#f3f0e0" font-size="12" font-family="IBM Plex Sans, sans-serif">unique-index</text>
+  <text x="360" y="266" text-anchor="middle" fill="#f3f0e0" font-size="12" font-family="IBM Plex Sans, sans-serif">collision?</text>
+
+  <!-- success -->
+  <rect x="516" y="230" width="176" height="48" rx="6" fill="#20251a" stroke="#5cb43a"/>
+  <text x="604" y="251" text-anchor="middle" fill="#92df62" font-size="12" font-weight="700" font-family="IBM Plex Sans, sans-serif">slot claimed</text>
+  <text x="604" y="268" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">row persisted</text>
+
+  <!-- retry guard -->
+  <rect x="252" y="332" width="216" height="64" rx="6" fill="#20251a" stroke="#545c42"/>
+  <text x="360" y="354" text-anchor="middle" fill="#f08760" font-size="12" font-family="IBM Plex Sans, sans-serif">increment retry counter</text>
+  <text x="360" y="372" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">past the retry ceiling (10)?</text>
+  <text x="360" y="388" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">or not a slot/uniqueness error &#8594; raise</text>
+
+  <!-- catch box -->
+  <rect x="20" y="230" width="200" height="48" rx="6" fill="#20251a" stroke="#434a35"/>
+  <text x="120" y="250" text-anchor="middle" fill="#f5da79" font-size="11" font-family="IBM Plex Sans, sans-serif">catch unique-constraint or</text>
+  <text x="120" y="266" text-anchor="middle" fill="#f5da79" font-size="11" font-family="IBM Plex Sans, sans-serif">slot-taken collision</text>
+
+  <!-- arrows main flow -->
+  <line x1="360" y1="98" x2="360" y2="126" stroke="#757d5e" stroke-width="1.5" marker-end="url(#sr-arrow)"/>
+  <line x1="360" y1="178" x2="360" y2="206" stroke="#757d5e" stroke-width="1.5" marker-end="url(#sr-arrow)"/>
+
+  <!-- no -> success -->
+  <line x1="470" y1="254" x2="514" y2="254" stroke="#5cb43a" stroke-width="1.5" marker-end="url(#sr-arrow-gr)"/>
+  <text x="492" y="246" text-anchor="middle" fill="#92df62" font-size="11" font-family="IBM Plex Sans, sans-serif">no</text>
+
+  <!-- yes -> catch -->
+  <line x1="250" y1="254" x2="222" y2="254" stroke="#f08760" stroke-width="1.5" marker-end="url(#sr-arrow-em)"/>
+  <text x="236" y="246" text-anchor="middle" fill="#f08760" font-size="11" font-family="IBM Plex Sans, sans-serif">yes</text>
+
+  <!-- catch -> retry guard -->
+  <line x1="120" y1="278" x2="120" y2="364" stroke="#757d5e" stroke-width="1.5"/>
+  <line x1="120" y1="364" x2="250" y2="364" stroke="#757d5e" stroke-width="1.5" marker-end="url(#sr-arrow)"/>
+
+  <!-- retry guard -> back to pick (retry) -->
+  <line x1="468" y1="356" x2="540" y2="356" stroke="#757d5e" stroke-width="1.5"/>
+  <line x1="540" y1="356" x2="540" y2="73" stroke="#757d5e" stroke-width="1.5"/>
+  <line x1="540" y1="73" x2="470" y2="73" stroke="#757d5e" stroke-width="1.5" marker-end="url(#sr-arrow)"/>
+  <text x="556" y="210" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">retry: re-read</text>
+  <text x="556" y="226" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">taken slots</text>
+
+  <text x="360" y="424" text-anchor="middle" fill="#757d5e" font-size="10.5" font-family="IBM Plex Sans, sans-serif">optimistic slot pick &#183; bounded retry on understood collisions &#183; application layer</text>
+</svg>

@@ -1,0 +1,60 @@
+<svg viewBox="0 0 720 396" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Two concurrent start requests race: both read no live chat, both try to insert, the database admits one and rejects the other with a unique-constraint violation, leaving exactly one chat">
+  <defs>
+    <marker id="rr-arrow" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 Z" fill="#757d5e"/>
+    </marker>
+    <marker id="rr-arrow-gr" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 Z" fill="#5cb43a"/>
+    </marker>
+    <marker id="rr-arrow-em" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 Z" fill="#f08760"/>
+    </marker>
+  </defs>
+
+  <text x="360" y="26" text-anchor="middle" fill="#f3f0e0" font-size="17" font-weight="700" font-family="IBM Plex Sans, sans-serif">Two concurrent starts &#8594; one chat</text>
+
+  <!-- lanes -->
+  <text x="130" y="58" text-anchor="middle" fill="#56d8c0" font-size="12" font-weight="700" font-family="IBM Plex Sans, sans-serif">Request A</text>
+  <text x="360" y="58" text-anchor="middle" fill="#eec854" font-size="12" font-weight="700" font-family="IBM Plex Sans, sans-serif">Postgres</text>
+  <text x="590" y="58" text-anchor="middle" fill="#abe87f" font-size="12" font-weight="700" font-family="IBM Plex Sans, sans-serif">Request B</text>
+
+  <line x1="130" y1="66" x2="130" y2="360" stroke="#434a35" stroke-width="1.2"/>
+  <line x1="360" y1="66" x2="360" y2="360" stroke="#545c42" stroke-width="1.4"/>
+  <line x1="590" y1="66" x2="590" y2="360" stroke="#434a35" stroke-width="1.2"/>
+
+  <!-- step 1: both read -->
+  <text x="130" y="92" text-anchor="middle" fill="#c7c4ae" font-size="10.5" font-family="JetBrains Mono, monospace">read live chat</text>
+  <line x1="130" y1="100" x2="356" y2="100" stroke="#757d5e" stroke-width="1.4" marker-end="url(#rr-arrow)"/>
+  <text x="590" y="92" text-anchor="middle" fill="#c7c4ae" font-size="10.5" font-family="JetBrains Mono, monospace">read live chat</text>
+  <line x1="590" y1="100" x2="364" y2="100" stroke="#757d5e" stroke-width="1.4" marker-end="url(#rr-arrow)"/>
+
+  <text x="360" y="124" text-anchor="middle" fill="#a19f89" font-size="10.5" font-family="IBM Plex Sans, sans-serif">both see: none</text>
+  <line x1="356" y1="138" x2="134" y2="138" stroke="#545c42" stroke-width="1.2" marker-end="url(#rr-arrow)"/>
+  <line x1="364" y1="138" x2="586" y2="138" stroke="#545c42" stroke-width="1.2" marker-end="url(#rr-arrow)"/>
+
+  <!-- step 2: both insert -->
+  <text x="130" y="168" text-anchor="middle" fill="#c7c4ae" font-size="10.5" font-family="JetBrains Mono, monospace">INSERT (agent, marquee)</text>
+  <line x1="130" y1="176" x2="356" y2="176" stroke="#5cb43a" stroke-width="1.5" marker-end="url(#rr-arrow-gr)"/>
+  <text x="590" y="168" text-anchor="middle" fill="#c7c4ae" font-size="10.5" font-family="JetBrains Mono, monospace">INSERT (agent, marquee)</text>
+  <line x1="590" y1="186" x2="364" y2="186" stroke="#f08760" stroke-width="1.5" marker-end="url(#rr-arrow-em)"/>
+
+  <!-- DB verdict box -->
+  <rect x="252" y="206" width="216" height="58" rx="6" fill="#20251a" stroke="#545c42"/>
+  <text x="360" y="228" text-anchor="middle" fill="#f5da79" font-size="11" font-family="IBM Plex Sans, sans-serif">UNIQUE (agent, marquee)</text>
+  <text x="360" y="246" text-anchor="middle" fill="#92df62" font-size="11" font-family="IBM Plex Sans, sans-serif">A committed &#183; one row exists</text>
+  <text x="360" y="260" text-anchor="middle" fill="#f08760" font-size="11" font-family="IBM Plex Sans, sans-serif">B violates the index</text>
+
+  <!-- step 3: verdicts back -->
+  <line x1="356" y1="290" x2="134" y2="290" stroke="#5cb43a" stroke-width="1.5" marker-end="url(#rr-arrow-gr)"/>
+  <text x="240" y="284" text-anchor="middle" fill="#92df62" font-size="10.5" font-family="IBM Plex Sans, sans-serif">success &#8594; deploy</text>
+
+  <line x1="364" y1="300" x2="586" y2="300" stroke="#f08760" stroke-width="1.5" marker-end="url(#rr-arrow-em)"/>
+  <text x="486" y="294" text-anchor="middle" fill="#f08760" font-size="10.5" font-family="IBM Plex Sans, sans-serif">unique-constraint violation</text>
+
+  <!-- B resolution -->
+  <rect x="470" y="312" width="240" height="40" rx="6" fill="#20251a" stroke="#434a35"/>
+  <text x="590" y="330" text-anchor="middle" fill="#c7c4ae" font-size="10.5" font-family="IBM Plex Sans, sans-serif">B re-reads, finds A&#8217;s row,</text>
+  <text x="590" y="345" text-anchor="middle" fill="#abe87f" font-size="10.5" font-family="IBM Plex Sans, sans-serif">reuses it &#8594; same chat</text>
+
+  <text x="360" y="384" text-anchor="middle" fill="#757d5e" font-size="10.5" font-family="IBM Plex Sans, sans-serif">find-or-initialize + UNIQUE (agent, marquee) &#8594; exactly one live chat</text>
+</svg>

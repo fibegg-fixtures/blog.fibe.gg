@@ -1,0 +1,68 @@
+<svg viewBox="0 0 760 470" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The cast of nouns as a quick-reference card grid: Player, Marquee, Template and Playspec, Prop, Playground, Trick, AgentChat and Genie, Billing wallet, Traefik, and Playguard, each with a one-line definition">
+  <text x="380" y="26" text-anchor="middle" fill="#f3f0e0" font-size="17" font-weight="700" font-family="IBM Plex Sans, sans-serif">The cast of nouns, on one card</text>
+  <text x="380" y="44" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">who owns &#183; what runs &#183; what routes &#183; what heals</text>
+
+  <!-- Row 1 -->
+  <rect x="20" y="60" width="232" height="76" rx="8" fill="#20251a" stroke="#79d44e"/>
+  <text x="36" y="84" fill="#92df62" font-size="14" font-weight="700" font-family="IBM Plex Sans, sans-serif">Player</text>
+  <text x="36" y="104" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">The account that owns</text>
+  <text x="36" y="120" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">everything else.</text>
+
+  <rect x="264" y="60" width="232" height="76" rx="8" fill="#20251a" stroke="#92df62"/>
+  <text x="280" y="84" fill="#abe87f" font-size="14" font-weight="700" font-family="IBM Plex Sans, sans-serif">Marquee</text>
+  <text x="280" y="104" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">A Docker host: BYO SSH box</text>
+  <text x="280" y="120" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">or auto-provisioned Scaleway VM.</text>
+
+  <rect x="508" y="60" width="232" height="76" rx="8" fill="#20251a" stroke="#eec854"/>
+  <text x="524" y="84" fill="#eec854" font-size="14" font-weight="700" font-family="IBM Plex Sans, sans-serif">Billing wallet</text>
+  <text x="524" y="104" fill="#c7c4ae" font-size="11" font-family="JetBrains Mono, monospace">Mana &#183; Sparks</text>
+  <text x="524" y="120" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">Funds the host daily; gates runtime.</text>
+
+  <!-- Row 2 -->
+  <rect x="20" y="146" width="232" height="76" rx="8" fill="#20251a" stroke="#434a35"/>
+  <text x="36" y="170" fill="#f3f0e0" font-size="14" font-weight="700" font-family="IBM Plex Sans, sans-serif">Template &#8594; Playspec</text>
+  <text x="36" y="190" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">The blueprint: services, builds,</text>
+  <text x="36" y="206" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">exposed ports, subdomains.</text>
+
+  <rect x="264" y="146" width="232" height="76" rx="8" fill="#20251a" stroke="#434a35"/>
+  <text x="280" y="170" fill="#f3f0e0" font-size="14" font-weight="700" font-family="IBM Plex Sans, sans-serif">Prop</text>
+  <text x="280" y="190" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">The source binding: Gitea, GitHub</text>
+  <text x="280" y="206" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">OAuth, or a GitHub App install.</text>
+
+  <rect x="508" y="146" width="232" height="76" rx="8" fill="#20251a" stroke="#56d8c0"/>
+  <text x="524" y="170" fill="#56d8c0" font-size="14" font-weight="700" font-family="IBM Plex Sans, sans-serif">Traefik</text>
+  <text x="524" y="190" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">Routes by subdomain; terminates</text>
+  <text x="524" y="206" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">TLS with one wildcard cert.</text>
+
+  <!-- Row 3 -->
+  <rect x="20" y="232" width="232" height="76" rx="8" fill="#20251a" stroke="#79d44e"/>
+  <text x="36" y="256" fill="#92df62" font-size="14" font-weight="700" font-family="IBM Plex Sans, sans-serif">Playground</text>
+  <text x="36" y="276" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">A long-lived environment, run as</text>
+  <text x="36" y="292" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">a Docker Compose project.</text>
+
+  <rect x="264" y="232" width="232" height="76" rx="8" fill="#20251a" stroke="#5cb43a"/>
+  <text x="280" y="256" fill="#92df62" font-size="14" font-weight="700" font-family="IBM Plex Sans, sans-serif">Trick</text>
+  <text x="280" y="276" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">A Playground in job mode: runs</text>
+  <text x="280" y="292" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">once, reports a result, exits.</text>
+
+  <rect x="508" y="232" width="232" height="76" rx="8" fill="#20251a" stroke="#56d8c0"/>
+  <text x="524" y="256" fill="#56d8c0" font-size="14" font-weight="700" font-family="IBM Plex Sans, sans-serif">Playguard</text>
+  <text x="524" y="276" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">The reconciler: every 60s, nudges</text>
+  <text x="524" y="292" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">reality toward the database.</text>
+
+  <!-- Row 4 (single wide card) -->
+  <rect x="20" y="318" width="476" height="76" rx="8" fill="#20251a" stroke="#5cb43a"/>
+  <text x="36" y="342" fill="#92df62" font-size="14" font-weight="700" font-family="IBM Plex Sans, sans-serif">AgentChat / Genie</text>
+  <text x="36" y="362" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">An AI coding agent that runs as a sidecar container alongside a</text>
+  <text x="36" y="378" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">Playground &#8212; attached only when an agent is present and not in job mode.</text>
+
+  <rect x="508" y="318" width="232" height="76" rx="8" fill="#252a1e" stroke="#434a35" stroke-dasharray="4 3"/>
+  <text x="624" y="350" text-anchor="middle" fill="#92df62" font-size="13" font-weight="700" font-family="IBM Plex Sans, sans-serif">Player owns Marquee.</text>
+  <text x="624" y="370" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">Billing funds it. Workloads</text>
+  <text x="624" y="386" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">run on it as Compose projects.</text>
+
+  <!-- Footer band -->
+  <rect x="20" y="408" width="720" height="42" rx="6" fill="#252a1e" stroke="#434a35"/>
+  <text x="380" y="427" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">Templates and Playspecs are the blueprint; Props are the source.</text>
+  <text x="380" y="443" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">Traefik routes; Playguard heals. That is the whole platform on one breath.</text>
+</svg>

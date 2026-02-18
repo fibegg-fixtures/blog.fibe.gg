@@ -1,0 +1,97 @@
+<svg viewBox="0 0 760 540" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Fibe resource graph: a Player owns a Marquee funded by Billing; on the Marquee, Playgrounds, Tricks, and AgentChats run as Docker Compose projects routed by Traefik and healed by Playguard">
+  <defs>
+    <marker id="rg-arrow" markerWidth="9" markerHeight="9" refX="7" refY="3.2" orient="auto">
+      <path d="M0,0 L7,3.2 L0,6.4 Z" fill="#757d5e"/>
+    </marker>
+    <marker id="rg-arrow-gold" markerWidth="9" markerHeight="9" refX="7" refY="3.2" orient="auto">
+      <path d="M0,0 L7,3.2 L0,6.4 Z" fill="#e2b33a"/>
+    </marker>
+    <marker id="rg-arrow-teal" markerWidth="9" markerHeight="9" refX="7" refY="3.2" orient="auto">
+      <path d="M0,0 L7,3.2 L0,6.4 Z" fill="#56d8c0"/>
+    </marker>
+  </defs>
+
+  <text x="380" y="26" text-anchor="middle" fill="#f3f0e0" font-size="17" font-weight="700" font-family="IBM Plex Sans, sans-serif">The Fibe resource graph</text>
+
+  <!-- Player -->
+  <rect x="40" y="56" width="150" height="58" rx="8" fill="#20251a" stroke="#79d44e"/>
+  <text x="115" y="82" text-anchor="middle" fill="#92df62" font-size="15" font-weight="700" font-family="IBM Plex Sans, sans-serif">Player</text>
+  <text x="115" y="100" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">the account / owner</text>
+
+  <!-- Billing -->
+  <rect x="40" y="200" width="150" height="76" rx="8" fill="#20251a" stroke="#e2b33a"/>
+  <text x="115" y="226" text-anchor="middle" fill="#eec854" font-size="14" font-weight="700" font-family="IBM Plex Sans, sans-serif">Billing wallet</text>
+  <text x="115" y="245" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="JetBrains Mono, monospace">Mana &#183; Sparks</text>
+  <text x="115" y="262" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">funds the host daily</text>
+
+  <!-- Marquee -->
+  <rect x="290" y="120" width="190" height="92" rx="8" fill="#252a1e" stroke="#92df62" stroke-width="2"/>
+  <text x="385" y="148" text-anchor="middle" fill="#abe87f" font-size="16" font-weight="700" font-family="IBM Plex Sans, sans-serif">Marquee</text>
+  <text x="385" y="168" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">a Docker host</text>
+  <text x="385" y="186" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">BYO SSH or Scaleway VM</text>
+  <text x="385" y="203" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">usable &#215; infra health</text>
+
+  <!-- Traefik -->
+  <rect x="560" y="56" width="160" height="58" rx="8" fill="#20251a" stroke="#56d8c0"/>
+  <text x="640" y="80" text-anchor="middle" fill="#56d8c0" font-size="14" font-weight="700" font-family="IBM Plex Sans, sans-serif">Traefik</text>
+  <text x="640" y="98" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">routes + wildcard TLS</text>
+
+  <!-- Playguard -->
+  <rect x="560" y="200" width="160" height="58" rx="8" fill="#20251a" stroke="#56d8c0"/>
+  <text x="640" y="224" text-anchor="middle" fill="#56d8c0" font-size="14" font-weight="700" font-family="IBM Plex Sans, sans-serif">Playguard</text>
+  <text x="640" y="242" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">reconciler &#183; every 60s</text>
+
+  <!-- Workloads -->
+  <rect x="300" y="350" width="160" height="74" rx="8" fill="#20251a" stroke="#79d44e"/>
+  <text x="380" y="376" text-anchor="middle" fill="#92df62" font-size="14" font-weight="700" font-family="IBM Plex Sans, sans-serif">Playground</text>
+  <text x="380" y="394" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">long-lived env</text>
+  <text x="380" y="411" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">9 lifecycle statuses</text>
+
+  <rect x="110" y="350" width="160" height="74" rx="8" fill="#20251a" stroke="#5cb43a"/>
+  <text x="190" y="376" text-anchor="middle" fill="#92df62" font-size="14" font-weight="700" font-family="IBM Plex Sans, sans-serif">Trick</text>
+  <text x="190" y="394" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">headless one-shot</text>
+  <text x="190" y="411" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">job-mode Playground</text>
+
+  <rect x="490" y="350" width="160" height="74" rx="8" fill="#20251a" stroke="#5cb43a"/>
+  <text x="570" y="376" text-anchor="middle" fill="#92df62" font-size="14" font-weight="700" font-family="IBM Plex Sans, sans-serif">AgentChat</text>
+  <text x="570" y="394" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">Genie AI sidecar</text>
+  <text x="570" y="411" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">coding agent</text>
+
+  <!-- Compose substrate band -->
+  <rect x="90" y="448" width="580" height="34" rx="6" fill="#252a1e" stroke="#434a35" stroke-dasharray="4 3"/>
+  <text x="380" y="470" text-anchor="middle" fill="#c7c4ae" font-size="12" font-family="JetBrains Mono, monospace">each deployed as a Docker Compose project on the Marquee</text>
+
+  <!-- Edges -->
+  <!-- Player owns Marquee -->
+  <line x1="190" y1="80" x2="288" y2="135" stroke="#757d5e" stroke-width="1.6" marker-end="url(#rg-arrow)"/>
+  <text x="232" y="98" text-anchor="middle" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">owns</text>
+
+  <!-- Player funds via Billing -->
+  <line x1="115" y1="114" x2="115" y2="198" stroke="#e2b33a" stroke-width="1.6" marker-end="url(#rg-arrow-gold)"/>
+  <text x="93" y="160" text-anchor="middle" fill="#eec854" font-size="10" font-family="IBM Plex Sans, sans-serif">pays</text>
+
+  <!-- Billing funds Marquee -->
+  <line x1="190" y1="232" x2="288" y2="185" stroke="#e2b33a" stroke-width="1.6" marker-end="url(#rg-arrow-gold)"/>
+  <text x="238" y="222" text-anchor="middle" fill="#eec854" font-size="10" font-family="IBM Plex Sans, sans-serif">funds (402 gate)</text>
+
+  <!-- Marquee to Traefik -->
+  <line x1="480" y1="142" x2="558" y2="98" stroke="#56d8c0" stroke-width="1.4" marker-end="url(#rg-arrow-teal)"/>
+  <text x="524" y="113" text-anchor="middle" fill="#56d8c0" font-size="10" font-family="IBM Plex Sans, sans-serif">runs</text>
+
+  <!-- Marquee to Playguard -->
+  <line x1="480" y1="190" x2="558" y2="222" stroke="#56d8c0" stroke-width="1.4" marker-end="url(#rg-arrow-teal)"/>
+  <text x="524" y="222" text-anchor="middle" fill="#56d8c0" font-size="10" font-family="IBM Plex Sans, sans-serif">healed by</text>
+
+  <!-- Marquee hosts workloads -->
+  <line x1="360" y1="212" x2="270" y2="348" stroke="#757d5e" stroke-width="1.4" marker-end="url(#rg-arrow)"/>
+  <line x1="385" y1="212" x2="385" y2="348" stroke="#757d5e" stroke-width="1.4" marker-end="url(#rg-arrow)"/>
+  <line x1="410" y1="212" x2="500" y2="348" stroke="#757d5e" stroke-width="1.4" marker-end="url(#rg-arrow)"/>
+  <text x="300" y="288" text-anchor="middle" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">hosts</text>
+
+  <!-- Traefik routes workloads -->
+  <line x1="640" y1="114" x2="600" y2="348" stroke="#56d8c0" stroke-width="1.2" stroke-dasharray="3 3" marker-end="url(#rg-arrow-teal)"/>
+  <text x="664" y="240" text-anchor="middle" fill="#56d8c0" font-size="10" font-family="IBM Plex Sans, sans-serif">routes</text>
+
+  <!-- Playguard reconciles workloads -->
+  <line x1="640" y1="258" x2="630" y2="348" stroke="#56d8c0" stroke-width="1.2" stroke-dasharray="3 3" marker-end="url(#rg-arrow-teal)"/>
+</svg>

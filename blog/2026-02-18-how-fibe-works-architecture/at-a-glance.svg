@@ -1,0 +1,17 @@
+<svg viewBox="0 0 760 110" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="At a glance: 3 runtime workload types on one Marquee, 9 Playground lifecycle statuses, a 60 second Playguard reconcile loop, and one 402 funding gate">
+  <rect x="4" y="14" width="180" height="82" rx="6" fill="#20251a" stroke="#434a35"/>
+  <text x="94" y="54" text-anchor="middle" fill="#92df62" font-size="30" font-weight="700" font-family="JetBrains Mono, monospace">3</text>
+  <text x="94" y="78" text-anchor="middle" fill="#a19f89" font-size="12" font-family="IBM Plex Sans, sans-serif">workload types</text>
+
+  <rect x="196" y="14" width="180" height="82" rx="6" fill="#20251a" stroke="#434a35"/>
+  <text x="286" y="54" text-anchor="middle" fill="#92df62" font-size="30" font-weight="700" font-family="JetBrains Mono, monospace">9</text>
+  <text x="286" y="78" text-anchor="middle" fill="#a19f89" font-size="12" font-family="IBM Plex Sans, sans-serif">lifecycle statuses</text>
+
+  <rect x="388" y="14" width="180" height="82" rx="6" fill="#20251a" stroke="#434a35"/>
+  <text x="478" y="54" text-anchor="middle" fill="#56d8c0" font-size="30" font-weight="700" font-family="JetBrains Mono, monospace">60s</text>
+  <text x="478" y="78" text-anchor="middle" fill="#a19f89" font-size="12" font-family="IBM Plex Sans, sans-serif">reconcile loop</text>
+
+  <rect x="580" y="14" width="180" height="82" rx="6" fill="#20251a" stroke="#434a35"/>
+  <text x="670" y="54" text-anchor="middle" fill="#eec854" font-size="30" font-weight="700" font-family="JetBrains Mono, monospace">402</text>
+  <text x="670" y="78" text-anchor="middle" fill="#a19f89" font-size="12" font-family="IBM Plex Sans, sans-serif">funding gate</text>
+</svg>

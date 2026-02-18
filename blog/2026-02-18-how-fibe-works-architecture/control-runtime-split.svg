@@ -1,0 +1,63 @@
+<svg viewBox="0 0 760 430" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The two-plane split: a Rails control plane holds all state and decides; the runtime plane is remote Docker hosts reached over SSH that hold no Fibe state">
+  <defs>
+    <marker id="cr-arrow" markerWidth="9" markerHeight="9" refX="7" refY="3.2" orient="auto">
+      <path d="M0,0 L7,3.2 L0,6.4 Z" fill="#757d5e"/>
+    </marker>
+  </defs>
+
+  <text x="380" y="26" text-anchor="middle" fill="#f3f0e0" font-size="17" font-weight="700" font-family="IBM Plex Sans, sans-serif">Two planes, one SSH seam</text>
+
+  <!-- Control plane panel -->
+  <rect x="30" y="50" width="320" height="350" rx="10" fill="#20251a" stroke="#79d44e" stroke-width="1.5"/>
+  <text x="190" y="76" text-anchor="middle" fill="#92df62" font-size="15" font-weight="700" font-family="IBM Plex Sans, sans-serif">Control plane</text>
+  <text x="190" y="94" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">Rails monolith &#183; our infra (Scaleway K8s)</text>
+
+  <rect x="52" y="112" width="276" height="40" rx="6" fill="#252a1e" stroke="#434a35"/>
+  <text x="190" y="137" text-anchor="middle" fill="#c7c4ae" font-size="12" font-family="IBM Plex Sans, sans-serif">Postgres &#8212; every status, every wallet</text>
+
+  <rect x="52" y="160" width="276" height="40" rx="6" fill="#252a1e" stroke="#434a35"/>
+  <text x="190" y="185" text-anchor="middle" fill="#c7c4ae" font-size="12" font-family="IBM Plex Sans, sans-serif">Sidekiq jobs &#183; Redis locks &amp; cache</text>
+
+  <rect x="52" y="208" width="276" height="40" rx="6" fill="#252a1e" stroke="#434a35"/>
+  <text x="190" y="233" text-anchor="middle" fill="#c7c4ae" font-size="12" font-family="IBM Plex Sans, sans-serif">Playguard reconciler (every 60s)</text>
+
+  <rect x="52" y="256" width="276" height="40" rx="6" fill="#252a1e" stroke="#434a35"/>
+  <text x="190" y="281" text-anchor="middle" fill="#c7c4ae" font-size="12" font-family="IBM Plex Sans, sans-serif">Billing &#183; funding gate (402)</text>
+
+  <rect x="52" y="304" width="276" height="40" rx="6" fill="#252a1e" stroke="#434a35"/>
+  <text x="190" y="329" text-anchor="middle" fill="#c7c4ae" font-size="12" font-family="IBM Plex Sans, sans-serif">Rust core (pure-CPU pieces)</text>
+
+  <text x="190" y="372" text-anchor="middle" fill="#92df62" font-size="11" font-weight="700" font-family="IBM Plex Sans, sans-serif">holds all the state &#183; decides</text>
+  <text x="190" y="388" text-anchor="middle" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">survives any host going dark</text>
+
+  <!-- Runtime plane panel -->
+  <rect x="410" y="50" width="320" height="350" rx="10" fill="#20251a" stroke="#56d8c0" stroke-width="1.5"/>
+  <text x="570" y="76" text-anchor="middle" fill="#56d8c0" font-size="15" font-weight="700" font-family="IBM Plex Sans, sans-serif">Runtime plane</text>
+  <text x="570" y="94" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">the Marquee &#183; a remote Docker host</text>
+
+  <rect x="432" y="112" width="276" height="40" rx="6" fill="#252a1e" stroke="#434a35"/>
+  <text x="570" y="137" text-anchor="middle" fill="#c7c4ae" font-size="12" font-family="IBM Plex Sans, sans-serif">Docker daemon + Compose projects</text>
+
+  <rect x="432" y="160" width="276" height="40" rx="6" fill="#252a1e" stroke="#434a35"/>
+  <text x="570" y="185" text-anchor="middle" fill="#c7c4ae" font-size="12" font-family="IBM Plex Sans, sans-serif">Traefik &#183; wildcard TLS routing</text>
+
+  <rect x="432" y="208" width="276" height="40" rx="6" fill="#252a1e" stroke="#434a35"/>
+  <text x="570" y="233" text-anchor="middle" fill="#c7c4ae" font-size="12" font-family="IBM Plex Sans, sans-serif">Playground / Trick / AgentChat containers</text>
+
+  <rect x="432" y="256" width="276" height="40" rx="6" fill="#252a1e" stroke="#434a35"/>
+  <text x="570" y="281" text-anchor="middle" fill="#c7c4ae" font-size="12" font-family="IBM Plex Sans, sans-serif">cloned source &#183; built images &#183; volumes</text>
+
+  <rect x="432" y="304" width="276" height="40" rx="6" fill="#252a1e" stroke="#434a35"/>
+  <text x="570" y="329" text-anchor="middle" fill="#c7c4ae" font-size="12" font-family="IBM Plex Sans, sans-serif">a small ownership marker file</text>
+
+  <text x="570" y="372" text-anchor="middle" fill="#56d8c0" font-size="11" font-weight="700" font-family="IBM Plex Sans, sans-serif">holds no Fibe state &#183; just does work</text>
+  <text x="570" y="388" text-anchor="middle" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">always reconciled back to the desired state</text>
+
+  <!-- SSH seam -->
+  <line x1="350" y1="200" x2="408" y2="200" stroke="#757d5e" stroke-width="2" marker-end="url(#cr-arrow)"/>
+  <line x1="408" y1="250" x2="352" y2="250" stroke="#757d5e" stroke-width="2" marker-end="url(#cr-arrow)"/>
+  <rect x="332" y="208" width="96" height="34" rx="6" fill="#252a1e" stroke="#eec854"/>
+  <text x="380" y="230" text-anchor="middle" fill="#eec854" font-size="12" font-weight="700" font-family="JetBrains Mono, monospace">SSH</text>
+  <text x="380" y="186" text-anchor="middle" fill="#a19f89" font-size="9" font-family="IBM Plex Sans, sans-serif">commands &amp; rsync</text>
+  <text x="380" y="270" text-anchor="middle" fill="#a19f89" font-size="9" font-family="IBM Plex Sans, sans-serif">docker compose ps</text>
+</svg>

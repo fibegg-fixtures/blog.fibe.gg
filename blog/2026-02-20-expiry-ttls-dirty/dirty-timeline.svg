@@ -1,0 +1,41 @@
+<svg viewBox="0 0 740 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Dirty-protection timeline: a playground runs, gets uncommitted edits, hits expiry and is parked in the has-changes state instead of destroyed, then an extend or push flips it back to running">
+  <defs>
+    <marker id="tl-arrow" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 Z" fill="#757d5e"/>
+    </marker>
+  </defs>
+
+  <!-- baseline -->
+  <line x1="40" y1="150" x2="700" y2="150" stroke="#545c42" stroke-width="2" marker-end="url(#tl-arrow)"/>
+  <text x="700" y="172" text-anchor="end" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">time &#8594;</text>
+
+  <!-- t0: running -->
+  <circle cx="100" cy="150" r="7" fill="#5cb43a" stroke="#92df62" stroke-width="1.5"/>
+  <text x="100" y="128" text-anchor="middle" fill="#92df62" font-size="12" font-weight="600" font-family="JetBrains Mono, monospace">running</text>
+  <text x="100" y="190" text-anchor="middle" fill="#a19f89" font-size="10.5" font-family="IBM Plex Sans, sans-serif">env up,</text>
+  <text x="100" y="204" text-anchor="middle" fill="#a19f89" font-size="10.5" font-family="IBM Plex Sans, sans-serif">tree clean</text>
+
+  <!-- t1: edits -->
+  <circle cx="265" cy="150" r="7" fill="#eec854" stroke="#f5da79" stroke-width="1.5"/>
+  <text x="265" y="128" text-anchor="middle" fill="#f5da79" font-size="12" font-weight="600" font-family="IBM Plex Sans, sans-serif">edits made</text>
+  <text x="265" y="190" text-anchor="middle" fill="#a19f89" font-size="10.5" font-family="IBM Plex Sans, sans-serif">uncommitted changes</text>
+  <text x="265" y="204" text-anchor="middle" fill="#a19f89" font-size="10" font-family="JetBrains Mono, monospace">git status --porcelain</text>
+
+  <!-- t2: expiry hit -->
+  <line x1="430" y1="60" x2="430" y2="240" stroke="#434a35" stroke-width="1" stroke-dasharray="3 3"/>
+  <circle cx="430" cy="150" r="7" fill="#f08760" stroke="#f08760" stroke-width="1.5"/>
+  <text x="430" y="128" text-anchor="middle" fill="#f08760" font-size="12" font-weight="600" font-family="JetBrains Mono, monospace">expiry hit</text>
+  <text x="430" y="80" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">sweep runs &#183; dirty?</text>
+  <rect x="350" y="208" width="160" height="56" rx="5" fill="#20251a" stroke="#f08760"/>
+  <text x="430" y="228" text-anchor="middle" fill="#f08760" font-size="11" font-weight="600" font-family="IBM Plex Sans, sans-serif">has changes</text>
+  <text x="430" y="244" text-anchor="middle" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">parked, not destroyed</text>
+  <text x="430" y="257" text-anchor="middle" fill="#a19f89" font-size="9.5" font-family="IBM Plex Sans, sans-serif">expiry skipped: dirty</text>
+
+  <!-- t3: extend/push -->
+  <circle cx="600" cy="150" r="7" fill="#5cb43a" stroke="#92df62" stroke-width="1.5"/>
+  <text x="600" y="128" text-anchor="middle" fill="#92df62" font-size="12" font-weight="600" font-family="IBM Plex Sans, sans-serif">extend / push</text>
+  <text x="600" y="190" text-anchor="middle" fill="#a19f89" font-size="10.5" font-family="IBM Plex Sans, sans-serif">expiry time moves out</text>
+  <text x="600" y="204" text-anchor="middle" fill="#abe87f" font-size="10" font-family="JetBrains Mono, monospace">&#8594; running again</text>
+
+  <text x="370" y="40" text-anchor="middle" fill="#c7c4ae" font-size="12.5" font-weight="600" font-family="IBM Plex Sans, sans-serif">A dirty environment never falls off the cliff &#8212; it waits on the ledge.</text>
+</svg>

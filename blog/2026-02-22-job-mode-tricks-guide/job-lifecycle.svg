@@ -1,0 +1,47 @@
+<svg viewBox="0 0 740 232" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Job lifecycle pipeline: launch, watched service runs, watched service exits, exit code branches to pass or fail, then cleanup">
+  <defs>
+    <marker id="lc-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#757d5e"/>
+    </marker>
+  </defs>
+  <rect x="0" y="0" width="740" height="232" fill="#1b1f16"/>
+  <text x="370" y="28" text-anchor="middle" fill="#f3f0e0" font-size="16" font-weight="700" font-family="IBM Plex Sans, sans-serif">The job lifecycle</text>
+
+  <!-- launch -->
+  <rect x="20" y="56" width="132" height="58" rx="7" fill="#20251a" stroke="#545c42"/>
+  <text x="86" y="82" text-anchor="middle" fill="#eec854" font-size="13" font-weight="700" font-family="JetBrains Mono, monospace">launch</text>
+  <text x="86" y="101" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">1 replica, no restart</text>
+
+  <line x1="152" y1="85" x2="194" y2="85" stroke="#757d5e" stroke-width="2" marker-end="url(#lc-arrow)"/>
+
+  <!-- run -->
+  <rect x="196" y="56" width="148" height="58" rx="7" fill="#20251a" stroke="#5cb43a"/>
+  <text x="270" y="80" text-anchor="middle" fill="#92df62" font-size="13" font-weight="700" font-family="JetBrains Mono, monospace">watched runs</text>
+  <text x="270" y="100" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">helpers support it</text>
+
+  <line x1="344" y1="85" x2="386" y2="85" stroke="#757d5e" stroke-width="2" marker-end="url(#lc-arrow)"/>
+
+  <!-- exit -->
+  <rect x="388" y="56" width="132" height="58" rx="7" fill="#20251a" stroke="#545c42"/>
+  <text x="454" y="80" text-anchor="middle" fill="#f3f0e0" font-size="13" font-weight="700" font-family="JetBrains Mono, monospace">it exits</text>
+  <text x="454" y="100" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">poll catches exit code</text>
+
+  <!-- branch up: pass -->
+  <line x1="520" y1="72" x2="568" y2="56" stroke="#757d5e" stroke-width="2" marker-end="url(#lc-arrow)"/>
+  <rect x="570" y="30" width="150" height="44" rx="7" fill="#20251a" stroke="#5cb43a"/>
+  <text x="645" y="50" text-anchor="middle" fill="#92df62" font-size="12.5" font-weight="700" font-family="JetBrains Mono, monospace">exit 0 &#8594; passed</text>
+  <text x="645" y="66" text-anchor="middle" fill="#a19f89" font-size="10.5" font-family="IBM Plex Sans, sans-serif">all watched must be 0</text>
+
+  <!-- branch down: fail -->
+  <line x1="520" y1="98" x2="568" y2="114" stroke="#757d5e" stroke-width="2" marker-end="url(#lc-arrow)"/>
+  <rect x="570" y="96" width="150" height="44" rx="7" fill="#20251a" stroke="#f08760"/>
+  <text x="645" y="116" text-anchor="middle" fill="#f08760" font-size="12.5" font-weight="700" font-family="JetBrains Mono, monospace">non-zero &#8594; failed</text>
+  <text x="645" y="132" text-anchor="middle" fill="#a19f89" font-size="10.5" font-family="IBM Plex Sans, sans-serif">fails immediately</text>
+
+  <!-- cleanup row -->
+  <rect x="196" y="158" width="524" height="52" rx="7" fill="#252a1e" stroke="#434a35"/>
+  <text x="458" y="182" text-anchor="middle" fill="#56d8c0" font-size="12.5" font-weight="700" font-family="JetBrains Mono, monospace">tear down containers &#183; save run result &#183; default TTL 1h</text>
+  <text x="458" y="200" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">exit codes + completion time + log tail outlive the containers; the run record itself expires</text>
+  <line x1="645" y1="140" x2="645" y2="156" stroke="#757d5e" stroke-width="2" marker-end="url(#lc-arrow)"/>
+  <line x1="270" y1="114" x2="270" y2="156" stroke="#757d5e" stroke-width="2" stroke-dasharray="4 3" marker-end="url(#lc-arrow)"/>
+</svg>

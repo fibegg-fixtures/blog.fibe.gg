@@ -1,0 +1,32 @@
+<svg viewBox="0 0 720 308" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Decision panel comparing a long-running Playground that stays up versus a job-mode Trick that finishes and tears down">
+  <rect x="0" y="0" width="720" height="308" fill="#1b1f16"/>
+  <text x="360" y="30" text-anchor="middle" fill="#f3f0e0" font-size="17" font-weight="700" font-family="IBM Plex Sans, sans-serif">Should this finish, or stay up?</text>
+
+  <!-- left: Playground -->
+  <rect x="24" y="52" width="316" height="232" rx="8" fill="#20251a" stroke="#545c42"/>
+  <text x="182" y="80" text-anchor="middle" fill="#56d8c0" font-size="15" font-weight="700" font-family="IBM Plex Sans, sans-serif">Playground (long-running)</text>
+  <text x="182" y="104" text-anchor="middle" fill="#a19f89" font-size="12" font-family="IBM Plex Sans, sans-serif">serves traffic &#183; has a URL &#183; never exits</text>
+
+  <rect x="48" y="124" width="268" height="34" rx="5" fill="#252a1e" stroke="#434a35"/>
+  <text x="62" y="146" fill="#c7c4ae" font-size="12.5" font-family="IBM Plex Sans, sans-serif">Rails / FastAPI web app</text>
+  <rect x="48" y="166" width="268" height="34" rx="5" fill="#252a1e" stroke="#434a35"/>
+  <text x="62" y="188" fill="#c7c4ae" font-size="12.5" font-family="IBM Plex Sans, sans-serif">Background worker that loops</text>
+  <rect x="48" y="208" width="268" height="34" rx="5" fill="#252a1e" stroke="#434a35"/>
+  <text x="62" y="230" fill="#c7c4ae" font-size="12.5" font-family="IBM Plex Sans, sans-serif">Hot-reload dev server</text>
+
+  <text x="182" y="266" text-anchor="middle" fill="#56d8c0" font-size="12.5" font-weight="700" font-family="JetBrains Mono, monospace">healthchecks monitor it</text>
+
+  <!-- right: Trick -->
+  <rect x="380" y="52" width="316" height="232" rx="8" fill="#20251a" stroke="#5cb43a"/>
+  <text x="538" y="80" text-anchor="middle" fill="#92df62" font-size="15" font-weight="700" font-family="IBM Plex Sans, sans-serif">Trick (job mode)</text>
+  <text x="538" y="104" text-anchor="middle" fill="#a19f89" font-size="12" font-family="IBM Plex Sans, sans-serif">runs &#183; exits &#183; records pass/fail &#183; tears down</text>
+
+  <rect x="404" y="124" width="268" height="34" rx="5" fill="#252a1e" stroke="#434a35"/>
+  <text x="418" y="146" fill="#c7c4ae" font-size="12.5" font-family="IBM Plex Sans, sans-serif">Test suite / lint check</text>
+  <rect x="404" y="166" width="268" height="34" rx="5" fill="#252a1e" stroke="#434a35"/>
+  <text x="418" y="188" fill="#c7c4ae" font-size="12.5" font-family="IBM Plex Sans, sans-serif">DB migration / schema setup</text>
+  <rect x="404" y="208" width="268" height="34" rx="5" fill="#252a1e" stroke="#434a35"/>
+  <text x="418" y="230" fill="#c7c4ae" font-size="12.5" font-family="IBM Plex Sans, sans-serif">Backup / export / data sync</text>
+
+  <text x="538" y="266" text-anchor="middle" fill="#92df62" font-size="12.5" font-weight="700" font-family="JetBrains Mono, monospace">watched exit code = result</text>
+</svg>

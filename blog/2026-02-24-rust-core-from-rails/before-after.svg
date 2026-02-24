@@ -1,0 +1,50 @@
+<svg viewBox="0 0 740 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Before and after: compose and traefik generation moved from a Ruby service tangled with the DB into a pure Rust command called by a thin Rails adapter">
+  <defs>
+    <marker id="ba-arr" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 z" fill="#757d5e"/>
+    </marker>
+  </defs>
+
+  <!-- BEFORE -->
+  <text x="186" y="30" text-anchor="middle" fill="#a19f89" font-size="13" font-weight="700" font-family="IBM Plex Sans, sans-serif">BEFORE</text>
+  <rect x="24" y="46" width="324" height="248" rx="8" fill="#20251a" stroke="#545c42"/>
+
+  <rect x="48" y="68" width="276" height="56" rx="5" fill="#252a1e" stroke="#434a35"/>
+  <text x="186" y="90" text-anchor="middle" fill="#f3f0e0" font-size="12" font-weight="700" font-family="IBM Plex Sans, sans-serif">Compose generation</text>
+  <text x="186" y="110" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">a Ruby service object</text>
+
+  <line x1="186" y1="124" x2="186" y2="150" stroke="#757d5e" stroke-width="2" marker-end="url(#ba-arr)"/>
+
+  <rect x="48" y="154" width="130" height="48" rx="5" fill="#252a1e" stroke="#434a35"/>
+  <text x="113" y="174" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">pure string</text>
+  <text x="113" y="190" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">building</text>
+
+  <rect x="194" y="154" width="130" height="48" rx="5" fill="#252a1e" stroke="#f08760"/>
+  <text x="259" y="174" text-anchor="middle" fill="#f08760" font-size="11" font-family="IBM Plex Sans, sans-serif">reaches into</text>
+  <text x="259" y="190" text-anchor="middle" fill="#f08760" font-size="11" font-family="IBM Plex Sans, sans-serif">AR records</text>
+
+  <rect x="48" y="216" width="276" height="56" rx="5" fill="#252a1e" stroke="#434a35"/>
+  <text x="186" y="240" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">logic + IO interleaved &#183; hard to test</text>
+  <text x="186" y="258" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">only Ruby could reproduce the output</text>
+
+  <!-- AFTER -->
+  <text x="554" y="30" text-anchor="middle" fill="#92df62" font-size="13" font-weight="700" font-family="IBM Plex Sans, sans-serif">AFTER</text>
+  <rect x="392" y="46" width="324" height="248" rx="8" fill="#20251a" stroke="#545c42"/>
+
+  <rect x="416" y="68" width="276" height="50" rx="5" fill="#252a1e" stroke="#434a35"/>
+  <text x="554" y="90" text-anchor="middle" fill="#f3f0e0" font-size="12" font-weight="700" font-family="IBM Plex Sans, sans-serif">Compose generation (Rails)</text>
+  <text x="554" y="108" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">thin adapter: load records, build hash</text>
+
+  <line x1="554" y1="118" x2="554" y2="142" stroke="#757d5e" stroke-width="2" marker-end="url(#ba-arr)"/>
+  <text x="616" y="135" text-anchor="middle" fill="#92df62" font-size="10" font-family="IBM Plex Sans, sans-serif">hand off</text>
+
+  <rect x="416" y="146" width="276" height="56" rx="5" fill="#252a1e" stroke="#eec854"/>
+  <text x="554" y="168" text-anchor="middle" fill="#eec854" font-size="12" font-weight="700" font-family="IBM Plex Sans, sans-serif">compile this template</text>
+  <text x="554" y="188" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">Rust &#183; no DB, no IO, deterministic</text>
+
+  <line x1="554" y1="202" x2="554" y2="226" stroke="#757d5e" stroke-width="2" marker-end="url(#ba-arr)"/>
+
+  <rect x="416" y="230" width="276" height="42" rx="5" fill="#252a1e" stroke="#434a35"/>
+  <text x="554" y="252" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">same bytes from Ruby, CLI, or the runtime</text>
+  <text x="554" y="268" text-anchor="middle" fill="#56d8c0" font-size="11" font-family="IBM Plex Sans, sans-serif">one source of truth for compose + traefik</text>
+</svg>

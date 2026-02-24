@@ -1,0 +1,54 @@
+<svg viewBox="0 0 740 396" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Decision matrix: code with stateful, IO-bound, unstable or long-running properties stays in Rails; pure, stateless, stable, CPU-bound code moves to Rust">
+  <text x="370" y="30" text-anchor="middle" fill="#f3f0e0" font-size="17" font-weight="700" font-family="IBM Plex Sans, sans-serif">Where does this code belong?</text>
+
+  <!-- header row -->
+  <rect x="24" y="48" width="360" height="34" rx="5" fill="#252a1e" stroke="#545c42"/>
+  <text x="44" y="70" fill="#a19f89" font-size="12" font-weight="700" font-family="IBM Plex Sans, sans-serif">Property of the code</text>
+  <rect x="392" y="48" width="160" height="34" rx="5" fill="#20251a" stroke="#434a35"/>
+  <text x="472" y="70" text-anchor="middle" fill="#92df62" font-size="12" font-weight="700" font-family="IBM Plex Sans, sans-serif">Rails</text>
+  <rect x="560" y="48" width="156" height="34" rx="5" fill="#20251a" stroke="#434a35"/>
+  <text x="638" y="70" text-anchor="middle" fill="#eec854" font-size="12" font-weight="700" font-family="IBM Plex Sans, sans-serif">Rust core</text>
+
+  <!-- rows -->
+  <!-- row helper: y positions -->
+  <!-- 1 -->
+  <rect x="24" y="90" width="360" height="34" rx="5" fill="#20251a" stroke="#434a35"/>
+  <text x="44" y="112" fill="#c7c4ae" font-size="12" font-family="IBM Plex Sans, sans-serif">Touches DB / network / disk</text>
+  <text x="472" y="112" text-anchor="middle" fill="#92df62" font-size="15" font-family="JetBrains Mono, monospace">&#10003;</text>
+  <text x="638" y="112" text-anchor="middle" fill="#545c42" font-size="15" font-family="JetBrains Mono, monospace">&#183;</text>
+  <!-- 2 -->
+  <rect x="24" y="128" width="360" height="34" rx="5" fill="#20251a" stroke="#434a35"/>
+  <text x="44" y="150" fill="#c7c4ae" font-size="12" font-family="IBM Plex Sans, sans-serif">Holds state across calls</text>
+  <text x="472" y="150" text-anchor="middle" fill="#92df62" font-size="15" font-family="JetBrains Mono, monospace">&#10003;</text>
+  <text x="638" y="150" text-anchor="middle" fill="#545c42" font-size="15" font-family="JetBrains Mono, monospace">&#183;</text>
+  <!-- 3 -->
+  <rect x="24" y="166" width="360" height="34" rx="5" fill="#20251a" stroke="#434a35"/>
+  <text x="44" y="188" fill="#c7c4ae" font-size="12" font-family="IBM Plex Sans, sans-serif">Long-running / orchestration</text>
+  <text x="472" y="188" text-anchor="middle" fill="#92df62" font-size="15" font-family="JetBrains Mono, monospace">&#10003;</text>
+  <text x="638" y="188" text-anchor="middle" fill="#545c42" font-size="15" font-family="JetBrains Mono, monospace">&#183;</text>
+  <!-- 4 -->
+  <rect x="24" y="204" width="360" height="34" rx="5" fill="#20251a" stroke="#434a35"/>
+  <text x="44" y="226" fill="#c7c4ae" font-size="12" font-family="IBM Plex Sans, sans-serif">Authorization / billing gates</text>
+  <text x="472" y="226" text-anchor="middle" fill="#92df62" font-size="15" font-family="JetBrains Mono, monospace">&#10003;</text>
+  <text x="638" y="226" text-anchor="middle" fill="#545c42" font-size="15" font-family="JetBrains Mono, monospace">&#183;</text>
+  <!-- 5 -->
+  <rect x="24" y="242" width="360" height="34" rx="5" fill="#20251a" stroke="#434a35"/>
+  <text x="44" y="264" fill="#c7c4ae" font-size="12" font-family="IBM Plex Sans, sans-serif">Changes most weeks</text>
+  <text x="472" y="264" text-anchor="middle" fill="#92df62" font-size="15" font-family="JetBrains Mono, monospace">&#10003;</text>
+  <text x="638" y="264" text-anchor="middle" fill="#545c42" font-size="15" font-family="JetBrains Mono, monospace">&#183;</text>
+  <!-- 6 -->
+  <rect x="24" y="280" width="360" height="34" rx="5" fill="#20251a" stroke="#434a35"/>
+  <text x="44" y="302" fill="#c7c4ae" font-size="12" font-family="IBM Plex Sans, sans-serif">Pure function of its input</text>
+  <text x="472" y="302" text-anchor="middle" fill="#545c42" font-size="15" font-family="JetBrains Mono, monospace">&#183;</text>
+  <text x="638" y="302" text-anchor="middle" fill="#eec854" font-size="15" font-family="JetBrains Mono, monospace">&#10003;</text>
+  <!-- 7 -->
+  <rect x="24" y="318" width="360" height="34" rx="5" fill="#20251a" stroke="#434a35"/>
+  <text x="44" y="340" fill="#c7c4ae" font-size="12" font-family="IBM Plex Sans, sans-serif">Stable spec, rarely changes</text>
+  <text x="472" y="340" text-anchor="middle" fill="#545c42" font-size="15" font-family="JetBrains Mono, monospace">&#183;</text>
+  <text x="638" y="340" text-anchor="middle" fill="#eec854" font-size="15" font-family="JetBrains Mono, monospace">&#10003;</text>
+  <!-- 8 -->
+  <rect x="24" y="356" width="360" height="34" rx="5" fill="#20251a" stroke="#434a35"/>
+  <text x="44" y="378" fill="#c7c4ae" font-size="12" font-family="IBM Plex Sans, sans-serif">CPU-bound, hot in a loop</text>
+  <text x="472" y="378" text-anchor="middle" fill="#545c42" font-size="15" font-family="JetBrains Mono, monospace">&#183;</text>
+  <text x="638" y="378" text-anchor="middle" fill="#eec854" font-size="15" font-family="JetBrains Mono, monospace">&#10003;</text>
+</svg>

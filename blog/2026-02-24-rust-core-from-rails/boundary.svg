@@ -1,0 +1,57 @@
+<svg viewBox="0 0 740 380" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The Rails to Rust boundary: Rails sends an operation name plus a JSON snapshot, the Rust core returns a JSON result">
+  <defs>
+    <marker id="arrR" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 z" fill="#79d44e"/>
+    </marker>
+    <marker id="arrL" markerWidth="9" markerHeight="9" refX="2" refY="4.5" orient="auto">
+      <path d="M9,0 L0,4.5 L9,9 z" fill="#56d8c0"/>
+    </marker>
+  </defs>
+
+  <text x="370" y="28" text-anchor="middle" fill="#f3f0e0" font-size="17" font-weight="700" font-family="IBM Plex Sans, sans-serif">The dispatch boundary</text>
+
+  <!-- Rails side -->
+  <rect x="24" y="56" width="280" height="288" rx="8" fill="#20251a" stroke="#545c42"/>
+  <text x="164" y="84" text-anchor="middle" fill="#92df62" font-size="15" font-weight="700" font-family="IBM Plex Sans, sans-serif">Rails monolith</text>
+  <text x="164" y="104" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">stateful &#183; IO-bound &#183; long-running</text>
+
+  <rect x="44" y="124" width="240" height="40" rx="5" fill="#252a1e" stroke="#434a35"/>
+  <text x="164" y="149" text-anchor="middle" fill="#c7c4ae" font-size="12" font-family="IBM Plex Sans, sans-serif">DB, Sidekiq, Docker over SSH</text>
+
+  <rect x="44" y="174" width="240" height="40" rx="5" fill="#252a1e" stroke="#434a35"/>
+  <text x="164" y="199" text-anchor="middle" fill="#c7c4ae" font-size="12" font-family="IBM Plex Sans, sans-serif">authz, billing gates, Playguard</text>
+
+  <rect x="44" y="226" width="240" height="44" rx="5" fill="#252a1e" stroke="#757d5e"/>
+  <text x="164" y="246" text-anchor="middle" fill="#f3f0e0" font-size="12" font-family="IBM Plex Sans, sans-serif">one entry point</text>
+  <text x="164" y="262" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">operation name + snapshot</text>
+
+  <text x="164" y="300" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">collects state &#183; serializes to JSON</text>
+  <text x="164" y="320" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">decodes the answer &#183; acts on it</text>
+
+  <!-- Rust side -->
+  <rect x="436" y="56" width="280" height="288" rx="8" fill="#20251a" stroke="#545c42"/>
+  <text x="576" y="84" text-anchor="middle" fill="#eec854" font-size="15" font-weight="700" font-family="IBM Plex Sans, sans-serif">Rust core</text>
+  <text x="576" y="104" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">pure &#183; stateless &#183; stable</text>
+
+  <rect x="456" y="124" width="240" height="40" rx="5" fill="#252a1e" stroke="#434a35"/>
+  <text x="576" y="149" text-anchor="middle" fill="#c7c4ae" font-size="12" font-family="IBM Plex Sans, sans-serif">compose + traefik label gen</text>
+
+  <rect x="456" y="174" width="240" height="40" rx="5" fill="#252a1e" stroke="#434a35"/>
+  <text x="576" y="199" text-anchor="middle" fill="#c7c4ae" font-size="12" font-family="IBM Plex Sans, sans-serif">drift detection, env merge</text>
+
+  <rect x="456" y="226" width="240" height="44" rx="5" fill="#252a1e" stroke="#757d5e"/>
+  <text x="576" y="246" text-anchor="middle" fill="#f3f0e0" font-size="12" font-family="IBM Plex Sans, sans-serif">named operations</text>
+  <text x="576" y="262" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">a few dozen small calculations</text>
+
+  <text x="576" y="300" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">no DB, no network, no clock</text>
+  <text x="576" y="320" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">JSON in &#8594; JSON out</text>
+
+  <!-- arrows -->
+  <line x1="304" y1="188" x2="436" y2="188" stroke="#79d44e" stroke-width="2.5" marker-end="url(#arrR)"/>
+  <text x="370" y="180" text-anchor="middle" fill="#92df62" font-size="11" font-family="JetBrains Mono, monospace">name + JSON snapshot</text>
+
+  <line x1="436" y1="222" x2="304" y2="222" stroke="#56d8c0" stroke-width="2.5" marker-end="url(#arrL)"/>
+  <text x="370" y="240" text-anchor="middle" fill="#56d8c0" font-size="11" font-family="JetBrains Mono, monospace">JSON result</text>
+
+  <text x="370" y="368" text-anchor="middle" fill="#757d5e" font-size="10" font-family="IBM Plex Sans, sans-serif">Same boundary whether the call is a subprocess (dev) or in-process FFI (prod)</text>
+</svg>

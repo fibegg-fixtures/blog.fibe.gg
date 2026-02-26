@@ -1,0 +1,39 @@
+<svg viewBox="0 0 720 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="One Prop feeds branch clones, image builds, and VCS triggers across the platform">
+  <defs>
+    <marker id="arrPF" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#757d5e"/>
+    </marker>
+  </defs>
+
+  <text x="360" y="26" text-anchor="middle" fill="#f3f0e0" font-size="16" font-weight="700" font-family="IBM Plex Sans, sans-serif">One binding, many consumers</text>
+
+  <!-- Prop node -->
+  <rect x="40" y="130" width="200" height="100" rx="8" fill="#252a1e" stroke="#79d44e" stroke-width="2"/>
+  <text x="140" y="162" text-anchor="middle" fill="#92df62" font-size="17" font-weight="700" font-family="JetBrains Mono, monospace">Prop</text>
+  <text x="140" y="185" text-anchor="middle" fill="#c7c4ae" font-size="11.5" font-family="IBM Plex Sans, sans-serif">player-owned git binding</text>
+  <text x="140" y="205" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">repo URL + credentials</text>
+  <text x="140" y="221" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">stable on-disk identifier</text>
+
+  <!-- arrows -->
+  <line x1="240" y1="150" x2="430" y2="78" stroke="#757d5e" stroke-width="1.6" marker-end="url(#arrPF)"/>
+  <line x1="240" y1="180" x2="430" y2="180" stroke="#757d5e" stroke-width="1.6" marker-end="url(#arrPF)"/>
+  <line x1="240" y1="210" x2="430" y2="282" stroke="#757d5e" stroke-width="1.6" marker-end="url(#arrPF)"/>
+
+  <!-- consumer 1: branch clone -->
+  <rect x="432" y="48" width="248" height="64" rx="7" fill="#20251a" stroke="#545c42"/>
+  <text x="448" y="74" fill="#abe87f" font-size="13.5" font-weight="700" font-family="JetBrains Mono, monospace">branch clone</text>
+  <text x="448" y="94" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">Playground source &#183; clones a branch onto the Marquee</text>
+
+  <!-- consumer 2: image builds -->
+  <rect x="432" y="148" width="248" height="64" rx="7" fill="#20251a" stroke="#545c42"/>
+  <text x="448" y="174" fill="#eec854" font-size="13.5" font-weight="700" font-family="JetBrains Mono, monospace">image builds</text>
+  <text x="448" y="194" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">build orchestrator &#183; keyed by Prop, branch, identity</text>
+
+  <!-- consumer 3: vcs triggers -->
+  <rect x="432" y="252" width="248" height="64" rx="7" fill="#20251a" stroke="#545c42"/>
+  <text x="448" y="278" fill="#56d8c0" font-size="13.5" font-weight="700" font-family="JetBrains Mono, monospace">VCS triggers</text>
+  <text x="448" y="298" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">Tricks &#183; headless one-shot jobs fire on the repo</text>
+
+  <text x="140" y="282" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">bind once</text>
+  <text x="140" y="298" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">reuse everywhere</text>
+</svg>

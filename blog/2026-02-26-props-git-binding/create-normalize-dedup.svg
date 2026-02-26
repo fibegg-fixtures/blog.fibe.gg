@@ -1,0 +1,46 @@
+<svg viewBox="0 0 720 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The create, normalize, dedup flow for binding a Prop">
+  <defs>
+    <marker id="arrND" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#757d5e"/>
+    </marker>
+  </defs>
+
+  <text x="360" y="26" text-anchor="middle" fill="#f3f0e0" font-size="16" font-weight="700" font-family="IBM Plex Sans, sans-serif">Bind once: create &#8594; normalize &#8594; dedup</text>
+
+  <!-- step 1 -->
+  <rect x="24" y="58" width="150" height="92" rx="7" fill="#252a1e" stroke="#545c42"/>
+  <text x="40" y="80" fill="#92df62" font-size="13" font-weight="700" font-family="JetBrains Mono, monospace">1 &#183; create</text>
+  <text x="40" y="102" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">repo URL + provider</text>
+  <text x="40" y="120" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">idempotency key on</text>
+  <text x="40" y="138" fill="#a19f89" font-size="10.5" font-family="IBM Plex Sans, sans-serif">every create request</text>
+
+  <line x1="174" y1="104" x2="206" y2="104" stroke="#757d5e" stroke-width="1.6" marker-end="url(#arrND)"/>
+
+  <!-- step 2 -->
+  <rect x="208" y="58" width="150" height="92" rx="7" fill="#252a1e" stroke="#545c42"/>
+  <text x="224" y="80" fill="#eec854" font-size="13" font-weight="700" font-family="JetBrains Mono, monospace">2 &#183; normalize</text>
+  <text x="224" y="102" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">per-provider</text>
+  <text x="224" y="120" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">URL canonicalizer</text>
+  <text x="224" y="138" fill="#a19f89" font-size="10.5" font-family="IBM Plex Sans, sans-serif">canonical, no .git noise</text>
+
+  <line x1="358" y1="104" x2="390" y2="104" stroke="#757d5e" stroke-width="1.6" marker-end="url(#arrND)"/>
+
+  <!-- step 3 -->
+  <rect x="392" y="58" width="150" height="92" rx="7" fill="#252a1e" stroke="#545c42"/>
+  <text x="408" y="80" fill="#56d8c0" font-size="13" font-weight="700" font-family="JetBrains Mono, monospace">3 &#183; dedup</text>
+  <text x="408" y="102" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">look up per player</text>
+  <text x="408" y="120" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">unique normalized URL</text>
+  <text x="408" y="138" fill="#a19f89" font-size="10.5" font-family="IBM Plex Sans, sans-serif">scoped to the player</text>
+
+  <line x1="542" y1="104" x2="574" y2="104" stroke="#757d5e" stroke-width="1.6" marker-end="url(#arrND)"/>
+
+  <!-- outcomes -->
+  <rect x="576" y="58" width="124" height="42" rx="7" fill="#20251a" stroke="#79d44e"/>
+  <text x="638" y="84" text-anchor="middle" fill="#92df62" font-size="12" font-weight="700" font-family="JetBrains Mono, monospace">new Prop</text>
+
+  <rect x="576" y="108" width="124" height="42" rx="7" fill="#20251a" stroke="#757d5e"/>
+  <text x="638" y="134" text-anchor="middle" fill="#c7c4ae" font-size="12" font-weight="700" font-family="JetBrains Mono, monospace">existing Prop</text>
+
+  <text x="360" y="190" text-anchor="middle" fill="#a19f89" font-size="11.5" font-family="IBM Plex Sans, sans-serif">Same repo bound twice &#8594; one row. After create commit, an async job indexes branches.</text>
+  <text x="360" y="214" text-anchor="middle" fill="#a19f89" font-size="11.5" font-family="IBM Plex Sans, sans-serif">Each branch records a head commit and discovered env files for source resolution.</text>
+</svg>

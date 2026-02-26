@@ -1,0 +1,40 @@
+<svg viewBox="0 0 720 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The three Prop provider connection types: managed Gitea, GitHub OAuth, and GitHub App">
+  <text x="360" y="26" text-anchor="middle" fill="#f3f0e0" font-size="16" font-weight="700" font-family="IBM Plex Sans, sans-serif">Three ways to back a Prop</text>
+  <text x="360" y="46" text-anchor="middle" fill="#a19f89" font-size="11.5" font-family="IBM Plex Sans, sans-serif">provider is GitHub or Gitea &#183; the connection carries the auth</text>
+
+  <!-- Gitea -->
+  <rect x="24" y="64" width="216" height="206" rx="8" fill="#20251a" stroke="#79d44e" stroke-width="1.6"/>
+  <text x="132" y="92" text-anchor="middle" fill="#92df62" font-size="14" font-weight="700" font-family="JetBrains Mono, monospace">Managed Gitea</text>
+  <text x="132" y="112" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">Fibe-hosted</text>
+  <line x1="44" y1="124" x2="220" y2="124" stroke="#434a35"/>
+  <text x="44" y="148" fill="#c7c4ae" font-size="11.5" font-family="IBM Plex Sans, sans-serif">provider: Gitea</text>
+  <text x="44" y="170" fill="#c7c4ae" font-size="11.5" font-family="IBM Plex Sans, sans-serif">one connection / player</text>
+  <text x="44" y="192" fill="#c7c4ae" font-size="11.5" font-family="IBM Plex Sans, sans-serif">create repo + Prop</text>
+  <text x="44" y="208" fill="#c7c4ae" font-size="11.5" font-family="IBM Plex Sans, sans-serif">atomically</text>
+  <text x="44" y="232" fill="#c7c4ae" font-size="11.5" font-family="IBM Plex Sans, sans-serif">clone auth: username + token</text>
+  <text x="44" y="254" fill="#a19f89" font-size="10.5" font-family="IBM Plex Sans, sans-serif">else: connect Gitea first</text>
+
+  <!-- GitHub OAuth -->
+  <rect x="252" y="64" width="216" height="206" rx="8" fill="#20251a" stroke="#eec854" stroke-width="1.6"/>
+  <text x="360" y="92" text-anchor="middle" fill="#f5da79" font-size="14" font-weight="700" font-family="JetBrains Mono, monospace">GitHub OAuth</text>
+  <text x="360" y="112" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">user-token flow</text>
+  <line x1="272" y1="124" x2="448" y2="124" stroke="#434a35"/>
+  <text x="272" y="148" fill="#c7c4ae" font-size="11.5" font-family="IBM Plex Sans, sans-serif">provider: GitHub</text>
+  <text x="272" y="170" fill="#c7c4ae" font-size="11.5" font-family="IBM Plex Sans, sans-serif">many connections OK</text>
+  <text x="272" y="192" fill="#c7c4ae" font-size="11.5" font-family="IBM Plex Sans, sans-serif">create repo only</text>
+  <text x="272" y="208" fill="#c7c4ae" font-size="11.5" font-family="IBM Plex Sans, sans-serif">(no Prop made)</text>
+  <text x="272" y="232" fill="#c7c4ae" font-size="11.5" font-family="IBM Plex Sans, sans-serif">acts as the player</text>
+  <text x="272" y="254" fill="#a19f89" font-size="10.5" font-family="IBM Plex Sans, sans-serif">else: connect GitHub first</text>
+
+  <!-- GitHub App -->
+  <rect x="480" y="64" width="216" height="206" rx="8" fill="#20251a" stroke="#56d8c0" stroke-width="1.6"/>
+  <text x="588" y="92" text-anchor="middle" fill="#56d8c0" font-size="14" font-weight="700" font-family="JetBrains Mono, monospace">GitHub App</text>
+  <text x="588" y="112" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">installation tokens</text>
+  <line x1="500" y1="124" x2="676" y2="124" stroke="#434a35"/>
+  <text x="500" y="148" fill="#c7c4ae" font-size="11.5" font-family="IBM Plex Sans, sans-serif">provider: GitHub</text>
+  <text x="500" y="170" fill="#c7c4ae" font-size="11.5" font-family="IBM Plex Sans, sans-serif">install per account</text>
+  <text x="500" y="192" fill="#c7c4ae" font-size="11.5" font-family="IBM Plex Sans, sans-serif">scoped repo access</text>
+  <text x="500" y="214" fill="#c7c4ae" font-size="11.5" font-family="IBM Plex Sans, sans-serif">JWT &#8594; install token</text>
+  <text x="500" y="236" fill="#c7c4ae" font-size="11.5" font-family="IBM Plex Sans, sans-serif">cached 50 min</text>
+  <text x="500" y="258" fill="#a19f89" font-size="10.5" font-family="IBM Plex Sans, sans-serif">clone auth: access-token user</text>
+</svg>

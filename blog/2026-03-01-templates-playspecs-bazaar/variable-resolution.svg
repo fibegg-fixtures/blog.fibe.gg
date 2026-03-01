@@ -1,0 +1,61 @@
+<svg viewBox="0 0 720 372" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A variable reference resolves in order through a user value, a default, and a random value; if none exist and the variable is required, the compile fails.">
+  <defs>
+    <marker id="vr-arrow" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 Z" fill="#79d44e"/>
+    </marker>
+    <marker id="vr-arrow-red" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 Z" fill="#f08760"/>
+    </marker>
+  </defs>
+
+  <text x="360" y="26" text-anchor="middle" fill="#f3f0e0" font-size="16" font-weight="700" font-family="IBM Plex Sans, sans-serif">How a variable reference resolves</text>
+
+  <!-- reference token -->
+  <rect x="40" y="50" width="220" height="62" rx="8" fill="#252a1e" stroke="#56d8c0"/>
+  <text x="150" y="76" text-anchor="middle" fill="#56d8c0" font-size="12.5" font-weight="700" font-family="IBM Plex Sans, sans-serif">reference</text>
+  <text x="150" y="98" text-anchor="middle" fill="#c7c4ae" font-size="11.5" font-family="JetBrains Mono, monospace">$$var__TAG  /  path:</text>
+
+  <line x1="150" y1="112" x2="150" y2="142" stroke="#79d44e" stroke-width="2" marker-end="url(#vr-arrow)"/>
+
+  <!-- step 1 user value -->
+  <rect x="40" y="144" width="320" height="44" rx="6" fill="#20251a" stroke="#545c42"/>
+  <text x="58" y="166" fill="#92df62" font-size="12" font-weight="700" font-family="JetBrains Mono, monospace">1</text>
+  <text x="80" y="166" fill="#f3f0e0" font-size="12.5" font-family="IBM Plex Sans, sans-serif">user value at launch?</text>
+  <text x="80" y="181" fill="#a19f89" font-size="10.5" font-family="IBM Plex Sans, sans-serif">launch input or stored launch values</text>
+
+  <line x1="200" y1="188" x2="200" y2="206" stroke="#79d44e" stroke-width="2" marker-end="url(#vr-arrow)"/>
+
+  <!-- step 2 default -->
+  <rect x="40" y="208" width="320" height="44" rx="6" fill="#20251a" stroke="#545c42"/>
+  <text x="58" y="230" fill="#92df62" font-size="12" font-weight="700" font-family="JetBrains Mono, monospace">2</text>
+  <text x="80" y="230" fill="#f3f0e0" font-size="12.5" font-family="IBM Plex Sans, sans-serif">default (literal)?</text>
+  <text x="80" y="245" fill="#a19f89" font-size="10.5" font-family="IBM Plex Sans, sans-serif">no $$var__ or $$root_domain allowed here</text>
+
+  <line x1="200" y1="252" x2="200" y2="270" stroke="#79d44e" stroke-width="2" marker-end="url(#vr-arrow)"/>
+
+  <!-- step 3 random -->
+  <rect x="40" y="272" width="320" height="44" rx="6" fill="#20251a" stroke="#545c42"/>
+  <text x="58" y="294" fill="#92df62" font-size="12" font-weight="700" font-family="JetBrains Mono, monospace">3</text>
+  <text x="80" y="294" fill="#f3f0e0" font-size="12.5" font-family="IBM Plex Sans, sans-serif">random: true?</text>
+  <text x="80" y="309" fill="#a19f89" font-size="10.5" font-family="IBM Plex Sans, sans-serif">generate a 32-char hex value</text>
+
+  <!-- resolved outcome -->
+  <rect x="430" y="144" width="250" height="76" rx="8" fill="#20251a" stroke="#79d44e"/>
+  <text x="555" y="172" text-anchor="middle" fill="#92df62" font-size="13" font-weight="700" font-family="IBM Plex Sans, sans-serif">resolved &#10003;</text>
+  <text x="555" y="194" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">value written into the node</text>
+  <text x="555" y="210" text-anchor="middle" fill="#a19f89" font-size="10.5" font-family="IBM Plex Sans, sans-serif">path write is the last word</text>
+
+  <!-- arrows from each step to resolved -->
+  <line x1="360" y1="166" x2="426" y2="170" stroke="#79d44e" stroke-width="2" marker-end="url(#vr-arrow)"/>
+  <line x1="360" y1="230" x2="426" y2="188" stroke="#79d44e" stroke-width="2" marker-end="url(#vr-arrow)"/>
+  <line x1="360" y1="294" x2="426" y2="206" stroke="#79d44e" stroke-width="2" marker-end="url(#vr-arrow)"/>
+
+  <!-- failure / fallback branch -->
+  <rect x="430" y="248" width="250" height="92" rx="8" fill="#252a1e" stroke="#f08760"/>
+  <text x="555" y="274" text-anchor="middle" fill="#f08760" font-size="13" font-weight="700" font-family="IBM Plex Sans, sans-serif">none of the above</text>
+  <text x="555" y="296" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">required: true &#8594; compile error</text>
+  <text x="555" y="314" text-anchor="middle" fill="#a19f89" font-size="10.5" font-family="IBM Plex Sans, sans-serif">else: empty scalar (path)</text>
+  <text x="555" y="330" text-anchor="middle" fill="#a19f89" font-size="10.5" font-family="IBM Plex Sans, sans-serif">or literal &#8220;placeholder&#8221; (inline)</text>
+
+  <line x1="360" y1="305" x2="426" y2="290" stroke="#f08760" stroke-width="2" marker-end="url(#vr-arrow-red)"/>
+</svg>

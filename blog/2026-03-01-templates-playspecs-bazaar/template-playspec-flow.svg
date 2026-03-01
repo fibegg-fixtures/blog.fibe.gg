@@ -1,0 +1,58 @@
+<svg viewBox="0 0 740 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A versioned Template produces a Playspec, the runtime generator compiles it into a compose file, and a Playground or Trick instantiates it on a Marquee.">
+  <defs>
+    <marker id="tpf-arrow" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 Z" fill="#79d44e"/>
+    </marker>
+  </defs>
+
+  <text x="370" y="26" text-anchor="middle" fill="#f3f0e0" font-size="16" font-weight="700" font-family="IBM Plex Sans, sans-serif">From description to running environment</text>
+
+  <!-- Template -->
+  <rect x="24" y="58" width="180" height="118" rx="8" fill="#20251a" stroke="#545c42"/>
+  <text x="114" y="84" text-anchor="middle" fill="#92df62" font-size="15" font-weight="700" font-family="IBM Plex Sans, sans-serif">Template</text>
+  <text x="114" y="106" text-anchor="middle" fill="#c7c4ae" font-size="11.5" font-family="IBM Plex Sans, sans-serif">immutable &#183; versioned</text>
+  <text x="114" y="130" text-anchor="middle" fill="#a19f89" font-size="11" font-family="JetBrains Mono, monospace">compose + x-fibe.gg</text>
+  <text x="114" y="148" text-anchor="middle" fill="#a19f89" font-size="11" font-family="JetBrains Mono, monospace">+ fibe.gg/* labels</text>
+  <text x="114" y="166" text-anchor="middle" fill="#eec854" font-size="11" font-family="IBM Plex Sans, sans-serif">authored in Scrolls</text>
+
+  <!-- Playspec -->
+  <rect x="280" y="58" width="180" height="118" rx="8" fill="#20251a" stroke="#545c42"/>
+  <text x="370" y="84" text-anchor="middle" fill="#92df62" font-size="15" font-weight="700" font-family="IBM Plex Sans, sans-serif">Playspec</text>
+  <text x="370" y="106" text-anchor="middle" fill="#c7c4ae" font-size="11.5" font-family="IBM Plex Sans, sans-serif">runnable blueprint</text>
+  <text x="370" y="130" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">variable values</text>
+  <text x="370" y="148" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">source bindings</text>
+  <text x="370" y="166" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">selected services</text>
+
+  <!-- Runtime generator -->
+  <rect x="536" y="58" width="180" height="118" rx="8" fill="#252a1e" stroke="#56d8c0"/>
+  <text x="626" y="84" text-anchor="middle" fill="#56d8c0" font-size="15" font-weight="700" font-family="IBM Plex Sans, sans-serif">Runtime compiler</text>
+  <text x="626" y="106" text-anchor="middle" fill="#c7c4ae" font-size="11.5" font-family="IBM Plex Sans, sans-serif">strip x-fibe.gg, inject,</text>
+  <text x="626" y="123" text-anchor="middle" fill="#c7c4ae" font-size="11.5" font-family="IBM Plex Sans, sans-serif">resolve placeholders</text>
+  <text x="626" y="148" text-anchor="middle" fill="#c7c4ae" font-size="11.5" font-family="IBM Plex Sans, sans-serif">emits the compose</text>
+  <text x="626" y="165" text-anchor="middle" fill="#c7c4ae" font-size="11.5" font-family="IBM Plex Sans, sans-serif">that actually runs</text>
+
+  <!-- arrows row 1 -->
+  <line x1="204" y1="117" x2="276" y2="117" stroke="#79d44e" stroke-width="2" marker-end="url(#tpf-arrow)"/>
+  <text x="240" y="108" text-anchor="middle" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">launch</text>
+  <line x1="460" y1="117" x2="532" y2="117" stroke="#79d44e" stroke-width="2" marker-end="url(#tpf-arrow)"/>
+  <text x="496" y="108" text-anchor="middle" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">compile</text>
+
+  <!-- down arrow -->
+  <line x1="626" y1="176" x2="626" y2="230" stroke="#79d44e" stroke-width="2" marker-end="url(#tpf-arrow)"/>
+  <text x="690" y="207" text-anchor="middle" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">sync over SSH</text>
+
+  <!-- Marquee band -->
+  <rect x="24" y="236" width="692" height="104" rx="8" fill="#20251a" stroke="#434a35"/>
+  <text x="44" y="262" fill="#eec854" font-size="13" font-weight="700" font-family="IBM Plex Sans, sans-serif">Marquee (Docker host)</text>
+
+  <rect x="430" y="276" width="130" height="48" rx="6" fill="#252a1e" stroke="#545c42"/>
+  <text x="495" y="298" text-anchor="middle" fill="#92df62" font-size="13" font-weight="700" font-family="IBM Plex Sans, sans-serif">Playground</text>
+  <text x="495" y="314" text-anchor="middle" fill="#a19f89" font-size="10.5" font-family="IBM Plex Sans, sans-serif">long-lived</text>
+
+  <rect x="576" y="276" width="120" height="48" rx="6" fill="#252a1e" stroke="#545c42"/>
+  <text x="636" y="298" text-anchor="middle" fill="#92df62" font-size="13" font-weight="700" font-family="IBM Plex Sans, sans-serif">Trick</text>
+  <text x="636" y="314" text-anchor="middle" fill="#a19f89" font-size="10.5" font-family="IBM Plex Sans, sans-serif">one-shot job</text>
+
+  <text x="240" y="300" text-anchor="middle" fill="#c7c4ae" font-size="11.5" font-family="JetBrains Mono, monospace">docker compose -p &#171;project&#187;</text>
+  <text x="240" y="318" text-anchor="middle" fill="#c7c4ae" font-size="11.5" font-family="JetBrains Mono, monospace">-f compose.yml up</text>
+</svg>

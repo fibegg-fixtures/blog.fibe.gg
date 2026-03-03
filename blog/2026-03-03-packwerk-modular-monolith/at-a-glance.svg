@@ -1,0 +1,17 @@
+<svg viewBox="0 0 730 96" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="At a glance: 13 packs, 4 layers, 4 strict checks, 1 deploy">
+  <rect x="0" y="8" width="172" height="80" rx="6" fill="#20251a" stroke="#434a35"/>
+  <text x="86" y="46" text-anchor="middle" fill="#92df62" font-size="30" font-weight="700" font-family="JetBrains Mono, monospace">13</text>
+  <text x="86" y="70" text-anchor="middle" fill="#a19f89" font-size="12" font-family="IBM Plex Sans, sans-serif">packs (+ root)</text>
+
+  <rect x="186" y="8" width="172" height="80" rx="6" fill="#20251a" stroke="#434a35"/>
+  <text x="272" y="46" text-anchor="middle" fill="#56d8c0" font-size="30" font-weight="700" font-family="JetBrains Mono, monospace">4</text>
+  <text x="272" y="70" text-anchor="middle" fill="#a19f89" font-size="12" font-family="IBM Plex Sans, sans-serif">layers</text>
+
+  <rect x="372" y="8" width="172" height="80" rx="6" fill="#20251a" stroke="#434a35"/>
+  <text x="458" y="46" text-anchor="middle" fill="#eec854" font-size="30" font-weight="700" font-family="JetBrains Mono, monospace">4</text>
+  <text x="458" y="70" text-anchor="middle" fill="#a19f89" font-size="12" font-family="IBM Plex Sans, sans-serif">strict checks/pack</text>
+
+  <rect x="558" y="8" width="172" height="80" rx="6" fill="#20251a" stroke="#434a35"/>
+  <text x="644" y="46" text-anchor="middle" fill="#abe87f" font-size="30" font-weight="700" font-family="JetBrains Mono, monospace">1</text>
+  <text x="644" y="70" text-anchor="middle" fill="#a19f89" font-size="12" font-family="IBM Plex Sans, sans-serif">deploy</text>
+</svg>

@@ -1,0 +1,64 @@
+<svg viewBox="0 0 720 470" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The public API surface of the provisioning pack: callers reach the pack only through its published interface, never through its private interior">
+  <defs>
+    <marker id="ps-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-end">
+      <path d="M0 0 L10 5 L0 10 z" fill="#79d44e"/>
+    </marker>
+    <marker id="ps-block" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-end">
+      <path d="M2 2 L8 8 M8 2 L2 8" stroke="#f08760" stroke-width="2" fill="none"/>
+    </marker>
+  </defs>
+
+  <text x="360" y="28" text-anchor="middle" fill="#f3f0e0" font-size="18" font-weight="700" font-family="IBM Plex Sans, sans-serif">One pack, one front door</text>
+  <text x="360" y="48" text-anchor="middle" fill="#a19f89" font-size="12" font-family="IBM Plex Sans, sans-serif">the provisioning domain &#183; everything else is private by default</text>
+
+  <!-- callers -->
+  <rect x="24" y="120" width="150" height="120" rx="8" fill="#20251a" stroke="#545c42"/>
+  <text x="99" y="142" text-anchor="middle" fill="#c7c4ae" font-size="12" font-weight="700" font-family="JetBrains Mono, monospace">callers</text>
+  <rect x="40" y="156" width="118" height="26" rx="4" fill="#252a1e" stroke="#434a35"/>
+  <text x="99" y="173" text-anchor="middle" fill="#abe87f" font-size="11" font-family="JetBrains Mono, monospace">application shell</text>
+  <rect x="40" y="188" width="118" height="26" rx="4" fill="#252a1e" stroke="#434a35"/>
+  <text x="99" y="205" text-anchor="middle" fill="#abe87f" font-size="11" font-family="JetBrains Mono, monospace">billing</text>
+  <rect x="40" y="220" width="118" height="14" rx="3" fill="none"/>
+  <text x="99" y="231" text-anchor="middle" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">&#8230; explicitly allowed callers</text>
+
+  <!-- the pack boundary -->
+  <rect x="250" y="74" width="446" height="372" rx="10" fill="#20251a" stroke="#757d5e" stroke-width="1.5"/>
+  <text x="473" y="98" text-anchor="middle" fill="#92df62" font-size="13" font-weight="700" font-family="JetBrains Mono, monospace">the provisioning domain</text>
+
+  <!-- published interface -->
+  <rect x="270" y="116" width="406" height="120" rx="8" fill="#252a1e" stroke="#79d44e" stroke-width="1.5"/>
+  <text x="288" y="138" fill="#92df62" font-size="12" font-weight="700" font-family="JetBrains Mono, monospace">published interface &#8212; the only public surface</text>
+  <rect x="288" y="150" width="178" height="26" rx="4" fill="#20251a" stroke="#434a35"/>
+  <text x="377" y="167" text-anchor="middle" fill="#abe87f" font-size="10" font-family="JetBrains Mono, monospace">Playground lifecycle</text>
+  <rect x="478" y="150" width="178" height="26" rx="4" fill="#20251a" stroke="#434a35"/>
+  <text x="567" y="167" text-anchor="middle" fill="#abe87f" font-size="10" font-family="JetBrains Mono, monospace">Marquee connectivity</text>
+  <rect x="288" y="182" width="178" height="26" rx="4" fill="#20251a" stroke="#434a35"/>
+  <text x="377" y="199" text-anchor="middle" fill="#abe87f" font-size="10" font-family="JetBrains Mono, monospace">Playground serializer</text>
+  <rect x="478" y="182" width="178" height="26" rx="4" fill="#20251a" stroke="#434a35"/>
+  <text x="567" y="199" text-anchor="middle" fill="#abe87f" font-size="10" font-family="JetBrains Mono, monospace">Compose service config</text>
+  <text x="473" y="226" text-anchor="middle" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">purpose-built entry points &#183; no single mega-facade allowed</text>
+
+  <!-- private interior -->
+  <rect x="270" y="252" width="406" height="176" rx="8" fill="#252a1e" stroke="#545c42" stroke-dasharray="5 4"/>
+  <text x="288" y="274" fill="#c7c4ae" font-size="12" font-weight="700" font-family="JetBrains Mono, monospace">private interior &#8212; off limits to other packs</text>
+  <rect x="288" y="288" width="120" height="30" rx="4" fill="#20251a" stroke="#434a35"/>
+  <text x="348" y="307" text-anchor="middle" fill="#c7c4ae" font-size="10" font-family="JetBrains Mono, monospace">domain logic</text>
+  <rect x="420" y="288" width="120" height="30" rx="4" fill="#20251a" stroke="#434a35"/>
+  <text x="480" y="307" text-anchor="middle" fill="#c7c4ae" font-size="10" font-family="JetBrains Mono, monospace">services</text>
+  <rect x="552" y="288" width="104" height="30" rx="4" fill="#20251a" stroke="#434a35"/>
+  <text x="604" y="307" text-anchor="middle" fill="#c7c4ae" font-size="10" font-family="JetBrains Mono, monospace">adapters</text>
+  <rect x="288" y="328" width="120" height="30" rx="4" fill="#20251a" stroke="#434a35"/>
+  <text x="348" y="347" text-anchor="middle" fill="#c7c4ae" font-size="10" font-family="JetBrains Mono, monospace">private internals</text>
+  <rect x="420" y="328" width="120" height="30" rx="4" fill="#20251a" stroke="#434a35"/>
+  <text x="480" y="347" text-anchor="middle" fill="#c7c4ae" font-size="10" font-family="JetBrains Mono, monospace">background jobs</text>
+  <rect x="552" y="328" width="104" height="30" rx="4" fill="#20251a" stroke="#434a35"/>
+  <text x="604" y="347" text-anchor="middle" fill="#c7c4ae" font-size="10" font-family="JetBrains Mono, monospace">ports</text>
+  <text x="473" y="392" text-anchor="middle" fill="#f08760" font-size="11" font-family="IBM Plex Sans, sans-serif">privacy enforced &#183; CI rejects any reach past the front door</text>
+  <text x="473" y="412" text-anchor="middle" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">refactor any of this freely &#8212; nothing outside the pack can see it</text>
+
+  <!-- allowed arrow into public -->
+  <line x1="174" y1="176" x2="268" y2="176" stroke="#79d44e" stroke-width="2" marker-end="url(#ps-arrow)"/>
+  <!-- blocked arrow into private -->
+  <line x1="174" y1="320" x2="268" y2="320" stroke="#f08760" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#ps-block)"/>
+  <text x="200" y="350" fill="#f08760" font-size="10" font-family="IBM Plex Sans, sans-serif">privacy violation</text>
+</svg>

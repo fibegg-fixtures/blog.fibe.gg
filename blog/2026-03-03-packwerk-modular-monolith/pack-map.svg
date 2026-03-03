@@ -1,0 +1,67 @@
+<svg viewBox="0 0 760 520" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Fibe pack map: four layers from application down to foundation, with dependencies only ever pointing downward">
+  <defs>
+    <marker id="pm-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-end">
+      <path d="M0 0 L10 5 L0 10 z" fill="#757d5e"/>
+    </marker>
+  </defs>
+
+  <text x="380" y="28" text-anchor="middle" fill="#f3f0e0" font-size="18" font-weight="700" font-family="IBM Plex Sans, sans-serif">The Fibe pack map</text>
+  <text x="380" y="48" text-anchor="middle" fill="#a19f89" font-size="12" font-family="IBM Plex Sans, sans-serif">dependencies only ever point downward &#183; never sideways within a forbidden direction</text>
+
+  <!-- Layer guide arrow -->
+  <text x="34" y="120" fill="#a19f89" font-size="11" font-family="JetBrains Mono, monospace" transform="rotate(-90 34 300)">layers descend &#8594; lower may not call higher</text>
+
+  <!-- APPLICATION layer -->
+  <rect x="70" y="68" width="660" height="92" rx="8" fill="#20251a" stroke="#545c42"/>
+  <text x="86" y="88" fill="#eec854" font-size="12" font-weight="700" font-family="JetBrains Mono, monospace">application</text>
+  <rect x="220" y="98" width="220" height="48" rx="6" fill="#252a1e" stroke="#79d44e"/>
+  <text x="330" y="120" text-anchor="middle" fill="#abe87f" font-size="13" font-family="JetBrains Mono, monospace">application shell</text>
+  <text x="330" y="136" text-anchor="middle" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">controllers, shell, audit</text>
+  <rect x="470" y="98" width="220" height="48" rx="6" fill="#252a1e" stroke="#79d44e"/>
+  <text x="580" y="120" text-anchor="middle" fill="#abe87f" font-size="13" font-family="JetBrains Mono, monospace">admin</text>
+  <text x="580" y="136" text-anchor="middle" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">admin workflows, settings</text>
+
+  <!-- WORKFLOW layer -->
+  <rect x="70" y="176" width="660" height="86" rx="8" fill="#20251a" stroke="#545c42"/>
+  <text x="86" y="196" fill="#eec854" font-size="12" font-weight="700" font-family="JetBrains Mono, monospace">workflow</text>
+  <rect x="220" y="206" width="220" height="44" rx="6" fill="#252a1e" stroke="#56d8c0"/>
+  <text x="330" y="232" text-anchor="middle" fill="#56d8c0" font-size="13" font-family="JetBrains Mono, monospace">orchestration</text>
+  <rect x="470" y="206" width="220" height="44" rx="6" fill="#252a1e" stroke="#56d8c0"/>
+  <text x="580" y="232" text-anchor="middle" fill="#56d8c0" font-size="13" font-family="JetBrains Mono, monospace">test scaffolding</text>
+
+  <!-- CAPABILITY layer -->
+  <rect x="70" y="278" width="660" height="142" rx="8" fill="#20251a" stroke="#545c42"/>
+  <text x="86" y="298" fill="#eec854" font-size="12" font-weight="700" font-family="JetBrains Mono, monospace">capability</text>
+  <!-- row 1 -->
+  <rect x="96" y="308" width="148" height="40" rx="6" fill="#252a1e" stroke="#92df62"/>
+  <text x="170" y="333" text-anchor="middle" fill="#92df62" font-size="12" font-family="JetBrains Mono, monospace">provisioning</text>
+  <rect x="252" y="308" width="148" height="40" rx="6" fill="#252a1e" stroke="#92df62"/>
+  <text x="326" y="333" text-anchor="middle" fill="#92df62" font-size="12" font-family="JetBrains Mono, monospace">billing</text>
+  <rect x="408" y="308" width="148" height="40" rx="6" fill="#252a1e" stroke="#92df62"/>
+  <text x="482" y="333" text-anchor="middle" fill="#92df62" font-size="12" font-family="JetBrains Mono, monospace">agents</text>
+  <rect x="564" y="308" width="148" height="40" rx="6" fill="#252a1e" stroke="#92df62"/>
+  <text x="638" y="333" text-anchor="middle" fill="#92df62" font-size="12" font-family="JetBrains Mono, monospace">platform core</text>
+  <!-- row 2 -->
+  <rect x="96" y="360" width="148" height="40" rx="6" fill="#252a1e" stroke="#92df62"/>
+  <text x="170" y="385" text-anchor="middle" fill="#92df62" font-size="12" font-family="JetBrains Mono, monospace">accounts</text>
+  <rect x="252" y="360" width="148" height="40" rx="6" fill="#252a1e" stroke="#92df62"/>
+  <text x="326" y="385" text-anchor="middle" fill="#92df62" font-size="12" font-family="JetBrains Mono, monospace">templates</text>
+  <rect x="408" y="360" width="148" height="40" rx="6" fill="#252a1e" stroke="#92df62"/>
+  <text x="482" y="385" text-anchor="middle" fill="#92df62" font-size="12" font-family="JetBrains Mono, monospace">knowledge</text>
+  <rect x="564" y="360" width="148" height="40" rx="6" fill="#252a1e" stroke="#92df62"/>
+  <text x="638" y="385" text-anchor="middle" fill="#92df62" font-size="11" font-family="JetBrains Mono, monospace">version control</text>
+
+  <!-- FOUNDATION layer -->
+  <rect x="70" y="436" width="660" height="66" rx="8" fill="#20251a" stroke="#545c42"/>
+  <text x="86" y="456" fill="#eec854" font-size="12" font-weight="700" font-family="JetBrains Mono, monospace">foundation</text>
+  <rect x="252" y="458" width="256" height="36" rx="6" fill="#252a1e" stroke="#5cb43a"/>
+  <text x="380" y="481" text-anchor="middle" fill="#abe87f" font-size="12" font-family="JetBrains Mono, monospace">shared kernel  &#183;  framework wiring</text>
+
+  <!-- downward dependency arrows (illustrative) -->
+  <line x1="330" y1="146" x2="330" y2="204" stroke="#757d5e" stroke-width="1.5" marker-end="url(#pm-arrow)"/>
+  <line x1="170" y1="348" x2="320" y2="456" stroke="#757d5e" stroke-width="1.5" marker-end="url(#pm-arrow)"/>
+  <line x1="326" y1="348" x2="360" y2="456" stroke="#757d5e" stroke-width="1.5" marker-end="url(#pm-arrow)"/>
+  <line x1="482" y1="348" x2="400" y2="456" stroke="#757d5e" stroke-width="1.5" marker-end="url(#pm-arrow)"/>
+  <line x1="170" y1="308" x2="252" y2="360" stroke="#757d5e" stroke-width="1.5" marker-end="url(#pm-arrow)"/>
+  <line x1="330" y1="250" x2="330" y2="306" stroke="#757d5e" stroke-width="1.5" marker-end="url(#pm-arrow)"/>
+</svg>

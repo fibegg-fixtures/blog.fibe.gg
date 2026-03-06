@@ -1,0 +1,52 @@
+<svg viewBox="0 0 720 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A failed renewal raises a lock-lost error and aborts the cycle through the cleanup block">
+  <defs>
+    <marker id="llArrow" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L7,3 L0,6 Z" fill="#757d5e"/>
+    </marker>
+    <marker id="llRed" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L7,3 L0,6 Z" fill="#f08760"/>
+    </marker>
+  </defs>
+
+  <text x="20" y="28" fill="#f3f0e0" font-size="16" font-weight="700" font-family="IBM Plex Sans, sans-serif">When renewal fails, the cycle stops &#8212; it does not continue</text>
+
+  <!-- step: phase done -->
+  <rect x="40" y="56" width="200" height="48" rx="6" fill="#20251a" stroke="#434a35"/>
+  <text x="140" y="80" text-anchor="middle" fill="#c7c4ae" font-size="12" font-family="JetBrains Mono, monospace">phase completes</text>
+  <text x="140" y="96" text-anchor="middle" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">e.g. image pull done</text>
+
+  <!-- step: renew -->
+  <rect x="40" y="140" width="200" height="48" rx="6" fill="#252a1e" stroke="#545c42"/>
+  <text x="140" y="164" text-anchor="middle" fill="#f3f0e0" font-size="12" font-family="JetBrains Mono, monospace">renew the lock</text>
+  <text x="140" y="180" text-anchor="middle" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">EVAL: GET == token ?</text>
+
+  <line x1="140" y1="104" x2="140" y2="138" stroke="#757d5e" stroke-width="1.5" marker-end="url(#llArrow)"/>
+
+  <!-- branch: matches -->
+  <rect x="40" y="232" width="200" height="48" rx="6" fill="#20251a" stroke="#5cb43a"/>
+  <text x="140" y="256" text-anchor="middle" fill="#92df62" font-size="12" font-family="JetBrains Mono, monospace">EXPIRE &#8594; 1</text>
+  <text x="140" y="272" text-anchor="middle" fill="#c7c4ae" font-size="10.5" font-family="IBM Plex Sans, sans-serif">still ours &#183; next phase</text>
+  <line x1="140" y1="188" x2="140" y2="230" stroke="#5cb43a" stroke-width="1.5" marker-end="url(#llArrow)"/>
+  <text x="152" y="214" fill="#92df62" font-size="10.5" font-family="JetBrains Mono, monospace">match</text>
+
+  <!-- branch: no match -->
+  <rect x="300" y="140" width="220" height="48" rx="6" fill="#20251a" stroke="#f08760"/>
+  <text x="410" y="164" text-anchor="middle" fill="#f08760" font-size="12" font-family="JetBrains Mono, monospace">EXPIRE returns 0</text>
+  <text x="410" y="180" text-anchor="middle" fill="#c7c4ae" font-size="10.5" font-family="IBM Plex Sans, sans-serif">token gone or changed</text>
+  <line x1="240" y1="164" x2="298" y2="164" stroke="#f08760" stroke-width="1.5" marker-end="url(#llRed)"/>
+  <text x="248" y="154" fill="#f08760" font-size="10.5" font-family="JetBrains Mono, monospace">no match</text>
+
+  <!-- raise -->
+  <rect x="300" y="224" width="220" height="48" rx="6" fill="#252a1e" stroke="#f08760"/>
+  <text x="410" y="252" text-anchor="middle" fill="#f08760" font-size="12.5" font-weight="700" font-family="JetBrains Mono, monospace">raise lock-lost error</text>
+  <line x1="410" y1="188" x2="410" y2="222" stroke="#f08760" stroke-width="1.5" marker-end="url(#llRed)"/>
+
+  <!-- ensure -->
+  <rect x="300" y="308" width="380" height="64" rx="6" fill="#20251a" stroke="#545c42"/>
+  <text x="490" y="332" text-anchor="middle" fill="#56d8c0" font-size="12" font-weight="700" font-family="JetBrains Mono, monospace">cleanup: release the lock</text>
+  <text x="490" y="352" text-anchor="middle" fill="#c7c4ae" font-size="10.5" font-family="IBM Plex Sans, sans-serif">DEL only if token still matches &#183; no half-finished writes over SSH</text>
+  <line x1="410" y1="272" x2="410" y2="306" stroke="#f08760" stroke-width="1.5" marker-end="url(#llRed)"/>
+
+  <text x="40" y="346" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">The 60s scheduler will dispatch a fresh,</text>
+  <text x="40" y="362" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">clean cycle on the next tick.</text>
+</svg>

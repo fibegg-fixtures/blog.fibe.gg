@@ -1,0 +1,43 @@
+<svg viewBox="0 0 720 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Two reconciler jobs race for the same Marquee lock; one wins, the other skips">
+  <defs>
+    <marker id="trArrow" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L7,3 L0,6 Z" fill="#757d5e"/>
+    </marker>
+  </defs>
+
+  <text x="20" y="28" fill="#f3f0e0" font-size="16" font-weight="700" font-family="IBM Plex Sans, sans-serif">Two jobs, one Marquee, one winner</text>
+
+  <!-- Job A -->
+  <rect x="30" y="56" width="190" height="50" rx="6" fill="#20251a" stroke="#434a35"/>
+  <text x="125" y="80" text-anchor="middle" fill="#f3f0e0" font-size="13" font-family="JetBrains Mono, monospace">Job A</text>
+  <text x="125" y="97" text-anchor="middle" fill="#a19f89" font-size="10.5" font-family="IBM Plex Sans, sans-serif">Playguard cycle for Marquee</text>
+
+  <!-- Job B -->
+  <rect x="500" y="56" width="190" height="50" rx="6" fill="#20251a" stroke="#434a35"/>
+  <text x="595" y="80" text-anchor="middle" fill="#f3f0e0" font-size="13" font-family="JetBrains Mono, monospace">Job B</text>
+  <text x="595" y="97" text-anchor="middle" fill="#a19f89" font-size="10.5" font-family="IBM Plex Sans, sans-serif">Playguard cycle for Marquee</text>
+
+  <!-- Redis -->
+  <rect x="270" y="140" width="180" height="56" rx="6" fill="#252a1e" stroke="#eec854"/>
+  <text x="360" y="164" text-anchor="middle" fill="#eec854" font-size="13" font-weight="700" font-family="JetBrains Mono, monospace">Redis</text>
+  <text x="360" y="184" text-anchor="middle" fill="#c7c4ae" font-size="10" font-family="JetBrains Mono, monospace">one lock key per Marquee</text>
+
+  <!-- arrows in -->
+  <line x1="125" y1="106" x2="300" y2="138" stroke="#757d5e" stroke-width="1.5" marker-end="url(#trArrow)"/>
+  <line x1="595" y1="106" x2="420" y2="138" stroke="#757d5e" stroke-width="1.5" marker-end="url(#trArrow)"/>
+  <text x="180" y="128" fill="#92df62" font-size="10.5" font-family="JetBrains Mono, monospace">SET NX</text>
+  <text x="500" y="128" fill="#f08760" font-size="10.5" font-family="JetBrains Mono, monospace">SET NX</text>
+
+  <!-- A wins -->
+  <rect x="30" y="232" width="270" height="62" rx="6" fill="#20251a" stroke="#5cb43a"/>
+  <text x="165" y="256" text-anchor="middle" fill="#92df62" font-size="12" font-weight="700" font-family="JetBrains Mono, monospace">returns "OK" &#8594; token held</text>
+  <text x="165" y="278" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">runs the full cycle, releases at the end</text>
+
+  <!-- B skips -->
+  <rect x="420" y="232" width="270" height="62" rx="6" fill="#20251a" stroke="#757d5e"/>
+  <text x="555" y="256" text-anchor="middle" fill="#a19f89" font-size="12" font-weight="700" font-family="JetBrains Mono, monospace">returns nil &#8594; no token</text>
+  <text x="555" y="278" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">logs "already locked", returns. No SSH.</text>
+
+  <line x1="165" y1="196" x2="165" y2="230" stroke="#5cb43a" stroke-width="1.5" marker-end="url(#trArrow)"/>
+  <line x1="555" y1="196" x2="555" y2="230" stroke="#757d5e" stroke-width="1.5" marker-end="url(#trArrow)"/>
+</svg>

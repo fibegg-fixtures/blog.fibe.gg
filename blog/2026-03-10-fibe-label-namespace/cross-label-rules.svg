@@ -1,0 +1,43 @@
+<svg viewBox="0 0 740 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Cross-label rules: which labels require which other labels, enforced at launch">
+  <rect x="0" y="0" width="740" height="250" fill="#181c12"/>
+  <text x="24" y="30" fill="#f3f0e0" font-size="14" font-weight="700" font-family="IBM Plex Sans, sans-serif">Cross-label rules &#183; enforced at launch</text>
+
+  <defs>
+    <marker id="arrCL" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 z" fill="#757d5e"/>
+    </marker>
+  </defs>
+
+  <!-- row 1: build requires repo_url -->
+  <rect x="24" y="50" width="150" height="36" rx="6" fill="#20251a" stroke="#e2b33a"/>
+  <text x="99" y="73" text-anchor="middle" fill="#eec854" font-size="12" font-family="JetBrains Mono, monospace">build:</text>
+  <line x1="174" y1="68" x2="258" y2="68" stroke="#757d5e" stroke-width="1.5" marker-end="url(#arrCL)"/>
+  <text x="216" y="62" text-anchor="middle" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">requires</text>
+  <rect x="266" y="50" width="170" height="36" rx="6" fill="#20251a" stroke="#79d44e"/>
+  <text x="351" y="73" text-anchor="middle" fill="#92df62" font-size="12" font-family="JetBrains Mono, monospace">fibe.gg/repo_url</text>
+
+  <!-- row 1b: source_mount requires repo_url -->
+  <rect x="466" y="50" width="170" height="36" rx="6" fill="#20251a" stroke="#56d8c0"/>
+  <text x="551" y="73" text-anchor="middle" fill="#56d8c0" font-size="12" font-family="JetBrains Mono, monospace">source_mount</text>
+  <line x1="466" y1="68" x2="442" y2="68" stroke="#757d5e" stroke-width="1.5" marker-end="url(#arrCL)"/>
+  <text x="675" y="73" text-anchor="middle" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">&#8594; repo_url too</text>
+
+  <!-- row 2: visibility requires port -->
+  <rect x="24" y="106" width="150" height="36" rx="6" fill="#20251a" stroke="#92df62"/>
+  <text x="99" y="129" text-anchor="middle" fill="#92df62" font-size="12" font-family="JetBrains Mono, monospace">visibility</text>
+  <line x1="174" y1="124" x2="258" y2="124" stroke="#757d5e" stroke-width="1.5" marker-end="url(#arrCL)"/>
+  <text x="216" y="118" text-anchor="middle" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">requires</text>
+  <rect x="266" y="106" width="170" height="36" rx="6" fill="#20251a" stroke="#79d44e"/>
+  <text x="351" y="129" text-anchor="middle" fill="#92df62" font-size="12" font-family="JetBrains Mono, monospace">fibe.gg/port</text>
+  <text x="551" y="129" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">port alone &#8594; defaults external</text>
+
+  <!-- row 3: zerodowntime requires port + no container_name -->
+  <rect x="24" y="162" width="150" height="36" rx="6" fill="#20251a" stroke="#f08760"/>
+  <text x="99" y="185" text-anchor="middle" fill="#f08760" font-size="11" font-family="JetBrains Mono, monospace">zerodowntime</text>
+  <line x1="174" y1="180" x2="258" y2="180" stroke="#757d5e" stroke-width="1.5" marker-end="url(#arrCL)"/>
+  <text x="216" y="174" text-anchor="middle" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">requires</text>
+  <rect x="266" y="162" width="450" height="36" rx="6" fill="#252a1e" stroke="#545c42"/>
+  <text x="491" y="185" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">port set &#183; NO container_name &#183; ports: stripped (unless preserve_ports)</text>
+
+  <text x="24" y="228" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">Break any of these and parsing hard-fails before launch &#8212; the error names the service and the missing piece.</text>
+</svg>

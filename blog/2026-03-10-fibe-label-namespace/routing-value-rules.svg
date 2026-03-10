@@ -1,0 +1,55 @@
+<svg viewBox="0 0 740 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Value rules for the routing labels: port, visibility, subdomain, and path_rule">
+  <rect x="0" y="0" width="740" height="320" fill="#181c12"/>
+  <text x="24" y="30" fill="#f3f0e0" font-size="14" font-weight="700" font-family="IBM Plex Sans, sans-serif">Routing labels &#183; value rules</text>
+
+  <!-- header row -->
+  <rect x="24" y="44" width="160" height="30" fill="#252a1e" stroke="#545c42"/>
+  <rect x="184" y="44" width="270" height="30" fill="#252a1e" stroke="#545c42"/>
+  <rect x="454" y="44" width="262" height="30" fill="#252a1e" stroke="#545c42"/>
+  <text x="40" y="64" fill="#eec854" font-size="12" font-weight="700" font-family="IBM Plex Sans, sans-serif">Label</text>
+  <text x="200" y="64" fill="#eec854" font-size="12" font-weight="700" font-family="IBM Plex Sans, sans-serif">Accepted values</text>
+  <text x="470" y="64" fill="#eec854" font-size="12" font-weight="700" font-family="IBM Plex Sans, sans-serif">Default / note</text>
+
+  <!-- port -->
+  <rect x="24" y="74" width="160" height="56" fill="#20251a" stroke="#434a35"/>
+  <rect x="184" y="74" width="270" height="56" fill="#20251a" stroke="#434a35"/>
+  <rect x="454" y="74" width="262" height="56" fill="#20251a" stroke="#434a35"/>
+  <text x="40" y="98" fill="#92df62" font-size="12" font-family="JetBrains Mono, monospace">port</text>
+  <text x="200" y="96" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">number 1..65535, or</text>
+  <text x="200" y="112" fill="#c7c4ae" font-size="11" font-family="JetBrains Mono, monospace">$$var__NAME</text>
+  <text x="470" y="96" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">not exposed unless set;</text>
+  <text x="470" y="112" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">the only label HTTP needs</text>
+
+  <!-- visibility -->
+  <rect x="24" y="130" width="160" height="56" fill="#20251a" stroke="#434a35"/>
+  <rect x="184" y="130" width="270" height="56" fill="#20251a" stroke="#434a35"/>
+  <rect x="454" y="130" width="262" height="56" fill="#20251a" stroke="#434a35"/>
+  <text x="40" y="154" fill="#92df62" font-size="12" font-family="JetBrains Mono, monospace">visibility</text>
+  <text x="200" y="152" fill="#c7c4ae" font-size="11" font-family="JetBrains Mono, monospace">external | internal</text>
+  <text x="200" y="168" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">(or empty / var)</text>
+  <text x="470" y="152" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">external; requires port.</text>
+  <text x="470" y="168" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">internal &#8594; Basic Auth gate</text>
+
+  <!-- subdomain -->
+  <rect x="24" y="186" width="160" height="60" fill="#20251a" stroke="#434a35"/>
+  <rect x="184" y="186" width="270" height="60" fill="#20251a" stroke="#434a35"/>
+  <rect x="454" y="186" width="262" height="60" fill="#20251a" stroke="#434a35"/>
+  <text x="40" y="210" fill="#92df62" font-size="12" font-family="JetBrains Mono, monospace">subdomain</text>
+  <text x="200" y="208" fill="#c7c4ae" font-size="11" font-family="JetBrains Mono, monospace">@ , or lowercase slug</text>
+  <text x="200" y="224" fill="#c7c4ae" font-size="11" font-family="JetBrains Mono, monospace">[a-z0-9-], no edge -</text>
+  <text x="200" y="240" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">empty &#8594; service name</text>
+  <text x="470" y="210" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">service name;</text>
+  <text x="470" y="226" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">@ binds the root domain;</text>
+  <text x="470" y="242" fill="#f08760" font-size="11" font-family="IBM Plex Sans, sans-serif">42 / true are rejected</text>
+
+  <!-- path_rule -->
+  <rect x="24" y="246" width="160" height="58" fill="#20251a" stroke="#434a35"/>
+  <rect x="184" y="246" width="270" height="58" fill="#20251a" stroke="#434a35"/>
+  <rect x="454" y="246" width="262" height="58" fill="#20251a" stroke="#434a35"/>
+  <text x="40" y="270" fill="#92df62" font-size="12" font-family="JetBrains Mono, monospace">path_rule</text>
+  <text x="200" y="268" fill="#c7c4ae" font-size="11" font-family="JetBrains Mono, monospace">Path / PathPrefix /</text>
+  <text x="200" y="284" fill="#c7c4ae" font-size="11" font-family="JetBrains Mono, monospace">PathRegexp  (&amp;&amp; ||)</text>
+  <text x="200" y="300" fill="#f08760" font-size="11" font-family="IBM Plex Sans, sans-serif">Host(&#8230;) is forbidden</text>
+  <text x="470" y="268" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">/ ; lets two services</text>
+  <text x="470" y="284" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">share one subdomain</text>
+</svg>

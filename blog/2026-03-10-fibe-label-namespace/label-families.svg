@@ -1,0 +1,46 @@
+<svg viewBox="0 0 740 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The four families of fibe.gg labels: routing, source and build, live development, and reliability, all attached to one Compose service">
+  <rect x="0" y="0" width="740" height="360" fill="#181c12"/>
+
+  <!-- central service node -->
+  <rect x="296" y="158" width="148" height="44" rx="8" fill="#252a1e" stroke="#79d44e" stroke-width="2"/>
+  <text x="370" y="180" text-anchor="middle" fill="#f3f0e0" font-size="14" font-weight="700" font-family="JetBrains Mono, monospace">services.web</text>
+  <text x="370" y="196" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">one Compose service</text>
+
+  <!-- Routing (top-left, green) -->
+  <rect x="24" y="20" width="300" height="116" rx="8" fill="#20251a" stroke="#5cb43a"/>
+  <text x="40" y="42" fill="#92df62" font-size="13" font-weight="700" font-family="IBM Plex Sans, sans-serif">ROUTING &#183; who can reach it, where</text>
+  <text x="40" y="66" fill="#c7c4ae" font-size="12" font-family="JetBrains Mono, monospace">fibe.gg/port</text>
+  <text x="40" y="84" fill="#c7c4ae" font-size="12" font-family="JetBrains Mono, monospace">fibe.gg/visibility</text>
+  <text x="40" y="102" fill="#c7c4ae" font-size="12" font-family="JetBrains Mono, monospace">fibe.gg/subdomain</text>
+  <text x="40" y="120" fill="#c7c4ae" font-size="12" font-family="JetBrains Mono, monospace">fibe.gg/path_rule</text>
+
+  <!-- Source & build (top-right, gold) -->
+  <rect x="416" y="20" width="300" height="116" rx="8" fill="#20251a" stroke="#e2b33a"/>
+  <text x="432" y="42" fill="#eec854" font-size="13" font-weight="700" font-family="IBM Plex Sans, sans-serif">SOURCE &amp; BUILD &#183; where it comes from</text>
+  <text x="432" y="66" fill="#c7c4ae" font-size="12" font-family="JetBrains Mono, monospace">fibe.gg/repo_url &#183; branch</text>
+  <text x="432" y="84" fill="#c7c4ae" font-size="12" font-family="JetBrains Mono, monospace">fibe.gg/dockerfile</text>
+  <text x="432" y="102" fill="#c7c4ae" font-size="12" font-family="JetBrains Mono, monospace">fibe.gg/build_target</text>
+  <text x="432" y="120" fill="#c7c4ae" font-size="12" font-family="JetBrains Mono, monospace">fibe.gg/build_args</text>
+
+  <!-- Live development (bottom-left, teal) -->
+  <rect x="24" y="224" width="300" height="116" rx="8" fill="#20251a" stroke="#56d8c0"/>
+  <text x="40" y="246" fill="#56d8c0" font-size="13" font-weight="700" font-family="IBM Plex Sans, sans-serif">LIVE DEV &#183; mount &amp; reload</text>
+  <text x="40" y="270" fill="#c7c4ae" font-size="12" font-family="JetBrains Mono, monospace">fibe.gg/production</text>
+  <text x="40" y="288" fill="#c7c4ae" font-size="12" font-family="JetBrains Mono, monospace">fibe.gg/source_mount</text>
+  <text x="40" y="306" fill="#c7c4ae" font-size="12" font-family="JetBrains Mono, monospace">fibe.gg/start_command</text>
+  <text x="40" y="324" fill="#c7c4ae" font-size="12" font-family="JetBrains Mono, monospace">fibe.gg/env_file</text>
+
+  <!-- Reliability (bottom-right, ember) -->
+  <rect x="416" y="224" width="300" height="116" rx="8" fill="#20251a" stroke="#f08760"/>
+  <text x="432" y="246" fill="#f08760" font-size="13" font-weight="700" font-family="IBM Plex Sans, sans-serif">RELIABILITY &#183; rollout &amp; readiness</text>
+  <text x="432" y="270" fill="#c7c4ae" font-size="12" font-family="JetBrains Mono, monospace">fibe.gg/zerodowntime</text>
+  <text x="432" y="288" fill="#c7c4ae" font-size="12" font-family="JetBrains Mono, monospace">fibe.gg/healthcheck_path</text>
+  <text x="432" y="306" fill="#c7c4ae" font-size="12" font-family="JetBrains Mono, monospace">fibe.gg/healthcheck_interval &#8230;</text>
+  <text x="432" y="324" fill="#c7c4ae" font-size="12" font-family="JetBrains Mono, monospace">fibe.gg/job_watch (job mode)</text>
+
+  <!-- connector lines -->
+  <line x1="296" y1="170" x2="324" y2="120" stroke="#545c42" stroke-width="1.5"/>
+  <line x1="444" y1="170" x2="416" y2="120" stroke="#545c42" stroke-width="1.5"/>
+  <line x1="296" y1="190" x2="324" y2="248" stroke="#545c42" stroke-width="1.5"/>
+  <line x1="444" y1="190" x2="416" y2="248" stroke="#545c42" stroke-width="1.5"/>
+</svg>

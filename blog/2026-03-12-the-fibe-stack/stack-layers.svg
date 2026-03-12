@@ -1,0 +1,55 @@
+<svg viewBox="0 0 740 470" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Layered architecture of the Fibe stack: Rails control plane, Rust core, NestJS genie runtime, Go SDK/MCP, and Terraform infrastructure">
+  <defs>
+    <marker id="layArrow" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 z" fill="#757d5e"/>
+    </marker>
+  </defs>
+
+  <text x="370" y="26" text-anchor="middle" fill="#f3f0e0" font-size="17" font-weight="700" font-family="IBM Plex Sans, sans-serif">The Fibe stack, by layer</text>
+
+  <!-- SDK / MCP top -->
+  <rect x="40" y="46" width="660" height="64" rx="7" fill="#20251a" stroke="#545c42"/>
+  <text x="58" y="72" fill="#56d8c0" font-size="14" font-weight="700" font-family="JetBrains Mono, monospace">Go &#183; SDK / CLI / MCP</text>
+  <text x="58" y="94" fill="#c7c4ae" font-size="12" font-family="IBM Plex Sans, sans-serif">fibe binary &#183; Cobra commands &#183; MCP server for agents &#183; talks to the Rails JSON API</text>
+  <text x="676" y="80" text-anchor="end" fill="#a19f89" font-size="11" font-family="JetBrains Mono, monospace">repo: sdk</text>
+
+  <!-- Rails control plane -->
+  <rect x="40" y="132" width="660" height="120" rx="7" fill="#252a1e" stroke="#79d44e"/>
+  <text x="58" y="158" fill="#92df62" font-size="14" font-weight="700" font-family="JetBrains Mono, monospace">Ruby on Rails &#183; control plane (modular monolith)</text>
+  <text x="58" y="180" fill="#c7c4ae" font-size="12" font-family="IBM Plex Sans, sans-serif">Packwerk packs &#183; Sorbet types &#183; the JSON API, GraphQL, billing, orchestration, Playguard reconciler</text>
+
+  <rect x="58" y="196" width="148" height="42" rx="5" fill="#20251a" stroke="#434a35"/>
+  <text x="132" y="222" text-anchor="middle" fill="#abe87f" font-size="11.5" font-family="JetBrains Mono, monospace">API surface</text>
+  <rect x="216" y="196" width="148" height="42" rx="5" fill="#20251a" stroke="#434a35"/>
+  <text x="290" y="222" text-anchor="middle" fill="#abe87f" font-size="11.5" font-family="JetBrains Mono, monospace">Billing &#183; Agents</text>
+  <rect x="374" y="196" width="148" height="42" rx="5" fill="#20251a" stroke="#434a35"/>
+  <text x="448" y="222" text-anchor="middle" fill="#abe87f" font-size="11.5" font-family="JetBrains Mono, monospace">Templates &#183; Provisioning</text>
+  <rect x="532" y="196" width="150" height="42" rx="5" fill="#20251a" stroke="#434a35"/>
+  <text x="607" y="222" text-anchor="middle" fill="#abe87f" font-size="11.5" font-family="JetBrains Mono, monospace">Knowledge &#183; Version control</text>
+  <text x="676" y="152" text-anchor="end" fill="#a19f89" font-size="11" font-family="JetBrains Mono, monospace">repo: fibe</text>
+
+  <!-- Rust core + Genie side by side -->
+  <rect x="40" y="274" width="322" height="92" rx="7" fill="#20251a" stroke="#545c42"/>
+  <text x="58" y="300" fill="#eec854" font-size="14" font-weight="700" font-family="JetBrains Mono, monospace">Rust &#183; fibe-core-rs</text>
+  <text x="58" y="322" fill="#c7c4ae" font-size="12" font-family="IBM Plex Sans, sans-serif">77 pure-CPU commands, one dispatcher.</text>
+  <text x="58" y="340" fill="#c7c4ae" font-size="12" font-family="IBM Plex Sans, sans-serif">Compose gen &#183; Traefik labels &#183; drift &#183; env.</text>
+  <text x="58" y="358" fill="#a19f89" font-size="11" font-family="JetBrains Mono, monospace">embedded in fibe via a bridge gem (FFI)</text>
+
+  <rect x="378" y="274" width="322" height="92" rx="7" fill="#20251a" stroke="#545c42"/>
+  <text x="396" y="300" fill="#56d8c0" font-size="14" font-weight="700" font-family="JetBrains Mono, monospace">NestJS &#183; fibe-agent (Genie)</text>
+  <text x="396" y="322" fill="#c7c4ae" font-size="12" font-family="IBM Plex Sans, sans-serif">Sidecar runtime for AI coding agents.</text>
+  <text x="396" y="340" fill="#c7c4ae" font-size="12" font-family="IBM Plex Sans, sans-serif">19 WebSocket actions &#183; 35 events.</text>
+  <text x="396" y="358" fill="#a19f89" font-size="11" font-family="JetBrains Mono, monospace">repo: fibe-agent</text>
+
+  <!-- Infra -->
+  <rect x="40" y="388" width="660" height="60" rx="7" fill="#20251a" stroke="#545c42"/>
+  <text x="58" y="414" fill="#f08760" font-size="14" font-weight="700" font-family="JetBrains Mono, monospace">Terraform &#183; infrastructure</text>
+  <text x="58" y="436" fill="#c7c4ae" font-size="12" font-family="IBM Plex Sans, sans-serif">Scaleway Kubernetes &#183; production cluster &#183; tutorial-VM provisioning</text>
+  <text x="676" y="422" text-anchor="end" fill="#a19f89" font-size="11" font-family="JetBrains Mono, monospace">repos: infra &#183; tutorial</text>
+
+  <!-- arrows -->
+  <line x1="370" y1="110" x2="370" y2="130" stroke="#757d5e" stroke-width="1.6" marker-end="url(#layArrow)"/>
+  <line x1="201" y1="252" x2="201" y2="272" stroke="#757d5e" stroke-width="1.6" marker-end="url(#layArrow)"/>
+  <line x1="539" y1="252" x2="539" y2="272" stroke="#757d5e" stroke-width="1.6" marker-end="url(#layArrow)"/>
+  <line x1="370" y1="366" x2="370" y2="386" stroke="#757d5e" stroke-width="1.6" marker-end="url(#layArrow)"/>
+</svg>

@@ -1,0 +1,17 @@
+<svg viewBox="0 0 720 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The Fibe stack at a glance: 4 languages, 1 Rails monolith, 77 Rust commands, 19 plus 35 Genie messages">
+  <rect x="0" y="10" width="168" height="80" rx="6" fill="#20251a" stroke="#434a35"/>
+  <text x="84" y="50" text-anchor="middle" fill="#92df62" font-size="30" font-weight="700" font-family="JetBrains Mono, monospace">4</text>
+  <text x="84" y="74" text-anchor="middle" fill="#a19f89" font-size="12" font-family="IBM Plex Sans, sans-serif">languages</text>
+
+  <rect x="184" y="10" width="168" height="80" rx="6" fill="#20251a" stroke="#434a35"/>
+  <text x="268" y="50" text-anchor="middle" fill="#abe87f" font-size="30" font-weight="700" font-family="JetBrains Mono, monospace">1</text>
+  <text x="268" y="74" text-anchor="middle" fill="#a19f89" font-size="12" font-family="IBM Plex Sans, sans-serif">Rails monolith</text>
+
+  <rect x="368" y="10" width="168" height="80" rx="6" fill="#20251a" stroke="#434a35"/>
+  <text x="452" y="50" text-anchor="middle" fill="#eec854" font-size="30" font-weight="700" font-family="JetBrains Mono, monospace">77</text>
+  <text x="452" y="74" text-anchor="middle" fill="#a19f89" font-size="12" font-family="IBM Plex Sans, sans-serif">Rust commands</text>
+
+  <rect x="552" y="10" width="168" height="80" rx="6" fill="#20251a" stroke="#434a35"/>
+  <text x="636" y="50" text-anchor="middle" fill="#56d8c0" font-size="30" font-weight="700" font-family="JetBrains Mono, monospace">19+35</text>
+  <text x="636" y="74" text-anchor="middle" fill="#a19f89" font-size="12" font-family="IBM Plex Sans, sans-serif">Genie actions / events</text>
+</svg>

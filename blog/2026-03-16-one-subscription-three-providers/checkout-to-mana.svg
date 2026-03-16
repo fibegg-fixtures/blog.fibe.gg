@@ -1,0 +1,63 @@
+<svg viewBox="0 0 720 470" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Checkout to Mana flow: start checkout selects a provider and snapshots price into a pending order, the provider webhook is claimed once, fulfilment validates the amount and mints Mana, then routes to tutorial provisioning or Sparks conversion">
+  <defs>
+    <marker id="cm-arrow" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 Z" fill="#79d44e"/>
+    </marker>
+  </defs>
+
+  <text x="360" y="26" text-anchor="middle" fill="#f3f0e0" font-size="16" font-weight="700" font-family="IBM Plex Sans, sans-serif">From checkout to Mana</text>
+
+  <!-- step 1 -->
+  <circle cx="44" cy="74" r="14" fill="#252a1e" stroke="#79d44e"/>
+  <text x="44" y="79" text-anchor="middle" fill="#92df62" font-size="13" font-weight="700" font-family="JetBrains Mono, monospace">1</text>
+  <rect x="74" y="54" width="610" height="44" rx="6" fill="#20251a" stroke="#434a35"/>
+  <text x="90" y="73" fill="#f3f0e0" font-size="13" font-weight="700" font-family="IBM Plex Sans, sans-serif">Start checkout &#8594; selector picks Stripe / Creem / Paddle</text>
+  <text x="90" y="90" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">trusted override, else admin setting, else default provider</text>
+  <line x1="360" y1="98" x2="360" y2="118" stroke="#79d44e" stroke-width="1.5" marker-end="url(#cm-arrow)"/>
+
+  <!-- step 2 -->
+  <circle cx="44" cy="142" r="14" fill="#252a1e" stroke="#79d44e"/>
+  <text x="44" y="147" text-anchor="middle" fill="#92df62" font-size="13" font-weight="700" font-family="JetBrains Mono, monospace">2</text>
+  <rect x="74" y="122" width="610" height="44" rx="6" fill="#20251a" stroke="#434a35"/>
+  <text x="90" y="141" fill="#f3f0e0" font-size="13" font-weight="700" font-family="IBM Plex Sans, sans-serif">Pending order created &#8212; price snapshotted</text>
+  <text x="90" y="158" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">amount + currency frozen onto the order at purchase time</text>
+  <line x1="360" y1="166" x2="360" y2="186" stroke="#79d44e" stroke-width="1.5" marker-end="url(#cm-arrow)"/>
+
+  <!-- step 3 -->
+  <circle cx="44" cy="210" r="14" fill="#252a1e" stroke="#eec854"/>
+  <text x="44" y="215" text-anchor="middle" fill="#eec854" font-size="13" font-weight="700" font-family="JetBrains Mono, monospace">3</text>
+  <rect x="74" y="190" width="610" height="44" rx="6" fill="#20251a" stroke="#545c42"/>
+  <text x="90" y="209" fill="#f3f0e0" font-size="13" font-weight="700" font-family="IBM Plex Sans, sans-serif">Provider webhook &#8594; claim the event (once per event id)</text>
+  <text x="90" y="226" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">duplicate event id &#8594; already claimed &#8594; clean no-op</text>
+  <line x1="360" y1="234" x2="360" y2="254" stroke="#79d44e" stroke-width="1.5" marker-end="url(#cm-arrow)"/>
+
+  <!-- step 4 -->
+  <circle cx="44" cy="278" r="14" fill="#252a1e" stroke="#eec854"/>
+  <text x="44" y="283" text-anchor="middle" fill="#eec854" font-size="13" font-weight="700" font-family="JetBrains Mono, monospace">4</text>
+  <rect x="74" y="258" width="610" height="44" rx="6" fill="#20251a" stroke="#545c42"/>
+  <text x="90" y="277" fill="#f3f0e0" font-size="13" font-weight="700" font-family="IBM Plex Sans, sans-serif">Fulfilment: lock the order, validate amount, mint Mana</text>
+  <text x="90" y="294" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">underpaid &#8594; rejected; idempotency keys make re-delivery safe</text>
+  <line x1="360" y1="302" x2="360" y2="322" stroke="#79d44e" stroke-width="1.5" marker-end="url(#cm-arrow)"/>
+
+  <!-- step 5 fan-out -->
+  <circle cx="44" cy="346" r="14" fill="#252a1e" stroke="#79d44e"/>
+  <text x="44" y="351" text-anchor="middle" fill="#92df62" font-size="13" font-weight="700" font-family="JetBrains Mono, monospace">5</text>
+  <text x="74" y="338" fill="#c7c4ae" font-size="12" font-weight="700" font-family="IBM Plex Sans, sans-serif">route by order kind</text>
+
+  <rect x="74" y="350" width="196" height="64" rx="6" fill="#252a1e" stroke="#eec854"/>
+  <text x="172" y="372" text-anchor="middle" fill="#f5da79" font-size="12" font-weight="700" font-family="JetBrains Mono, monospace">tutorial</text>
+  <text x="172" y="390" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">spend Mana bundle,</text>
+  <text x="172" y="405" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">publish provision event</text>
+
+  <rect x="282" y="350" width="156" height="64" rx="6" fill="#20251a" stroke="#56d8c0"/>
+  <text x="360" y="372" text-anchor="middle" fill="#56d8c0" font-size="12" font-weight="700" font-family="JetBrains Mono, monospace">standard</text>
+  <text x="360" y="390" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">convert Mana</text>
+  <text x="360" y="405" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">&#8594; Sparks (wallet)</text>
+
+  <rect x="450" y="350" width="234" height="64" rx="6" fill="#20251a" stroke="#545c42"/>
+  <text x="567" y="372" text-anchor="middle" fill="#abe87f" font-size="12" font-weight="700" font-family="JetBrains Mono, monospace">recharge / top-up</text>
+  <text x="567" y="390" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">auto-recharge mints Mana</text>
+  <text x="567" y="405" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">each subscription period</text>
+
+  <text x="360" y="446" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">Daily funding then debits the wallet from here &#8212; the plan never funds runtime directly.</text>
+</svg>

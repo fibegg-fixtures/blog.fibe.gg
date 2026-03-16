@@ -1,0 +1,40 @@
+<svg viewBox="0 0 720 286" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Plan limits table: tutorial single and multiplayer plans each cap marquee count at one one and ten, while the subscription's runtime allowance is always zero and runtime is funded by the wallet not the plan">
+  <text x="360" y="28" text-anchor="middle" fill="#f3f0e0" font-size="16" font-weight="700" font-family="IBM Plex Sans, sans-serif">What the plan caps &#8212; and what it doesn't</text>
+
+  <!-- header -->
+  <rect x="20" y="46" width="220" height="38" rx="4" fill="#252a1e" stroke="#545c42"/>
+  <text x="130" y="70" text-anchor="middle" fill="#c7c4ae" font-size="12" font-weight="700" font-family="IBM Plex Sans, sans-serif">Plan type</text>
+  <rect x="244" y="46" width="220" height="38" rx="4" fill="#252a1e" stroke="#545c42"/>
+  <text x="354" y="70" text-anchor="middle" fill="#c7c4ae" font-size="12" font-weight="700" font-family="IBM Plex Sans, sans-serif">Marquee cap (admin)</text>
+  <rect x="468" y="46" width="232" height="38" rx="4" fill="#252a1e" stroke="#545c42"/>
+  <text x="584" y="70" text-anchor="middle" fill="#c7c4ae" font-size="12" font-weight="700" font-family="IBM Plex Sans, sans-serif">Subscription runtime allowance</text>
+
+  <!-- tutorial -->
+  <rect x="20" y="88" width="220" height="38" rx="4" fill="#20251a" stroke="#434a35"/>
+  <text x="36" y="112" fill="#abe87f" font-size="13" font-family="JetBrains Mono, monospace">tutorial</text>
+  <rect x="244" y="88" width="220" height="38" rx="4" fill="#20251a" stroke="#434a35"/>
+  <text x="354" y="112" text-anchor="middle" fill="#f5da79" font-size="14" font-weight="700" font-family="JetBrains Mono, monospace">1</text>
+  <rect x="468" y="88" width="232" height="38" rx="4" fill="#20251a" stroke="#434a35"/>
+  <text x="584" y="112" text-anchor="middle" fill="#a19f89" font-size="14" font-family="JetBrains Mono, monospace">0</text>
+
+  <!-- single -->
+  <rect x="20" y="130" width="220" height="38" rx="4" fill="#20251a" stroke="#434a35"/>
+  <text x="36" y="154" fill="#abe87f" font-size="13" font-family="JetBrains Mono, monospace">single</text>
+  <rect x="244" y="130" width="220" height="38" rx="4" fill="#20251a" stroke="#434a35"/>
+  <text x="354" y="154" text-anchor="middle" fill="#f5da79" font-size="14" font-weight="700" font-family="JetBrains Mono, monospace">1</text>
+  <rect x="468" y="130" width="232" height="38" rx="4" fill="#20251a" stroke="#434a35"/>
+  <text x="584" y="154" text-anchor="middle" fill="#a19f89" font-size="14" font-family="JetBrains Mono, monospace">0</text>
+
+  <!-- multiplayer -->
+  <rect x="20" y="172" width="220" height="38" rx="4" fill="#20251a" stroke="#434a35"/>
+  <text x="36" y="196" fill="#abe87f" font-size="13" font-family="JetBrains Mono, monospace">multiplayer</text>
+  <rect x="244" y="172" width="220" height="38" rx="4" fill="#20251a" stroke="#434a35"/>
+  <text x="354" y="196" text-anchor="middle" fill="#f5da79" font-size="14" font-weight="700" font-family="JetBrains Mono, monospace">10</text>
+  <rect x="468" y="172" width="232" height="38" rx="4" fill="#20251a" stroke="#434a35"/>
+  <text x="584" y="196" text-anchor="middle" fill="#a19f89" font-size="14" font-family="JetBrains Mono, monospace">0</text>
+
+  <!-- footnote band -->
+  <rect x="20" y="226" width="680" height="44" rx="6" fill="#252a1e" stroke="#56d8c0"/>
+  <text x="360" y="248" text-anchor="middle" fill="#56d8c0" font-size="12" font-weight="700" font-family="IBM Plex Sans, sans-serif">The plan grants the right to OWN marquees, not to RUN them.</text>
+  <text x="360" y="264" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">Runtime is funded daily from the Mana / Sparks wallet &#183; allowance is always 0.</text>
+</svg>

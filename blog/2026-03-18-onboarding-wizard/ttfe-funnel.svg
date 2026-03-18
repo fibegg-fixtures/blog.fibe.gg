@@ -1,0 +1,31 @@
+<svg viewBox="0 0 700 330" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Time to first environment funnel: signup, fund the marquee, connect a prop, launch a playground, running environment">
+  <text x="350" y="28" text-anchor="middle" fill="#f3f0e0" font-size="16" font-weight="700" font-family="IBM Plex Sans, sans-serif">The funnel we are actually optimizing</text>
+  <text x="350" y="48" text-anchor="middle" fill="#a19f89" font-size="12" font-family="IBM Plex Sans, sans-serif">every step the wizard can do for you is a step the player cannot drop out of</text>
+
+  <!-- funnel bars, narrowing -->
+  <rect x="120" y="68"  width="460" height="42" rx="5" fill="#20251a" stroke="#545c42"/>
+  <text x="138" y="94" fill="#f3f0e0" font-size="13" font-family="IBM Plex Sans, sans-serif">Sign up</text>
+  <text x="562" y="94" text-anchor="end" fill="#92df62" font-size="13" font-weight="700" font-family="JetBrains Mono, monospace">step 1</text>
+
+  <rect x="150" y="120" width="400" height="42" rx="5" fill="#20251a" stroke="#99761f"/>
+  <text x="168" y="146" fill="#f3f0e0" font-size="13" font-family="IBM Plex Sans, sans-serif">Fund the Marquee &#183; the 402 gate</text>
+  <text x="532" y="146" text-anchor="end" fill="#f5da79" font-size="13" font-weight="700" font-family="JetBrains Mono, monospace">step 2</text>
+
+  <rect x="185" y="172" width="330" height="42" rx="5" fill="#20251a" stroke="#545c42"/>
+  <text x="203" y="198" fill="#f3f0e0" font-size="13" font-family="IBM Plex Sans, sans-serif">Connect a Prop &#183; bring your git</text>
+  <text x="497" y="198" text-anchor="end" fill="#92df62" font-size="13" font-weight="700" font-family="JetBrains Mono, monospace">step 3</text>
+
+  <rect x="220" y="224" width="260" height="42" rx="5" fill="#20251a" stroke="#545c42"/>
+  <text x="238" y="250" fill="#f3f0e0" font-size="13" font-family="IBM Plex Sans, sans-serif">Launch a Playspec</text>
+  <text x="462" y="250" text-anchor="end" fill="#92df62" font-size="13" font-weight="700" font-family="JetBrains Mono, monospace">step 5</text>
+
+  <rect x="255" y="276" width="190" height="42" rx="5" fill="#20251a" stroke="#79d44e" stroke-width="2"/>
+  <text x="273" y="302" fill="#abe87f" font-size="13" font-weight="700" font-family="IBM Plex Sans, sans-serif">Running environment</text>
+  <text x="427" y="302" text-anchor="end" fill="#92df62" font-size="13" font-weight="700" font-family="JetBrains Mono, monospace">&#10003;</text>
+
+  <!-- TTFE bracket -->
+  <line x1="600" y1="74" x2="600" y2="312" stroke="#56d8c0" stroke-width="2"/>
+  <line x1="596" y1="74" x2="604" y2="74" stroke="#56d8c0" stroke-width="2"/>
+  <line x1="596" y1="312" x2="604" y2="312" stroke="#56d8c0" stroke-width="2"/>
+  <text x="620" y="190" fill="#56d8c0" font-size="12" font-weight="700" font-family="IBM Plex Sans, sans-serif" transform="rotate(90 620 190)">time to first environment</text>
+</svg>

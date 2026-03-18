@@ -1,0 +1,54 @@
+<svg viewBox="0 0 720 380" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The Bridge app shell with the wizard rendered as a Turbo Frame inside the empty-state pane">
+  <text x="360" y="26" text-anchor="middle" fill="#f3f0e0" font-size="16" font-weight="700" font-family="IBM Plex Sans, sans-serif">The wizard is not a page. It is a frame inside the Bridge.</text>
+
+  <!-- app shell outer -->
+  <rect x="24" y="48" width="672" height="312" rx="8" fill="#20251a" stroke="#545c42"/>
+
+  <!-- top bar -->
+  <rect x="24" y="48" width="672" height="34" rx="8" fill="#252a1e" stroke="#434a35"/>
+  <text x="44" y="70" fill="#c7c4ae" font-size="12" font-weight="700" font-family="JetBrains Mono, monospace">fibe.gg / bridge</text>
+
+  <!-- sidebar -->
+  <rect x="40" y="96" width="150" height="248" rx="6" fill="#252a1e" stroke="#434a35"/>
+  <text x="115" y="118" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">the real sidebar</text>
+  <rect x="54" y="132" width="122" height="22" rx="4" fill="#20251a" stroke="#545c42"/>
+  <text x="64" y="147" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">Marquees</text>
+  <!-- glowing item -->
+  <rect x="54" y="160" width="122" height="22" rx="4" fill="#20251a" stroke="#eec854" stroke-width="2"/>
+  <text x="64" y="175" fill="#f5da79" font-size="11" font-weight="700" font-family="IBM Plex Sans, sans-serif">Props &#9737;</text>
+  <rect x="54" y="188" width="122" height="22" rx="4" fill="#20251a" stroke="#545c42"/>
+  <text x="64" y="203" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">Playgrounds</text>
+  <rect x="54" y="216" width="122" height="22" rx="4" fill="#20251a" stroke="#545c42"/>
+  <text x="64" y="231" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">Bridge</text>
+  <rect x="54" y="244" width="122" height="22" rx="4" fill="#20251a" stroke="#545c42"/>
+  <text x="64" y="259" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">Scrolls</text>
+  <text x="115" y="300" text-anchor="middle" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">active step glows</text>
+  <text x="115" y="314" text-anchor="middle" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">the real sidebar home</text>
+
+  <!-- base pane -->
+  <rect x="206" y="96" width="474" height="248" rx="6" fill="#1b1f16" stroke="#434a35"/>
+  <text x="443" y="118" text-anchor="middle" fill="#a19f89" font-size="11" font-family="JetBrains Mono, monospace">the base pane  (empty state)</text>
+
+  <!-- wizard inline frame -->
+  <rect x="226" y="132" width="434" height="196" rx="6" fill="#20251a" stroke="#79d44e" stroke-width="2"/>
+  <text x="443" y="154" text-anchor="middle" fill="#92df62" font-size="12" font-weight="700" font-family="JetBrains Mono, monospace">the wizard, rendered as a Turbo Frame</text>
+
+  <!-- progress dots inside wizard -->
+  <circle cx="270" cy="182" r="9" fill="#20251a" stroke="#79d44e" stroke-width="2"/>
+  <circle cx="320" cy="182" r="9" fill="#20251a" stroke="#79d44e" stroke-width="2"/>
+  <circle cx="370" cy="182" r="11" fill="#20251a" stroke="#eec854" stroke-width="3"/>
+  <circle cx="420" cy="182" r="9" fill="#20251a" stroke="#545c42" stroke-width="2"/>
+  <circle cx="470" cy="182" r="9" fill="#20251a" stroke="#545c42" stroke-width="2"/>
+  <line x1="262" y1="182" x2="616" y2="182" stroke="#434a35" stroke-width="2"/>
+  <line x1="262" y1="182" x2="370" y2="182" stroke="#5cb43a" stroke-width="2"/>
+  <circle cx="520" cy="182" r="9" fill="#20251a" stroke="#545c42" stroke-width="2"/>
+  <circle cx="570" cy="182" r="9" fill="#20251a" stroke="#545c42" stroke-width="2"/>
+  <circle cx="616" cy="182" r="9" fill="#20251a" stroke="#545c42" stroke-width="2"/>
+
+  <text x="443" y="234" text-anchor="middle" fill="#f3f0e0" font-size="13" font-weight="700" font-family="IBM Plex Sans, sans-serif">Bring your Props</text>
+  <text x="443" y="256" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">all 14 step partials are server-rendered once;</text>
+  <text x="443" y="272" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">Stimulus toggles which one is visible</text>
+
+  <rect x="560" y="294" width="80" height="24" rx="12" fill="#20251a" stroke="#92df62"/>
+  <text x="600" y="310" text-anchor="middle" fill="#92df62" font-size="11" font-weight="700" font-family="IBM Plex Sans, sans-serif">Continue &#8594;</text>
+</svg>

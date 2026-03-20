@@ -1,0 +1,54 @@
+<svg viewBox="0 0 760 392" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A two-column decision panel: the load-bearing code we type with Sorbet on the left, and the code we deliberately leave dynamic on the right">
+  <rect x="0" y="0" width="760" height="392" fill="#20251a"/>
+
+  <text x="24" y="32" fill="#f3f0e0" font-size="17" font-weight="700" font-family="IBM Plex Sans, sans-serif">Where types earn their keep &#8212; and where we let Ruby be Ruby</text>
+
+  <!-- LEFT: typed -->
+  <rect x="24" y="52" width="350" height="312" rx="8" fill="#252a1e" stroke="#5cb43a" stroke-width="1.5"/>
+  <text x="44" y="80" fill="#92df62" font-size="14" font-weight="700" font-family="IBM Plex Sans, sans-serif">typed: strict / true</text>
+  <text x="44" y="100" fill="#a19f89" font-size="11.5" font-family="IBM Plex Sans, sans-serif">load-bearing &#183; long-lived &#183; many callers</text>
+
+  <g font-family="IBM Plex Sans, sans-serif" font-size="12.5" fill="#c7c4ae">
+    <circle cx="50" cy="126" r="3" fill="#79d44e"/>
+    <text x="62" y="130">Domain models (Playground, Marquee, Playspec)</text>
+    <circle cx="50" cy="152" r="3" fill="#79d44e"/>
+    <text x="62" y="156">State machines &#8212; statuses &amp; legal transitions</text>
+    <circle cx="50" cy="178" r="3" fill="#79d44e"/>
+    <text x="62" y="182">Constants &amp; timeouts via T.let</text>
+    <circle cx="50" cy="204" r="3" fill="#79d44e"/>
+    <text x="62" y="208">Service boundaries (provisioning, billing)</text>
+    <circle cx="50" cy="230" r="3" fill="#79d44e"/>
+    <text x="62" y="234">Money / wallet math (Mana &amp; Sparks)</text>
+    <circle cx="50" cy="256" r="3" fill="#79d44e"/>
+    <text x="62" y="260">Failure taxonomy &amp; error categories</text>
+    <circle cx="50" cy="282" r="3" fill="#79d44e"/>
+    <text x="62" y="286">Public method sigs across pack edges</text>
+  </g>
+  <rect x="44" y="306" width="310" height="44" rx="5" fill="#20251a" stroke="#434a35"/>
+  <text x="54" y="326" fill="#abe87f" font-size="10.5" font-family="JetBrains Mono, monospace">stale_timeout =</text>
+  <text x="54" y="342" fill="#abe87f" font-size="10.5" font-family="JetBrains Mono, monospace">  T.let(30.minutes, Duration)</text>
+
+  <!-- RIGHT: dynamic -->
+  <rect x="386" y="52" width="350" height="312" rx="8" fill="#252a1e" stroke="#757d5e" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <text x="406" y="80" fill="#eec854" font-size="14" font-weight="700" font-family="IBM Plex Sans, sans-serif">typed: false</text>
+  <text x="406" y="100" fill="#a19f89" font-size="11.5" font-family="IBM Plex Sans, sans-serif">churny &#183; glue &#183; Rails-shaped &#183; one caller</text>
+
+  <g font-family="IBM Plex Sans, sans-serif" font-size="12.5" fill="#c7c4ae">
+    <circle cx="412" cy="126" r="3" fill="#e2b33a"/>
+    <text x="424" y="130">Controllers &amp; view helpers</text>
+    <circle cx="412" cy="152" r="3" fill="#e2b33a"/>
+    <text x="424" y="156">Migrations &amp; one-off rake tasks</text>
+    <circle cx="412" cy="178" r="3" fill="#e2b33a"/>
+    <text x="424" y="182">Most specs &amp; test fixtures</text>
+    <circle cx="412" cy="204" r="3" fill="#e2b33a"/>
+    <text x="424" y="208">GraphQL schema / metaprogrammed DSLs</text>
+    <circle cx="412" cy="230" r="3" fill="#e2b33a"/>
+    <text x="424" y="234">Throwaway scripts &amp; experiments</text>
+    <circle cx="412" cy="256" r="3" fill="#e2b33a"/>
+    <text x="424" y="260">JSON blobs &#8594; one shared alias, not 40 shapes</text>
+  </g>
+  <rect x="406" y="288" width="310" height="62" rx="5" fill="#20251a" stroke="#434a35"/>
+  <text x="416" y="308" fill="#f5da79" font-size="10.5" font-family="JetBrains Mono, monospace">JsonData =</text>
+  <text x="416" y="324" fill="#f5da79" font-size="10.5" font-family="JetBrains Mono, monospace">  T.type_alias { ... }</text>
+  <text x="416" y="342" fill="#a19f89" font-size="10" font-family="JetBrains Mono, monospace"># a JSON object &#8212; one alias, not 40 structs</text>
+</svg>

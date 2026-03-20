@@ -1,0 +1,16 @@
+<svg viewBox="0 0 760 132" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Sigil distribution across the Rails monolith: 1381 files typed strict, 865 typed false, 52 typed true">
+  <rect x="0" y="0" width="760" height="132" fill="#20251a"/>
+  <text x="24" y="28" fill="#a19f89" font-size="12.5" font-family="IBM Plex Sans, sans-serif">Sigils across the Rails monolith &#8212; the shape of "gradual" in numbers</text>
+
+  <rect x="24" y="40" width="228" height="76" rx="6" fill="#252a1e" stroke="#5cb43a"/>
+  <text x="138" y="78" text-anchor="middle" fill="#92df62" font-size="30" font-weight="700" font-family="JetBrains Mono, monospace">1381</text>
+  <text x="138" y="102" text-anchor="middle" fill="#a19f89" font-size="12" font-family="IBM Plex Sans, sans-serif"># typed: strict</text>
+
+  <rect x="266" y="40" width="228" height="76" rx="6" fill="#252a1e" stroke="#757d5e"/>
+  <text x="380" y="78" text-anchor="middle" fill="#eec854" font-size="30" font-weight="700" font-family="JetBrains Mono, monospace">865</text>
+  <text x="380" y="102" text-anchor="middle" fill="#a19f89" font-size="12" font-family="IBM Plex Sans, sans-serif"># typed: false</text>
+
+  <rect x="508" y="40" width="228" height="76" rx="6" fill="#252a1e" stroke="#56d8c0"/>
+  <text x="622" y="78" text-anchor="middle" fill="#56d8c0" font-size="30" font-weight="700" font-family="JetBrains Mono, monospace">52</text>
+  <text x="622" y="102" text-anchor="middle" fill="#a19f89" font-size="12" font-family="IBM Plex Sans, sans-serif"># typed: true</text>
+</svg>

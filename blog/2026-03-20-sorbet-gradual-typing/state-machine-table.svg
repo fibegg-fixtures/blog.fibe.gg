@@ -1,0 +1,61 @@
+<svg viewBox="0 0 760 470" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Playground state machine encoded as typed constants: a frozen list of the nine lifecycle states and a typed table mapping each state to its legal target states">
+  <defs>
+    <marker id="sm-arrow" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L7,3 L0,6 Z" fill="#79d44e"/>
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="760" height="470" fill="#20251a"/>
+
+  <text x="24" y="34" fill="#f3f0e0" font-size="17" font-weight="700" font-family="IBM Plex Sans, sans-serif">The state machine is a constant, not a comment</text>
+  <text x="24" y="56" fill="#a19f89" font-size="12.5" font-family="IBM Plex Sans, sans-serif">Playground lifecycle &#183; 9 statuses, legal edges declared once and type-checked</text>
+
+  <!-- statuses band -->
+  <rect x="24" y="74" width="712" height="58" rx="6" fill="#252a1e" stroke="#434a35"/>
+  <text x="38" y="96" fill="#56d8c0" font-size="12" font-family="IBM Plex Sans, sans-serif">The nine lifecycle states &#8212; one frozen, typed list</text>
+  <text x="38" y="120" fill="#c7c4ae" font-size="11.5" font-family="JetBrains Mono, monospace">pending &#183; in_progress &#183; running &#183; error &#183; has_changes &#183; completed &#183; destroying &#183; stopping &#183; stopped</text>
+
+  <!-- transitions header -->
+  <text x="24" y="160" fill="#eec854" font-size="12.5" font-weight="700" font-family="IBM Plex Sans, sans-serif">Legal transitions &#8212; one typed table, state &#8594; allowed next states</text>
+
+  <!-- table -->
+  <g font-family="JetBrains Mono, monospace" font-size="11.5">
+    <!-- column headers -->
+    <text x="38" y="186" fill="#757d5e" font-size="11">from</text>
+    <text x="220" y="186" fill="#757d5e" font-size="11">&#8594; legal targets</text>
+
+    <!-- rows -->
+    <line x1="24" y1="196" x2="736" y2="196" stroke="#434a35" stroke-width="1"/>
+
+    <text x="38" y="216" fill="#92df62">pending</text>
+    <text x="220" y="216" fill="#c7c4ae">in_progress &#183; destroying</text>
+
+    <text x="38" y="240" fill="#92df62">in_progress</text>
+    <text x="220" y="240" fill="#c7c4ae">running &#183; error &#183; pending &#183; destroying &#183; stopping</text>
+
+    <text x="38" y="264" fill="#92df62">running</text>
+    <text x="220" y="264" fill="#c7c4ae">error &#183; has_changes &#183; completed &#183; destroying &#183; stopping</text>
+
+    <text x="38" y="288" fill="#92df62">error</text>
+    <text x="220" y="288" fill="#c7c4ae">pending &#183; in_progress &#183; destroying &#183; stopping</text>
+
+    <text x="38" y="312" fill="#92df62">has_changes</text>
+    <text x="220" y="312" fill="#c7c4ae">pending &#183; error &#183; running &#183; destroying &#183; stopping</text>
+
+    <text x="38" y="336" fill="#92df62">completed</text>
+    <text x="220" y="336" fill="#c7c4ae">destroying</text>
+
+    <text x="38" y="360" fill="#92df62">stopping</text>
+    <text x="220" y="360" fill="#c7c4ae">stopped &#183; error &#183; destroying</text>
+
+    <text x="38" y="384" fill="#92df62">stopped</text>
+    <text x="220" y="384" fill="#c7c4ae">pending &#183; in_progress &#183; destroying</text>
+
+    <text x="38" y="408" fill="#f08760">destroying</text>
+    <text x="220" y="408" fill="#a19f89">(terminal &#8212; empty array, no escape)</text>
+  </g>
+
+  <!-- guard box -->
+  <rect x="24" y="424" width="712" height="34" rx="6" fill="#252a1e" stroke="#545c42"/>
+  <text x="38" y="445" fill="#abe87f" font-size="11.5" font-family="JetBrains Mono, monospace">sig { params(target: String).returns(T::Boolean) }  &#8594;  the guard: is the requested state in the current state's allowed list?</text>
+</svg>

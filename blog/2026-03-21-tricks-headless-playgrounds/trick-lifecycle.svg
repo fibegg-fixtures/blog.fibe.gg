@@ -1,0 +1,74 @@
+<svg viewBox="0 0 720 380" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Trick lifecycle state machine from pending through running to completed or error">
+  <defs>
+    <marker id="tl-arrow" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L7,3 L0,6 z" fill="#757d5e"/>
+    </marker>
+    <marker id="tl-arrow-err" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L7,3 L0,6 z" fill="#f08760"/>
+    </marker>
+  </defs>
+
+  <text x="360" y="28" text-anchor="middle" fill="#f3f0e0" font-size="17" font-weight="700" font-family="IBM Plex Sans, sans-serif">A Trick has a defined notion of done</text>
+
+  <!-- pending -->
+  <rect x="40" y="64" width="140" height="56" rx="8" fill="#20251a" stroke="#545c42"/>
+  <text x="110" y="90" text-anchor="middle" fill="#f3f0e0" font-size="14" font-weight="700" font-family="JetBrains Mono, monospace">pending</text>
+  <text x="110" y="108" text-anchor="middle" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">queued on marquee</text>
+
+  <!-- in progress -->
+  <rect x="290" y="64" width="140" height="56" rx="8" fill="#20251a" stroke="#545c42"/>
+  <text x="360" y="90" text-anchor="middle" fill="#f3f0e0" font-size="14" font-weight="700" font-family="JetBrains Mono, monospace">in progress</text>
+  <text x="360" y="108" text-anchor="middle" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">build &#183; compose</text>
+
+  <!-- running -->
+  <rect x="540" y="64" width="140" height="56" rx="8" fill="#20251a" stroke="#5cb43a"/>
+  <text x="610" y="90" text-anchor="middle" fill="#92df62" font-size="14" font-weight="700" font-family="JetBrains Mono, monospace">running</text>
+  <text x="610" y="108" text-anchor="middle" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">detached, polled 10s</text>
+
+  <!-- completed -->
+  <rect x="540" y="208" width="140" height="56" rx="8" fill="#20251a" stroke="#5cb43a"/>
+  <text x="610" y="234" text-anchor="middle" fill="#92df62" font-size="14" font-weight="700" font-family="JetBrains Mono, monospace">completed</text>
+  <text x="610" y="252" text-anchor="middle" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">watched done</text>
+
+  <!-- error -->
+  <rect x="290" y="208" width="140" height="56" rx="8" fill="#20251a" stroke="#f08760"/>
+  <text x="360" y="234" text-anchor="middle" fill="#f08760" font-size="14" font-weight="700" font-family="JetBrains Mono, monospace">error</text>
+  <text x="360" y="252" text-anchor="middle" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">build / startup / timeout</text>
+
+  <!-- destroying -->
+  <rect x="540" y="312" width="140" height="48" rx="8" fill="#20251a" stroke="#434a35"/>
+  <text x="610" y="341" text-anchor="middle" fill="#c7c4ae" font-size="13" font-weight="700" font-family="JetBrains Mono, monospace">destroying</text>
+
+  <!-- arrows top row -->
+  <line x1="180" y1="92" x2="284" y2="92" stroke="#757d5e" stroke-width="2" marker-end="url(#tl-arrow)"/>
+  <text x="232" y="84" text-anchor="middle" fill="#a19f89" font-size="9.5" font-family="IBM Plex Sans, sans-serif">creation claims it</text>
+
+  <line x1="430" y1="92" x2="534" y2="92" stroke="#757d5e" stroke-width="2" marker-end="url(#tl-arrow)"/>
+  <text x="482" y="84" text-anchor="middle" fill="#a19f89" font-size="9.5" font-family="IBM Plex Sans, sans-serif">compose up</text>
+
+  <!-- running -> completed -->
+  <line x1="610" y1="120" x2="610" y2="204" stroke="#5cb43a" stroke-width="2" marker-end="url(#tl-arrow)"/>
+  <text x="618" y="166" fill="#92df62" font-size="9.5" font-family="IBM Plex Sans, sans-serif">all watched exit 0</text>
+
+  <!-- in progress -> error -->
+  <line x1="360" y1="120" x2="360" y2="204" stroke="#f08760" stroke-width="2" marker-end="url(#tl-arrow-err)"/>
+  <text x="352" y="166" text-anchor="end" fill="#f08760" font-size="9.5" font-family="IBM Plex Sans, sans-serif">build fails</text>
+
+  <!-- running -> error -->
+  <line x1="540" y1="106" x2="432" y2="214" stroke="#f08760" stroke-width="2" marker-end="url(#tl-arrow-err)"/>
+  <text x="500" y="150" text-anchor="middle" fill="#f08760" font-size="9.5" font-family="IBM Plex Sans, sans-serif">nonzero / timeout</text>
+
+  <!-- completed -> destroying -->
+  <line x1="610" y1="264" x2="610" y2="308" stroke="#757d5e" stroke-width="2" marker-end="url(#tl-arrow)"/>
+  <text x="618" y="290" fill="#a19f89" font-size="9.5" font-family="IBM Plex Sans, sans-serif">expiry / delete</text>
+
+  <!-- result callout -->
+  <rect x="40" y="200" width="220" height="120" rx="8" fill="#252a1e" stroke="#99761f"/>
+  <text x="56" y="224" fill="#eec854" font-size="12" font-weight="700" font-family="JetBrains Mono, monospace">Result (kept)</text>
+  <text x="56" y="246" fill="#c7c4ae" font-size="10.5" font-family="IBM Plex Sans, sans-serif">success = at least one watched</text>
+  <text x="56" y="262" fill="#c7c4ae" font-size="10.5" font-family="IBM Plex Sans, sans-serif">service AND all of them exit 0</text>
+  <text x="56" y="284" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">per service: exit code, status,</text>
+  <text x="56" y="298" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">logs, structured summary</text>
+  <text x="56" y="314" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">teardown keeps row + result</text>
+  <line x1="500" y1="236" x2="262" y2="248" stroke="#99761f" stroke-width="1.5" stroke-dasharray="4 3" marker-end="url(#tl-arrow)"/>
+</svg>

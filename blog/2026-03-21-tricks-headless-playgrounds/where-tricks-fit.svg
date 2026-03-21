@@ -1,0 +1,53 @@
+<svg viewBox="0 0 720 340" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="How Tricks are launched: VCS pushes, cron schedules, or the SDK, each producing a Trick that records a result">
+  <defs>
+    <marker id="wf-arrow" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L7,3 L0,6 z" fill="#757d5e"/>
+    </marker>
+  </defs>
+
+  <text x="360" y="28" text-anchor="middle" fill="#f3f0e0" font-size="17" font-weight="700" font-family="IBM Plex Sans, sans-serif">Where Tricks fit</text>
+
+  <!-- triggers column -->
+  <text x="118" y="64" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">TRIGGERS</text>
+
+  <rect x="24" y="76" width="188" height="52" rx="6" fill="#20251a" stroke="#434a35"/>
+  <text x="118" y="100" text-anchor="middle" fill="#56d8c0" font-size="12" font-weight="700" font-family="JetBrains Mono, monospace">VCS push / PR</text>
+  <text x="118" y="117" text-anchor="middle" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">webhook matched by prop+branch</text>
+
+  <rect x="24" y="140" width="188" height="52" rx="6" fill="#20251a" stroke="#434a35"/>
+  <text x="118" y="164" text-anchor="middle" fill="#f5da79" font-size="12" font-weight="700" font-family="JetBrains Mono, monospace">cron schedule</text>
+  <text x="118" y="181" text-anchor="middle" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">self-perpetuating, one tick at a time</text>
+
+  <rect x="24" y="204" width="188" height="52" rx="6" fill="#20251a" stroke="#434a35"/>
+  <text x="118" y="228" text-anchor="middle" fill="#92df62" font-size="12" font-weight="700" font-family="JetBrains Mono, monospace">SDK / CLI / MCP</text>
+  <text x="118" y="245" text-anchor="middle" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">on-demand one-shot</text>
+
+  <!-- arrows to trick -->
+  <line x1="212" y1="102" x2="296" y2="150" stroke="#757d5e" stroke-width="2" marker-end="url(#wf-arrow)"/>
+  <line x1="212" y1="166" x2="296" y2="166" stroke="#757d5e" stroke-width="2" marker-end="url(#wf-arrow)"/>
+  <line x1="212" y1="230" x2="296" y2="182" stroke="#757d5e" stroke-width="2" marker-end="url(#wf-arrow)"/>
+
+  <!-- the trick -->
+  <rect x="300" y="120" width="160" height="96" rx="8" fill="#252a1e" stroke="#5cb43a" stroke-width="2"/>
+  <text x="380" y="150" text-anchor="middle" fill="#92df62" font-size="15" font-weight="700" font-family="JetBrains Mono, monospace">Trick</text>
+  <text x="380" y="170" text-anchor="middle" fill="#c7c4ae" font-size="10.5" font-family="IBM Plex Sans, sans-serif">job-mode Playground</text>
+  <text x="380" y="186" text-anchor="middle" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">same runtime as your</text>
+  <text x="380" y="200" text-anchor="middle" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">dev environments</text>
+
+  <!-- arrow to result -->
+  <line x1="460" y1="168" x2="540" y2="168" stroke="#757d5e" stroke-width="2" marker-end="url(#wf-arrow)"/>
+
+  <!-- result -->
+  <rect x="544" y="120" width="152" height="96" rx="8" fill="#20251a" stroke="#99761f"/>
+  <text x="620" y="150" text-anchor="middle" fill="#eec854" font-size="14" font-weight="700" font-family="JetBrains Mono, monospace">Result</text>
+  <text x="620" y="172" text-anchor="middle" fill="#c7c4ae" font-size="10.5" font-family="IBM Plex Sans, sans-serif">pass / fail + logs</text>
+  <text x="620" y="190" text-anchor="middle" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">survives teardown</text>
+  <text x="620" y="206" text-anchor="middle" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">webhooks: playground.*</text>
+
+  <!-- failure loop note -->
+  <rect x="300" y="256" width="396" height="60" rx="8" fill="#252a1e" stroke="#434a35"/>
+  <text x="316" y="278" fill="#f08760" font-size="11" font-weight="700" font-family="JetBrains Mono, monospace">on failure (CI / Muti):</text>
+  <text x="316" y="297" fill="#c7c4ae" font-size="10.5" font-family="IBM Plex Sans, sans-serif">a standalone Genie gets a chat message out-of-band &#8212; it</text>
+  <text x="316" y="311" fill="#c7c4ae" font-size="10.5" font-family="IBM Plex Sans, sans-serif">is never injected into the Trick. Loop ends on pass or retry limit.</text>
+  <line x1="620" y1="216" x2="560" y2="252" stroke="#757d5e" stroke-width="1.5" stroke-dasharray="4 3" marker-end="url(#wf-arrow)"/>
+</svg>

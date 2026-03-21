@@ -1,0 +1,46 @@
+<svg viewBox="0 0 720 416" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Comparison of an interactive Playground and a job-mode Trick, sharing one creation pipeline">
+  <text x="360" y="28" text-anchor="middle" fill="#f3f0e0" font-size="17" font-weight="700" font-family="IBM Plex Sans, sans-serif">One model, one creation pipeline, a job-mode flag</text>
+
+  <!-- Playground column -->
+  <rect x="24" y="48" width="324" height="344" rx="8" fill="#20251a" stroke="#434a35"/>
+  <text x="186" y="76" text-anchor="middle" fill="#92df62" font-size="15" font-weight="700" font-family="IBM Plex Sans, sans-serif">Playground &#183; interactive</text>
+  <text x="186" y="96" text-anchor="middle" fill="#a19f89" font-size="11" font-family="JetBrains Mono, monospace">job mode: off</text>
+
+  <!-- Trick column -->
+  <rect x="372" y="48" width="324" height="344" rx="8" fill="#20251a" stroke="#545c42"/>
+  <text x="534" y="76" text-anchor="middle" fill="#eec854" font-size="15" font-weight="700" font-family="IBM Plex Sans, sans-serif">Trick &#183; job mode</text>
+  <text x="534" y="96" text-anchor="middle" fill="#a19f89" font-size="11" font-family="JetBrains Mono, monospace">job mode: on</text>
+
+  <!-- rows -->
+  <line x1="40" y1="116" x2="332" y2="116" stroke="#434a35" stroke-width="1"/>
+  <line x1="388" y1="116" x2="680" y2="116" stroke="#545c42" stroke-width="1"/>
+
+  <!-- traefik routing step -->
+  <text x="44" y="146" fill="#abe87f" font-size="12" font-family="JetBrains Mono, monospace">&#10003; Traefik routing</text>
+  <text x="44" y="164" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">routed via wildcard TLS</text>
+  <text x="392" y="146" fill="#f08760" font-size="12" font-family="JetBrains Mono, monospace">&#10007; Traefik routing</text>
+  <text x="392" y="164" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">no public route, labels stripped</text>
+
+  <!-- agent startup step -->
+  <text x="44" y="196" fill="#abe87f" font-size="12" font-family="JetBrains Mono, monospace">&#10003; agent startup</text>
+  <text x="44" y="214" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">Genie sidecar (if an agent)</text>
+  <text x="392" y="196" fill="#f08760" font-size="12" font-family="JetBrains Mono, monospace">&#10007; agent startup</text>
+  <text x="392" y="214" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">no Genie inside the Trick</text>
+
+  <!-- compose -->
+  <text x="44" y="246" fill="#abe87f" font-size="12" font-family="JetBrains Mono, monospace">&#10003; compose up -d</text>
+  <text x="44" y="264" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">wait until healthy, stay up</text>
+  <text x="392" y="246" fill="#56d8c0" font-size="12" font-family="JetBrains Mono, monospace">&#10003; detached compose up</text>
+  <text x="392" y="264" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">restart:no &#183; replicas:1 &#183; nohup</text>
+
+  <!-- TTL -->
+  <text x="44" y="296" fill="#f3f0e0" font-size="12" font-family="JetBrains Mono, monospace">TTL 8h default</text>
+  <text x="392" y="296" fill="#f5da79" font-size="12" font-family="JetBrains Mono, monospace">TTL 1h default</text>
+  <text x="392" y="314" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">Playguard-enforced cap</text>
+
+  <!-- notion of done -->
+  <text x="44" y="346" fill="#f3f0e0" font-size="12" font-family="JetBrains Mono, monospace">no terminal state</text>
+  <text x="44" y="364" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">runs until you stop it</text>
+  <text x="392" y="346" fill="#92df62" font-size="12" font-family="JetBrains Mono, monospace">running &#8594; completed</text>
+  <text x="392" y="364" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">exit 0 = success, result kept</text>
+</svg>

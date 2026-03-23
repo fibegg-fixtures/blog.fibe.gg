@@ -1,0 +1,51 @@
+<svg viewBox="0 0 740 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="How the on-disk project name is derived: human name is slugified and truncated to 40 chars, gets a temporary random suffix before save, then is finalized with the database id to be globally unique">
+  <defs>
+    <marker id="cpnArrow" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 z" fill="#757d5e"/>
+    </marker>
+  </defs>
+
+  <text x="370" y="30" text-anchor="middle" fill="#f3f0e0" font-size="17" font-weight="700" font-family="IBM Plex Sans, sans-serif">Deriving a globally unique project name</text>
+
+  <!-- Step 1: human name -->
+  <rect x="30" y="58" width="200" height="66" rx="8" fill="#20251a" stroke="#434a35"/>
+  <text x="130" y="82" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">1 &#183; human name</text>
+  <text x="130" y="106" text-anchor="middle" fill="#f3f0e0" font-size="13" font-family="JetBrains Mono, monospace">My Cool Feature!</text>
+
+  <line x1="230" y1="91" x2="276" y2="91" stroke="#757d5e" stroke-width="1.5" marker-end="url(#cpnArrow)"/>
+
+  <!-- Step 2: slugify + cap at 40 chars -->
+  <rect x="280" y="58" width="240" height="66" rx="8" fill="#20251a" stroke="#434a35"/>
+  <text x="400" y="82" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">2 &#183; slugify, cap at 40 chars</text>
+  <text x="400" y="106" text-anchor="middle" fill="#abe87f" font-size="13" font-family="JetBrains Mono, monospace">my-cool-feature</text>
+
+  <line x1="520" y1="91" x2="566" y2="91" stroke="#757d5e" stroke-width="1.5" marker-end="url(#cpnArrow)"/>
+
+  <!-- slug box -->
+  <rect x="570" y="58" width="140" height="66" rx="8" fill="#252a1e" stroke="#545c42"/>
+  <text x="640" y="82" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">slug (&#8804; 40 chars)</text>
+  <text x="640" y="106" text-anchor="middle" fill="#92df62" font-size="13" font-weight="700" font-family="JetBrains Mono, monospace">stable prefix</text>
+
+  <!-- branch down to two states -->
+  <line x1="640" y1="124" x2="640" y2="158" stroke="#757d5e" stroke-width="1.5"/>
+  <line x1="220" y1="170" x2="640" y2="170" stroke="#757d5e" stroke-width="1.5"/>
+  <line x1="220" y1="170" x2="220" y2="196" stroke="#757d5e" stroke-width="1.5" marker-end="url(#cpnArrow)"/>
+  <line x1="520" y1="170" x2="520" y2="196" stroke="#757d5e" stroke-width="1.5" marker-end="url(#cpnArrow)"/>
+
+  <!-- Pre-save -->
+  <rect x="40" y="202" width="360" height="96" rx="8" fill="#20251a" stroke="#56d8c0"/>
+  <text x="220" y="226" text-anchor="middle" fill="#56d8c0" font-size="13" font-weight="700" font-family="IBM Plex Sans, sans-serif">Before save &#183; no id yet</text>
+  <rect x="60" y="240" width="320" height="32" rx="4" fill="#252a1e" stroke="#434a35"/>
+  <text x="220" y="261" text-anchor="middle" fill="#f3f0e0" font-size="13" font-family="JetBrains Mono, monospace">my-cool-feature--3f9a1c84</text>
+  <text x="220" y="289" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">temporary random suffix</text>
+
+  <!-- Finalized -->
+  <rect x="416" y="202" width="284" height="96" rx="8" fill="#20251a" stroke="#92df62"/>
+  <text x="558" y="226" text-anchor="middle" fill="#92df62" font-size="13" font-weight="700" font-family="IBM Plex Sans, sans-serif">After create &#183; finalized</text>
+  <rect x="436" y="240" width="244" height="32" rx="4" fill="#252a1e" stroke="#434a35"/>
+  <text x="558" y="261" text-anchor="middle" fill="#abe87f" font-size="13" font-family="JetBrains Mono, monospace">my-cool-feature--4127</text>
+  <text x="558" y="289" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">DB id  &#183;  unique by construction</text>
+
+  <!-- footnote -->
+  <text x="370" y="330" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">The random suffix avoids a pre-save clash; the id makes the final name provably unique forever.</text>
+</svg>

@@ -1,0 +1,53 @@
+<svg viewBox="0 0 740 430" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="How subdomain uniqueness is enforced: bare subdomains must be unique, path-ruled services may share a host, and the @ root may appear at most once">
+  <defs>
+    <marker id="scrArrow" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 z" fill="#757d5e"/>
+    </marker>
+  </defs>
+
+  <text x="370" y="28" text-anchor="middle" fill="#f3f0e0" font-size="17" font-weight="700" font-family="IBM Plex Sans, sans-serif">One Playground, three kinds of route</text>
+  <text x="370" y="48" text-anchor="middle" fill="#a19f89" font-size="12" font-family="IBM Plex Sans, sans-serif">Each service declares a subdomain; the rule it falls under depends on its path rule</text>
+
+  <!-- Bare subdomain panel -->
+  <rect x="24" y="70" width="222" height="200" rx="8" fill="#20251a" stroke="#5cb43a"/>
+  <text x="135" y="96" text-anchor="middle" fill="#92df62" font-size="14" font-weight="700" font-family="IBM Plex Sans, sans-serif">Bare subdomain</text>
+  <text x="135" y="116" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">no path rule</text>
+  <rect x="44" y="132" width="182" height="30" rx="4" fill="#252a1e" stroke="#434a35"/>
+  <text x="135" y="152" text-anchor="middle" fill="#abe87f" font-size="12" font-family="JetBrains Mono, monospace">web &#8594; app.host</text>
+  <rect x="44" y="170" width="182" height="30" rx="4" fill="#252a1e" stroke="#434a35"/>
+  <text x="135" y="190" text-anchor="middle" fill="#abe87f" font-size="12" font-family="JetBrains Mono, monospace">api &#8594; api.host</text>
+  <text x="135" y="228" text-anchor="middle" fill="#f3f0e0" font-size="12" font-weight="700" font-family="IBM Plex Sans, sans-serif">MUST be unique</text>
+  <text x="135" y="248" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">within env and across siblings</text>
+
+  <!-- path-ruled panel -->
+  <rect x="259" y="70" width="222" height="200" rx="8" fill="#20251a" stroke="#56d8c0"/>
+  <text x="370" y="96" text-anchor="middle" fill="#56d8c0" font-size="14" font-weight="700" font-family="IBM Plex Sans, sans-serif">path-ruled service</text>
+  <text x="370" y="116" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">has a path rule</text>
+  <rect x="279" y="132" width="182" height="30" rx="4" fill="#252a1e" stroke="#434a35"/>
+  <text x="370" y="152" text-anchor="middle" fill="#56d8c0" font-size="11" font-family="JetBrains Mono, monospace">api.host/v1 &#8594; svc-a</text>
+  <rect x="279" y="170" width="182" height="30" rx="4" fill="#252a1e" stroke="#434a35"/>
+  <text x="370" y="190" text-anchor="middle" fill="#56d8c0" font-size="11" font-family="JetBrains Mono, monospace">api.host/v2 &#8594; svc-b</text>
+  <text x="370" y="228" text-anchor="middle" fill="#f3f0e0" font-size="12" font-weight="700" font-family="IBM Plex Sans, sans-serif">MAY share a host</text>
+  <text x="370" y="248" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">Traefik splits by path</text>
+
+  <!-- root panel -->
+  <rect x="494" y="70" width="222" height="200" rx="8" fill="#20251a" stroke="#eec854"/>
+  <text x="605" y="96" text-anchor="middle" fill="#eec854" font-size="14" font-weight="700" font-family="IBM Plex Sans, sans-serif">The @ root</text>
+  <text x="605" y="116" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">subdomain is &quot;@&quot;</text>
+  <rect x="514" y="132" width="182" height="30" rx="4" fill="#252a1e" stroke="#434a35"/>
+  <text x="605" y="152" text-anchor="middle" fill="#f5da79" font-size="12" font-family="JetBrains Mono, monospace">@ &#8594; host (apex)</text>
+  <rect x="514" y="170" width="182" height="30" rx="4" fill="#2a2018" stroke="#99761f"/>
+  <text x="605" y="190" text-anchor="middle" fill="#f08760" font-size="12" font-family="JetBrains Mono, monospace">@ &#8594; host  &#10007;</text>
+  <text x="605" y="228" text-anchor="middle" fill="#f3f0e0" font-size="12" font-weight="700" font-family="IBM Plex Sans, sans-serif">AT MOST once</text>
+  <text x="605" y="248" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">two roots &#8594; reject</text>
+
+  <!-- enforcement bar -->
+  <line x1="135" y1="270" x2="135" y2="312" stroke="#757d5e" stroke-width="1.5" marker-end="url(#scrArrow)"/>
+  <line x1="370" y1="270" x2="370" y2="312" stroke="#757d5e" stroke-width="1.5" marker-end="url(#scrArrow)"/>
+  <line x1="605" y1="270" x2="605" y2="312" stroke="#757d5e" stroke-width="1.5" marker-end="url(#scrArrow)"/>
+
+  <rect x="24" y="318" width="692" height="86" rx="8" fill="#252a1e" stroke="#545c42"/>
+  <text x="370" y="346" text-anchor="middle" fill="#f3f0e0" font-size="14" font-weight="700" font-family="IBM Plex Sans, sans-serif">Checked at write time, before the row is saved</text>
+  <text x="370" y="370" text-anchor="middle" fill="#c7c4ae" font-size="12" font-family="IBM Plex Sans, sans-serif">duplicate subdomain  &#183;  duplicate root  &#183;  subdomain in use  &#183;  root in use</text>
+  <text x="370" y="392" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">An invalid Playground never reaches the host. Routing stays dumb because the database refuses ambiguity.</text>
+</svg>

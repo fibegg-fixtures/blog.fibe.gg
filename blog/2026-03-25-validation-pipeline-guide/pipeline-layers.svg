@@ -1,0 +1,87 @@
+<svg viewBox="0 0 740 470" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The Fibe template validation pipeline: seven layers from YAML syntax through runtime, each catching a different class of error, getting more expensive to reach as you descend.">
+  <defs>
+    <marker id="pl-arrow" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 Z" fill="#757d5e"/>
+    </marker>
+  </defs>
+  <text x="370" y="26" text-anchor="middle" fill="#f3f0e0" font-size="17" font-weight="700" font-family="IBM Plex Sans, sans-serif">The validation pipeline</text>
+  <text x="370" y="45" text-anchor="middle" fill="#a19f89" font-size="12" font-family="IBM Plex Sans, sans-serif">top layers are cheap and fast &#183; reaching a launch failure costs the most</text>
+
+  <!-- left rail: cost arrow -->
+  <line x1="28" y1="70" x2="28" y2="430" stroke="#545c42" stroke-width="1.5" marker-end="url(#pl-arrow)"/>
+  <text x="20" y="80" text-anchor="middle" fill="#92df62" font-size="10" font-family="JetBrains Mono, monospace" transform="rotate(-90 20 250)">cheaper to fix  &#8594;  more expensive</text>
+
+  <!-- layer rows -->
+  <!-- 1 -->
+  <rect x="56" y="62" width="200" height="44" rx="6" fill="#20251a" stroke="#79d44e"/>
+  <text x="72" y="82" fill="#92df62" font-size="13" font-weight="700" font-family="JetBrains Mono, monospace">[1] YAML syntax</text>
+  <text x="72" y="98" fill="#a19f89" font-size="10.5" font-family="IBM Plex Sans, sans-serif">parse the document</text>
+  <text x="276" y="80" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">bad indentation, tabs vs spaces,</text>
+  <text x="276" y="96" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">unclosed quotes</text>
+
+  <!-- 2 -->
+  <rect x="56" y="114" width="200" height="44" rx="6" fill="#20251a" stroke="#5cb43a"/>
+  <text x="72" y="134" fill="#92df62" font-size="13" font-weight="700" font-family="JetBrains Mono, monospace">[2] Compose shape</text>
+  <text x="72" y="150" fill="#a19f89" font-size="10.5" font-family="IBM Plex Sans, sans-serif">root mapping + services:</text>
+  <text x="276" y="132" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">missing services: key, service</text>
+  <text x="276" y="148" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">value is not a mapping</text>
+
+  <!-- 3 -->
+  <rect x="56" y="166" width="200" height="44" rx="6" fill="#252a1e" stroke="#eec854"/>
+  <text x="72" y="186" fill="#f5da79" font-size="13" font-weight="700" font-family="JetBrains Mono, monospace">[3] Template schema</text>
+  <text x="72" y="202" fill="#a19f89" font-size="10.5" font-family="IBM Plex Sans, sans-serif">label + x-fibe.gg shape</text>
+  <text x="276" y="184" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">unknown fibe.gg/* label,</text>
+  <text x="276" y="200" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">per-label regex mismatch</text>
+
+  <!-- 4 -->
+  <rect x="56" y="218" width="200" height="44" rx="6" fill="#252a1e" stroke="#eec854"/>
+  <text x="72" y="238" fill="#f5da79" font-size="13" font-weight="700" font-family="JetBrains Mono, monospace">[4] Label semantics</text>
+  <text x="72" y="254" fill="#a19f89" font-size="10.5" font-family="IBM Plex Sans, sans-serif">cross-label rules</text>
+  <text x="276" y="236" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">build: without repo_url,</text>
+  <text x="276" y="252" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">zerodowntime conflicts</text>
+
+  <!-- 5 -->
+  <rect x="56" y="270" width="200" height="44" rx="6" fill="#252a1e" stroke="#eec854"/>
+  <text x="72" y="290" fill="#f5da79" font-size="13" font-weight="700" font-family="JetBrains Mono, monospace">[5] Template variables</text>
+  <text x="72" y="306" fill="#a19f89" font-size="10.5" font-family="IBM Plex Sans, sans-serif">declared vs referenced</text>
+  <text x="276" y="288" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">undeclared / unused var,</text>
+  <text x="276" y="304" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">bad regex, token in default</text>
+
+  <!-- 6 -->
+  <rect x="56" y="322" width="200" height="44" rx="6" fill="#252a1e" stroke="#f08760"/>
+  <text x="72" y="342" fill="#f08760" font-size="13" font-weight="700" font-family="JetBrains Mono, monospace">[6] Template compiler</text>
+  <text x="72" y="358" fill="#a19f89" font-size="10.5" font-family="IBM Plex Sans, sans-serif">substitution happens here</text>
+  <text x="276" y="340" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">required-but-missing, value</text>
+  <text x="276" y="356" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">fails pattern, path can't write</text>
+
+  <!-- 7 -->
+  <rect x="56" y="374" width="200" height="44" rx="6" fill="#252a1e" stroke="#f08760"/>
+  <text x="72" y="394" fill="#f08760" font-size="13" font-weight="700" font-family="JetBrains Mono, monospace">[7] Runtime API</text>
+  <text x="72" y="410" fill="#a19f89" font-size="10.5" font-family="IBM Plex Sans, sans-serif">launch / preview / import</text>
+  <text x="276" y="392" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">Prop/Marquee not found, repo</text>
+  <text x="276" y="408" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">not authorized, subdomain taken</text>
+
+  <!-- connectors -->
+  <line x1="156" y1="106" x2="156" y2="114" stroke="#757d5e" stroke-width="1.5" marker-end="url(#pl-arrow)"/>
+  <line x1="156" y1="158" x2="156" y2="166" stroke="#757d5e" stroke-width="1.5" marker-end="url(#pl-arrow)"/>
+  <line x1="156" y1="210" x2="156" y2="218" stroke="#757d5e" stroke-width="1.5" marker-end="url(#pl-arrow)"/>
+  <line x1="156" y1="262" x2="156" y2="270" stroke="#757d5e" stroke-width="1.5" marker-end="url(#pl-arrow)"/>
+  <line x1="156" y1="314" x2="156" y2="322" stroke="#757d5e" stroke-width="1.5" marker-end="url(#pl-arrow)"/>
+  <line x1="156" y1="366" x2="156" y2="374" stroke="#757d5e" stroke-width="1.5" marker-end="url(#pl-arrow)"/>
+
+  <!-- right band: which tool runs which layer -->
+  <rect x="560" y="62" width="160" height="148" rx="6" fill="#20251a" stroke="#434a35"/>
+  <text x="640" y="84" text-anchor="middle" fill="#56d8c0" font-size="11.5" font-weight="700" font-family="JetBrains Mono, monospace">layers 1&#8211;5</text>
+  <text x="640" y="104" text-anchor="middle" fill="#c7c4ae" font-size="10" font-family="IBM Plex Sans, sans-serif">fibe_schema</text>
+  <text x="640" y="119" text-anchor="middle" fill="#a19f89" font-size="9.5" font-family="IBM Plex Sans, sans-serif">operation: validate</text>
+  <line x1="576" y1="132" x2="704" y2="132" stroke="#434a35" stroke-width="1"/>
+  <text x="640" y="152" text-anchor="middle" fill="#56d8c0" font-size="11.5" font-weight="700" font-family="JetBrains Mono, monospace">layer 6</text>
+  <text x="640" y="170" text-anchor="middle" fill="#c7c4ae" font-size="10" font-family="IBM Plex Sans, sans-serif">templates_change</text>
+  <text x="640" y="185" text-anchor="middle" fill="#a19f89" font-size="9.5" font-family="IBM Plex Sans, sans-serif">mode: preview</text>
+
+  <rect x="560" y="374" width="160" height="44" rx="6" fill="#20251a" stroke="#f08760"/>
+  <text x="640" y="394" text-anchor="middle" fill="#f08760" font-size="11.5" font-weight="700" font-family="JetBrains Mono, monospace">layer 7</text>
+  <text x="640" y="410" text-anchor="middle" fill="#c7c4ae" font-size="10" font-family="IBM Plex Sans, sans-serif">fibe_launch (for real)</text>
+
+  <text x="370" y="452" text-anchor="middle" fill="#a19f89" font-size="10.5" font-family="IBM Plex Sans, sans-serif">A schema pass does NOT prove the template compiles. Always preview before you launch.</text>
+</svg>

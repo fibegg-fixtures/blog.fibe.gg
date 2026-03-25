@@ -1,0 +1,36 @@
+<svg viewBox="0 0 720 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A before-and-after comparison: a typo in a fibe.gg label hard-fails at the schema layer, while a non-fibe label passes straight through to Docker.">
+  <text x="360" y="26" text-anchor="middle" fill="#f3f0e0" font-size="16" font-weight="700" font-family="IBM Plex Sans, sans-serif">Inside the fibe.gg/ namespace, a typo is an error &#8212; not a no-op</text>
+
+  <!-- left panel: typo hard-fails -->
+  <rect x="20" y="46" width="332" height="222" rx="8" fill="#252a1e" stroke="#f08760" stroke-width="1.5"/>
+  <text x="40" y="72" fill="#f08760" font-size="13" font-weight="700" font-family="IBM Plex Sans, sans-serif">&#10007;  typo under fibe.gg/</text>
+
+  <rect x="40" y="84" width="292" height="92" rx="5" fill="#20251a" stroke="#434a35"/>
+  <text x="54" y="104" fill="#a19f89" font-size="10.5" font-family="JetBrains Mono, monospace">labels:</text>
+  <text x="54" y="122" fill="#f08760" font-size="10.5" font-family="JetBrains Mono, monospace">  fibe.gg/prot: 3000</text>
+  <text x="232" y="122" fill="#f08760" font-size="9" font-family="IBM Plex Sans, sans-serif">&#8592; should be port</text>
+  <text x="54" y="140" fill="#c7c4ae" font-size="10.5" font-family="JetBrains Mono, monospace">  fibe.gg/visibility:</text>
+  <text x="54" y="156" fill="#c7c4ae" font-size="10.5" font-family="JetBrains Mono, monospace">    external</text>
+
+  <rect x="40" y="186" width="292" height="64" rx="5" fill="#20251a" stroke="#f08760"/>
+  <text x="54" y="208" fill="#f08760" font-size="11" font-weight="700" font-family="JetBrains Mono, monospace">Service 'web':</text>
+  <text x="54" y="224" fill="#f08760" font-size="11" font-weight="700" font-family="JetBrains Mono, monospace">unknown label 'fibe.gg/prot'</text>
+  <text x="54" y="242" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">caught at layer 3, before launch</text>
+
+  <!-- right panel: non-fibe passes through -->
+  <rect x="368" y="46" width="332" height="222" rx="8" fill="#252a1e" stroke="#79d44e" stroke-width="1.5"/>
+  <text x="388" y="72" fill="#92df62" font-size="13" font-weight="700" font-family="IBM Plex Sans, sans-serif">&#10003;  outside the namespace</text>
+
+  <rect x="388" y="84" width="292" height="92" rx="5" fill="#20251a" stroke="#434a35"/>
+  <text x="402" y="104" fill="#a19f89" font-size="10.5" font-family="JetBrains Mono, monospace">labels:</text>
+  <text x="402" y="122" fill="#92df62" font-size="10.5" font-family="JetBrains Mono, monospace">  traefik.enable: "true"</text>
+  <text x="402" y="140" fill="#92df62" font-size="10.5" font-family="JetBrains Mono, monospace">  com.acme.owner: team</text>
+  <text x="402" y="158" fill="#c7c4ae" font-size="10.5" font-family="JetBrains Mono, monospace">  fibe.gg/port: 3000</text>
+
+  <rect x="388" y="186" width="292" height="64" rx="5" fill="#20251a" stroke="#79d44e"/>
+  <text x="402" y="208" fill="#92df62" font-size="11" font-weight="700" font-family="JetBrains Mono, monospace">passes through to Docker</text>
+  <text x="402" y="226" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">only fibe.gg/* keys are whitelist-</text>
+  <text x="402" y="240" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">checked; everything else is yours</text>
+
+  <text x="360" y="290" text-anchor="middle" fill="#a19f89" font-size="10.5" font-family="IBM Plex Sans, sans-serif">The whitelist is the feature: a misspelled fibe.gg/ key can never silently do nothing.</text>
+</svg>

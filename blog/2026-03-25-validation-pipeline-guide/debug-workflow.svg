@@ -1,0 +1,44 @@
+<svg viewBox="0 0 720 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A four-step debugging loop: validate with fibe_schema, locate the layer from the error text, apply the fix, then preview-compile before launching for real.">
+  <defs>
+    <marker id="wf-arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#56d8c0"/>
+    </marker>
+  </defs>
+  <text x="360" y="28" text-anchor="middle" fill="#f3f0e0" font-size="16" font-weight="700" font-family="IBM Plex Sans, sans-serif">The four-step loop</text>
+
+  <!-- step 1 -->
+  <rect x="22" y="64" width="150" height="96" rx="8" fill="#20251a" stroke="#92df62"/>
+  <text x="97" y="92" text-anchor="middle" fill="#92df62" font-size="22" font-weight="700" font-family="JetBrains Mono, monospace">1</text>
+  <text x="97" y="116" text-anchor="middle" fill="#f3f0e0" font-size="12" font-weight="700" font-family="IBM Plex Sans, sans-serif">Validate</text>
+  <text x="97" y="134" text-anchor="middle" fill="#a19f89" font-size="9.5" font-family="JetBrains Mono, monospace">fibe_schema</text>
+  <text x="97" y="148" text-anchor="middle" fill="#a19f89" font-size="9.5" font-family="IBM Plex Sans, sans-serif">read the message</text>
+
+  <!-- step 2 -->
+  <rect x="200" y="64" width="150" height="96" rx="8" fill="#20251a" stroke="#eec854"/>
+  <text x="275" y="92" text-anchor="middle" fill="#f5da79" font-size="22" font-weight="700" font-family="JetBrains Mono, monospace">2</text>
+  <text x="275" y="116" text-anchor="middle" fill="#f3f0e0" font-size="12" font-weight="700" font-family="IBM Plex Sans, sans-serif">Find the layer</text>
+  <text x="275" y="134" text-anchor="middle" fill="#a19f89" font-size="9.5" font-family="IBM Plex Sans, sans-serif">the wording tells you</text>
+  <text x="275" y="148" text-anchor="middle" fill="#a19f89" font-size="9.5" font-family="IBM Plex Sans, sans-serif">which stage spoke</text>
+
+  <!-- step 3 -->
+  <rect x="378" y="64" width="150" height="96" rx="8" fill="#20251a" stroke="#eec854"/>
+  <text x="453" y="92" text-anchor="middle" fill="#f5da79" font-size="22" font-weight="700" font-family="JetBrains Mono, monospace">3</text>
+  <text x="453" y="116" text-anchor="middle" fill="#f3f0e0" font-size="12" font-weight="700" font-family="IBM Plex Sans, sans-serif">Apply the fix</text>
+  <text x="453" y="134" text-anchor="middle" fill="#a19f89" font-size="9.5" font-family="IBM Plex Sans, sans-serif">smallest change that</text>
+  <text x="453" y="148" text-anchor="middle" fill="#a19f89" font-size="9.5" font-family="IBM Plex Sans, sans-serif">satisfies that layer</text>
+
+  <!-- step 4 -->
+  <rect x="556" y="64" width="150" height="96" rx="8" fill="#20251a" stroke="#56d8c0"/>
+  <text x="631" y="92" text-anchor="middle" fill="#56d8c0" font-size="22" font-weight="700" font-family="JetBrains Mono, monospace">4</text>
+  <text x="631" y="116" text-anchor="middle" fill="#f3f0e0" font-size="12" font-weight="700" font-family="IBM Plex Sans, sans-serif">Preview, then launch</text>
+  <text x="631" y="134" text-anchor="middle" fill="#a19f89" font-size="9.5" font-family="JetBrains Mono, monospace">mode: preview</text>
+  <text x="631" y="148" text-anchor="middle" fill="#a19f89" font-size="9.5" font-family="IBM Plex Sans, sans-serif">compile before real</text>
+
+  <line x1="172" y1="112" x2="198" y2="112" stroke="#56d8c0" stroke-width="2" marker-end="url(#wf-arrow)"/>
+  <line x1="350" y1="112" x2="376" y2="112" stroke="#56d8c0" stroke-width="2" marker-end="url(#wf-arrow)"/>
+  <line x1="528" y1="112" x2="554" y2="112" stroke="#56d8c0" stroke-width="2" marker-end="url(#wf-arrow)"/>
+
+  <!-- loop back -->
+  <path d="M631 160 L631 196 L97 196 L97 162" fill="none" stroke="#757d5e" stroke-width="1.5" stroke-dasharray="5 4" marker-end="url(#wf-arrow)"/>
+  <text x="360" y="214" text-anchor="middle" fill="#a19f89" font-size="10.5" font-family="IBM Plex Sans, sans-serif">still red? back to step 1 &#8212; one layer at a time, fixing the earliest error first</text>
+</svg>

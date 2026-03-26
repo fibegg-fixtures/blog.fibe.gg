@@ -1,0 +1,17 @@
+<svg viewBox="0 0 740 96" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A Playground at a glance: 9 lifecycle statuses, 8 creation steps, 30 minute stale timeout, 8 hour default TTL">
+  <rect x="0" y="8" width="176" height="80" rx="6" fill="#20251a" stroke="#434a35"/>
+  <text x="88" y="46" text-anchor="middle" fill="#92df62" font-size="30" font-weight="700" font-family="JetBrains Mono, monospace">9</text>
+  <text x="88" y="70" text-anchor="middle" fill="#a19f89" font-size="12" font-family="IBM Plex Sans, sans-serif">lifecycle statuses</text>
+
+  <rect x="188" y="8" width="176" height="80" rx="6" fill="#20251a" stroke="#434a35"/>
+  <text x="276" y="46" text-anchor="middle" fill="#92df62" font-size="30" font-weight="700" font-family="JetBrains Mono, monospace">8</text>
+  <text x="276" y="70" text-anchor="middle" fill="#a19f89" font-size="12" font-family="IBM Plex Sans, sans-serif">creation steps</text>
+
+  <rect x="376" y="8" width="176" height="80" rx="6" fill="#252a1e" stroke="#545c42"/>
+  <text x="464" y="46" text-anchor="middle" fill="#eec854" font-size="30" font-weight="700" font-family="JetBrains Mono, monospace">30m</text>
+  <text x="464" y="70" text-anchor="middle" fill="#a19f89" font-size="12" font-family="IBM Plex Sans, sans-serif">stale in-progress timeout</text>
+
+  <rect x="564" y="8" width="176" height="80" rx="6" fill="#252a1e" stroke="#545c42"/>
+  <text x="652" y="46" text-anchor="middle" fill="#56d8c0" font-size="30" font-weight="700" font-family="JetBrains Mono, monospace">8h</text>
+  <text x="652" y="70" text-anchor="middle" fill="#a19f89" font-size="12" font-family="IBM Plex Sans, sans-serif">default TTL (1h job-mode)</text>
+</svg>

@@ -1,0 +1,108 @@
+<svg viewBox="0 0 740 560" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The nine-status Playground state machine: pending, in progress, running, has changes, completed, error, stopping, stopped, destroying, with destroyed as the terminal removed row">
+  <defs>
+    <marker id="sm-arrow" markerWidth="8" markerHeight="8" refX="6.5" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 z" fill="#757d5e"/>
+    </marker>
+    <marker id="sm-gold" markerWidth="8" markerHeight="8" refX="6.5" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 z" fill="#eec854"/>
+    </marker>
+    <marker id="sm-ember" markerWidth="8" markerHeight="8" refX="6.5" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 z" fill="#f08760"/>
+    </marker>
+  </defs>
+
+  <text x="24" y="28" fill="#f3f0e0" font-size="17" font-weight="700" font-family="IBM Plex Sans, sans-serif">Nine statuses, one set of legal moves</text>
+  <text x="24" y="48" fill="#a19f89" font-size="12" font-family="IBM Plex Sans, sans-serif">Solid edges are the declared transitions. destroyed is not a status &#8212; it is the absence of a row.</text>
+
+  <!-- nodes -->
+  <!-- pending -->
+  <rect x="60" y="80" width="120" height="44" rx="22" fill="#252a1e" stroke="#757d5e"/>
+  <text x="120" y="107" text-anchor="middle" fill="#f3f0e0" font-size="13" font-family="JetBrains Mono, monospace">pending</text>
+  <!-- in progress -->
+  <rect x="300" y="80" width="140" height="44" rx="22" fill="#252a1e" stroke="#757d5e"/>
+  <text x="370" y="107" text-anchor="middle" fill="#f3f0e0" font-size="13" font-family="JetBrains Mono, monospace">in progress</text>
+  <!-- running -->
+  <rect x="300" y="220" width="140" height="44" rx="22" fill="#1c241a" stroke="#5cb43a" stroke-width="2"/>
+  <text x="370" y="247" text-anchor="middle" fill="#abe87f" font-size="13" font-weight="700" font-family="JetBrains Mono, monospace">running</text>
+  <!-- has changes -->
+  <rect x="540" y="220" width="140" height="44" rx="22" fill="#252a1e" stroke="#eec854"/>
+  <text x="610" y="247" text-anchor="middle" fill="#f5da79" font-size="13" font-family="JetBrains Mono, monospace">has changes</text>
+  <!-- completed -->
+  <rect x="300" y="340" width="140" height="44" rx="22" fill="#252a1e" stroke="#56d8c0"/>
+  <text x="370" y="367" text-anchor="middle" fill="#56d8c0" font-size="13" font-family="JetBrains Mono, monospace">completed</text>
+  <!-- error -->
+  <rect x="60" y="220" width="120" height="44" rx="22" fill="#251c1a" stroke="#f08760"/>
+  <text x="120" y="247" text-anchor="middle" fill="#f08760" font-size="13" font-family="JetBrains Mono, monospace">error</text>
+  <!-- stopping -->
+  <rect x="540" y="80" width="140" height="44" rx="22" fill="#252a1e" stroke="#757d5e"/>
+  <text x="610" y="107" text-anchor="middle" fill="#f3f0e0" font-size="13" font-family="JetBrains Mono, monospace">stopping</text>
+  <!-- stopped -->
+  <rect x="540" y="340" width="140" height="44" rx="22" fill="#252a1e" stroke="#757d5e"/>
+  <text x="610" y="367" text-anchor="middle" fill="#f3f0e0" font-size="13" font-family="JetBrains Mono, monospace">stopped</text>
+  <!-- destroying -->
+  <rect x="300" y="460" width="140" height="44" rx="22" fill="#251c1a" stroke="#f08760" stroke-width="2"/>
+  <text x="370" y="487" text-anchor="middle" fill="#f08760" font-size="13" font-weight="700" font-family="JetBrains Mono, monospace">destroying</text>
+  <!-- destroyed (ghost) -->
+  <rect x="540" y="460" width="140" height="44" rx="22" fill="#181c12" stroke="#434a35" stroke-dasharray="4 3"/>
+  <text x="610" y="487" text-anchor="middle" fill="#a19f89" font-size="13" font-family="JetBrains Mono, monospace">destroyed</text>
+
+  <!-- edges -->
+  <!-- pending -> in progress -->
+  <line x1="180" y1="102" x2="298" y2="102" stroke="#757d5e" stroke-width="1.8" marker-end="url(#sm-arrow)"/>
+  <text x="239" y="94" text-anchor="middle" fill="#92df62" font-size="10.5" font-family="IBM Plex Sans, sans-serif">claim</text>
+
+  <!-- in progress -> running -->
+  <line x1="370" y1="124" x2="370" y2="218" stroke="#757d5e" stroke-width="1.8" marker-end="url(#sm-arrow)"/>
+  <text x="378" y="175" fill="#92df62" font-size="10.5" font-family="IBM Plex Sans, sans-serif">healthy</text>
+
+  <!-- in progress -> error -->
+  <line x1="300" y1="116" x2="180" y2="216" stroke="#f08760" stroke-width="1.6" marker-end="url(#sm-ember)"/>
+  <text x="210" y="160" fill="#f08760" font-size="10.5" font-family="IBM Plex Sans, sans-serif">fail</text>
+
+  <!-- in progress -> pending (recover) -->
+  <path d="M300,92 C240,70 200,70 182,90" fill="none" stroke="#eec854" stroke-width="1.6" marker-end="url(#sm-gold)"/>
+  <text x="240" y="62" text-anchor="middle" fill="#eec854" font-size="10.5" font-family="IBM Plex Sans, sans-serif">recover / requeue</text>
+
+  <!-- error -> pending -->
+  <line x1="120" y1="218" x2="120" y2="126" stroke="#eec854" stroke-width="1.6" marker-end="url(#sm-gold)"/>
+  <text x="62" y="175" fill="#eec854" font-size="10.5" font-family="IBM Plex Sans, sans-serif">retry</text>
+
+  <!-- running -> has changes -->
+  <line x1="440" y1="242" x2="538" y2="242" stroke="#eec854" stroke-width="1.6" marker-end="url(#sm-gold)"/>
+  <text x="489" y="234" text-anchor="middle" fill="#eec854" font-size="10.5" font-family="IBM Plex Sans, sans-serif">dirty</text>
+
+  <!-- running -> completed -->
+  <line x1="370" y1="264" x2="370" y2="338" stroke="#56d8c0" stroke-width="1.6" marker-end="url(#sm-arrow)"/>
+  <text x="378" y="305" fill="#56d8c0" font-size="10.5" font-family="IBM Plex Sans, sans-serif">job done</text>
+
+  <!-- running -> error -->
+  <line x1="300" y1="242" x2="182" y2="242" stroke="#f08760" stroke-width="1.6" marker-end="url(#sm-ember)"/>
+  <text x="241" y="234" text-anchor="middle" fill="#f08760" font-size="10.5" font-family="IBM Plex Sans, sans-serif">fault</text>
+
+  <!-- running -> stopping -->
+  <path d="M440,228 C500,200 540,150 600,126" fill="none" stroke="#757d5e" stroke-width="1.6" marker-end="url(#sm-arrow)"/>
+  <text x="540" y="180" text-anchor="middle" fill="#a19f89" font-size="10.5" font-family="IBM Plex Sans, sans-serif">stop</text>
+
+  <!-- stopping -> stopped -->
+  <line x1="610" y1="124" x2="610" y2="338" stroke="#757d5e" stroke-width="1.8" marker-end="url(#sm-arrow)"/>
+  <text x="618" y="235" fill="#a19f89" font-size="10.5" font-family="IBM Plex Sans, sans-serif">stopped</text>
+
+  <!-- stopped -> pending -->
+  <path d="M540,360 C470,360 460,140 442,112" fill="none" stroke="#eec854" stroke-width="1.6" marker-end="url(#sm-gold)"/>
+  <text x="470" y="330" text-anchor="middle" fill="#eec854" font-size="10.5" font-family="IBM Plex Sans, sans-serif">start</text>
+
+  <!-- has changes -> running -->
+  <path d="M580,264 C540,300 470,270 440,255" fill="none" stroke="#5cb43a" stroke-width="1.6" marker-end="url(#sm-arrow)"/>
+  <text x="520" y="295" text-anchor="middle" fill="#92df62" font-size="10.5" font-family="IBM Plex Sans, sans-serif">re-extend</text>
+
+  <!-- everything -> destroying (representative from completed) -->
+  <line x1="370" y1="384" x2="370" y2="458" stroke="#f08760" stroke-width="1.8" marker-end="url(#sm-ember)"/>
+  <text x="378" y="425" fill="#f08760" font-size="10.5" font-family="IBM Plex Sans, sans-serif">destroy</text>
+
+  <!-- destroying -> destroyed -->
+  <line x1="440" y1="482" x2="538" y2="482" stroke="#f08760" stroke-width="1.8" marker-end="url(#sm-ember)"/>
+  <text x="489" y="474" text-anchor="middle" fill="#f08760" font-size="10.5" font-family="IBM Plex Sans, sans-serif">teardown</text>
+
+  <!-- note: many statuses -> destroying -->
+  <text x="120" y="300" fill="#a19f89" font-size="10.5" font-family="IBM Plex Sans, sans-serif">(every live status can reach destroying)</text>
+</svg>

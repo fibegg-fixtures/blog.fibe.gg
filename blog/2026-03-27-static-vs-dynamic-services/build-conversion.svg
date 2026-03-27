@@ -1,0 +1,40 @@
+<svg viewBox="0 0 740 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Before and after: converting a Compose build block into Fibe dynamic-service labels">
+  <defs>
+    <marker id="bc-arrow" markerWidth="11" markerHeight="11" refX="9" refY="5.5" orient="auto">
+      <path d="M0,0 L11,5.5 L0,11 z" fill="#79d44e"/>
+    </marker>
+  </defs>
+  <text x="370" y="26" text-anchor="middle" fill="#f3f0e0" font-size="16" font-weight="700" font-family="IBM Plex Sans, sans-serif">Drop build:, lift the fields into labels</text>
+
+  <!-- BEFORE panel -->
+  <rect x="24" y="48" width="300" height="270" rx="8" fill="#20251a" stroke="#545c42"/>
+  <text x="44" y="74" fill="#a19f89" font-size="12" font-weight="700" font-family="IBM Plex Sans, sans-serif">BEFORE &#183; plain Compose</text>
+  <text x="44" y="104" fill="#c7c4ae" font-size="12" font-family="JetBrains Mono, monospace">services:</text>
+  <text x="56" y="124" fill="#c7c4ae" font-size="12" font-family="JetBrains Mono, monospace">api:</text>
+  <text x="68" y="144" fill="#56d8c0" font-size="12" font-family="JetBrains Mono, monospace">build:</text>
+  <text x="80" y="164" fill="#c7c4ae" font-size="12" font-family="JetBrains Mono, monospace">context: .</text>
+  <text x="80" y="184" fill="#c7c4ae" font-size="12" font-family="JetBrains Mono, monospace">dockerfile: deploy/Dockerfile</text>
+  <text x="80" y="204" fill="#c7c4ae" font-size="12" font-family="JetBrains Mono, monospace">target: production</text>
+  <text x="80" y="224" fill="#c7c4ae" font-size="12" font-family="JetBrains Mono, monospace">args:</text>
+  <text x="92" y="244" fill="#c7c4ae" font-size="12" font-family="JetBrains Mono, monospace">NODE_VERSION: "20"</text>
+  <text x="44" y="284" fill="#f08760" font-size="11" font-family="IBM Plex Sans, sans-serif">Fibe can't build a local dir.</text>
+  <text x="44" y="302" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">context: is ignored at runtime.</text>
+
+  <!-- arrow -->
+  <line x1="332" y1="183" x2="408" y2="183" stroke="#79d44e" stroke-width="2.5" marker-end="url(#bc-arrow)"/>
+  <text x="370" y="173" text-anchor="middle" fill="#92df62" font-size="11" font-family="JetBrains Mono, monospace">convert</text>
+
+  <!-- AFTER panel -->
+  <rect x="416" y="48" width="304" height="270" rx="8" fill="#20251a" stroke="#5cb43a"/>
+  <text x="436" y="74" fill="#92df62" font-size="12" font-weight="700" font-family="IBM Plex Sans, sans-serif">AFTER &#183; Fibe labels</text>
+  <text x="436" y="104" fill="#c7c4ae" font-size="12" font-family="JetBrains Mono, monospace">labels:</text>
+  <text x="448" y="124" fill="#f5da79" font-size="12" font-family="JetBrains Mono, monospace">fibe.gg/repo_url: ...owner/repo</text>
+  <text x="448" y="144" fill="#abe87f" font-size="12" font-family="JetBrains Mono, monospace">fibe.gg/dockerfile:</text>
+  <text x="460" y="160" fill="#c7c4ae" font-size="11" font-family="JetBrains Mono, monospace">deploy/Dockerfile</text>
+  <text x="448" y="182" fill="#abe87f" font-size="12" font-family="JetBrains Mono, monospace">fibe.gg/build_target: production</text>
+  <text x="448" y="202" fill="#abe87f" font-size="12" font-family="JetBrains Mono, monospace">fibe.gg/build_args:</text>
+  <text x="460" y="218" fill="#c7c4ae" font-size="11" font-family="JetBrains Mono, monospace">"NODE_VERSION=20"</text>
+  <text x="448" y="240" fill="#abe87f" font-size="12" font-family="JetBrains Mono, monospace">fibe.gg/port: 8080</text>
+  <text x="436" y="276" fill="#f5da79" font-size="11" font-family="IBM Plex Sans, sans-serif">repo_url is REQUIRED with build:</text>
+  <text x="436" y="296" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">args become one comma-joined string</text>
+</svg>

@@ -1,0 +1,86 @@
+<svg viewBox="0 0 760 470" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Marquee infrastructure-lifecycle machine driven by webhook verbs">
+  <defs>
+    <marker id="sm-arrow" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L7,3 L0,6 Z" fill="#757d5e"/>
+    </marker>
+    <marker id="sm-arrow-green" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L7,3 L0,6 Z" fill="#5cb43a"/>
+    </marker>
+    <marker id="sm-arrow-ember" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L7,3 L0,6 Z" fill="#f08760"/>
+    </marker>
+  </defs>
+
+  <text x="380" y="26" text-anchor="middle" fill="#f3f0e0" font-size="16" font-weight="700" font-family="IBM Plex Sans, sans-serif">Infrastructure lifecycle &#183; driven by webhook verbs</text>
+
+  <!-- provisioning -->
+  <rect x="40" y="70" width="170" height="60" rx="8" fill="#252a1e" stroke="#eec854" stroke-width="1.5"/>
+  <text x="125" y="96" text-anchor="middle" fill="#f5da79" font-size="15" font-weight="700" font-family="JetBrains Mono, monospace">provisioning</text>
+  <text x="125" y="116" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">progress: queued &#8594; deploying</text>
+
+  <!-- provisioned -->
+  <rect x="300" y="70" width="170" height="60" rx="8" fill="#252a1e" stroke="#5cb43a" stroke-width="1.5"/>
+  <text x="385" y="96" text-anchor="middle" fill="#92df62" font-size="15" font-weight="700" font-family="JetBrains Mono, monospace">provisioned</text>
+  <text x="385" y="116" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">serving: active</text>
+
+  <!-- destroying -->
+  <rect x="300" y="250" width="170" height="60" rx="8" fill="#252a1e" stroke="#56d8c0" stroke-width="1.5"/>
+  <text x="385" y="276" text-anchor="middle" fill="#56d8c0" font-size="15" font-weight="700" font-family="JetBrains Mono, monospace">destroying</text>
+  <text x="385" y="296" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">serving: disabled</text>
+
+  <!-- destroyed -->
+  <rect x="560" y="250" width="170" height="60" rx="8" fill="#20251a" stroke="#545c42" stroke-width="1.5"/>
+  <text x="645" y="276" text-anchor="middle" fill="#c7c4ae" font-size="15" font-weight="700" font-family="JetBrains Mono, monospace">destroyed</text>
+  <text x="645" y="296" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">row may be reaped</text>
+
+  <!-- failed -->
+  <rect x="40" y="250" width="170" height="60" rx="8" fill="#252a1e" stroke="#f08760" stroke-width="1.5"/>
+  <text x="125" y="276" text-anchor="middle" fill="#f08760" font-size="15" font-weight="700" font-family="JetBrains Mono, monospace">failed</text>
+  <text x="125" y="296" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">serving: error</text>
+
+  <!-- provisioning -> provisioned : deployed -->
+  <line x1="210" y1="100" x2="298" y2="100" stroke="#5cb43a" stroke-width="2" marker-end="url(#sm-arrow-green)"/>
+  <text x="254" y="92" text-anchor="middle" fill="#92df62" font-size="11" font-family="JetBrains Mono, monospace">deployed</text>
+
+  <!-- provisioning -> failed : null / timeout 30m / retry x6 -->
+  <line x1="125" y1="130" x2="125" y2="248" stroke="#f08760" stroke-width="2" marker-end="url(#sm-arrow-ember)"/>
+  <text x="118" y="170" text-anchor="end" fill="#f08760" font-size="11" font-family="JetBrains Mono, monospace">null</text>
+  <text x="118" y="188" text-anchor="end" fill="#a19f89" font-size="10.5" font-family="IBM Plex Sans, sans-serif">timeout 30m</text>
+  <text x="118" y="204" text-anchor="end" fill="#a19f89" font-size="10.5" font-family="IBM Plex Sans, sans-serif">retry x6 exhausted</text>
+
+  <!-- provisioned -> destroying : cleanup / fix-redeploy -->
+  <line x1="385" y1="130" x2="385" y2="248" stroke="#757d5e" stroke-width="2" marker-end="url(#sm-arrow)"/>
+  <text x="393" y="180" text-anchor="start" fill="#c7c4ae" font-size="11" font-family="JetBrains Mono, monospace">cleanup /</text>
+  <text x="393" y="196" text-anchor="start" fill="#c7c4ae" font-size="11" font-family="JetBrains Mono, monospace">fix-redeploy</text>
+
+  <!-- provisioned -> failed : 2x null confirm -->
+  <line x1="300" y1="118" x2="212" y2="262" stroke="#f08760" stroke-width="1.6" stroke-dasharray="5 4" marker-end="url(#sm-arrow-ember)"/>
+  <text x="232" y="186" text-anchor="middle" fill="#f08760" font-size="10.5" font-family="JetBrains Mono, monospace">2x null /</text>
+  <text x="232" y="200" text-anchor="middle" fill="#f08760" font-size="10.5" font-family="JetBrains Mono, monospace">failed</text>
+
+  <!-- destroying -> destroyed : destroyed webhook -->
+  <line x1="470" y1="280" x2="558" y2="280" stroke="#757d5e" stroke-width="2" marker-end="url(#sm-arrow)"/>
+  <text x="514" y="272" text-anchor="middle" fill="#56d8c0" font-size="11" font-family="JetBrains Mono, monospace">destroyed</text>
+
+  <!-- failed -> provisioning : reprovision (paid) -->
+  <path d="M70,250 C50,200 60,150 100,132" fill="none" stroke="#5cb43a" stroke-width="1.6" marker-end="url(#sm-arrow-green)"/>
+  <text x="36" y="200" text-anchor="middle" fill="#92df62" font-size="10.5" font-family="IBM Plex Sans, sans-serif" transform="rotate(-90 36 200)">reprovision (if paid)</text>
+
+  <!-- destroyed -> provisioning : re-purchase -->
+  <path d="M645,250 C645,40 360,40 210,86" fill="none" stroke="#5cb43a" stroke-width="1.6" stroke-dasharray="5 4" marker-end="url(#sm-arrow-green)"/>
+  <text x="540" y="52" text-anchor="middle" fill="#92df62" font-size="11" font-family="IBM Plex Sans, sans-serif">re-purchase &#8594; new generation</text>
+
+  <!-- legend -->
+  <rect x="40" y="360" width="690" height="86" rx="8" fill="#20251a" stroke="#434a35"/>
+  <text x="56" y="384" fill="#c7c4ae" font-size="12" font-weight="700" font-family="IBM Plex Sans, sans-serif">Webhook verbs (status field on the callback):</text>
+  <text x="56" y="406" fill="#a19f89" font-size="11.5" font-family="JetBrains Mono, monospace">step</text>
+  <text x="120" y="406" fill="#c7c4ae" font-size="11.5" font-family="IBM Plex Sans, sans-serif">progress &#183;</text>
+  <text x="196" y="406" fill="#92df62" font-size="11.5" font-family="JetBrains Mono, monospace">deployed</text>
+  <text x="276" y="406" fill="#c7c4ae" font-size="11.5" font-family="IBM Plex Sans, sans-serif">store host/ssh/acme-dns &#183;</text>
+  <text x="468" y="406" fill="#56d8c0" font-size="11.5" font-family="JetBrains Mono, monospace">destroyed</text>
+  <text x="56" y="428" fill="#f08760" font-size="11.5" font-family="JetBrains Mono, monospace">failed</text>
+  <text x="120" y="428" fill="#c7c4ae" font-size="11.5" font-family="IBM Plex Sans, sans-serif">error (unless live chats &#8594; preserve) &#183;</text>
+  <text x="368" y="428" fill="#f08760" font-size="11.5" font-family="JetBrains Mono, monospace">null</text>
+  <text x="408" y="428" fill="#c7c4ae" font-size="11.5" font-family="IBM Plex Sans, sans-serif">two-confirmation &#183;</text>
+  <text x="556" y="428" fill="#56d8c0" font-size="11.5" font-family="JetBrains Mono, monospace">rebooted</text>
+</svg>

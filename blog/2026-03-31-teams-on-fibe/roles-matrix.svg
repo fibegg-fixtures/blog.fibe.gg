@@ -1,0 +1,53 @@
+<svg viewBox="0 0 740 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Roles by capability matrix: Owner, Admin, and Member across team and Marquee actions">
+  <rect x="0" y="0" width="740" height="360" fill="#20251a" stroke="#434a35" rx="8"/>
+  <text x="24" y="34" fill="#f3f0e0" font-size="16" font-weight="700" font-family="IBM Plex Sans, sans-serif">What each role can do</text>
+
+  <!-- Column headers -->
+  <text x="430" y="70" text-anchor="middle" fill="#92df62" font-size="13" font-weight="700" font-family="JetBrains Mono, monospace">Owner</text>
+  <text x="560" y="70" text-anchor="middle" fill="#eec854" font-size="13" font-weight="700" font-family="JetBrains Mono, monospace">Admin</text>
+  <text x="685" y="70" text-anchor="middle" fill="#56d8c0" font-size="13" font-weight="700" font-family="JetBrains Mono, monospace">Member</text>
+
+  <line x1="24" y1="82" x2="716" y2="82" stroke="#545c42" stroke-width="1"/>
+
+  <!-- Rows -->
+  <!-- Row template: action label left, then three cells -->
+  <text x="24" y="112" fill="#c7c4ae" font-size="12.5" font-family="IBM Plex Sans, sans-serif">Invite / remove members</text>
+  <text x="430" y="112" text-anchor="middle" fill="#92df62" font-size="14" font-family="JetBrains Mono, monospace">&#10003;</text>
+  <text x="560" y="112" text-anchor="middle" fill="#f08760" font-size="14" font-family="JetBrains Mono, monospace">&#10007;</text>
+  <text x="685" y="112" text-anchor="middle" fill="#f08760" font-size="14" font-family="JetBrains Mono, monospace">&#10007;</text>
+
+  <text x="24" y="142" fill="#c7c4ae" font-size="12.5" font-family="IBM Plex Sans, sans-serif">Change member roles</text>
+  <text x="430" y="142" text-anchor="middle" fill="#92df62" font-size="14" font-family="JetBrains Mono, monospace">&#10003;</text>
+  <text x="560" y="142" text-anchor="middle" fill="#f08760" font-size="14" font-family="JetBrains Mono, monospace">&#10007;</text>
+  <text x="685" y="142" text-anchor="middle" fill="#f08760" font-size="14" font-family="JetBrains Mono, monospace">&#10007;</text>
+
+  <text x="24" y="172" fill="#c7c4ae" font-size="12.5" font-family="IBM Plex Sans, sans-serif">Share / unshare a Marquee</text>
+  <text x="430" y="172" text-anchor="middle" fill="#92df62" font-size="14" font-family="JetBrains Mono, monospace">&#10003;</text>
+  <text x="560" y="172" text-anchor="middle" fill="#f08760" font-size="14" font-family="JetBrains Mono, monospace">&#10007;</text>
+  <text x="685" y="172" text-anchor="middle" fill="#f08760" font-size="14" font-family="JetBrains Mono, monospace">&#10007;</text>
+
+  <text x="24" y="202" fill="#c7c4ae" font-size="12.5" font-family="IBM Plex Sans, sans-serif">Transfer leadership</text>
+  <text x="430" y="202" text-anchor="middle" fill="#92df62" font-size="14" font-family="JetBrains Mono, monospace">&#10003;</text>
+  <text x="560" y="202" text-anchor="middle" fill="#f08760" font-size="14" font-family="JetBrains Mono, monospace">&#10007;</text>
+  <text x="685" y="202" text-anchor="middle" fill="#f08760" font-size="14" font-family="JetBrains Mono, monospace">&#10007;</text>
+
+  <line x1="24" y1="218" x2="716" y2="218" stroke="#434a35" stroke-width="1" stroke-dasharray="3 3"/>
+
+  <text x="24" y="248" fill="#c7c4ae" font-size="12.5" font-family="IBM Plex Sans, sans-serif">Launch on the shared Marquee</text>
+  <text x="430" y="248" text-anchor="middle" fill="#92df62" font-size="14" font-family="JetBrains Mono, monospace">&#10003;</text>
+  <text x="560" y="248" text-anchor="middle" fill="#92df62" font-size="14" font-family="JetBrains Mono, monospace">&#10003;</text>
+  <text x="685" y="248" text-anchor="middle" fill="#92df62" font-size="14" font-family="JetBrains Mono, monospace">&#10003;</text>
+
+  <text x="24" y="278" fill="#c7c4ae" font-size="12.5" font-family="IBM Plex Sans, sans-serif">See / manage Playgrounds on it</text>
+  <text x="430" y="278" text-anchor="middle" fill="#92df62" font-size="14" font-family="JetBrains Mono, monospace">&#10003;</text>
+  <text x="560" y="278" text-anchor="middle" fill="#92df62" font-size="14" font-family="JetBrains Mono, monospace">&#10003;</text>
+  <text x="685" y="278" text-anchor="middle" fill="#92df62" font-size="14" font-family="JetBrains Mono, monospace">&#10003;</text>
+
+  <text x="24" y="308" fill="#c7c4ae" font-size="12.5" font-family="IBM Plex Sans, sans-serif">Leave the team</text>
+  <text x="430" y="308" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">transfer first</text>
+  <text x="560" y="308" text-anchor="middle" fill="#92df62" font-size="14" font-family="JetBrains Mono, monospace">&#10003;</text>
+  <text x="685" y="308" text-anchor="middle" fill="#92df62" font-size="14" font-family="JetBrains Mono, monospace">&#10003;</text>
+
+  <line x1="24" y1="324" x2="716" y2="324" stroke="#545c42" stroke-width="1"/>
+  <text x="24" y="348" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">Green band = sharing is manage-level for everyone with access. There is no read-only grant.</text>
+</svg>

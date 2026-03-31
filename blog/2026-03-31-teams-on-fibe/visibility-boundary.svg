@@ -1,0 +1,42 @@
+<svg viewBox="0 0 740 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Visibility boundary: shared via the Marquee versus private to each member">
+  <rect x="0" y="0" width="740" height="360" fill="#20251a" stroke="#434a35" rx="8"/>
+  <text x="24" y="32" fill="#f3f0e0" font-size="16" font-weight="700" font-family="IBM Plex Sans, sans-serif">What crosses the boundary &#8212; and what doesn't</text>
+
+  <!-- Shared panel -->
+  <rect x="24" y="56" width="338" height="276" rx="8" fill="#252a1e" stroke="#79d44e"/>
+  <text x="193" y="84" text-anchor="middle" fill="#92df62" font-size="14" font-weight="700" font-family="JetBrains Mono, monospace">SHARED via the Marquee</text>
+  <text x="193" y="104" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">everyone with manage access sees this</text>
+
+  <rect x="44" y="124" width="298" height="34" rx="5" fill="#20251a" stroke="#434a35"/>
+  <text x="60" y="146" fill="#c7c4ae" font-size="12" font-family="IBM Plex Sans, sans-serif">The Marquee (the Docker host itself)</text>
+
+  <rect x="44" y="166" width="298" height="34" rx="5" fill="#20251a" stroke="#434a35"/>
+  <text x="60" y="188" fill="#c7c4ae" font-size="12" font-family="IBM Plex Sans, sans-serif">Playgrounds running on it (all members')</text>
+
+  <rect x="44" y="208" width="298" height="34" rx="5" fill="#20251a" stroke="#434a35"/>
+  <text x="60" y="230" fill="#c7c4ae" font-size="12" font-family="IBM Plex Sans, sans-serif">Logs, terminal, URLs of those Playgrounds</text>
+
+  <rect x="44" y="250" width="298" height="34" rx="5" fill="#20251a" stroke="#434a35"/>
+  <text x="60" y="272" fill="#c7c4ae" font-size="12" font-family="IBM Plex Sans, sans-serif">CI / schedule targets on the host</text>
+
+  <text x="193" y="312" text-anchor="middle" fill="#a19f89" font-size="10.5" font-family="IBM Plex Sans, sans-serif">shared capacity, not isolated per member</text>
+
+  <!-- Private panel -->
+  <rect x="378" y="56" width="338" height="276" rx="8" fill="#252a1e" stroke="#f08760"/>
+  <text x="547" y="84" text-anchor="middle" fill="#f08760" font-size="14" font-weight="700" font-family="JetBrains Mono, monospace">PRIVATE to each account</text>
+  <text x="547" y="104" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">never exposed by Marquee access</text>
+
+  <rect x="398" y="124" width="298" height="34" rx="5" fill="#20251a" stroke="#434a35"/>
+  <text x="414" y="146" fill="#c7c4ae" font-size="12" font-family="IBM Plex Sans, sans-serif">Props (Git bindings) &#183; Playspecs</text>
+
+  <rect x="398" y="166" width="298" height="34" rx="5" fill="#20251a" stroke="#434a35"/>
+  <text x="414" y="188" fill="#c7c4ae" font-size="12" font-family="IBM Plex Sans, sans-serif">Genies and their chats</text>
+
+  <rect x="398" y="208" width="298" height="34" rx="5" fill="#20251a" stroke="#434a35"/>
+  <text x="414" y="230" fill="#c7c4ae" font-size="12" font-family="IBM Plex Sans, sans-serif">Secret Vault &#183; Job ENV</text>
+
+  <rect x="398" y="250" width="298" height="34" rx="5" fill="#20251a" stroke="#434a35"/>
+  <text x="414" y="272" fill="#c7c4ae" font-size="12" font-family="IBM Plex Sans, sans-serif">API keys &#183; audit logs (per-account)</text>
+
+  <text x="547" y="312" text-anchor="middle" fill="#a19f89" font-size="10.5" font-family="IBM Plex Sans, sans-serif">members bring their own; nothing is team-scoped</text>
+</svg>

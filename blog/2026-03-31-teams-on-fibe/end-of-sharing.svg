@@ -1,0 +1,27 @@
+<svg viewBox="0 0 740 230" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="What happens when sharing ends: triggers on the left, consequences on the right">
+  <defs>
+    <marker id="arrEnd" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#f08760"/>
+    </marker>
+  </defs>
+  <rect x="0" y="0" width="740" height="230" fill="#20251a" stroke="#434a35" rx="8"/>
+  <text x="24" y="32" fill="#f3f0e0" font-size="16" font-weight="700" font-family="IBM Plex Sans, sans-serif">When access ends, cleanup is immediate</text>
+
+  <!-- Triggers -->
+  <rect x="24" y="56" width="300" height="150" rx="8" fill="#252a1e" stroke="#eec854"/>
+  <text x="174" y="82" text-anchor="middle" fill="#eec854" font-size="13" font-weight="700" font-family="JetBrains Mono, monospace">Any of these triggers</text>
+  <text x="44" y="110" fill="#c7c4ae" font-size="12" font-family="IBM Plex Sans, sans-serif">&#183; Owner unshares the Marquee</text>
+  <text x="44" y="134" fill="#c7c4ae" font-size="12" font-family="IBM Plex Sans, sans-serif">&#183; You leave or are removed</text>
+  <text x="44" y="158" fill="#c7c4ae" font-size="12" font-family="IBM Plex Sans, sans-serif">&#183; The owner leaves the team</text>
+  <text x="44" y="186" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">Move work out first &#8212; there is no grace.</text>
+
+  <line x1="324" y1="131" x2="408" y2="131" stroke="#f08760" stroke-width="2.5" marker-end="url(#arrEnd)"/>
+
+  <!-- Consequences -->
+  <rect x="416" y="56" width="300" height="150" rx="8" fill="#252a1e" stroke="#f08760"/>
+  <text x="566" y="82" text-anchor="middle" fill="#f08760" font-size="13" font-weight="700" font-family="JetBrains Mono, monospace">On that Marquee</text>
+  <text x="436" y="110" fill="#c7c4ae" font-size="12" font-family="IBM Plex Sans, sans-serif">&#183; Your Playgrounds are destroyed</text>
+  <text x="436" y="134" fill="#c7c4ae" font-size="12" font-family="IBM Plex Sans, sans-serif">&#183; Your live Genie chats are stopped</text>
+  <text x="436" y="166" fill="#92df62" font-size="12" font-family="IBM Plex Sans, sans-serif">&#183; Everything you own stays yours</text>
+  <text x="436" y="190" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">Your own Marquees + resources untouched.</text>
+</svg>

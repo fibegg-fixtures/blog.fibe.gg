@@ -1,0 +1,65 @@
+<svg viewBox="0 0 760 430" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Build record state machine: pending, building, success, failed, with funding and verification gates">
+  <defs>
+    <marker id="bsm-arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#757d5e"/>
+    </marker>
+    <marker id="bsm-arrow-red" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#f08760"/>
+    </marker>
+    <marker id="bsm-arrow-green" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#5cb43a"/>
+    </marker>
+  </defs>
+
+  <text x="380" y="28" text-anchor="middle" fill="#f3f0e0" font-size="17" font-weight="700" font-family="IBM Plex Sans, sans-serif">Build record state machine</text>
+  <text x="380" y="48" text-anchor="middle" fill="#a19f89" font-size="12" font-family="IBM Plex Sans, sans-serif">one build per (prop, service, branch, commit) &#183; gated and verified at every hop</text>
+
+  <!-- pending -->
+  <rect x="40" y="80" width="150" height="62" rx="8" fill="#20251a" stroke="#545c42"/>
+  <text x="115" y="110" text-anchor="middle" fill="#eec854" font-size="16" font-weight="700" font-family="JetBrains Mono, monospace">pending</text>
+  <text x="115" y="130" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">enqueued, awaiting build</text>
+
+  <!-- building -->
+  <rect x="305" y="80" width="150" height="62" rx="8" fill="#20251a" stroke="#545c42"/>
+  <text x="380" y="110" text-anchor="middle" fill="#56d8c0" font-size="16" font-weight="700" font-family="JetBrains Mono, monospace">building</text>
+  <text x="380" y="130" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">start time recorded</text>
+
+  <!-- success -->
+  <rect x="570" y="80" width="150" height="62" rx="8" fill="#20251a" stroke="#5cb43a"/>
+  <text x="645" y="110" text-anchor="middle" fill="#92df62" font-size="16" font-weight="700" font-family="JetBrains Mono, monospace">success</text>
+  <text x="645" y="130" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">image labelled + verified</text>
+
+  <!-- failed -->
+  <rect x="305" y="330" width="150" height="62" rx="8" fill="#252a1e" stroke="#f08760"/>
+  <text x="380" y="360" text-anchor="middle" fill="#f08760" font-size="16" font-weight="700" font-family="JetBrains Mono, monospace">failed</text>
+  <text x="380" y="380" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">failure reason recorded</text>
+
+  <!-- pending -> building -->
+  <line x1="190" y1="111" x2="300" y2="111" stroke="#757d5e" stroke-width="2" marker-end="url(#bsm-arrow)"/>
+  <text x="245" y="102" text-anchor="middle" fill="#c7c4ae" font-size="10" font-family="JetBrains Mono, monospace">funded?</text>
+
+  <!-- building -> success -->
+  <line x1="455" y1="111" x2="565" y2="111" stroke="#5cb43a" stroke-width="2" marker-end="url(#bsm-arrow-green)"/>
+  <text x="510" y="102" text-anchor="middle" fill="#92df62" font-size="10" font-family="JetBrains Mono, monospace">verified</text>
+
+  <!-- gate 1 label between pending and building -->
+  <rect x="200" y="170" width="360" height="34" rx="6" fill="#20251a" stroke="#99761f"/>
+  <text x="380" y="191" text-anchor="middle" fill="#eec854" font-size="11" font-family="JetBrains Mono, monospace">GATE &#183; Marquee not funded (402) checked at enqueue AND start</text>
+
+  <!-- verification band -->
+  <rect x="200" y="218" width="360" height="52" rx="6" fill="#20251a" stroke="#56d8c0"/>
+  <text x="380" y="238" text-anchor="middle" fill="#56d8c0" font-size="11" font-family="JetBrains Mono, monospace">VERIFY 1 &#183; checkout tip commit == build commit</text>
+  <text x="380" y="258" text-anchor="middle" fill="#56d8c0" font-size="11" font-family="JetBrains Mono, monospace">VERIFY 2 &#183; commit stamped into image == build commit</text>
+
+  <!-- pending -> failed (unfunded) -->
+  <line x1="115" y1="142" x2="320" y2="328" stroke="#f08760" stroke-width="2" marker-end="url(#bsm-arrow-red)"/>
+  <text x="150" y="250" text-anchor="middle" fill="#f08760" font-size="10" font-family="JetBrains Mono, monospace">unfunded &#8594;</text>
+  <text x="160" y="264" text-anchor="middle" fill="#f08760" font-size="10" font-family="JetBrains Mono, monospace">fail the build</text>
+
+  <!-- building -> failed (verify fail / stale) -->
+  <line x1="380" y1="142" x2="380" y2="326" stroke="#f08760" stroke-width="2" marker-end="url(#bsm-arrow-red)"/>
+  <text x="470" y="295" text-anchor="middle" fill="#f08760" font-size="10" font-family="JetBrains Mono, monospace">mismatch &#183; stale 45m</text>
+
+  <!-- failed terminal note -->
+  <text x="380" y="416" text-anchor="middle" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">failed is terminal for this record; the next commit opens a brand-new record</text>
+</svg>

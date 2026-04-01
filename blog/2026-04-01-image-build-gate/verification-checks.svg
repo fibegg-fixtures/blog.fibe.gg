@@ -1,0 +1,69 @@
+<svg viewBox="0 0 740 460" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Two verification checks during a build: remote checkout equals the build commit, and the built image identity equals the build commit">
+  <defs>
+    <marker id="vc-arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#757d5e"/>
+    </marker>
+    <marker id="vc-green" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#5cb43a"/>
+    </marker>
+    <marker id="vc-red" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#f08760"/>
+    </marker>
+  </defs>
+
+  <text x="370" y="28" text-anchor="middle" fill="#f3f0e0" font-size="17" font-weight="700" font-family="IBM Plex Sans, sans-serif">Two checks that refuse to lie</text>
+
+  <!-- The intended commit (source of truth) -->
+  <rect x="270" y="50" width="200" height="56" rx="8" fill="#20251a" stroke="#eec854"/>
+  <text x="370" y="74" text-anchor="middle" fill="#eec854" font-size="12" font-weight="700" font-family="IBM Plex Sans, sans-serif">the build's commit</text>
+  <text x="370" y="92" text-anchor="middle" fill="#a19f89" font-size="11" font-family="JetBrains Mono, monospace">the commit we promised to build</text>
+
+  <!-- CHECK 1 -->
+  <rect x="40" y="150" width="300" height="120" rx="10" fill="#252a1e" stroke="#545c42"/>
+  <text x="190" y="176" text-anchor="middle" fill="#56d8c0" font-size="13" font-weight="700" font-family="IBM Plex Sans, sans-serif">VERIFY 1 &#183; source</text>
+  <text x="190" y="200" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">clone &amp; checkout on the Marquee,</text>
+  <text x="190" y="216" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">then read the actual HEAD</text>
+  <rect x="62" y="230" width="256" height="28" rx="5" fill="#20251a" stroke="#56d8c0"/>
+  <text x="190" y="249" text-anchor="middle" fill="#56d8c0" font-size="11" font-family="JetBrains Mono, monospace">checkout commit == build commit ?</text>
+
+  <!-- CHECK 2 -->
+  <rect x="400" y="150" width="300" height="120" rx="10" fill="#252a1e" stroke="#545c42"/>
+  <text x="550" y="176" text-anchor="middle" fill="#56d8c0" font-size="13" font-weight="700" font-family="IBM Plex Sans, sans-serif">VERIFY 2 &#183; image</text>
+  <text x="550" y="200" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">inspect the built image,</text>
+  <text x="550" y="216" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">read its commit label</text>
+  <rect x="422" y="230" width="256" height="28" rx="5" fill="#20251a" stroke="#56d8c0"/>
+  <text x="550" y="249" text-anchor="middle" fill="#56d8c0" font-size="10" font-family="JetBrains Mono, monospace">commit stamped into image == build commit ?</text>
+
+  <!-- commit feeds both -->
+  <line x1="320" y1="106" x2="200" y2="146" stroke="#757d5e" stroke-width="2" marker-end="url(#vc-arrow)"/>
+  <line x1="420" y1="106" x2="540" y2="146" stroke="#757d5e" stroke-width="2" marker-end="url(#vc-arrow)"/>
+
+  <!-- pass / fail outcomes for check 1 -->
+  <line x1="140" y1="270" x2="140" y2="330" stroke="#5cb43a" stroke-width="2" marker-end="url(#vc-green)"/>
+  <line x1="250" y1="270" x2="280" y2="330" stroke="#f08760" stroke-width="2" marker-end="url(#vc-red)"/>
+
+  <!-- pass / fail outcomes for check 2 -->
+  <line x1="500" y1="270" x2="470" y2="330" stroke="#f08760" stroke-width="2" marker-end="url(#vc-red)"/>
+  <line x1="600" y1="270" x2="600" y2="330" stroke="#5cb43a" stroke-width="2" marker-end="url(#vc-green)"/>
+
+  <!-- pass node -->
+  <rect x="70" y="334" width="140" height="46" rx="7" fill="#20251a" stroke="#5cb43a"/>
+  <text x="140" y="354" text-anchor="middle" fill="#92df62" font-size="12" font-weight="700" font-family="JetBrains Mono, monospace">proceed</text>
+  <text x="140" y="371" text-anchor="middle" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">build / mark success</text>
+
+  <!-- fail node 1 -->
+  <rect x="250" y="334" width="240" height="46" rx="7" fill="#252a1e" stroke="#f08760"/>
+  <text x="370" y="354" text-anchor="middle" fill="#f08760" font-size="11" font-weight="700" font-family="JetBrains Mono, monospace">source checkout mismatch</text>
+  <text x="370" y="371" text-anchor="middle" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">build skipped, source rejected</text>
+
+  <!-- fail node 2 -->
+  <rect x="530" y="334" width="170" height="46" rx="7" fill="#252a1e" stroke="#f08760"/>
+  <text x="615" y="354" text-anchor="middle" fill="#92df62" font-size="11" font-weight="700" font-family="JetBrains Mono, monospace">proceed</text>
+  <text x="615" y="371" text-anchor="middle" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">image identity confirmed</text>
+
+  <!-- bottom band: the invalid-image outcome -->
+  <rect x="250" y="400" width="240" height="44" rx="7" fill="#252a1e" stroke="#f08760"/>
+  <text x="370" y="420" text-anchor="middle" fill="#f08760" font-size="11" font-weight="700" font-family="JetBrains Mono, monospace">invalid image metadata</text>
+  <text x="370" y="436" text-anchor="middle" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">stamp missing / wrong &#8594; image not trusted</text>
+  <line x1="470" y1="334" x2="420" y2="398" stroke="#f08760" stroke-width="2" marker-end="url(#vc-red)"/>
+</svg>

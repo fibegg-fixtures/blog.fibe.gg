@@ -1,0 +1,17 @@
+<svg viewBox="0 0 760 96" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Grace and retention at a glance: 3 grace days, 7 retention days, 6 incident states, 1 incident per service-day">
+  <rect x="0" y="8" width="178" height="80" rx="6" fill="#20251a" stroke="#434a35"/>
+  <text x="89" y="46" text-anchor="middle" fill="#eec854" font-size="30" font-weight="700" font-family="JetBrains Mono, monospace">3</text>
+  <text x="89" y="70" text-anchor="middle" fill="#a19f89" font-size="12" font-family="IBM Plex Sans, sans-serif">grace days (default)</text>
+
+  <rect x="194" y="8" width="178" height="80" rx="6" fill="#20251a" stroke="#434a35"/>
+  <text x="283" y="46" text-anchor="middle" fill="#eec854" font-size="30" font-weight="700" font-family="JetBrains Mono, monospace">7</text>
+  <text x="283" y="70" text-anchor="middle" fill="#a19f89" font-size="12" font-family="IBM Plex Sans, sans-serif">retention days (tutorial)</text>
+
+  <rect x="388" y="8" width="178" height="80" rx="6" fill="#20251a" stroke="#434a35"/>
+  <text x="477" y="46" text-anchor="middle" fill="#92df62" font-size="30" font-weight="700" font-family="JetBrains Mono, monospace">6</text>
+  <text x="477" y="70" text-anchor="middle" fill="#a19f89" font-size="12" font-family="IBM Plex Sans, sans-serif">incident states</text>
+
+  <rect x="582" y="8" width="178" height="80" rx="6" fill="#20251a" stroke="#434a35"/>
+  <text x="671" y="46" text-anchor="middle" fill="#56d8c0" font-size="30" font-weight="700" font-family="JetBrains Mono, monospace">1</text>
+  <text x="671" y="70" text-anchor="middle" fill="#a19f89" font-size="12" font-family="IBM Plex Sans, sans-serif">incident / marquee / day</text>
+</svg>

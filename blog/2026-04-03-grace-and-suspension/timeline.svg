@@ -1,0 +1,37 @@
+<svg viewBox="0 0 760 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Timeline for a tutorial marquee from a missed payment to destruction: day 0 missed payment opens grace, 3-day grace window, day 3 suspension, 7-day retention window, day 10 scheduled destroy. Repayment anywhere before day 10 recovers everything.">
+  <text x="380" y="28" text-anchor="middle" fill="#f3f0e0" font-size="16" font-weight="700" font-family="IBM Plex Sans, sans-serif">Tutorial marquee: missed payment &#8594; scheduled destroy</text>
+
+  <!-- baseline -->
+  <line x1="60" y1="150" x2="700" y2="150" stroke="#545c42" stroke-width="2"/>
+
+  <!-- grace band -->
+  <rect x="100" y="120" width="220" height="60" rx="4" fill="#20251a" stroke="#eec854" stroke-opacity="0.5"/>
+  <text x="210" y="112" text-anchor="middle" fill="#f5da79" font-size="12" font-family="IBM Plex Sans, sans-serif">3-day grace window</text>
+  <text x="210" y="172" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">disabled, debt tracked, email sent</text>
+
+  <!-- retention band -->
+  <rect x="320" y="120" width="320" height="60" rx="4" fill="#20251a" stroke="#f08760" stroke-opacity="0.5"/>
+  <text x="480" y="112" text-anchor="middle" fill="#f08760" font-size="12" font-family="IBM Plex Sans, sans-serif">7-day retention window</text>
+  <text x="480" y="172" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">suspended, infra still intact</text>
+
+  <!-- day 0 -->
+  <circle cx="100" cy="150" r="7" fill="#eec854"/>
+  <text x="100" y="216" text-anchor="middle" fill="#f5da79" font-size="12" font-weight="700" font-family="JetBrains Mono, monospace">Day 0</text>
+  <text x="100" y="234" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">payment missed</text>
+  <text x="100" y="249" text-anchor="middle" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">incident: active</text>
+
+  <!-- day 3 -->
+  <circle cx="320" cy="150" r="7" fill="#f08760"/>
+  <text x="320" y="216" text-anchor="middle" fill="#f08760" font-size="12" font-weight="700" font-family="JetBrains Mono, monospace">Day 3</text>
+  <text x="320" y="234" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">suspended</text>
+  <text x="320" y="249" text-anchor="middle" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">destruction deadline set</text>
+
+  <!-- day 10 -->
+  <circle cx="640" cy="150" r="7" fill="#f08760"/>
+  <text x="640" y="216" text-anchor="middle" fill="#f08760" font-size="12" font-weight="700" font-family="JetBrains Mono, monospace">Day 10</text>
+  <text x="640" y="234" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">scheduled destroy</text>
+  <text x="640" y="249" text-anchor="middle" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">Terraform destroy.yml</text>
+
+  <!-- repay recovery arrow -->
+  <text x="380" y="282" text-anchor="middle" fill="#92df62" font-size="11.5" font-family="IBM Plex Sans, sans-serif">A same-currency credit at any point before Day 10 repays the debt &#8594; the marquee funds again next cycle.</text>
+</svg>

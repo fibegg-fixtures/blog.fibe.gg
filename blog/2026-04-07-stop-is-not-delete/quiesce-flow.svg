@@ -1,0 +1,56 @@
+<svg viewBox="0 0 720 392" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The marquee-unavailable quiesce flow. A failure signal is gated by three checks: is any chat still answering health, is the marquee non-operational, and are there live chats. If a chat is reachable the signal is ignored. Otherwise live chats are stopped with a reason string and the volumes are preserved. Reactivation reuses the same compose project and volumes.">
+  <defs>
+    <marker id="qarrow" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L7,3 L0,6 Z" fill="#757d5e"/>
+    </marker>
+    <marker id="qarrowgreen" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L7,3 L0,6 Z" fill="#5cb43a"/>
+    </marker>
+  </defs>
+
+  <text x="360" y="26" text-anchor="middle" fill="#f3f0e0" font-size="16" font-weight="700" font-family="IBM Plex Sans, sans-serif">Marquee-unavailable quiesce keeps the data</text>
+
+  <!-- signal -->
+  <rect x="270" y="44" width="180" height="44" rx="6" fill="#20251a" stroke="#f08760"/>
+  <text x="360" y="63" text-anchor="middle" fill="#f08760" font-size="12.5" font-weight="700" font-family="IBM Plex Sans, sans-serif">Marquee failure signal</text>
+  <text x="360" y="79" text-anchor="middle" fill="#a19f89" font-size="10.5" font-family="IBM Plex Sans, sans-serif">infra gone &#183; config drift &#183; failed probe</text>
+
+  <line x1="360" y1="88" x2="360" y2="112" stroke="#757d5e" stroke-width="1.5" marker-end="url(#qarrow)"/>
+
+  <!-- gate 1 -->
+  <rect x="226" y="114" width="268" height="48" rx="6" fill="#20251a" stroke="#eec854"/>
+  <text x="360" y="134" text-anchor="middle" fill="#eec854" font-size="12.5" font-weight="700" font-family="IBM Plex Sans, sans-serif">Any chat still answering /api/health?</text>
+  <text x="360" y="152" text-anchor="middle" fill="#a19f89" font-size="10.5" font-family="IBM Plex Sans, sans-serif">false-signal guard: reachability beats paperwork</text>
+
+  <!-- yes branch -->
+  <line x1="494" y1="138" x2="600" y2="138" stroke="#5cb43a" stroke-width="1.5" marker-end="url(#qarrowgreen)"/>
+  <text x="547" y="131" text-anchor="middle" fill="#92df62" font-size="11" font-weight="700" font-family="JetBrains Mono, monospace">YES</text>
+  <rect x="600" y="116" width="108" height="44" rx="6" fill="#20251a" stroke="#5cb43a"/>
+  <text x="654" y="135" text-anchor="middle" fill="#92df62" font-size="11.5" font-weight="700" font-family="IBM Plex Sans, sans-serif">IGNORE</text>
+  <text x="654" y="151" text-anchor="middle" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">stays active</text>
+
+  <!-- no -->
+  <line x1="360" y1="162" x2="360" y2="186" stroke="#757d5e" stroke-width="1.5" marker-end="url(#qarrow)"/>
+  <text x="378" y="178" text-anchor="middle" fill="#a19f89" font-size="11" font-family="JetBrains Mono, monospace">NO</text>
+
+  <!-- gate 2 -->
+  <rect x="226" y="188" width="268" height="44" rx="6" fill="#20251a" stroke="#545c42"/>
+  <text x="360" y="208" text-anchor="middle" fill="#c7c4ae" font-size="12" font-family="IBM Plex Sans, sans-serif">Non-operational AND live chats exist?</text>
+  <text x="360" y="224" text-anchor="middle" fill="#a19f89" font-size="10.5" font-family="IBM Plex Sans, sans-serif">host is going away with chats still on it</text>
+
+  <line x1="360" y1="232" x2="360" y2="256" stroke="#757d5e" stroke-width="1.5" marker-end="url(#qarrow)"/>
+  <text x="378" y="248" text-anchor="middle" fill="#a19f89" font-size="11" font-family="JetBrains Mono, monospace">YES</text>
+
+  <!-- action -->
+  <rect x="186" y="258" width="348" height="60" rx="6" fill="#252a1e" stroke="#79d44e"/>
+  <text x="360" y="280" text-anchor="middle" fill="#abe87f" font-size="12.5" font-weight="700" font-family="IBM Plex Sans, sans-serif">stop &#8594; docker compose down  (no -v)</text>
+  <text x="360" y="298" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">status &#8594; stopped, with a reason</text>
+  <text x="360" y="313" text-anchor="middle" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">"Marquee became unavailable" + status details</text>
+
+  <line x1="360" y1="318" x2="360" y2="342" stroke="#5cb43a" stroke-width="1.5" marker-end="url(#qarrowgreen)"/>
+
+  <!-- outcome -->
+  <rect x="156" y="344" width="408" height="40" rx="6" fill="#20251a" stroke="#5cb43a"/>
+  <text x="360" y="362" text-anchor="middle" fill="#92df62" font-size="12.5" font-weight="700" font-family="IBM Plex Sans, sans-serif">3 volumes preserved &#183; row preserved</text>
+  <text x="360" y="378" text-anchor="middle" fill="#a19f89" font-size="10.5" font-family="IBM Plex Sans, sans-serif">Reactivation reuses the same compose project + volumes.</text>
+</svg>

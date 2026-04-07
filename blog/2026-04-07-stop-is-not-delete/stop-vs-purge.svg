@@ -1,0 +1,45 @@
+<svg viewBox="0 0 720 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Stop versus purge: stop tears down containers but keeps the chat row and all three volumes; purge runs docker compose down with -v and removes the volumes while still keeping the chat row at status stopped">
+  <text x="360" y="28" text-anchor="middle" fill="#f3f0e0" font-size="17" font-weight="700" font-family="IBM Plex Sans, sans-serif">Stop vs. Purge</text>
+
+  <!-- STOP panel -->
+  <rect x="16" y="48" width="332" height="292" rx="8" fill="#20251a" stroke="#5cb43a"/>
+  <text x="182" y="76" text-anchor="middle" fill="#92df62" font-size="15" font-weight="700" font-family="IBM Plex Sans, sans-serif">Stop</text>
+  <text x="182" y="96" text-anchor="middle" fill="#a19f89" font-size="11.5" font-family="JetBrains Mono, monospace">docker compose down  (no -v)</text>
+
+  <rect x="36" y="112" width="292" height="40" rx="5" fill="#252a1e" stroke="#434a35"/>
+  <text x="50" y="137" fill="#f08760" font-size="12.5" font-family="IBM Plex Sans, sans-serif">Containers</text>
+  <text x="314" y="137" text-anchor="end" fill="#f08760" font-size="12.5" font-weight="700" font-family="JetBrains Mono, monospace">REMOVED</text>
+
+  <rect x="36" y="158" width="292" height="40" rx="5" fill="#252a1e" stroke="#434a35"/>
+  <text x="50" y="183" fill="#abe87f" font-size="12.5" font-family="IBM Plex Sans, sans-serif">3 data volumes</text>
+  <text x="314" y="183" text-anchor="end" fill="#92df62" font-size="12.5" font-weight="700" font-family="JetBrains Mono, monospace">KEPT</text>
+
+  <rect x="36" y="204" width="292" height="40" rx="5" fill="#252a1e" stroke="#434a35"/>
+  <text x="50" y="229" fill="#abe87f" font-size="12.5" font-family="IBM Plex Sans, sans-serif">Chat DB row</text>
+  <text x="314" y="229" text-anchor="end" fill="#92df62" font-size="12.5" font-weight="700" font-family="JetBrains Mono, monospace">KEPT</text>
+
+  <rect x="36" y="262" width="292" height="58" rx="5" fill="#1a1f15" stroke="#434a35"/>
+  <text x="182" y="285" text-anchor="middle" fill="#c7c4ae" font-size="12" font-family="IBM Plex Sans, sans-serif">status &#8594; stopped</text>
+  <text x="182" y="306" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">Restart reuses the same volumes.</text>
+
+  <!-- PURGE panel -->
+  <rect x="372" y="48" width="332" height="292" rx="8" fill="#20251a" stroke="#f08760"/>
+  <text x="538" y="76" text-anchor="middle" fill="#f08760" font-size="15" font-weight="700" font-family="IBM Plex Sans, sans-serif">Purge</text>
+  <text x="538" y="96" text-anchor="middle" fill="#a19f89" font-size="11.5" font-family="JetBrains Mono, monospace">docker compose down -v  + rm</text>
+
+  <rect x="392" y="112" width="292" height="40" rx="5" fill="#252a1e" stroke="#434a35"/>
+  <text x="406" y="137" fill="#f08760" font-size="12.5" font-family="IBM Plex Sans, sans-serif">Containers</text>
+  <text x="670" y="137" text-anchor="end" fill="#f08760" font-size="12.5" font-weight="700" font-family="JetBrains Mono, monospace">REMOVED</text>
+
+  <rect x="392" y="158" width="292" height="40" rx="5" fill="#2a1e1a" stroke="#99761f"/>
+  <text x="406" y="183" fill="#f08760" font-size="12.5" font-family="IBM Plex Sans, sans-serif">3 data volumes</text>
+  <text x="670" y="183" text-anchor="end" fill="#f08760" font-size="12.5" font-weight="700" font-family="JetBrains Mono, monospace">DELETED</text>
+
+  <rect x="392" y="204" width="292" height="40" rx="5" fill="#252a1e" stroke="#434a35"/>
+  <text x="406" y="229" fill="#abe87f" font-size="12.5" font-family="IBM Plex Sans, sans-serif">Chat DB row</text>
+  <text x="670" y="229" text-anchor="end" fill="#92df62" font-size="12.5" font-weight="700" font-family="JetBrains Mono, monospace">KEPT</text>
+
+  <rect x="392" y="262" width="292" height="58" rx="5" fill="#1a1f15" stroke="#434a35"/>
+  <text x="538" y="285" text-anchor="middle" fill="#c7c4ae" font-size="12" font-family="IBM Plex Sans, sans-serif">status &#8594; stopped  (no "purged" status)</text>
+  <text x="538" y="306" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">Restart rebuilds from empty.</text>
+</svg>

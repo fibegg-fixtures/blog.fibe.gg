@@ -1,0 +1,19 @@
+<svg viewBox="0 0 720 96" role="img" aria-label="Billing gate at a glance" xmlns="http://www.w3.org/2000/svg" font-family="JetBrains Mono, monospace">
+  <defs>
+    <linearGradient id="g1" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#252a1e"/><stop offset="1" stop-color="#20251a"/>
+    </linearGradient>
+  </defs>
+  <rect x="0"   y="8" width="172" height="80" rx="6" fill="url(#g1)" stroke="#434a35"/>
+  <rect x="183" y="8" width="172" height="80" rx="6" fill="url(#g1)" stroke="#434a35"/>
+  <rect x="366" y="8" width="172" height="80" rx="6" fill="url(#g1)" stroke="#434a35"/>
+  <rect x="549" y="8" width="171" height="80" rx="6" fill="url(#g1)" stroke="#434a35"/>
+  <text x="86"  y="46" text-anchor="middle" fill="#92df62" font-size="30" font-weight="700">1</text>
+  <text x="86"  y="70" text-anchor="middle" fill="#a19f89" font-size="12">entitlement check</text>
+  <text x="269" y="46" text-anchor="middle" fill="#eec854" font-size="30" font-weight="700">~103</text>
+  <text x="269" y="70" text-anchor="middle" fill="#a19f89" font-size="12">guarded call sites</text>
+  <text x="452" y="46" text-anchor="middle" fill="#56d8c0" font-size="30" font-weight="700">402</text>
+  <text x="452" y="70" text-anchor="middle" fill="#a19f89" font-size="12">HTTP status</text>
+  <text x="634" y="46" text-anchor="middle" fill="#f08760" font-size="30" font-weight="700">0</text>
+  <text x="634" y="70" text-anchor="middle" fill="#a19f89" font-size="12">SSH calls when broke</text>
+</svg>

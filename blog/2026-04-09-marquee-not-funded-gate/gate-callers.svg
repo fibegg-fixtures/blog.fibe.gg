@@ -1,0 +1,30 @@
+<svg viewBox="0 0 720 360" role="img" aria-label="How callers handle a not-funded 402" xmlns="http://www.w3.org/2000/svg" font-family="IBM Plex Sans, sans-serif">
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0L10 5L0 10z" fill="#757d5e"/>
+    </marker>
+  </defs>
+  <rect x="270" y="16" width="180" height="56" rx="8" fill="#20251a" stroke="#5cb43a" stroke-width="1.5"/>
+  <text x="360" y="40" text-anchor="middle" fill="#f3f0e0" font-size="14" font-weight="600">Billing entitlement gate</text>
+  <text x="360" y="58" text-anchor="middle" fill="#92df62" font-size="12" font-family="JetBrains Mono, monospace">not funded &#8594; 402</text>
+  <g font-size="12.5">
+    <line x1="330" y1="72" x2="110" y2="148" stroke="#757d5e" stroke-width="1.4" marker-end="url(#ar)"/>
+    <rect x="16" y="150" width="200" height="84" rx="8" fill="#252a1e" stroke="#434a35"/>
+    <text x="116" y="176" text-anchor="middle" fill="#abe87f" font-weight="600">Controller / API</text>
+    <text x="116" y="198" text-anchor="middle" fill="#c7c4ae">renders the 402</text>
+    <text x="116" y="216" text-anchor="middle" fill="#a19f89" font-size="11">client retries after funding</text>
+    <line x1="343" y1="72" x2="320" y2="148" stroke="#757d5e" stroke-width="1.4" marker-end="url(#ar)"/>
+    <rect x="246" y="150" width="200" height="84" rx="8" fill="#252a1e" stroke="#434a35"/>
+    <text x="346" y="176" text-anchor="middle" fill="#abe87f" font-weight="600">Background job</text>
+    <text x="346" y="198" text-anchor="middle" fill="#c7c4ae">fails with a billing reason</text>
+    <text x="346" y="216" text-anchor="middle" fill="#a19f89" font-size="11">original code preserved</text>
+    <line x1="377" y1="72" x2="560" y2="148" stroke="#757d5e" stroke-width="1.4" marker-end="url(#ar)"/>
+    <rect x="476" y="150" width="228" height="84" rx="8" fill="#252a1e" stroke="#434a35"/>
+    <text x="590" y="176" text-anchor="middle" fill="#abe87f" font-weight="600">Real-time channel</text>
+    <text x="590" y="198" text-anchor="middle" fill="#c7c4ae">transmits a status payload</text>
+    <text x="590" y="216" text-anchor="middle" fill="#a19f89" font-size="11">no crash, terminal rejects sub</text>
+  </g>
+  <rect x="120" y="276" width="480" height="64" rx="8" fill="#20251a" stroke="#99761f" stroke-dasharray="4 3"/>
+  <text x="360" y="302" text-anchor="middle" fill="#f5da79" font-size="13" font-weight="600">Invariant: unfunded shutdown is local-only</text>
+  <text x="360" y="324" text-anchor="middle" fill="#c7c4ae" font-size="12">no SSH &#183; no Docker &#183; no routing changes &#8212; billing reads stay open</text>
+</svg>

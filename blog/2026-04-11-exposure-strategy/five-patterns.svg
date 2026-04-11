@@ -1,0 +1,48 @@
+<svg viewBox="0 0 740 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The five exposure patterns at a glance: public external, internal admin, root front door, path-shared, and none">
+  <text x="370" y="24" text-anchor="middle" fill="#f3f0e0" font-size="15" font-weight="700" font-family="IBM Plex Sans, sans-serif">Five exposure patterns at a glance</text>
+
+  <!-- Public -->
+  <rect x="12" y="40" width="138" height="144" rx="8" fill="#20251a" stroke="#5cb43a"/>
+  <text x="81" y="64" text-anchor="middle" fill="#92df62" font-size="13" font-weight="700" font-family="IBM Plex Sans, sans-serif">Public</text>
+  <text x="81" y="90" text-anchor="middle" fill="#79d44e" font-size="10" font-family="JetBrains Mono, monospace">port: N</text>
+  <text x="81" y="106" text-anchor="middle" fill="#79d44e" font-size="10" font-family="JetBrains Mono, monospace">visibility:</text>
+  <text x="81" y="120" text-anchor="middle" fill="#79d44e" font-size="10" font-family="JetBrains Mono, monospace">external</text>
+  <text x="81" y="148" text-anchor="middle" fill="#c7c4ae" font-size="10" font-family="IBM Plex Sans, sans-serif">the app users</text>
+  <text x="81" y="162" text-anchor="middle" fill="#c7c4ae" font-size="10" font-family="IBM Plex Sans, sans-serif">actually visit</text>
+
+  <!-- Internal -->
+  <rect x="158" y="40" width="138" height="144" rx="8" fill="#20251a" stroke="#e2b33a"/>
+  <text x="227" y="64" text-anchor="middle" fill="#eec854" font-size="13" font-weight="700" font-family="IBM Plex Sans, sans-serif">Internal</text>
+  <text x="227" y="90" text-anchor="middle" fill="#f5da79" font-size="10" font-family="JetBrains Mono, monospace">port: N</text>
+  <text x="227" y="106" text-anchor="middle" fill="#f5da79" font-size="10" font-family="JetBrains Mono, monospace">visibility:</text>
+  <text x="227" y="120" text-anchor="middle" fill="#f5da79" font-size="10" font-family="JetBrains Mono, monospace">internal</text>
+  <text x="227" y="148" text-anchor="middle" fill="#c7c4ae" font-size="10" font-family="IBM Plex Sans, sans-serif">browser URL +</text>
+  <text x="227" y="162" text-anchor="middle" fill="#c7c4ae" font-size="10" font-family="IBM Plex Sans, sans-serif">Basic Auth</text>
+
+  <!-- Root -->
+  <rect x="304" y="40" width="138" height="144" rx="8" fill="#20251a" stroke="#56d8c0"/>
+  <text x="373" y="64" text-anchor="middle" fill="#56d8c0" font-size="13" font-weight="700" font-family="IBM Plex Sans, sans-serif">Root</text>
+  <text x="373" y="90" text-anchor="middle" fill="#56d8c0" font-size="10" font-family="JetBrains Mono, monospace">subdomain:</text>
+  <text x="373" y="104" text-anchor="middle" fill="#56d8c0" font-size="10" font-family="JetBrains Mono, monospace">"@"</text>
+  <text x="373" y="130" text-anchor="middle" fill="#c7c4ae" font-size="10" font-family="IBM Plex Sans, sans-serif">front door at</text>
+  <text x="373" y="144" text-anchor="middle" fill="#c7c4ae" font-size="10" font-family="IBM Plex Sans, sans-serif">the bare root</text>
+  <text x="373" y="166" text-anchor="middle" fill="#a19f89" font-size="9" font-family="IBM Plex Sans, sans-serif">at most once</text>
+
+  <!-- Path-shared -->
+  <rect x="450" y="40" width="138" height="144" rx="8" fill="#20251a" stroke="#5cb43a"/>
+  <text x="519" y="64" text-anchor="middle" fill="#92df62" font-size="13" font-weight="700" font-family="IBM Plex Sans, sans-serif">Path-shared</text>
+  <text x="519" y="90" text-anchor="middle" fill="#79d44e" font-size="10" font-family="JetBrains Mono, monospace">same</text>
+  <text x="519" y="104" text-anchor="middle" fill="#79d44e" font-size="10" font-family="JetBrains Mono, monospace">subdomain +</text>
+  <text x="519" y="118" text-anchor="middle" fill="#79d44e" font-size="10" font-family="JetBrains Mono, monospace">path_rule</text>
+  <text x="519" y="146" text-anchor="middle" fill="#c7c4ae" font-size="10" font-family="IBM Plex Sans, sans-serif">two services,</text>
+  <text x="519" y="160" text-anchor="middle" fill="#c7c4ae" font-size="10" font-family="IBM Plex Sans, sans-serif">one hostname</text>
+
+  <!-- None -->
+  <rect x="596" y="40" width="138" height="144" rx="8" fill="#20251a" stroke="#545c42"/>
+  <text x="665" y="64" text-anchor="middle" fill="#a19f89" font-size="13" font-weight="700" font-family="IBM Plex Sans, sans-serif">None</text>
+  <text x="665" y="92" text-anchor="middle" fill="#c7c4ae" font-size="10" font-family="JetBrains Mono, monospace">(no port</text>
+  <text x="665" y="106" text-anchor="middle" fill="#c7c4ae" font-size="10" font-family="JetBrains Mono, monospace">label)</text>
+  <text x="665" y="134" text-anchor="middle" fill="#c7c4ae" font-size="10" font-family="IBM Plex Sans, sans-serif">db, cache,</text>
+  <text x="665" y="148" text-anchor="middle" fill="#c7c4ae" font-size="10" font-family="IBM Plex Sans, sans-serif">queue, worker</text>
+  <text x="665" y="168" text-anchor="middle" fill="#a19f89" font-size="9" font-family="IBM Plex Sans, sans-serif">network-only</text>
+</svg>

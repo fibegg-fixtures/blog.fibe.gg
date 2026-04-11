@@ -1,0 +1,47 @@
+<svg viewBox="0 0 720 380" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Before and after: raw Compose host ports give no TLS and no public URL, while a fibe.gg/port label gets wildcard TLS and a Marquee subdomain URL through Traefik">
+  <defs>
+    <marker id="pb-arrow" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto">
+      <path d="M0,0 L7,3 L0,6 Z" fill="#757d5e"/>
+    </marker>
+  </defs>
+
+  <!-- BEFORE panel -->
+  <rect x="16" y="16" width="332" height="348" rx="10" fill="#20251a" stroke="#f08760"/>
+  <text x="182" y="44" text-anchor="middle" fill="#f08760" font-size="15" font-weight="700" font-family="IBM Plex Sans, sans-serif">BEFORE &#183; raw Compose ports</text>
+
+  <rect x="40" y="60" width="284" height="70" rx="6" fill="#252a1e" stroke="#545c42"/>
+  <text x="56" y="82" fill="#c7c4ae" font-size="11" font-family="JetBrains Mono, monospace">services:</text>
+  <text x="56" y="99" fill="#c7c4ae" font-size="11" font-family="JetBrains Mono, monospace">  web:</text>
+  <text x="56" y="116" fill="#c7c4ae" font-size="11" font-family="JetBrains Mono, monospace">    ports: ["3000:3000"]</text>
+
+  <line x1="182" y1="130" x2="182" y2="158" stroke="#757d5e" stroke-width="1.5" marker-end="url(#pb-arrow)"/>
+  <text x="290" y="150" text-anchor="middle" fill="#f08760" font-size="10" font-family="IBM Plex Sans, sans-serif">Fibe strips it</text>
+
+  <rect x="40" y="160" width="284" height="184" rx="6" fill="#252a1e" stroke="#545c42"/>
+  <text x="182" y="186" text-anchor="middle" fill="#f3f0e0" font-size="12" font-weight="700" font-family="IBM Plex Sans, sans-serif">what you get</text>
+  <text x="60" y="214" fill="#f08760" font-size="12" font-family="JetBrains Mono, monospace">&#10007;  no public URL</text>
+  <text x="60" y="242" fill="#f08760" font-size="12" font-family="JetBrains Mono, monospace">&#10007;  no TLS</text>
+  <text x="60" y="270" fill="#f08760" font-size="12" font-family="JetBrains Mono, monospace">&#10007;  bypasses Traefik</text>
+  <text x="60" y="298" fill="#f08760" font-size="12" font-family="JetBrains Mono, monospace">&#10007;  fights zerodowntime</text>
+  <text x="60" y="326" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">local-dev convenience only</text>
+
+  <!-- AFTER panel -->
+  <rect x="372" y="16" width="332" height="348" rx="10" fill="#20251a" stroke="#5cb43a"/>
+  <text x="538" y="44" text-anchor="middle" fill="#92df62" font-size="15" font-weight="700" font-family="IBM Plex Sans, sans-serif">AFTER &#183; fibe.gg/port label</text>
+
+  <rect x="396" y="60" width="284" height="88" rx="6" fill="#252a1e" stroke="#545c42"/>
+  <text x="412" y="82" fill="#c7c4ae" font-size="11" font-family="JetBrains Mono, monospace">    labels:</text>
+  <text x="412" y="99" fill="#abe87f" font-size="11" font-family="JetBrains Mono, monospace">      fibe.gg/port: 3000</text>
+  <text x="412" y="116" fill="#abe87f" font-size="11" font-family="JetBrains Mono, monospace">      fibe.gg/visibility:</text>
+  <text x="412" y="133" fill="#abe87f" font-size="11" font-family="JetBrains Mono, monospace">        external</text>
+
+  <line x1="538" y1="148" x2="538" y2="176" stroke="#757d5e" stroke-width="1.5" marker-end="url(#pb-arrow)"/>
+  <text x="630" y="168" text-anchor="middle" fill="#92df62" font-size="10" font-family="IBM Plex Sans, sans-serif">Traefik routes it</text>
+
+  <rect x="396" y="178" width="284" height="166" rx="6" fill="#252a1e" stroke="#545c42"/>
+  <text x="538" y="204" text-anchor="middle" fill="#f3f0e0" font-size="12" font-weight="700" font-family="IBM Plex Sans, sans-serif">what you get</text>
+  <text x="416" y="232" fill="#92df62" font-size="12" font-family="JetBrains Mono, monospace">&#10003;  https://web.&lt;root&gt;</text>
+  <text x="416" y="260" fill="#92df62" font-size="12" font-family="JetBrains Mono, monospace">&#10003;  wildcard ACME TLS</text>
+  <text x="416" y="288" fill="#92df62" font-size="12" font-family="JetBrains Mono, monospace">&#10003;  host ports auto-managed</text>
+  <text x="416" y="316" fill="#92df62" font-size="12" font-family="JetBrains Mono, monospace">&#10003;  zerodowntime compatible</text>
+</svg>

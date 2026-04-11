@@ -1,0 +1,85 @@
+<svg viewBox="0 0 760 470" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Decision tree for service exposure: reachable or not, then external public, internal admin, root, or path-shared">
+  <defs>
+    <marker id="dt-arrow" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto">
+      <path d="M0,0 L7,3 L0,6 Z" fill="#757d5e"/>
+    </marker>
+  </defs>
+
+  <text x="380" y="26" text-anchor="middle" fill="#f3f0e0" font-size="16" font-weight="700" font-family="IBM Plex Sans, sans-serif">Which exposure does this service get?</text>
+
+  <!-- Root question -->
+  <rect x="266" y="44" width="228" height="48" rx="8" fill="#252a1e" stroke="#545c42"/>
+  <text x="380" y="66" text-anchor="middle" fill="#f3f0e0" font-size="13" font-family="IBM Plex Sans, sans-serif">Should it be reachable</text>
+  <text x="380" y="83" text-anchor="middle" fill="#f3f0e0" font-size="13" font-family="IBM Plex Sans, sans-serif">from a browser at all?</text>
+
+  <!-- No branch -->
+  <line x1="266" y1="68" x2="150" y2="68" stroke="#757d5e" stroke-width="1.5" marker-end="url(#dt-arrow)"/>
+  <text x="208" y="60" text-anchor="middle" fill="#a19f89" font-size="11" font-family="JetBrains Mono, monospace">no</text>
+  <rect x="20" y="48" width="124" height="84" rx="8" fill="#20251a" stroke="#434a35"/>
+  <text x="82" y="74" text-anchor="middle" fill="#a19f89" font-size="12" font-weight="700" font-family="IBM Plex Sans, sans-serif">None</text>
+  <text x="82" y="94" text-anchor="middle" fill="#c7c4ae" font-size="10" font-family="IBM Plex Sans, sans-serif">db, cache, queue,</text>
+  <text x="82" y="108" text-anchor="middle" fill="#c7c4ae" font-size="10" font-family="IBM Plex Sans, sans-serif">worker, builder</text>
+  <text x="82" y="124" text-anchor="middle" fill="#79d44e" font-size="10" font-family="JetBrains Mono, monospace">omit fibe.gg/port</text>
+
+  <!-- Yes branch -->
+  <line x1="380" y1="92" x2="380" y2="122" stroke="#757d5e" stroke-width="1.5" marker-end="url(#dt-arrow)"/>
+  <text x="396" y="112" text-anchor="middle" fill="#a19f89" font-size="11" font-family="JetBrains Mono, monospace">yes</text>
+
+  <!-- Visibility question -->
+  <rect x="266" y="124" width="228" height="48" rx="8" fill="#252a1e" stroke="#545c42"/>
+  <text x="380" y="146" text-anchor="middle" fill="#f3f0e0" font-size="13" font-family="IBM Plex Sans, sans-serif">Public, or staff-only?</text>
+  <text x="380" y="163" text-anchor="middle" fill="#a19f89" font-size="11" font-family="JetBrains Mono, monospace">fibe.gg/port + fibe.gg/visibility</text>
+
+  <!-- Internal branch -->
+  <line x1="494" y1="148" x2="606" y2="148" stroke="#757d5e" stroke-width="1.5" marker-end="url(#dt-arrow)"/>
+  <text x="552" y="140" text-anchor="middle" fill="#a19f89" font-size="11" font-family="JetBrains Mono, monospace">staff</text>
+  <rect x="616" y="124" width="128" height="80" rx="8" fill="#20251a" stroke="#e2b33a"/>
+  <text x="680" y="150" text-anchor="middle" fill="#eec854" font-size="12" font-weight="700" font-family="IBM Plex Sans, sans-serif">Internal</text>
+  <text x="680" y="170" text-anchor="middle" fill="#c7c4ae" font-size="10" font-family="IBM Plex Sans, sans-serif">admin / metrics</text>
+  <text x="680" y="184" text-anchor="middle" fill="#56d8c0" font-size="10" font-family="JetBrains Mono, monospace">visibility:</text>
+  <text x="680" y="197" text-anchor="middle" fill="#56d8c0" font-size="10" font-family="JetBrains Mono, monospace">internal</text>
+
+  <!-- Public branch -->
+  <line x1="380" y1="172" x2="380" y2="206" stroke="#757d5e" stroke-width="1.5" marker-end="url(#dt-arrow)"/>
+  <text x="402" y="194" text-anchor="middle" fill="#a19f89" font-size="11" font-family="JetBrains Mono, monospace">public</text>
+
+  <!-- Subdomain question -->
+  <rect x="232" y="208" width="296" height="48" rx="8" fill="#252a1e" stroke="#545c42"/>
+  <text x="380" y="230" text-anchor="middle" fill="#f3f0e0" font-size="13" font-family="IBM Plex Sans, sans-serif">How should the hostname work?</text>
+  <text x="380" y="247" text-anchor="middle" fill="#a19f89" font-size="11" font-family="JetBrains Mono, monospace">fibe.gg/subdomain (+ path_rule?)</text>
+
+  <!-- four outcome boxes -->
+  <line x1="380" y1="256" x2="380" y2="290" stroke="#757d5e" stroke-width="1.5"/>
+  <line x1="110" y1="290" x2="650" y2="290" stroke="#757d5e" stroke-width="1.5"/>
+  <line x1="110" y1="290" x2="110" y2="318" stroke="#757d5e" stroke-width="1.5" marker-end="url(#dt-arrow)"/>
+  <line x1="290" y1="290" x2="290" y2="318" stroke="#757d5e" stroke-width="1.5" marker-end="url(#dt-arrow)"/>
+  <line x1="470" y1="290" x2="470" y2="318" stroke="#757d5e" stroke-width="1.5" marker-end="url(#dt-arrow)"/>
+  <line x1="650" y1="290" x2="650" y2="318" stroke="#757d5e" stroke-width="1.5" marker-end="url(#dt-arrow)"/>
+
+  <rect x="30" y="320" width="160" height="120" rx="8" fill="#20251a" stroke="#5cb43a"/>
+  <text x="110" y="344" text-anchor="middle" fill="#92df62" font-size="12" font-weight="700" font-family="IBM Plex Sans, sans-serif">Default</text>
+  <text x="110" y="366" text-anchor="middle" fill="#c7c4ae" font-size="10" font-family="IBM Plex Sans, sans-serif">service name</text>
+  <text x="110" y="380" text-anchor="middle" fill="#c7c4ae" font-size="10" font-family="IBM Plex Sans, sans-serif">becomes subdomain</text>
+  <text x="110" y="404" text-anchor="middle" fill="#79d44e" font-size="10" font-family="JetBrains Mono, monospace">(omit subdomain)</text>
+  <text x="110" y="424" text-anchor="middle" fill="#a19f89" font-size="10" font-family="JetBrains Mono, monospace">web.&lt;root&gt;</text>
+
+  <rect x="210" y="320" width="160" height="120" rx="8" fill="#20251a" stroke="#5cb43a"/>
+  <text x="290" y="344" text-anchor="middle" fill="#92df62" font-size="12" font-weight="700" font-family="IBM Plex Sans, sans-serif">Named</text>
+  <text x="290" y="366" text-anchor="middle" fill="#c7c4ae" font-size="10" font-family="IBM Plex Sans, sans-serif">pick a subdomain</text>
+  <text x="290" y="390" text-anchor="middle" fill="#79d44e" font-size="10" font-family="JetBrains Mono, monospace">subdomain: api</text>
+  <text x="290" y="424" text-anchor="middle" fill="#a19f89" font-size="10" font-family="JetBrains Mono, monospace">api.&lt;root&gt;</text>
+
+  <rect x="390" y="320" width="160" height="120" rx="8" fill="#20251a" stroke="#56d8c0"/>
+  <text x="470" y="344" text-anchor="middle" fill="#56d8c0" font-size="12" font-weight="700" font-family="IBM Plex Sans, sans-serif">Root</text>
+  <text x="470" y="366" text-anchor="middle" fill="#c7c4ae" font-size="10" font-family="IBM Plex Sans, sans-serif">the front door</text>
+  <text x="470" y="380" text-anchor="middle" fill="#c7c4ae" font-size="10" font-family="IBM Plex Sans, sans-serif">(once per Marquee)</text>
+  <text x="470" y="404" text-anchor="middle" fill="#79d44e" font-size="10" font-family="JetBrains Mono, monospace">subdomain: "@"</text>
+  <text x="470" y="424" text-anchor="middle" fill="#a19f89" font-size="10" font-family="JetBrains Mono, monospace">&lt;root&gt;</text>
+
+  <rect x="570" y="320" width="160" height="120" rx="8" fill="#20251a" stroke="#5cb43a"/>
+  <text x="650" y="344" text-anchor="middle" fill="#92df62" font-size="12" font-weight="700" font-family="IBM Plex Sans, sans-serif">Path-shared</text>
+  <text x="650" y="366" text-anchor="middle" fill="#c7c4ae" font-size="10" font-family="IBM Plex Sans, sans-serif">same host, split</text>
+  <text x="650" y="380" text-anchor="middle" fill="#c7c4ae" font-size="10" font-family="IBM Plex Sans, sans-serif">on URL path</text>
+  <text x="650" y="404" text-anchor="middle" fill="#79d44e" font-size="10" font-family="JetBrains Mono, monospace">same subdomain</text>
+  <text x="650" y="424" text-anchor="middle" fill="#79d44e" font-size="10" font-family="JetBrains Mono, monospace">+ path_rule</text>
+</svg>

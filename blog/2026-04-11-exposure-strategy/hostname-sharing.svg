@@ -1,0 +1,44 @@
+<svg viewBox="0 0 720 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="One hostname shared across services by path rule: Traefik routes /cable and /health to the websocket service and everything else to the web service">
+  <defs>
+    <marker id="hs-arrow" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto">
+      <path d="M0,0 L7,3 L0,6 Z" fill="#757d5e"/>
+    </marker>
+  </defs>
+
+  <text x="360" y="28" text-anchor="middle" fill="#f3f0e0" font-size="16" font-weight="700" font-family="IBM Plex Sans, sans-serif">One host, two services, split on path</text>
+
+  <!-- host bar -->
+  <rect x="200" y="48" width="320" height="44" rx="8" fill="#252a1e" stroke="#56d8c0"/>
+  <text x="360" y="68" text-anchor="middle" fill="#56d8c0" font-size="13" font-weight="700" font-family="JetBrains Mono, monospace">app.next.fibe.live</text>
+  <text x="360" y="85" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">single wildcard-TLS hostname</text>
+
+  <!-- traefik -->
+  <line x1="360" y1="92" x2="360" y2="118" stroke="#757d5e" stroke-width="1.5" marker-end="url(#hs-arrow)"/>
+  <rect x="270" y="120" width="180" height="44" rx="8" fill="#20251a" stroke="#eec854"/>
+  <text x="360" y="141" text-anchor="middle" fill="#eec854" font-size="13" font-weight="700" font-family="IBM Plex Sans, sans-serif">Traefik</text>
+  <text x="360" y="157" text-anchor="middle" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">matches Host, then path_rule</text>
+
+  <!-- two paths -->
+  <line x1="360" y1="164" x2="200" y2="210" stroke="#757d5e" stroke-width="1.5" marker-end="url(#hs-arrow)"/>
+  <line x1="360" y1="164" x2="520" y2="210" stroke="#757d5e" stroke-width="1.5" marker-end="url(#hs-arrow)"/>
+
+  <text x="232" y="192" text-anchor="middle" fill="#5cb43a" font-size="11" font-family="JetBrains Mono, monospace">/cable, /health</text>
+  <text x="500" y="192" text-anchor="middle" fill="#92df62" font-size="11" font-family="JetBrains Mono, monospace">everything else</text>
+
+  <!-- ws service -->
+  <rect x="70" y="214" width="240" height="118" rx="8" fill="#20251a" stroke="#5cb43a"/>
+  <text x="190" y="238" text-anchor="middle" fill="#92df62" font-size="13" font-weight="700" font-family="JetBrains Mono, monospace">ws</text>
+  <text x="190" y="259" text-anchor="middle" fill="#c7c4ae" font-size="10" font-family="JetBrains Mono, monospace">fibe.gg/port: 8081</text>
+  <text x="190" y="277" text-anchor="middle" fill="#c7c4ae" font-size="10" font-family="JetBrains Mono, monospace">subdomain: app</text>
+  <text x="190" y="297" text-anchor="middle" fill="#abe87f" font-size="10" font-family="JetBrains Mono, monospace">path_rule: Path(`/cable`)</text>
+  <text x="190" y="313" text-anchor="middle" fill="#abe87f" font-size="10" font-family="JetBrains Mono, monospace">|| Path(`/health`)</text>
+  <text x="190" y="328" text-anchor="middle" fill="#a19f89" font-size="9" font-family="IBM Plex Sans, sans-serif">the specific route</text>
+
+  <!-- web service -->
+  <rect x="410" y="214" width="240" height="118" rx="8" fill="#20251a" stroke="#5cb43a"/>
+  <text x="530" y="238" text-anchor="middle" fill="#92df62" font-size="13" font-weight="700" font-family="JetBrains Mono, monospace">web</text>
+  <text x="530" y="259" text-anchor="middle" fill="#c7c4ae" font-size="10" font-family="JetBrains Mono, monospace">fibe.gg/port: 3000</text>
+  <text x="530" y="277" text-anchor="middle" fill="#c7c4ae" font-size="10" font-family="JetBrains Mono, monospace">subdomain: app</text>
+  <text x="530" y="297" text-anchor="middle" fill="#a19f89" font-size="10" font-family="JetBrains Mono, monospace">(no path_rule)</text>
+  <text x="530" y="316" text-anchor="middle" fill="#a19f89" font-size="9" font-family="IBM Plex Sans, sans-serif">the catch-all route</text>
+</svg>

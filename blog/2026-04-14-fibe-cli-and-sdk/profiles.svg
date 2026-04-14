@@ -1,0 +1,49 @@
+<svg viewBox="0 0 720 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Profiles map: one machine holds named profiles, each bundling an API key and a domain, and resolution order picks which one wins">
+  <defs>
+    <marker id="prof-arrow" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 Z" fill="#56d8c0"/>
+    </marker>
+  </defs>
+  <text x="360" y="26" text-anchor="middle" fill="#f3f0e0" font-size="15" font-weight="700" font-family="IBM Plex Sans, sans-serif">One machine, many environments</text>
+
+  <!-- machine box -->
+  <rect x="20" y="44" width="300" height="206" rx="8" fill="#20251a" stroke="#545c42"/>
+  <text x="170" y="66" text-anchor="middle" fill="#a19f89" font-size="11" font-family="JetBrains Mono, monospace">~/.config/fibe/</text>
+
+  <!-- profile default -->
+  <rect x="38" y="80" width="264" height="48" rx="6" fill="#252a1e" stroke="#79d44e"/>
+  <text x="54" y="100" fill="#abe87f" font-size="12" font-weight="700" font-family="JetBrains Mono, monospace">default</text>
+  <text x="54" y="118" fill="#c7c4ae" font-size="10.5" font-family="JetBrains Mono, monospace">key fibe_live_***  &#183;  https://fibe.gg</text>
+  <text x="284" y="100" text-anchor="end" fill="#92df62" font-size="10" font-family="IBM Plex Sans, sans-serif">active</text>
+
+  <!-- profile staging -->
+  <rect x="38" y="136" width="264" height="48" rx="6" fill="#252a1e" stroke="#434a35"/>
+  <text x="54" y="156" fill="#eec854" font-size="12" font-weight="700" font-family="JetBrains Mono, monospace">staging</text>
+  <text x="54" y="174" fill="#a19f89" font-size="10.5" font-family="JetBrains Mono, monospace">key fibe_live_***  &#183;  fibe.staging.example.com</text>
+
+  <!-- profile ci -->
+  <rect x="38" y="192" width="264" height="48" rx="6" fill="#252a1e" stroke="#434a35"/>
+  <text x="54" y="212" fill="#56d8c0" font-size="12" font-weight="700" font-family="JetBrains Mono, monospace">ci-readonly</text>
+  <text x="54" y="230" fill="#a19f89" font-size="10.5" font-family="JetBrains Mono, monospace">scoped key  &#183;  https://fibe.gg</text>
+
+  <!-- resolution order panel -->
+  <rect x="356" y="44" width="344" height="206" rx="8" fill="#20251a" stroke="#545c42"/>
+  <text x="528" y="66" text-anchor="middle" fill="#f3f0e0" font-size="12.5" font-weight="700" font-family="IBM Plex Sans, sans-serif">How a call resolves its identity</text>
+
+  <rect x="372" y="80" width="312" height="34" rx="5" fill="#252a1e" stroke="#79d44e"/>
+  <text x="384" y="101" fill="#abe87f" font-size="11" font-family="JetBrains Mono, monospace">1.  --api-key / --profile flag</text>
+
+  <rect x="372" y="120" width="312" height="34" rx="5" fill="#252a1e" stroke="#5cb43a"/>
+  <text x="384" y="141" fill="#92df62" font-size="11" font-family="JetBrains Mono, monospace">2.  active profile (auth use)</text>
+
+  <rect x="372" y="160" width="312" height="34" rx="5" fill="#252a1e" stroke="#434a35"/>
+  <text x="384" y="181" fill="#c7c4ae" font-size="11" font-family="JetBrains Mono, monospace">3.  FIBE_API_KEY  (only if no profile)</text>
+
+  <rect x="372" y="200" width="312" height="34" rx="5" fill="#252a1e" stroke="#f08760"/>
+  <text x="384" y="221" fill="#f08760" font-size="11" font-family="JetBrains Mono, monospace">4.  else: &#34;no credentials&#34; error</text>
+
+  <line x1="320" y1="104" x2="354" y2="96" stroke="#56d8c0" stroke-width="1.6" marker-end="url(#prof-arrow)"/>
+
+  <text x="360" y="290" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">A configured profile wins over env vars. Use --profile for a one-off override.</text>
+  <text x="360" y="308" text-anchor="middle" fill="#a19f89" font-size="11" font-family="JetBrains Mono, monospace">fibe auth status  shows which one is active</text>
+</svg>

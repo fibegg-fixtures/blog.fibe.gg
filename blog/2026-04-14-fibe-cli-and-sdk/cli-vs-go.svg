@@ -1,0 +1,35 @@
+<svg viewBox="0 0 720 326" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Comparison panel: when to reach for the fibe CLI versus the Go library">
+  <text x="360" y="26" text-anchor="middle" fill="#f3f0e0" font-size="15" font-weight="700" font-family="IBM Plex Sans, sans-serif">Same binary, two front doors</text>
+
+  <!-- CLI column -->
+  <rect x="20" y="44" width="330" height="262" rx="8" fill="#20251a" stroke="#5cb43a"/>
+  <text x="185" y="72" text-anchor="middle" fill="#92df62" font-size="14" font-weight="700" font-family="JetBrains Mono, monospace">fibe CLI</text>
+  <text x="185" y="92" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">terminal &#183; shell scripts &#183; CI</text>
+  <line x1="40" y1="104" x2="330" y2="104" stroke="#434a35" stroke-width="1"/>
+
+  <text x="40" y="128" fill="#abe87f" font-size="11.5" font-family="IBM Plex Sans, sans-serif">&#8594; one-off launches and triggers</text>
+  <text x="40" y="150" fill="#abe87f" font-size="11.5" font-family="IBM Plex Sans, sans-serif">&#8594; CI jobs (-o json + jq)</text>
+  <text x="40" y="172" fill="#abe87f" font-size="11.5" font-family="IBM Plex Sans, sans-serif">&#8594; interactive ops and debugging</text>
+  <text x="40" y="194" fill="#abe87f" font-size="11.5" font-family="IBM Plex Sans, sans-serif">&#8594; nothing to compile</text>
+
+  <rect x="40" y="214" width="290" height="74" rx="5" fill="#252a1e" stroke="#434a35"/>
+  <text x="54" y="236" fill="#c7c4ae" font-size="10.5" font-family="JetBrains Mono, monospace">ID=$(fibe launch \</text>
+  <text x="54" y="254" fill="#c7c4ae" font-size="10.5" font-family="JetBrains Mono, monospace">  --template rails --marquee 1 \</text>
+  <text x="54" y="272" fill="#c7c4ae" font-size="10.5" font-family="JetBrains Mono, monospace">  -o json | jq -r .id)</text>
+
+  <!-- Go column -->
+  <rect x="370" y="44" width="330" height="262" rx="8" fill="#20251a" stroke="#56d8c0"/>
+  <text x="535" y="72" text-anchor="middle" fill="#56d8c0" font-size="14" font-weight="700" font-family="JetBrains Mono, monospace">Go library</text>
+  <text x="535" y="92" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">github.com/fibegg/sdk/fibe</text>
+  <line x1="390" y1="104" x2="680" y2="104" stroke="#434a35" stroke-width="1"/>
+
+  <text x="390" y="128" fill="#abe87f" font-size="11.5" font-family="IBM Plex Sans, sans-serif">&#8594; typed responses, no jq parsing</text>
+  <text x="390" y="150" fill="#abe87f" font-size="11.5" font-family="IBM Plex Sans, sans-serif">&#8594; structured errors (IsNotFound)</text>
+  <text x="390" y="172" fill="#abe87f" font-size="11.5" font-family="IBM Plex Sans, sans-serif">&#8594; embed in a dashboard or bot</text>
+  <text x="390" y="194" fill="#abe87f" font-size="11.5" font-family="IBM Plex Sans, sans-serif">&#8594; retries + circuit breaker built in</text>
+
+  <rect x="390" y="214" width="290" height="74" rx="5" fill="#252a1e" stroke="#434a35"/>
+  <text x="404" y="236" fill="#c7c4ae" font-size="10.5" font-family="JetBrains Mono, monospace">pg, err := client.Playgrounds.</text>
+  <text x="404" y="254" fill="#c7c4ae" font-size="10.5" font-family="JetBrains Mono, monospace">  Create(ctx, &amp;fibe.</text>
+  <text x="404" y="272" fill="#c7c4ae" font-size="10.5" font-family="JetBrains Mono, monospace">  PlaygroundCreateParams{...})</text>
+</svg>

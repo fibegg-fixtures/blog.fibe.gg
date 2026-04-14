@@ -1,0 +1,51 @@
+<svg viewBox="0 0 740 248" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The fibe CLI flow: install, then authenticate with a profile, then launch a template, then wait for running, then read the URL">
+  <defs>
+    <marker id="cliflow-arrow" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 Z" fill="#79d44e"/>
+    </marker>
+  </defs>
+  <rect x="0" y="0" width="740" height="248" fill="none"/>
+  <text x="370" y="26" text-anchor="middle" fill="#f3f0e0" font-size="15" font-weight="700" font-family="IBM Plex Sans, sans-serif">One launch, start to URL</text>
+
+  <!-- Step 1 install -->
+  <rect x="16" y="48" width="130" height="70" rx="6" fill="#20251a" stroke="#545c42"/>
+  <text x="81" y="72" text-anchor="middle" fill="#abe87f" font-size="13" font-weight="700" font-family="JetBrains Mono, monospace">brew install</text>
+  <text x="81" y="90" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">get the binary</text>
+  <text x="81" y="107" text-anchor="middle" fill="#a19f89" font-size="10.5" font-family="JetBrains Mono, monospace">fibe doctor</text>
+
+  <!-- Step 2 auth -->
+  <rect x="170" y="48" width="130" height="70" rx="6" fill="#252a1e" stroke="#eec854"/>
+  <text x="235" y="72" text-anchor="middle" fill="#eec854" font-size="13" font-weight="700" font-family="JetBrains Mono, monospace">auth login</text>
+  <text x="235" y="90" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">profile = key + domain</text>
+  <text x="235" y="107" text-anchor="middle" fill="#a19f89" font-size="10.5" font-family="JetBrains Mono, monospace">--profile prod</text>
+
+  <!-- Step 3 launch -->
+  <rect x="324" y="48" width="130" height="70" rx="6" fill="#20251a" stroke="#5cb43a"/>
+  <text x="389" y="72" text-anchor="middle" fill="#92df62" font-size="13" font-weight="700" font-family="JetBrains Mono, monospace">launch</text>
+  <text x="389" y="90" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">returns an id, fast</text>
+  <text x="389" y="107" text-anchor="middle" fill="#a19f89" font-size="10.5" font-family="JetBrains Mono, monospace">-o json | jq .id</text>
+
+  <!-- Step 4 wait -->
+  <rect x="478" y="48" width="130" height="70" rx="6" fill="#20251a" stroke="#56d8c0"/>
+  <text x="543" y="72" text-anchor="middle" fill="#56d8c0" font-size="13" font-weight="700" font-family="JetBrains Mono, monospace">wait</text>
+  <text x="543" y="90" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">poll until running</text>
+  <text x="543" y="107" text-anchor="middle" fill="#a19f89" font-size="10.5" font-family="JetBrains Mono, monospace">--timeout 5m</text>
+
+  <!-- Step 5 url -->
+  <rect x="632" y="48" width="92" height="70" rx="6" fill="#252a1e" stroke="#79d44e"/>
+  <text x="678" y="76" text-anchor="middle" fill="#abe87f" font-size="13" font-weight="700" font-family="JetBrains Mono, monospace">get</text>
+  <text x="678" y="94" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">read URL</text>
+
+  <!-- arrows -->
+  <line x1="146" y1="83" x2="166" y2="83" stroke="#79d44e" stroke-width="2" marker-end="url(#cliflow-arrow)"/>
+  <line x1="300" y1="83" x2="320" y2="83" stroke="#79d44e" stroke-width="2" marker-end="url(#cliflow-arrow)"/>
+  <line x1="454" y1="83" x2="474" y2="83" stroke="#79d44e" stroke-width="2" marker-end="url(#cliflow-arrow)"/>
+  <line x1="608" y1="83" x2="628" y2="83" stroke="#79d44e" stroke-width="2" marker-end="url(#cliflow-arrow)"/>
+
+  <!-- async note -->
+  <rect x="324" y="150" width="284" height="74" rx="6" fill="#20251a" stroke="#434a35"/>
+  <text x="466" y="172" text-anchor="middle" fill="#f08760" font-size="12" font-weight="700" font-family="IBM Plex Sans, sans-serif">Launch is async</text>
+  <text x="466" y="192" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">create returns immediately with an id;</text>
+  <text x="466" y="209" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">the env keeps booting. wait bridges the gap.</text>
+  <line x1="466" y1="118" x2="466" y2="148" stroke="#f08760" stroke-width="1.5" stroke-dasharray="3 3"/>
+</svg>

@@ -1,0 +1,55 @@
+<svg viewBox="0 0 740 392" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="What each tool catches: style, smells, duplication, complexity, types, boundaries, architecture, security, and behavior">
+  <text x="20" y="26" fill="#f3f0e0" font-size="16" font-weight="700" font-family="IBM Plex Sans, sans-serif">What each tool is paid to catch</text>
+
+  <!-- column 1 -->
+  <rect x="20" y="42" width="226" height="48" rx="6" fill="#20251a" stroke="#434a35"/>
+  <text x="34" y="62" fill="#92df62" font-size="12.5" font-weight="700" font-family="JetBrains Mono, monospace">RuboCop</text>
+  <text x="34" y="80" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">style &#183; the nits, so reviewers don&#8217;t</text>
+
+  <rect x="20" y="98" width="226" height="48" rx="6" fill="#20251a" stroke="#434a35"/>
+  <text x="34" y="118" fill="#92df62" font-size="12.5" font-weight="700" font-family="JetBrains Mono, monospace">Reek</text>
+  <text x="34" y="136" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">code smells: long methods, feature envy</text>
+
+  <rect x="20" y="154" width="226" height="48" rx="6" fill="#20251a" stroke="#434a35"/>
+  <text x="34" y="174" fill="#92df62" font-size="12.5" font-weight="700" font-family="JetBrains Mono, monospace">Flay</text>
+  <text x="34" y="192" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">structural duplication &#183; target score 0</text>
+
+  <!-- column 2 -->
+  <rect x="258" y="42" width="226" height="48" rx="6" fill="#20251a" stroke="#434a35"/>
+  <text x="272" y="62" fill="#f5da79" font-size="12.5" font-weight="700" font-family="JetBrains Mono, monospace">Flog</text>
+  <text x="272" y="80" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">per-method complexity over threshold</text>
+
+  <rect x="258" y="98" width="226" height="48" rx="6" fill="#20251a" stroke="#434a35"/>
+  <text x="272" y="118" fill="#f5da79" font-size="12.5" font-weight="700" font-family="JetBrains Mono, monospace">Sorbet</text>
+  <text x="272" y="136" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">static type errors &#183; whole tree</text>
+
+  <rect x="258" y="154" width="226" height="48" rx="6" fill="#20251a" stroke="#434a35"/>
+  <text x="272" y="174" fill="#f5da79" font-size="12.5" font-weight="700" font-family="JetBrains Mono, monospace">Packwerk</text>
+  <text x="272" y="192" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">pack privacy &#183; visibility &#183; layers</text>
+
+  <!-- column 3 -->
+  <rect x="496" y="42" width="226" height="48" rx="6" fill="#20251a" stroke="#434a35"/>
+  <text x="510" y="62" fill="#56d8c0" font-size="12.5" font-weight="700" font-family="JetBrains Mono, monospace">Architecture guard</text>
+  <text x="510" y="80" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">no Rails/IO inside domain code</text>
+
+  <rect x="496" y="98" width="226" height="48" rx="6" fill="#20251a" stroke="#434a35"/>
+  <text x="510" y="118" fill="#f08760" font-size="12.5" font-weight="700" font-family="JetBrains Mono, monospace">brakeman + audit</text>
+  <text x="510" y="136" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">security flaws &#183; vulnerable gems</text>
+
+  <rect x="496" y="154" width="226" height="48" rx="6" fill="#20251a" stroke="#434a35"/>
+  <text x="510" y="174" fill="#abe87f" font-size="12.5" font-weight="700" font-family="JetBrains Mono, monospace">RSpec</text>
+  <text x="510" y="192" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">behavior &#183; the suite that proves it works</text>
+
+  <!-- wide bottom row: the Fibe-specific guards -->
+  <rect x="20" y="214" width="702" height="48" rx="6" fill="#252a1e" stroke="#545c42"/>
+  <text x="34" y="234" fill="#56d8c0" font-size="12.5" font-weight="700" font-family="JetBrains Mono, monospace">env guard &#183; production boot &#183; silenced types &#183; i18n-tasks</text>
+  <text x="34" y="252" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">Fibe-specific guards: no raw ENV in app code, the app actually boots in production, no quietly-suppressed types, no missing translations</text>
+
+  <rect x="20" y="270" width="702" height="48" rx="6" fill="#252a1e" stroke="#545c42"/>
+  <text x="34" y="290" fill="#eec854" font-size="12.5" font-weight="700" font-family="JetBrains Mono, monospace">N+1 analysis &#183; merge coverage + Skunk</text>
+  <text x="34" y="308" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">N+1 queries flagged during specs &#183; coverage merged across processes, then graded for cost-of-change</text>
+
+  <rect x="20" y="326" width="702" height="48" rx="6" fill="#252a1e" stroke="#545c42"/>
+  <text x="34" y="346" fill="#abe87f" font-size="12.5" font-weight="700" font-family="JetBrains Mono, monospace">Rust core</text>
+  <text x="34" y="364" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">the Rust workspace: cargo tests, doc build, and a check that all 77 exposed computations are still registered</text>
+</svg>

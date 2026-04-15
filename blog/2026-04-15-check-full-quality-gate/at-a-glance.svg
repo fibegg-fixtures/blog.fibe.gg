@@ -1,0 +1,17 @@
+<svg viewBox="0 0 740 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The gate at a glance: one command, two execution tiers, around twenty checks, one exit code">
+  <rect x="0" y="10" width="176" height="80" rx="6" fill="#20251a" stroke="#434a35"/>
+  <text x="88" y="50" text-anchor="middle" fill="#92df62" font-size="30" font-weight="700" font-family="JetBrains Mono, monospace">1</text>
+  <text x="88" y="74" text-anchor="middle" fill="#a19f89" font-size="12" font-family="IBM Plex Sans, sans-serif">command to remember</text>
+
+  <rect x="188" y="10" width="176" height="80" rx="6" fill="#20251a" stroke="#434a35"/>
+  <text x="276" y="50" text-anchor="middle" fill="#eec854" font-size="30" font-weight="700" font-family="JetBrains Mono, monospace">2</text>
+  <text x="276" y="74" text-anchor="middle" fill="#a19f89" font-size="12" font-family="IBM Plex Sans, sans-serif">tiers: parallel + then</text>
+
+  <rect x="376" y="10" width="176" height="80" rx="6" fill="#20251a" stroke="#434a35"/>
+  <text x="464" y="50" text-anchor="middle" fill="#56d8c0" font-size="30" font-weight="700" font-family="JetBrains Mono, monospace">~20</text>
+  <text x="464" y="74" text-anchor="middle" fill="#a19f89" font-size="12" font-family="IBM Plex Sans, sans-serif">distinct checks</text>
+
+  <rect x="564" y="10" width="176" height="80" rx="6" fill="#20251a" stroke="#434a35"/>
+  <text x="652" y="50" text-anchor="middle" fill="#abe87f" font-size="30" font-weight="700" font-family="JetBrains Mono, monospace">0 or 1</text>
+  <text x="652" y="74" text-anchor="middle" fill="#a19f89" font-size="12" font-family="IBM Plex Sans, sans-serif">exit code you read</text>
+</svg>

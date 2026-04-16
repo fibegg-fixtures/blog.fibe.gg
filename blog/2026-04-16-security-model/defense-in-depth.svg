@@ -1,0 +1,62 @@
+<svg viewBox="0 0 720 470" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Defense-in-depth: a request passes through Turnstile, authentication, 2FA, scope checks, and the secret vault, with every meaningful action landing in the immutable audit log.">
+  <defs>
+    <marker id="did-arrow" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 Z" fill="#79d44e"/>
+    </marker>
+    <marker id="did-arrow-gold" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 Z" fill="#e2b33a"/>
+    </marker>
+  </defs>
+
+  <text x="360" y="28" text-anchor="middle" fill="#f3f0e0" font-size="18" font-weight="700" font-family="IBM Plex Sans, sans-serif">Defense in depth: one request, many gates</text>
+
+  <!-- request -->
+  <rect x="36" y="54" width="120" height="44" rx="6" fill="#252a1e" stroke="#545c42"/>
+  <text x="96" y="74" text-anchor="middle" fill="#f3f0e0" font-size="13" font-family="IBM Plex Sans, sans-serif">Incoming</text>
+  <text x="96" y="90" text-anchor="middle" fill="#c7c4ae" font-size="12" font-family="IBM Plex Sans, sans-serif">request</text>
+
+  <!-- layer stack -->
+  <!-- Turnstile -->
+  <rect x="210" y="50" width="474" height="52" rx="6" fill="#20251a" stroke="#56d8c0"/>
+  <text x="232" y="72" fill="#56d8c0" font-size="13" font-weight="700" font-family="JetBrains Mono, monospace">1 &#183; Turnstile</text>
+  <text x="232" y="90" fill="#c7c4ae" font-size="11.5" font-family="IBM Plex Sans, sans-serif">Cloudflare captcha guards signup &amp; signin against bots</text>
+
+  <!-- Auth -->
+  <rect x="210" y="112" width="474" height="52" rx="6" fill="#20251a" stroke="#79d44e"/>
+  <text x="232" y="134" fill="#92df62" font-size="13" font-weight="700" font-family="JetBrains Mono, monospace">2 &#183; Authentication</text>
+  <text x="232" y="152" fill="#c7c4ae" font-size="11.5" font-family="IBM Plex Sans, sans-serif">Hashed session token or hashed API key &#8594; identity</text>
+
+  <!-- 2FA -->
+  <rect x="210" y="174" width="474" height="52" rx="6" fill="#20251a" stroke="#79d44e"/>
+  <text x="232" y="196" fill="#92df62" font-size="13" font-weight="700" font-family="JetBrains Mono, monospace">3 &#183; Two-factor</text>
+  <text x="232" y="214" fill="#c7c4ae" font-size="11.5" font-family="IBM Plex Sans, sans-serif">TOTP code or WebAuthn assertion for human sign-in</text>
+
+  <!-- Scopes -->
+  <rect x="210" y="236" width="474" height="52" rx="6" fill="#20251a" stroke="#abe87f"/>
+  <text x="232" y="258" fill="#abe87f" font-size="13" font-weight="700" font-family="JetBrains Mono, monospace">4 &#183; Scope &amp; ability check</text>
+  <text x="232" y="276" fill="#c7c4ae" font-size="11.5" font-family="IBM Plex Sans, sans-serif">Least privilege: 50 scopes, per-resource ownership</text>
+
+  <!-- Secret vault -->
+  <rect x="210" y="298" width="474" height="52" rx="6" fill="#20251a" stroke="#eec854"/>
+  <text x="232" y="320" fill="#eec854" font-size="13" font-weight="700" font-family="JetBrains Mono, monospace">5 &#183; Secret vault</text>
+  <text x="232" y="338" fill="#c7c4ae" font-size="11.5" font-family="IBM Plex Sans, sans-serif">Encrypted, player-scoped values injected only on opt-in</text>
+
+  <!-- arrows down the stack -->
+  <line x1="447" y1="102" x2="447" y2="110" stroke="#79d44e" stroke-width="2" marker-end="url(#did-arrow)"/>
+  <line x1="447" y1="164" x2="447" y2="172" stroke="#79d44e" stroke-width="2" marker-end="url(#did-arrow)"/>
+  <line x1="447" y1="226" x2="447" y2="234" stroke="#79d44e" stroke-width="2" marker-end="url(#did-arrow)"/>
+  <line x1="447" y1="288" x2="447" y2="296" stroke="#79d44e" stroke-width="2" marker-end="url(#did-arrow)"/>
+
+  <!-- request arrow in -->
+  <line x1="156" y1="76" x2="208" y2="76" stroke="#79d44e" stroke-width="2" marker-end="url(#did-arrow)"/>
+
+  <!-- audit log spanning side -->
+  <rect x="36" y="378" width="648" height="68" rx="6" fill="#252a1e" stroke="#e2b33a"/>
+  <text x="56" y="404" fill="#f5da79" font-size="14" font-weight="700" font-family="JetBrains Mono, monospace">Immutable audit log</text>
+  <text x="56" y="426" fill="#c7c4ae" font-size="11.5" font-family="IBM Plex Sans, sans-serif">Every meaningful action is recorded; updates and deletes are refused. Visibility-scoped per player.</text>
+
+  <!-- arrows from each layer to audit -->
+  <line x1="120" y1="350" x2="120" y2="376" stroke="#e2b33a" stroke-width="1.5" stroke-dasharray="3 3" marker-end="url(#did-arrow-gold)"/>
+  <line x1="360" y1="350" x2="360" y2="376" stroke="#e2b33a" stroke-width="1.5" stroke-dasharray="3 3" marker-end="url(#did-arrow-gold)"/>
+  <line x1="600" y1="350" x2="600" y2="376" stroke="#e2b33a" stroke-width="1.5" stroke-dasharray="3 3" marker-end="url(#did-arrow-gold)"/>
+</svg>

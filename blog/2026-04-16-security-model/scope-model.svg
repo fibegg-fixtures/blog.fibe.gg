@@ -1,0 +1,53 @@
+<svg viewBox="0 0 720 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The scope model: 50 enumerated scopes grouped by resource and verb, a wildcard scope reserved for administrators, and team keys that resolve only team-owned resources.">
+  <text x="360" y="28" text-anchor="middle" fill="#f3f0e0" font-size="18" font-weight="700" font-family="IBM Plex Sans, sans-serif">The scope model</text>
+
+  <!-- left: enumerated scopes -->
+  <rect x="24" y="48" width="320" height="288" rx="6" fill="#20251a" stroke="#434a35"/>
+  <text x="44" y="74" fill="#92df62" font-size="13" font-weight="700" font-family="JetBrains Mono, monospace">50 enumerated scopes</text>
+  <text x="44" y="92" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">resource : verb</text>
+
+  <!-- scope example chips -->
+  <rect x="44" y="106" width="128" height="26" rx="4" fill="#252a1e" stroke="#545c42"/>
+  <text x="108" y="123" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="JetBrains Mono, monospace">marquees:read</text>
+  <rect x="180" y="106" width="128" height="26" rx="4" fill="#252a1e" stroke="#545c42"/>
+  <text x="244" y="123" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="JetBrains Mono, monospace">props:write</text>
+
+  <rect x="44" y="138" width="128" height="26" rx="4" fill="#252a1e" stroke="#545c42"/>
+  <text x="108" y="155" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="JetBrains Mono, monospace">playgrounds:write</text>
+  <rect x="180" y="138" width="128" height="26" rx="4" fill="#252a1e" stroke="#545c42"/>
+  <text x="244" y="155" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="JetBrains Mono, monospace">agents:delete</text>
+
+  <rect x="44" y="170" width="128" height="26" rx="4" fill="#252a1e" stroke="#545c42"/>
+  <text x="108" y="187" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="JetBrains Mono, monospace">secrets:read</text>
+  <rect x="180" y="170" width="128" height="26" rx="4" fill="#252a1e" stroke="#757d5e"/>
+  <text x="244" y="187" text-anchor="middle" fill="#f5da79" font-size="11" font-family="JetBrains Mono, monospace">secrets:manage</text>
+
+  <rect x="44" y="202" width="128" height="26" rx="4" fill="#252a1e" stroke="#545c42"/>
+  <text x="108" y="219" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="JetBrains Mono, monospace">webhooks:write</text>
+  <rect x="180" y="202" width="128" height="26" rx="4" fill="#252a1e" stroke="#545c42"/>
+  <text x="244" y="219" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="JetBrains Mono, monospace">launch:write</text>
+
+  <text x="44" y="252" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">A `:manage` scope expands to read +</text>
+  <text x="44" y="268" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">write + delete for that resource.</text>
+  <text x="44" y="296" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">Unknown strings fail validation &#8212;</text>
+  <text x="44" y="312" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">there is no &quot;just allow it&quot; default.</text>
+
+  <!-- right top: wildcard -->
+  <rect x="360" y="48" width="336" height="132" rx="6" fill="#20251a" stroke="#f08760"/>
+  <text x="380" y="74" fill="#f08760" font-size="13" font-weight="700" font-family="JetBrains Mono, monospace">Wildcard &quot;*&quot; = admin only</text>
+  <rect x="380" y="86" width="60" height="30" rx="4" fill="#252a1e" stroke="#f08760"/>
+  <text x="410" y="106" text-anchor="middle" fill="#f08760" font-size="16" font-weight="700" font-family="JetBrains Mono, monospace">*</text>
+  <text x="456" y="98" fill="#c7c4ae" font-size="11.5" font-family="IBM Plex Sans, sans-serif">A non-admin who requests the</text>
+  <text x="456" y="114" fill="#c7c4ae" font-size="11.5" font-family="IBM Plex Sans, sans-serif">wildcard is rejected at validation:</text>
+  <text x="380" y="144" fill="#a19f89" font-size="11" font-family="JetBrains Mono, monospace">&quot;wildcard scope is restricted</text>
+  <text x="380" y="160" fill="#a19f89" font-size="11" font-family="JetBrains Mono, monospace"> to administrators&quot;</text>
+
+  <!-- right bottom: team keys -->
+  <rect x="360" y="196" width="336" height="140" rx="6" fill="#20251a" stroke="#56d8c0"/>
+  <text x="380" y="222" fill="#56d8c0" font-size="13" font-weight="700" font-family="JetBrains Mono, monospace">Team keys &#8594; team resources</text>
+  <text x="380" y="246" fill="#c7c4ae" font-size="11.5" font-family="IBM Plex Sans, sans-serif">A key bound to a team resolves only</text>
+  <text x="380" y="262" fill="#c7c4ae" font-size="11.5" font-family="IBM Plex Sans, sans-serif">resources that team owns &#8212; never the</text>
+  <text x="380" y="278" fill="#c7c4ae" font-size="11.5" font-family="IBM Plex Sans, sans-serif">creator's personal playgrounds.</text>
+  <text x="380" y="304" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">Creating a team key requires an</text>
+  <text x="380" y="320" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">accepted membership in that team.</text>
+</svg>

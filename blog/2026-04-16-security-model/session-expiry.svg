@@ -1,0 +1,42 @@
+<svg viewBox="0 0 720 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Session expiry: a sliding 24-hour idle timeout that resets on each access, plus a hard 30-day absolute ceiling from creation. A session dies when either limit is hit.">
+  <defs>
+    <marker id="se-arrow" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 Z" fill="#757d5e"/>
+    </marker>
+  </defs>
+
+  <text x="360" y="28" text-anchor="middle" fill="#f3f0e0" font-size="18" font-weight="700" font-family="IBM Plex Sans, sans-serif">Two timers, whichever fires first</text>
+
+  <!-- idle timeout band -->
+  <text x="40" y="78" fill="#92df62" font-size="13" font-weight="700" font-family="JetBrains Mono, monospace">Idle timeout = 24 hours</text>
+  <text x="40" y="96" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">slides forward on every access</text>
+
+  <!-- idle timeline -->
+  <line x1="40" y1="128" x2="680" y2="128" stroke="#434a35" stroke-width="2"/>
+  <!-- access ticks -->
+  <circle cx="80" cy="128" r="6" fill="#79d44e"/>
+  <circle cx="230" cy="128" r="6" fill="#79d44e"/>
+  <circle cx="360" cy="128" r="6" fill="#79d44e"/>
+  <text x="80" y="116" text-anchor="middle" fill="#c7c4ae" font-size="10.5" font-family="IBM Plex Sans, sans-serif">access</text>
+  <text x="230" y="116" text-anchor="middle" fill="#c7c4ae" font-size="10.5" font-family="IBM Plex Sans, sans-serif">access</text>
+  <text x="360" y="116" text-anchor="middle" fill="#c7c4ae" font-size="10.5" font-family="IBM Plex Sans, sans-serif">access</text>
+  <!-- window after last access -->
+  <line x1="360" y1="128" x2="560" y2="128" stroke="#79d44e" stroke-width="4"/>
+  <line x1="560" y1="128" x2="600" y2="128" stroke="#757d5e" stroke-width="2" stroke-dasharray="4 3" marker-end="url(#se-arrow)"/>
+  <circle cx="560" cy="128" r="7" fill="#20251a" stroke="#f08760" stroke-width="2"/>
+  <text x="560" y="152" text-anchor="middle" fill="#f08760" font-size="10.5" font-family="IBM Plex Sans, sans-serif">+24h idle</text>
+  <text x="560" y="166" text-anchor="middle" fill="#f08760" font-size="10.5" font-family="IBM Plex Sans, sans-serif">&#8594; expired</text>
+
+  <!-- absolute timeout band -->
+  <text x="40" y="214" fill="#eec854" font-size="13" font-weight="700" font-family="JetBrains Mono, monospace">Absolute timeout = 30 days</text>
+  <text x="40" y="232" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">fixed from sign-in &#8212; never resets</text>
+
+  <!-- absolute timeline -->
+  <line x1="40" y1="264" x2="680" y2="264" stroke="#434a35" stroke-width="2"/>
+  <circle cx="80" cy="264" r="6" fill="#eec854"/>
+  <text x="80" y="252" text-anchor="middle" fill="#c7c4ae" font-size="10.5" font-family="IBM Plex Sans, sans-serif">sign-in</text>
+  <line x1="80" y1="264" x2="640" y2="264" stroke="#eec854" stroke-width="4"/>
+  <circle cx="640" cy="264" r="7" fill="#20251a" stroke="#f08760" stroke-width="2"/>
+  <text x="640" y="288" text-anchor="middle" fill="#f08760" font-size="10.5" font-family="IBM Plex Sans, sans-serif">day 30</text>
+  <text x="640" y="302" text-anchor="middle" fill="#f08760" font-size="10.5" font-family="IBM Plex Sans, sans-serif">hard cap</text>
+</svg>

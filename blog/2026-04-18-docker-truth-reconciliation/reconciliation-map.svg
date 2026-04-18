@@ -1,0 +1,77 @@
+<svg viewBox="0 0 740 432" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="DB status versus Docker truth: the reconciliation decision table">
+  <defs>
+    <marker id="rm-arrow" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto">
+      <path d="M0,0 L7,3 L0,6 Z" fill="#757d5e"/>
+    </marker>
+  </defs>
+  <rect x="0" y="0" width="740" height="432" fill="none"/>
+  <text x="20" y="28" fill="#f3f0e0" font-size="17" font-weight="700" font-family="IBM Plex Sans, sans-serif">DB status vs. Docker truth &#183; the reconciler</text>
+
+  <!-- column headers -->
+  <text x="120" y="62" text-anchor="middle" fill="#a19f89" font-size="12" font-family="IBM Plex Sans, sans-serif">DB says</text>
+  <text x="350" y="62" text-anchor="middle" fill="#a19f89" font-size="12" font-family="IBM Plex Sans, sans-serif">docker compose ps says</text>
+  <text x="620" y="62" text-anchor="middle" fill="#a19f89" font-size="12" font-family="IBM Plex Sans, sans-serif">we write</text>
+
+  <!-- row 1: blind -->
+  <rect x="20" y="72" width="200" height="56" rx="6" fill="#20251a" stroke="#434a35"/>
+  <text x="120" y="98" text-anchor="middle" fill="#c7c4ae" font-size="13" font-family="IBM Plex Sans, sans-serif">any status</text>
+  <text x="120" y="116" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">running / error / &#8230;</text>
+  <rect x="250" y="72" width="200" height="56" rx="6" fill="#2a2118" stroke="#99761f"/>
+  <text x="350" y="98" text-anchor="middle" fill="#f5da79" font-size="13" font-family="IBM Plex Sans, sans-serif">inspection failed</text>
+  <text x="350" y="116" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">daemon unreachable</text>
+  <line x1="455" y1="100" x2="515" y2="100" stroke="#757d5e" stroke-width="1.5" marker-end="url(#rm-arrow)"/>
+  <rect x="520" y="72" width="200" height="56" rx="6" fill="#20251a" stroke="#545c42"/>
+  <text x="620" y="98" text-anchor="middle" fill="#56d8c0" font-size="13" font-weight="700" font-family="IBM Plex Sans, sans-serif">NOTHING</text>
+  <text x="620" y="116" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">log warn &#183; return</text>
+
+  <!-- row 2: recover to running -->
+  <rect x="20" y="138" width="200" height="56" rx="6" fill="#20251a" stroke="#434a35"/>
+  <text x="120" y="160" text-anchor="middle" fill="#c7c4ae" font-size="12" font-family="IBM Plex Sans, sans-serif">pending / stopped /</text>
+  <text x="120" y="176" text-anchor="middle" fill="#c7c4ae" font-size="12" font-family="IBM Plex Sans, sans-serif">stale in-progress /</text>
+  <text x="120" y="190" text-anchor="middle" fill="#c7c4ae" font-size="12" font-family="IBM Plex Sans, sans-serif">recoverable error</text>
+  <rect x="250" y="138" width="200" height="56" rx="6" fill="#1d2a18" stroke="#5cb43a"/>
+  <text x="350" y="164" text-anchor="middle" fill="#92df62" font-size="13" font-family="IBM Plex Sans, sans-serif">healthy + FS-ready</text>
+  <text x="350" y="182" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">project exists, all up</text>
+  <line x1="455" y1="166" x2="515" y2="166" stroke="#757d5e" stroke-width="1.5" marker-end="url(#rm-arrow)"/>
+  <rect x="520" y="138" width="200" height="56" rx="6" fill="#1d2a18" stroke="#79d44e"/>
+  <text x="620" y="164" text-anchor="middle" fill="#abe87f" font-size="13" font-weight="700" font-family="IBM Plex Sans, sans-serif">running</text>
+  <text x="620" y="182" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">clear failure fields</text>
+
+  <!-- row 3: running, project gone -->
+  <rect x="20" y="204" width="200" height="56" rx="6" fill="#20251a" stroke="#434a35"/>
+  <text x="120" y="230" text-anchor="middle" fill="#c7c4ae" font-size="13" font-family="IBM Plex Sans, sans-serif">running (non-job)</text>
+  <text x="120" y="248" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">we think it's up</text>
+  <rect x="250" y="204" width="200" height="56" rx="6" fill="#2a1c18" stroke="#f08760"/>
+  <text x="350" y="230" text-anchor="middle" fill="#f08760" font-size="13" font-family="IBM Plex Sans, sans-serif">project gone</text>
+  <text x="350" y="248" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">or all containers stopped</text>
+  <line x1="455" y1="232" x2="515" y2="232" stroke="#757d5e" stroke-width="1.5" marker-end="url(#rm-arrow)"/>
+  <rect x="520" y="204" width="200" height="56" rx="6" fill="#20251a" stroke="#545c42"/>
+  <text x="620" y="230" text-anchor="middle" fill="#c7c4ae" font-size="13" font-weight="700" font-family="IBM Plex Sans, sans-serif">stopped</text>
+  <text x="620" y="248" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">the demotion path</text>
+
+  <!-- row 4: running w/ stale error -->
+  <rect x="20" y="270" width="200" height="56" rx="6" fill="#20251a" stroke="#434a35"/>
+  <text x="120" y="296" text-anchor="middle" fill="#c7c4ae" font-size="13" font-family="IBM Plex Sans, sans-serif">running + stale error</text>
+  <text x="120" y="314" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">a lie in the row</text>
+  <rect x="250" y="270" width="200" height="56" rx="6" fill="#1d2a18" stroke="#5cb43a"/>
+  <text x="350" y="296" text-anchor="middle" fill="#92df62" font-size="13" font-family="IBM Plex Sans, sans-serif">project exists</text>
+  <text x="350" y="314" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">actually fine</text>
+  <line x1="455" y1="298" x2="515" y2="298" stroke="#757d5e" stroke-width="1.5" marker-end="url(#rm-arrow)"/>
+  <rect x="520" y="270" width="200" height="56" rx="6" fill="#1d2a18" stroke="#79d44e"/>
+  <text x="620" y="296" text-anchor="middle" fill="#abe87f" font-size="13" font-weight="700" font-family="IBM Plex Sans, sans-serif">running (kept)</text>
+  <text x="620" y="314" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">clear error only</text>
+
+  <!-- row 5: clean-stopped stays -->
+  <rect x="20" y="336" width="200" height="56" rx="6" fill="#20251a" stroke="#434a35"/>
+  <text x="120" y="362" text-anchor="middle" fill="#c7c4ae" font-size="13" font-family="IBM Plex Sans, sans-serif">stopped (non-job)</text>
+  <text x="120" y="380" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">deliberately off</text>
+  <rect x="250" y="336" width="200" height="56" rx="6" fill="#20251a" stroke="#545c42"/>
+  <text x="350" y="362" text-anchor="middle" fill="#c7c4ae" font-size="13" font-family="IBM Plex Sans, sans-serif">cleanly stopped</text>
+  <text x="350" y="380" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">exit 0 / not running</text>
+  <line x1="455" y1="364" x2="515" y2="364" stroke="#757d5e" stroke-width="1.5" marker-end="url(#rm-arrow)"/>
+  <rect x="520" y="336" width="200" height="56" rx="6" fill="#20251a" stroke="#545c42"/>
+  <text x="620" y="364" text-anchor="middle" fill="#56d8c0" font-size="13" font-weight="700" font-family="IBM Plex Sans, sans-serif">NOTHING</text>
+  <text x="620" y="380" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">leave it be</text>
+
+  <text x="20" y="418" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">Green = recover &#183; gold/ember = demote &#183; teal = intentional no-op. Recovery and demotion both write directly, outside the transition table.</text>
+</svg>

@@ -1,0 +1,62 @@
+<svg viewBox="0 0 720 470" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The recover-to-running decision: which statuses are eligible and the two gates that must pass">
+  <defs>
+    <marker id="rr-arrow" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto">
+      <path d="M0,0 L7,3 L0,6 Z" fill="#757d5e"/>
+    </marker>
+  </defs>
+  <text x="20" y="28" fill="#f3f0e0" font-size="17" font-weight="700" font-family="IBM Plex Sans, sans-serif">Recovery eligibility &#8212; who is eligible, who gets blocked</text>
+
+  <!-- eligibility column -->
+  <text x="150" y="60" text-anchor="middle" fill="#a19f89" font-size="12" font-family="IBM Plex Sans, sans-serif">eligible-status check</text>
+
+  <rect x="30" y="72" width="240" height="44" rx="6" fill="#20251a" stroke="#434a35"/>
+  <text x="150" y="92" text-anchor="middle" fill="#c7c4ae" font-size="12" font-family="IBM Plex Sans, sans-serif">pending / stopped</text>
+  <text x="150" y="108" text-anchor="middle" fill="#a19f89" font-size="10.5" font-family="IBM Plex Sans, sans-serif">always eligible to recover</text>
+
+  <rect x="30" y="124" width="240" height="58" rx="6" fill="#20251a" stroke="#434a35"/>
+  <text x="150" y="146" text-anchor="middle" fill="#c7c4ae" font-size="12" font-family="IBM Plex Sans, sans-serif">in-progress</text>
+  <text x="150" y="163" text-anchor="middle" fill="#a19f89" font-size="10.5" font-family="IBM Plex Sans, sans-serif">if stale, OR containers were brought up</text>
+  <text x="150" y="177" text-anchor="middle" fill="#a19f89" font-size="10.5" font-family="IBM Plex Sans, sans-serif">(else: still being built)</text>
+
+  <rect x="30" y="190" width="240" height="58" rx="6" fill="#20251a" stroke="#434a35"/>
+  <text x="150" y="212" text-anchor="middle" fill="#c7c4ae" font-size="12" font-family="IBM Plex Sans, sans-serif">error</text>
+  <text x="150" y="229" text-anchor="middle" fill="#a19f89" font-size="10.5" font-family="IBM Plex Sans, sans-serif">only if it's a recoverable error</text>
+  <text x="150" y="243" text-anchor="middle" fill="#a19f89" font-size="10.5" font-family="IBM Plex Sans, sans-serif">timeout &#183; conflict &#183; stale &#183; one-shot exit 0</text>
+
+  <!-- blockers -->
+  <text x="150" y="278" text-anchor="middle" fill="#f08760" font-size="12" font-weight="700" font-family="IBM Plex Sans, sans-serif">two early bail-outs</text>
+  <rect x="30" y="288" width="240" height="44" rx="6" fill="#2a1c18" stroke="#f08760"/>
+  <text x="150" y="308" text-anchor="middle" fill="#f08760" font-size="11.5" font-family="IBM Plex Sans, sans-serif">clean-stopped &amp; non-job</text>
+  <text x="150" y="324" text-anchor="middle" fill="#a19f89" font-size="10.5" font-family="IBM Plex Sans, sans-serif">deliberately off &#8594; bail</text>
+  <rect x="30" y="338" width="240" height="44" rx="6" fill="#2a1c18" stroke="#f08760"/>
+  <text x="150" y="358" text-anchor="middle" fill="#f08760" font-size="11.5" font-family="IBM Plex Sans, sans-serif">replacement queued</text>
+  <text x="150" y="374" text-anchor="middle" fill="#a19f89" font-size="10.5" font-family="IBM Plex Sans, sans-serif">rollout / teardown pending &#8594; bail</text>
+
+  <!-- arrow to gate -->
+  <line x1="270" y1="153" x2="332" y2="153" stroke="#757d5e" stroke-width="1.5" marker-end="url(#rr-arrow)"/>
+  <text x="300" y="143" text-anchor="middle" fill="#92df62" font-size="11" font-weight="700" font-family="JetBrains Mono, monospace">eligible</text>
+
+  <!-- runtime gate -->
+  <rect x="340" y="84" width="356" height="150" rx="8" fill="#20251a" stroke="#5cb43a"/>
+  <text x="518" y="110" text-anchor="middle" fill="#92df62" font-size="13" font-weight="700" font-family="IBM Plex Sans, sans-serif">runtime recoverable? &#8212; AND of three</text>
+  <rect x="360" y="124" width="316" height="30" rx="5" fill="#1d2a18" stroke="#434a35"/>
+  <text x="518" y="144" text-anchor="middle" fill="#abe87f" font-size="12" font-family="IBM Plex Sans, sans-serif">the project exists</text>
+  <rect x="360" y="160" width="316" height="30" rx="5" fill="#1d2a18" stroke="#434a35"/>
+  <text x="518" y="180" text-anchor="middle" fill="#abe87f" font-size="12" font-family="IBM Plex Sans, sans-serif">the health check passes (FS-ready)</text>
+  <rect x="360" y="196" width="316" height="30" rx="5" fill="#1d2a18" stroke="#434a35"/>
+  <text x="518" y="216" text-anchor="middle" fill="#abe87f" font-size="12" font-family="IBM Plex Sans, sans-serif">the inspection reports healthy</text>
+
+  <line x1="518" y1="234" x2="518" y2="268" stroke="#757d5e" stroke-width="1.5" marker-end="url(#rr-arrow)"/>
+
+  <!-- write -->
+  <rect x="360" y="270" width="316" height="78" rx="8" fill="#1d2a18" stroke="#79d44e"/>
+  <text x="518" y="296" text-anchor="middle" fill="#abe87f" font-size="14" font-weight="700" font-family="IBM Plex Sans, sans-serif">write the status to running</text>
+  <text x="518" y="318" text-anchor="middle" fill="#c7c4ae" font-size="11.5" font-family="IBM Plex Sans, sans-serif">clear the half-finished step and every failure field</text>
+  <text x="518" y="336" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">audit the status sync &#183; the recovery path</text>
+
+  <text x="340" y="372" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">If eligible but runtime not healthy: no recovery this tick. Try again in 60s.</text>
+
+  <text x="20" y="412" fill="#c7c4ae" font-size="12" font-family="IBM Plex Sans, sans-serif">Note: the transition table has no error&#8594;running edge. This recovery is a deliberate</text>
+  <text x="20" y="430" fill="#c7c4ae" font-size="12" font-family="IBM Plex Sans, sans-serif">direct write that bypasses the table &#8212; the reconciler is allowed to write the truth directly.</text>
+  <text x="20" y="454" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">Job-mode adds one wrinkle: an active job runtime counts as recoverable even mid-run.</text>
+</svg>

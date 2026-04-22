@@ -1,0 +1,74 @@
+<svg viewBox="0 0 860 560" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A checkout creates an order in a pending-payment state that snapshots pricing, a provider webhook is claimed exactly once, fulfilment takes a row lock and validates the paid amount, then mints Mana, which either provisions a tutorial marquee and sets the paid-through time, converts one-way to Sparks for standard or multiplayer, or stays credited as a Mana top-up.">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#79d44e"/>
+    </marker>
+    <marker id="arrowGold" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#eec854"/>
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="860" height="560" fill="#20251a"/>
+
+  <text x="30" y="40" font-family="IBM Plex Sans, sans-serif" font-size="20" font-weight="700" fill="#f3f0e0">Checkout &#8594; Mana &#8594; where it lands</text>
+  <text x="30" y="62" font-family="IBM Plex Sans, sans-serif" font-size="13" fill="#a19f89">Money enters once, is claimed once, and is validated under a lock before any currency moves.</text>
+
+  <!-- 1. checkout -->
+  <rect x="30" y="90" width="220" height="64" rx="8" fill="#252a1e" stroke="#434a35" stroke-width="1.5"/>
+  <text x="46" y="116" font-family="IBM Plex Sans, sans-serif" font-size="14" font-weight="700" fill="#92df62">1 &#183; Checkout</text>
+  <text x="46" y="138" font-family="IBM Plex Sans, sans-serif" font-size="11" fill="#c7c4ae">player clicks buy</text>
+
+  <!-- 2. order -->
+  <rect x="320" y="84" width="270" height="78" rx="8" fill="#252a1e" stroke="#434a35" stroke-width="1.5"/>
+  <text x="336" y="110" font-family="IBM Plex Sans, sans-serif" font-size="14" font-weight="700" fill="#92df62">2 &#183; Order created</text>
+  <text x="336" y="132" font-family="IBM Plex Sans, sans-serif" font-size="11" fill="#c7c4ae">pending payment</text>
+  <text x="336" y="150" font-family="IBM Plex Sans, sans-serif" font-size="11" fill="#eec854">snapshots bundle pricing</text>
+
+  <!-- 3. webhook -->
+  <rect x="640" y="84" width="190" height="78" rx="8" fill="#252a1e" stroke="#434a35" stroke-width="1.5"/>
+  <text x="656" y="110" font-family="IBM Plex Sans, sans-serif" font-size="14" font-weight="700" fill="#56d8c0">3 &#183; Provider webhook</text>
+  <text x="656" y="132" font-family="IBM Plex Sans, sans-serif" font-size="11" fill="#c7c4ae">claimed once per event</text>
+  <text x="656" y="150" font-family="IBM Plex Sans, sans-serif" font-size="11" fill="#a19f89">duplicate &#8594; ignored</text>
+
+  <line x1="250" y1="122" x2="316" y2="122" stroke="#79d44e" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="590" y1="123" x2="636" y2="123" stroke="#79d44e" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- 4. fulfill -->
+  <rect x="290" y="206" width="330" height="92" rx="8" fill="#252a1e" stroke="#eec854" stroke-width="1.5"/>
+  <text x="306" y="232" font-family="IBM Plex Sans, sans-serif" font-size="14" font-weight="700" fill="#eec854">4 &#183; Fulfilment</text>
+  <text x="306" y="254" font-family="IBM Plex Sans, sans-serif" font-size="11" fill="#c7c4ae">pessimistic row lock on the order</text>
+  <text x="306" y="272" font-family="IBM Plex Sans, sans-serif" font-size="11" fill="#f08760">validate paid amount &#8594; underpaid raises</text>
+  <text x="306" y="290" font-family="IBM Plex Sans, sans-serif" font-size="11" fill="#79d44e">credit the Mana wallet &#8594; mint Mana</text>
+
+  <line x1="730" y1="162" x2="560" y2="204" stroke="#eec854" stroke-width="2" marker-end="url(#arrowGold)"/>
+
+  <!-- 5. mint mana hub -->
+  <rect x="345" y="338" width="170" height="52" rx="26" fill="#20251a" stroke="#92df62" stroke-width="2"/>
+  <text x="430" y="362" text-anchor="middle" font-family="IBM Plex Sans, sans-serif" font-size="14" font-weight="700" fill="#92df62">Mana minted</text>
+  <text x="430" y="380" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="11" fill="#a19f89">credit to Mana wallet</text>
+
+  <line x1="430" y1="298" x2="430" y2="336" stroke="#79d44e" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- three outcomes -->
+  <rect x="30" y="442" width="250" height="92" rx="8" fill="#252a1e" stroke="#434a35" stroke-width="1.5"/>
+  <text x="46" y="468" font-family="IBM Plex Sans, sans-serif" font-size="13" font-weight="700" fill="#56d8c0">Tutorial checkout</text>
+  <text x="46" y="490" font-family="IBM Plex Sans, sans-serif" font-size="11" fill="#c7c4ae">debit Mana bundle</text>
+  <text x="46" y="507" font-family="IBM Plex Sans, sans-serif" font-size="11" fill="#c7c4ae">publish provision event</text>
+  <text x="46" y="524" font-family="IBM Plex Sans, sans-serif" font-size="11" fill="#eec854">set paid-through time</text>
+
+  <rect x="305" y="442" width="250" height="92" rx="8" fill="#252a1e" stroke="#434a35" stroke-width="1.5"/>
+  <text x="321" y="468" font-family="IBM Plex Sans, sans-serif" font-size="13" font-weight="700" fill="#f5da79">Standard / multiplayer</text>
+  <text x="321" y="490" font-family="IBM Plex Sans, sans-serif" font-size="11" fill="#c7c4ae">convert Mana to Sparks</text>
+  <text x="321" y="507" font-family="IBM Plex Sans, sans-serif" font-size="11" fill="#a19f89">one-way, two legs,</text>
+  <text x="321" y="524" font-family="IBM Plex Sans, sans-serif" font-size="11" fill="#a19f89">one transaction</text>
+
+  <rect x="580" y="442" width="250" height="92" rx="8" fill="#252a1e" stroke="#434a35" stroke-width="1.5"/>
+  <text x="596" y="468" font-family="IBM Plex Sans, sans-serif" font-size="13" font-weight="700" fill="#92df62">Mana top-up</text>
+  <text x="596" y="490" font-family="IBM Plex Sans, sans-serif" font-size="11" fill="#c7c4ae">credit the Mana wallet</text>
+  <text x="596" y="507" font-family="IBM Plex Sans, sans-serif" font-size="11" fill="#a19f89">stays in the Mana</text>
+  <text x="596" y="524" font-family="IBM Plex Sans, sans-serif" font-size="11" fill="#a19f89">balance</text>
+
+  <line x1="380" y1="390" x2="180" y2="440" stroke="#79d44e" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="430" y1="390" x2="430" y2="440" stroke="#79d44e" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="480" y1="390" x2="680" y2="440" stroke="#79d44e" stroke-width="2" marker-end="url(#arrow)"/>
+</svg>

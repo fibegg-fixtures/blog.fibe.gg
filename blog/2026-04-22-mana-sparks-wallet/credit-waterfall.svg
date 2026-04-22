@@ -1,0 +1,41 @@
+<svg viewBox="0 0 720 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A positive same-currency credit first repays outstanding grace incidents oldest first, then whatever remains stays in the wallet balance">
+  <defs>
+    <marker id="cw-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#757d5e"/>
+    </marker>
+  </defs>
+
+  <text x="360" y="26" text-anchor="middle" fill="#f3f0e0" font-size="16" font-weight="700" font-family="IBM Plex Sans, sans-serif">Where a positive credit goes: debt first, balance last</text>
+
+  <!-- incoming credit -->
+  <rect x="270" y="46" width="180" height="52" rx="6" fill="#252a1e" stroke="#92df62" stroke-width="1.5"/>
+  <text x="360" y="68" text-anchor="middle" fill="#92df62" font-size="13" font-weight="700" font-family="JetBrains Mono, monospace">+ credit (same currency)</text>
+  <text x="360" y="86" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">balance updated, then waterfall runs</text>
+
+  <line x1="360" y1="98" x2="360" y2="128" stroke="#757d5e" stroke-width="2" marker-end="url(#cw-arrow)"/>
+
+  <!-- oldest grace incident -->
+  <rect x="120" y="130" width="480" height="50" rx="6" fill="#20251a" stroke="#e2b33a"/>
+  <text x="140" y="152" fill="#eec854" font-size="12" font-weight="700" font-family="IBM Plex Sans, sans-serif">grace incident #1 (oldest first)</text>
+  <text x="580" y="152" text-anchor="end" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">repay up to its outstanding amount</text>
+  <text x="140" y="170" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">fully covered &#8594; marked repaid</text>
+
+  <line x1="360" y1="180" x2="360" y2="206" stroke="#757d5e" stroke-width="2" marker-end="url(#cw-arrow)"/>
+  <text x="392" y="198" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">funds remaining?</text>
+
+  <!-- next grace incident -->
+  <rect x="120" y="208" width="480" height="50" rx="6" fill="#20251a" stroke="#e2b33a"/>
+  <text x="140" y="230" fill="#eec854" font-size="12" font-weight="700" font-family="IBM Plex Sans, sans-serif">grace incident #2 (next oldest)</text>
+  <text x="580" y="230" text-anchor="end" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">repay up to its outstanding amount</text>
+  <text x="140" y="248" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">partial &#8594; still owed, debt reduced</text>
+
+  <line x1="360" y1="258" x2="360" y2="284" stroke="#757d5e" stroke-width="2" marker-end="url(#cw-arrow)"/>
+  <text x="392" y="276" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">funds remaining?</text>
+
+  <!-- leftover to balance -->
+  <rect x="200" y="286" width="320" height="56" rx="6" fill="#252a1e" stroke="#56d8c0" stroke-width="1.5"/>
+  <text x="360" y="310" text-anchor="middle" fill="#56d8c0" font-size="13" font-weight="700" font-family="JetBrains Mono, monospace">leftover stays in wallet balance</text>
+  <text x="360" y="328" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">a second debit + ledger entry records the repayment</text>
+
+  <text x="360" y="372" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">grace never advances the paid-through time &#8212; repaying debt is not the same as funding the day</text>
+</svg>

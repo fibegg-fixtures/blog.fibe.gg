@@ -1,0 +1,53 @@
+<svg viewBox="0 0 720 380" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="One wallet post inside a locked transaction writes exactly one signed wallet transaction and exactly one ledger entry recording the balance after it posted">
+  <defs>
+    <marker id="de-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#757d5e"/>
+    </marker>
+  </defs>
+
+  <text x="360" y="26" text-anchor="middle" fill="#f3f0e0" font-size="16" font-weight="700" font-family="IBM Plex Sans, sans-serif">One post = one locked transaction = two rows that must agree</text>
+
+  <!-- caller -->
+  <rect x="24" y="56" width="200" height="58" rx="6" fill="#252a1e" stroke="#545c42"/>
+  <text x="124" y="82" text-anchor="middle" fill="#f3f0e0" font-size="13" font-family="IBM Plex Sans, sans-serif">credit or debit</text>
+  <text x="124" y="100" text-anchor="middle" fill="#a19f89" font-size="11" font-family="JetBrains Mono, monospace">idempotency key, amount</text>
+
+  <line x1="224" y1="85" x2="296" y2="85" stroke="#757d5e" stroke-width="2" marker-end="url(#de-arrow)"/>
+
+  <!-- idempotency gate -->
+  <rect x="298" y="50" width="180" height="70" rx="6" fill="#20251a" stroke="#434a35"/>
+  <text x="388" y="76" text-anchor="middle" fill="#eec854" font-size="12" font-weight="700" font-family="IBM Plex Sans, sans-serif">key already posted?</text>
+  <text x="388" y="96" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">yes &#8594; return existing movement</text>
+  <text x="388" y="111" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">no &#8594; open transaction</text>
+
+  <line x1="388" y1="120" x2="388" y2="150" stroke="#757d5e" stroke-width="2" marker-end="url(#de-arrow)"/>
+
+  <!-- locked transaction box -->
+  <rect x="60" y="152" width="600" height="200" rx="8" fill="#20251a" stroke="#5cb43a" stroke-width="1.5"/>
+  <text x="80" y="176" fill="#92df62" font-size="12" font-weight="700" font-family="JetBrains Mono, monospace">database transaction (wallet row locked)</text>
+
+  <!-- balance check -->
+  <rect x="80" y="190" width="240" height="58" rx="6" fill="#252a1e" stroke="#545c42"/>
+  <text x="200" y="214" text-anchor="middle" fill="#f3f0e0" font-size="12" font-family="IBM Plex Sans, sans-serif">new balance = balance + amount</text>
+  <text x="200" y="234" text-anchor="middle" fill="#f08760" font-size="11" font-family="JetBrains Mono, monospace">would go negative? &#8594; reject</text>
+
+  <line x1="320" y1="219" x2="392" y2="219" stroke="#757d5e" stroke-width="2" marker-end="url(#de-arrow)"/>
+
+  <rect x="394" y="190" width="246" height="58" rx="6" fill="#252a1e" stroke="#545c42"/>
+  <text x="517" y="222" text-anchor="middle" fill="#f3f0e0" font-size="12" font-family="IBM Plex Sans, sans-serif">commit the new wallet balance</text>
+
+  <!-- two rows -->
+  <line x1="200" y1="248" x2="200" y2="282" stroke="#757d5e" stroke-width="2" marker-end="url(#de-arrow)"/>
+  <line x1="517" y1="248" x2="517" y2="282" stroke="#757d5e" stroke-width="2" marker-end="url(#de-arrow)"/>
+
+  <rect x="80" y="284" width="240" height="56" rx="6" fill="#252a1e" stroke="#56d8c0"/>
+  <text x="200" y="306" text-anchor="middle" fill="#56d8c0" font-size="12" font-weight="700" font-family="IBM Plex Sans, sans-serif">wallet transaction</text>
+  <text x="200" y="324" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">signed amount &#183; unique key</text>
+
+  <rect x="394" y="284" width="246" height="56" rx="6" fill="#252a1e" stroke="#56d8c0"/>
+  <text x="517" y="306" text-anchor="middle" fill="#56d8c0" font-size="12" font-weight="700" font-family="IBM Plex Sans, sans-serif">ledger entry</text>
+  <text x="517" y="324" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">balance after &#183; one per movement (1:1)</text>
+
+  <line x1="320" y1="312" x2="392" y2="312" stroke="#79d44e" stroke-width="2" stroke-dasharray="4 3"/>
+  <text x="356" y="304" text-anchor="middle" fill="#79d44e" font-size="10" font-family="IBM Plex Sans, sans-serif">must agree</text>
+</svg>

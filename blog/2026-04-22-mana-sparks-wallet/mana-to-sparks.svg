@@ -1,0 +1,43 @@
+<svg viewBox="0 0 720 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Mana converts to Sparks one way through two idempotent legs in a single transaction: a Mana-debit leg and a Sparks-credit leg, with no reverse path">
+  <defs>
+    <marker id="ms-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#757d5e"/>
+    </marker>
+  </defs>
+
+  <text x="360" y="28" text-anchor="middle" fill="#f3f0e0" font-size="16" font-weight="700" font-family="IBM Plex Sans, sans-serif">Mana &#8594; Sparks &#8212; one way, two legs, one transaction</text>
+
+  <!-- Mana wallet -->
+  <rect x="36" y="70" width="180" height="86" rx="8" fill="#20251a" stroke="#e2b33a" stroke-width="1.5"/>
+  <text x="126" y="100" text-anchor="middle" fill="#eec854" font-size="14" font-weight="700" font-family="JetBrains Mono, monospace">Mana wallet</text>
+  <text x="126" y="122" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">tutorial currency</text>
+  <text x="126" y="140" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">minted by checkout / recharge</text>
+
+  <!-- Sparks wallet -->
+  <rect x="504" y="70" width="180" height="86" rx="8" fill="#20251a" stroke="#92df62" stroke-width="1.5"/>
+  <text x="594" y="100" text-anchor="middle" fill="#92df62" font-size="14" font-weight="700" font-family="JetBrains Mono, monospace">Sparks wallet</text>
+  <text x="594" y="122" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">standard currency</text>
+  <text x="594" y="140" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">funds non-tutorial marquees</text>
+
+  <!-- transaction band -->
+  <rect x="246" y="64" width="228" height="148" rx="8" fill="#252a1e" stroke="#5cb43a"/>
+  <text x="360" y="88" text-anchor="middle" fill="#79d44e" font-size="11" font-weight="700" font-family="JetBrains Mono, monospace">single DB transaction</text>
+
+  <rect x="262" y="100" width="196" height="42" rx="5" fill="#20251a" stroke="#545c42"/>
+  <text x="360" y="118" text-anchor="middle" fill="#eec854" font-size="11" font-weight="700" font-family="IBM Plex Sans, sans-serif">leg 1 &#183; Mana-debit key</text>
+  <text x="360" y="134" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">debit Mana</text>
+
+  <rect x="262" y="150" width="196" height="42" rx="5" fill="#20251a" stroke="#545c42"/>
+  <text x="360" y="168" text-anchor="middle" fill="#92df62" font-size="11" font-weight="700" font-family="IBM Plex Sans, sans-serif">leg 2 &#183; Sparks-credit key</text>
+  <text x="360" y="184" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">credit Sparks</text>
+
+  <!-- arrows in -->
+  <line x1="216" y1="113" x2="260" y2="121" stroke="#e2b33a" stroke-width="2" marker-end="url(#ms-arrow)"/>
+  <line x1="460" y1="171" x2="502" y2="120" stroke="#92df62" stroke-width="2" marker-end="url(#ms-arrow)"/>
+
+  <!-- no reverse -->
+  <line x1="504" y1="180" x2="220" y2="180" stroke="#f08760" stroke-width="2" stroke-dasharray="6 5"/>
+  <text x="362" y="248" text-anchor="middle" fill="#f08760" font-size="12" font-weight="700" font-family="IBM Plex Sans, sans-serif">no reverse path exists &#8212; Sparks never convert back to Mana</text>
+
+  <text x="360" y="284" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">re-running with the same key returns the existing pair &#8212; the conversion can be retried but never doubled</text>
+</svg>

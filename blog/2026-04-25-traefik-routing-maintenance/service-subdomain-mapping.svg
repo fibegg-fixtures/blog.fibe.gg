@@ -1,0 +1,65 @@
+<svg viewBox="0 0 740 388" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Compose services map to subdomains via generated Traefik labels under one wildcard certificate">
+  <defs>
+    <marker id="ssm-arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0,0 L9,5 L0,10 z" fill="#5cb43a"/>
+    </marker>
+  </defs>
+
+  <text x="370" y="26" text-anchor="middle" fill="#f3f0e0" font-size="17" font-weight="700" font-family="IBM Plex Sans, sans-serif">Service &#8594; subdomain, via generated labels</text>
+
+  <!-- left: compose services -->
+  <rect x="28" y="52" width="232" height="300" rx="8" fill="#20251a" stroke="#434a35"/>
+  <text x="144" y="76" text-anchor="middle" fill="#c7c4ae" font-size="12" font-weight="700" font-family="IBM Plex Sans, sans-serif">Playspec services</text>
+
+  <rect x="48" y="92" width="192" height="48" rx="6" fill="#252a1e" stroke="#545c42"/>
+  <text x="144" y="112" text-anchor="middle" fill="#92df62" font-size="13" font-family="JetBrains Mono, monospace">app</text>
+  <text x="144" y="130" text-anchor="middle" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">exposed &#183; subdomain: app</text>
+
+  <rect x="48" y="150" width="192" height="48" rx="6" fill="#252a1e" stroke="#545c42"/>
+  <text x="144" y="170" text-anchor="middle" fill="#92df62" font-size="13" font-family="JetBrains Mono, monospace">api</text>
+  <text x="144" y="188" text-anchor="middle" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">exposed &#183; subdomain: api</text>
+
+  <rect x="48" y="208" width="192" height="48" rx="6" fill="#252a1e" stroke="#545c42"/>
+  <text x="144" y="228" text-anchor="middle" fill="#92df62" font-size="13" font-family="JetBrains Mono, monospace">docs</text>
+  <text x="144" y="246" text-anchor="middle" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">subdomain defaults to name</text>
+
+  <rect x="48" y="266" width="192" height="48" rx="6" fill="#20251a" stroke="#434a35"/>
+  <text x="144" y="286" text-anchor="middle" fill="#757d5e" font-size="13" font-family="JetBrains Mono, monospace">worker</text>
+  <text x="144" y="304" text-anchor="middle" fill="#757d5e" font-size="10" font-family="JetBrains Mono, monospace">not exposed &#8594; no router</text>
+
+  <!-- arrows -->
+  <line x1="244" y1="116" x2="300" y2="116" stroke="#5cb43a" stroke-width="1.6" marker-end="url(#ssm-arrow)"/>
+  <line x1="244" y1="174" x2="300" y2="174" stroke="#5cb43a" stroke-width="1.6" marker-end="url(#ssm-arrow)"/>
+  <line x1="244" y1="232" x2="300" y2="232" stroke="#5cb43a" stroke-width="1.6" marker-end="url(#ssm-arrow)"/>
+
+  <!-- middle: generated labels -->
+  <rect x="304" y="52" width="240" height="300" rx="8" fill="#20251a" stroke="#434a35"/>
+  <text x="424" y="76" text-anchor="middle" fill="#c7c4ae" font-size="12" font-weight="700" font-family="IBM Plex Sans, sans-serif">Generated Traefik labels</text>
+
+  <rect x="318" y="92" width="212" height="64" rx="6" fill="#252a1e" stroke="#545c42"/>
+  <text x="328" y="112" fill="#f3f0e0" font-size="9.5" font-family="IBM Plex Sans, sans-serif">router rule:</text>
+  <text x="328" y="128" fill="#56d8c0" font-size="9.5" font-family="JetBrains Mono, monospace">Host(`app.&lt;env&gt;.mq.dev`)</text>
+  <text x="328" y="146" fill="#a19f89" font-size="9.5" font-family="IBM Plex Sans, sans-serif">TLS via wildcard resolver</text>
+
+  <rect x="318" y="166" width="212" height="48" rx="6" fill="#252a1e" stroke="#545c42"/>
+  <text x="328" y="186" fill="#f3f0e0" font-size="9.5" font-family="IBM Plex Sans, sans-serif">router rule:</text>
+  <text x="328" y="202" fill="#56d8c0" font-size="9.5" font-family="JetBrains Mono, monospace">Host(`api.&lt;env&gt;.mq.dev`)</text>
+
+  <rect x="318" y="224" width="212" height="48" rx="6" fill="#252a1e" stroke="#545c42"/>
+  <text x="328" y="244" fill="#f3f0e0" font-size="9.5" font-family="IBM Plex Sans, sans-serif">router rule:</text>
+  <text x="328" y="260" fill="#56d8c0" font-size="9.5" font-family="JetBrains Mono, monospace">Host(`docs.&lt;env&gt;.mq.dev`)</text>
+
+  <text x="424" y="298" text-anchor="middle" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">+ service, entrypoints,</text>
+  <text x="424" y="314" text-anchor="middle" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">https redirect middleware</text>
+
+  <line x1="544" y1="200" x2="588" y2="200" stroke="#5cb43a" stroke-width="1.6" marker-end="url(#ssm-arrow)"/>
+
+  <!-- right: wildcard cert -->
+  <rect x="592" y="120" width="124" height="160" rx="8" fill="#20251a" stroke="#e2b33a"/>
+  <text x="654" y="150" text-anchor="middle" fill="#eec854" font-size="12" font-weight="700" font-family="JetBrains Mono, monospace">one cert</text>
+  <text x="654" y="180" text-anchor="middle" fill="#f5da79" font-size="13" font-family="JetBrains Mono, monospace">*.&lt;env&gt;</text>
+  <text x="654" y="200" text-anchor="middle" fill="#f5da79" font-size="13" font-family="JetBrains Mono, monospace">.mq.dev</text>
+  <text x="654" y="228" text-anchor="middle" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">ZeroSSL EAB</text>
+  <text x="654" y="244" text-anchor="middle" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">+ acme-dns</text>
+  <text x="654" y="266" text-anchor="middle" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">covers all subs</text>
+</svg>

@@ -1,0 +1,56 @@
+<svg viewBox="0 0 760 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Random generation flow: declare random true, Fibe generates 32 hex once, persists, reuses on later compiles, fans out to every path">
+  <defs>
+    <marker id="rf-arrow" markerWidth="10" markerHeight="10" refX="8" refY="4" orient="auto">
+      <path d="M0,0 L9,4 L0,8 Z" fill="#79d44e"/>
+    </marker>
+  </defs>
+
+  <text x="380" y="26" text-anchor="middle" fill="#f3f0e0" font-size="16" font-weight="700" font-family="IBM Plex Sans, sans-serif">random: true &#8212; generate once, never hardcode</text>
+
+  <!-- step 1 -->
+  <rect x="20" y="52" width="160" height="92" rx="8" fill="#252a1e" stroke="#545c42"/>
+  <text x="100" y="76" text-anchor="middle" fill="#f5da79" font-size="12" font-weight="700" font-family="JetBrains Mono, monospace">1. declare</text>
+  <text x="100" y="100" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="JetBrains Mono, monospace">random: true</text>
+  <text x="100" y="118" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="JetBrains Mono, monospace">required: true</text>
+  <text x="100" y="136" text-anchor="middle" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">no default value</text>
+
+  <line x1="180" y1="98" x2="218" y2="98" stroke="#79d44e" stroke-width="2" marker-end="url(#rf-arrow)"/>
+
+  <!-- step 2 -->
+  <rect x="222" y="52" width="160" height="92" rx="8" fill="#252a1e" stroke="#545c42"/>
+  <text x="302" y="76" text-anchor="middle" fill="#f5da79" font-size="12" font-weight="700" font-family="JetBrains Mono, monospace">2. compile</text>
+  <text x="302" y="100" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">Fibe generates</text>
+  <text x="302" y="118" text-anchor="middle" fill="#92df62" font-size="11" font-family="JetBrains Mono, monospace">32 lowercase hex</text>
+  <text x="302" y="136" text-anchor="middle" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">before the required check</text>
+
+  <line x1="382" y1="98" x2="420" y2="98" stroke="#79d44e" stroke-width="2" marker-end="url(#rf-arrow)"/>
+
+  <!-- step 3 -->
+  <rect x="424" y="52" width="160" height="92" rx="8" fill="#252a1e" stroke="#545c42"/>
+  <text x="504" y="76" text-anchor="middle" fill="#f5da79" font-size="12" font-weight="700" font-family="JetBrains Mono, monospace">3. persist</text>
+  <text x="504" y="100" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">stored for the launch</text>
+  <text x="504" y="118" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">reused on every</text>
+  <text x="504" y="136" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">later compile</text>
+
+  <line x1="584" y1="98" x2="622" y2="98" stroke="#79d44e" stroke-width="2" marker-end="url(#rf-arrow)"/>
+
+  <!-- step 4 -->
+  <rect x="626" y="52" width="120" height="92" rx="8" fill="#20251a" stroke="#5cb43a" stroke-width="2"/>
+  <text x="686" y="76" text-anchor="middle" fill="#92df62" font-size="12" font-weight="700" font-family="JetBrains Mono, monospace">4. fan out</text>
+  <text x="686" y="100" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">same value to</text>
+  <text x="686" y="118" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="JetBrains Mono, monospace">every path</text>
+
+  <!-- fan-out targets -->
+  <line x1="686" y1="144" x2="686" y2="176" stroke="#79d44e" stroke-width="1.5" marker-end="url(#rf-arrow)"/>
+  <rect x="200" y="180" width="360" height="44" rx="6" fill="#20251a" stroke="#434a35"/>
+  <text x="380" y="198" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="JetBrains Mono, monospace">services.postgres.environment.POSTGRES_PASSWORD</text>
+  <text x="380" y="216" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="JetBrains Mono, monospace">services.app.environment.DATABASE_PASSWORD</text>
+  <line x1="560" y1="200" x2="612" y2="200" stroke="#757d5e" stroke-width="1" stroke-dasharray="3 3"/>
+  <line x1="200" y1="200" x2="148" y2="200" stroke="#757d5e" stroke-width="1" stroke-dasharray="3 3"/>
+  <text x="100" y="204" text-anchor="middle" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">paths:</text>
+
+  <!-- caution band -->
+  <rect x="20" y="244" width="726" height="42" rx="6" fill="#20251a" stroke="#f08760" stroke-width="1.5"/>
+  <text x="383" y="262" text-anchor="middle" fill="#f08760" font-size="11" font-weight="700" font-family="JetBrains Mono, monospace">do NOT re-randomize on every launch</text>
+  <text x="383" y="278" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">the value persists by design &#8212; a changed password locks you out of the existing DB volume</text>
+</svg>

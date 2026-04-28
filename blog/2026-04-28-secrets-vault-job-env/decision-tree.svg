@@ -1,0 +1,70 @@
+<svg viewBox="0 0 760 460" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Decision tree: where does this secret go - launch variable, Secret Vault, or Job ENV">
+  <defs>
+    <marker id="dt-arrow" markerWidth="9" markerHeight="9" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#757d5e"/>
+    </marker>
+  </defs>
+
+  <text x="380" y="28" text-anchor="middle" fill="#f3f0e0" font-size="17" font-weight="700" font-family="IBM Plex Sans, sans-serif">Where does this value go?</text>
+
+  <!-- root question -->
+  <rect x="240" y="46" width="280" height="50" rx="8" fill="#252a1e" stroke="#545c42"/>
+  <text x="380" y="68" text-anchor="middle" fill="#f3f0e0" font-size="13" font-family="IBM Plex Sans, sans-serif">Is it the Player's external credential,</text>
+  <text x="380" y="85" text-anchor="middle" fill="#f3f0e0" font-size="13" font-family="IBM Plex Sans, sans-serif">reused across many launches?</text>
+
+  <!-- branch lines from root -->
+  <line x1="300" y1="96" x2="150" y2="146" stroke="#757d5e" stroke-width="1.5" marker-end="url(#dt-arrow)"/>
+  <line x1="460" y1="96" x2="610" y2="146" stroke="#757d5e" stroke-width="1.5" marker-end="url(#dt-arrow)"/>
+  <text x="208" y="124" text-anchor="middle" fill="#abe87f" font-size="12" font-family="JetBrains Mono, monospace">yes</text>
+  <text x="560" y="124" text-anchor="middle" fill="#eec854" font-size="12" font-family="JetBrains Mono, monospace">no</text>
+
+  <!-- left: vault question -->
+  <rect x="20" y="150" width="260" height="50" rx="8" fill="#252a1e" stroke="#545c42"/>
+  <text x="150" y="172" text-anchor="middle" fill="#f3f0e0" font-size="13" font-family="IBM Plex Sans, sans-serif">Consumed by a Trick (job-mode)</text>
+  <text x="150" y="189" text-anchor="middle" fill="#f3f0e0" font-size="13" font-family="IBM Plex Sans, sans-serif">on every run?</text>
+
+  <line x1="90" y1="200" x2="78" y2="256" stroke="#757d5e" stroke-width="1.5" marker-end="url(#dt-arrow)"/>
+  <line x1="210" y1="200" x2="222" y2="256" stroke="#757d5e" stroke-width="1.5" marker-end="url(#dt-arrow)"/>
+  <text x="62" y="232" text-anchor="middle" fill="#abe87f" font-size="12" font-family="JetBrains Mono, monospace">yes</text>
+  <text x="240" y="232" text-anchor="middle" fill="#56d8c0" font-size="12" font-family="JetBrains Mono, monospace">no</text>
+
+  <!-- right: random question -->
+  <rect x="480" y="150" width="260" height="50" rx="8" fill="#252a1e" stroke="#545c42"/>
+  <text x="610" y="172" text-anchor="middle" fill="#f3f0e0" font-size="13" font-family="IBM Plex Sans, sans-serif">Should Fibe generate it,</text>
+  <text x="610" y="189" text-anchor="middle" fill="#f3f0e0" font-size="13" font-family="IBM Plex Sans, sans-serif">never seen outside this launch?</text>
+
+  <line x1="550" y1="200" x2="540" y2="256" stroke="#757d5e" stroke-width="1.5" marker-end="url(#dt-arrow)"/>
+  <line x1="670" y1="200" x2="680" y2="256" stroke="#757d5e" stroke-width="1.5" marker-end="url(#dt-arrow)"/>
+  <text x="524" y="232" text-anchor="middle" fill="#abe87f" font-size="12" font-family="JetBrains Mono, monospace">yes</text>
+  <text x="702" y="232" text-anchor="middle" fill="#eec854" font-size="12" font-family="JetBrains Mono, monospace">no</text>
+
+  <!-- leaf: Job ENV -->
+  <rect x="20" y="260" width="160" height="78" rx="8" fill="#20251a" stroke="#5cb43a" stroke-width="2"/>
+  <text x="100" y="288" text-anchor="middle" fill="#92df62" font-size="15" font-weight="700" font-family="JetBrains Mono, monospace">Job ENV</text>
+  <text x="100" y="310" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">Trick-only, Player or</text>
+  <text x="100" y="325" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">Prop scope</text>
+
+  <!-- leaf: Secret Vault -->
+  <rect x="195" y="260" width="160" height="78" rx="8" fill="#20251a" stroke="#5cb43a" stroke-width="2"/>
+  <text x="275" y="288" text-anchor="middle" fill="#92df62" font-size="15" font-weight="700" font-family="JetBrains Mono, monospace">Secret Vault</text>
+  <text x="275" y="310" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">encrypted, fetched</text>
+  <text x="275" y="325" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">by name, rotatable</text>
+
+  <!-- leaf: random var -->
+  <rect x="455" y="260" width="160" height="78" rx="8" fill="#20251a" stroke="#eec854" stroke-width="2"/>
+  <text x="535" y="284" text-anchor="middle" fill="#f5da79" font-size="14" font-weight="700" font-family="JetBrains Mono, monospace">random var</text>
+  <text x="535" y="306" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">random: true,</text>
+  <text x="535" y="321" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">persisted per launch</text>
+
+  <!-- leaf: launch var sensitive -->
+  <rect x="630" y="260" width="120" height="78" rx="8" fill="#20251a" stroke="#eec854" stroke-width="2"/>
+  <text x="690" y="284" text-anchor="middle" fill="#f5da79" font-size="13" font-weight="700" font-family="JetBrains Mono, monospace">launch var</text>
+  <text x="690" y="306" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">+ secret /</text>
+  <text x="690" y="321" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">sensitive</text>
+
+  <!-- never do this band -->
+  <rect x="20" y="376" width="720" height="64" rx="8" fill="#20251a" stroke="#f08760" stroke-width="1.5"/>
+  <text x="380" y="400" text-anchor="middle" fill="#f08760" font-size="13" font-weight="700" font-family="JetBrains Mono, monospace">NEVER</text>
+  <text x="380" y="420" text-anchor="middle" fill="#c7c4ae" font-size="12" font-family="IBM Plex Sans, sans-serif">a real secret in a `default:` field, in template text, or committed to a repo &#183;</text>
+  <text x="380" y="435" text-anchor="middle" fill="#c7c4ae" font-size="12" font-family="IBM Plex Sans, sans-serif">it lands in plain YAML and in everyone's git history</text>
+</svg>

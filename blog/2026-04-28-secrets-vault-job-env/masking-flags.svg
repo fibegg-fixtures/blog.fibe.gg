@@ -1,0 +1,32 @@
+<svg viewBox="0 0 720 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="What secret and sensitive flags do: secret masks in the launcher form, sensitive excludes from logs and telemetry, neither is encryption at rest">
+  <text x="360" y="26" text-anchor="middle" fill="#f3f0e0" font-size="16" font-weight="700" font-family="IBM Plex Sans, sans-serif">secret: vs sensitive: &#8212; both are UI hints</text>
+
+  <!-- secret panel -->
+  <rect x="20" y="48" width="216" height="150" rx="8" fill="#20251a" stroke="#eec854" stroke-width="1.5"/>
+  <text x="128" y="74" text-anchor="middle" fill="#f5da79" font-size="14" font-weight="700" font-family="JetBrains Mono, monospace">secret: true</text>
+  <text x="128" y="98" text-anchor="middle" fill="#c7c4ae" font-size="12" font-family="IBM Plex Sans, sans-serif">masks the value in the</text>
+  <text x="128" y="114" text-anchor="middle" fill="#c7c4ae" font-size="12" font-family="IBM Plex Sans, sans-serif">launcher form</text>
+  <rect x="48" y="128" width="160" height="30" rx="4" fill="#252a1e" stroke="#545c42"/>
+  <text x="128" y="148" text-anchor="middle" fill="#92df62" font-size="14" font-family="JetBrains Mono, monospace">&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;&#8226;</text>
+  <text x="128" y="180" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">reveal-click to show</text>
+
+  <!-- sensitive panel -->
+  <rect x="252" y="48" width="216" height="150" rx="8" fill="#20251a" stroke="#56d8c0" stroke-width="1.5"/>
+  <text x="360" y="74" text-anchor="middle" fill="#56d8c0" font-size="14" font-weight="700" font-family="JetBrains Mono, monospace">sensitive: true</text>
+  <text x="360" y="98" text-anchor="middle" fill="#c7c4ae" font-size="12" font-family="IBM Plex Sans, sans-serif">excludes the value from</text>
+  <text x="360" y="114" text-anchor="middle" fill="#c7c4ae" font-size="12" font-family="IBM Plex Sans, sans-serif">logs and telemetry</text>
+  <rect x="284" y="128" width="152" height="30" rx="4" fill="#252a1e" stroke="#545c42"/>
+  <text x="360" y="148" text-anchor="middle" fill="#a19f89" font-size="12" font-family="JetBrains Mono, monospace">log: [redacted]</text>
+  <text x="360" y="180" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">never surfaced in output</text>
+
+  <!-- not encryption panel -->
+  <rect x="484" y="48" width="216" height="150" rx="8" fill="#20251a" stroke="#f08760" stroke-width="1.5"/>
+  <text x="592" y="74" text-anchor="middle" fill="#f08760" font-size="14" font-weight="700" font-family="JetBrains Mono, monospace">neither = crypto</text>
+  <text x="592" y="100" text-anchor="middle" fill="#c7c4ae" font-size="12" font-family="IBM Plex Sans, sans-serif">flags are display hints,</text>
+  <text x="592" y="116" text-anchor="middle" fill="#c7c4ae" font-size="12" font-family="IBM Plex Sans, sans-serif">not at-rest encryption</text>
+  <text x="592" y="146" text-anchor="middle" fill="#f08760" font-size="12" font-weight="700" font-family="IBM Plex Sans, sans-serif">long-lived real secret?</text>
+  <text x="592" y="166" text-anchor="middle" fill="#92df62" font-size="12" font-family="IBM Plex Sans, sans-serif">&#8594; use the Secret Vault</text>
+  <text x="592" y="184" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">encrypted, rotatable</text>
+
+  <text x="360" y="224" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">Use both on the same variable for a "paste your own, leave blank to skip" field.</text>
+</svg>

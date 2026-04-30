@@ -1,0 +1,97 @@
+<svg viewBox="0 0 740 560" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The AgentChat deploy pipeline: validate guard, then six numbered steps from compose generation to running, with retryable and non-retryable failure exits">
+  <defs>
+    <marker id="arrowDP" markerWidth="9" markerHeight="9" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#757d5e"/>
+    </marker>
+    <marker id="arrowDPgold" markerWidth="9" markerHeight="9" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#e2b33a"/>
+    </marker>
+    <marker id="arrowDPember" markerWidth="9" markerHeight="9" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#f08760"/>
+    </marker>
+  </defs>
+
+  <text x="20" y="28" fill="#f3f0e0" font-size="16" font-weight="700" font-family="IBM Plex Sans, sans-serif">AgentChat deploy job</text>
+  <text x="200" y="28" fill="#a19f89" font-size="12" font-family="JetBrains Mono, monospace">Redis deploy-lock &#183; 30-minute timeout</text>
+
+  <!-- validate guard -->
+  <rect x="20" y="44" width="700" height="56" rx="6" fill="#252a1e" stroke="#99761f"/>
+  <text x="34" y="66" fill="#eec854" font-size="13" font-weight="700" font-family="IBM Plex Sans, sans-serif">Validate</text>
+  <text x="34" y="86" fill="#c7c4ae" font-size="11.5" font-family="IBM Plex Sans, sans-serif">agent authenticated &#183; marquee entitled + operational &#183; root domain present &#183; free slot (bounded retry, up to 10x)</text>
+
+  <line x1="370" y1="100" x2="370" y2="124" stroke="#757d5e" stroke-width="2" marker-end="url(#arrowDP)"/>
+
+  <!-- step boxes -->
+  <!-- step 1 -->
+  <rect x="20" y="126" width="700" height="52" rx="6" fill="#20251a" stroke="#5cb43a"/>
+  <circle cx="44" cy="152" r="13" fill="#20251a" stroke="#92df62"/>
+  <text x="44" y="157" text-anchor="middle" fill="#92df62" font-size="14" font-weight="700" font-family="JetBrains Mono, monospace">1</text>
+  <text x="68" y="148" fill="#f3f0e0" font-size="13" font-weight="700" font-family="IBM Plex Sans, sans-serif">Generate desired state</text>
+  <text x="68" y="167" fill="#a19f89" font-size="11" font-family="JetBrains Mono, monospace">render compose YAML + fibe.yml (provider, creds env, MCP, skills)</text>
+
+  <line x1="370" y1="178" x2="370" y2="190" stroke="#757d5e" stroke-width="2" marker-end="url(#arrowDP)"/>
+
+  <!-- step 2 -->
+  <rect x="20" y="192" width="700" height="52" rx="6" fill="#20251a" stroke="#5cb43a"/>
+  <circle cx="44" cy="218" r="13" fill="#20251a" stroke="#92df62"/>
+  <text x="44" y="223" text-anchor="middle" fill="#92df62" font-size="14" font-weight="700" font-family="JetBrains Mono, monospace">2</text>
+  <text x="68" y="214" fill="#f3f0e0" font-size="13" font-weight="700" font-family="IBM Plex Sans, sans-serif">Stage on-disk content</text>
+  <text x="68" y="233" fill="#a19f89" font-size="11" font-family="JetBrains Mono, monospace">stage main.md + enabled skills, re-download mounted files &#183; failure &#8594; temporary</text>
+
+  <line x1="370" y1="244" x2="370" y2="256" stroke="#757d5e" stroke-width="2" marker-end="url(#arrowDP)"/>
+
+  <!-- step 3 -->
+  <rect x="20" y="258" width="700" height="52" rx="6" fill="#20251a" stroke="#5cb43a"/>
+  <circle cx="44" cy="284" r="13" fill="#20251a" stroke="#92df62"/>
+  <text x="44" y="289" text-anchor="middle" fill="#92df62" font-size="14" font-weight="700" font-family="JetBrains Mono, monospace">3</text>
+  <text x="68" y="280" fill="#f3f0e0" font-size="13" font-weight="700" font-family="IBM Plex Sans, sans-serif">Docker auth</text>
+  <text x="68" y="299" fill="#a19f89" font-size="11" font-family="JetBrains Mono, monospace">rsync DockerHub creds &#8594; DOCKER_CONFIG &#183; failure &#8594; temporary</text>
+
+  <line x1="370" y1="310" x2="370" y2="322" stroke="#757d5e" stroke-width="2" marker-end="url(#arrowDP)"/>
+
+  <!-- step 4 -->
+  <rect x="20" y="324" width="700" height="52" rx="6" fill="#20251a" stroke="#5cb43a"/>
+  <circle cx="44" cy="350" r="13" fill="#20251a" stroke="#92df62"/>
+  <text x="44" y="355" text-anchor="middle" fill="#92df62" font-size="14" font-weight="700" font-family="JetBrains Mono, monospace">4</text>
+  <text x="68" y="346" fill="#f3f0e0" font-size="13" font-weight="700" font-family="IBM Plex Sans, sans-serif">compose up --force-recreate</text>
+  <text x="68" y="365" fill="#a19f89" font-size="11" font-family="JetBrains Mono, monospace">stale-conflict &#8594; one self-clean + retry &#183; exit -1/124/137/143/255 &#8594; retryable</text>
+
+  <line x1="370" y1="376" x2="370" y2="388" stroke="#757d5e" stroke-width="2" marker-end="url(#arrowDP)"/>
+
+  <!-- step 5 -->
+  <rect x="20" y="390" width="700" height="52" rx="6" fill="#20251a" stroke="#5cb43a"/>
+  <circle cx="44" cy="416" r="13" fill="#20251a" stroke="#92df62"/>
+  <text x="44" y="421" text-anchor="middle" fill="#92df62" font-size="14" font-weight="700" font-family="JetBrains Mono, monospace">5</text>
+  <text x="68" y="412" fill="#f3f0e0" font-size="13" font-weight="700" font-family="IBM Plex Sans, sans-serif">Connect Traefik network</text>
+  <text x="68" y="431" fill="#a19f89" font-size="11" font-family="JetBrains Mono, monospace">join the chat's Compose network to Traefik (network-drift repair runs here too)</text>
+
+  <line x1="370" y1="442" x2="370" y2="454" stroke="#757d5e" stroke-width="2" marker-end="url(#arrowDP)"/>
+
+  <!-- step 6 -->
+  <rect x="20" y="456" width="700" height="52" rx="6" fill="#20251a" stroke="#5cb43a"/>
+  <circle cx="44" cy="482" r="13" fill="#20251a" stroke="#92df62"/>
+  <text x="44" y="487" text-anchor="middle" fill="#92df62" font-size="14" font-weight="700" font-family="JetBrains Mono, monospace">6</text>
+  <text x="68" y="478" fill="#f3f0e0" font-size="13" font-weight="700" font-family="IBM Plex Sans, sans-serif">Wait reachable</text>
+  <text x="68" y="497" fill="#a19f89" font-size="11" font-family="JetBrains Mono, monospace">poll up to 45&#215;2s &#183; SSL handshake = still issuing (not a failure) &#183; timeout &#8594; retry</text>
+
+  <line x1="370" y1="508" x2="370" y2="524" stroke="#5cb43a" stroke-width="2.5" marker-end="url(#arrowDP)"/>
+  <rect x="280" y="526" width="180" height="30" rx="6" fill="#252a1e" stroke="#92df62"/>
+  <text x="370" y="546" text-anchor="middle" fill="#92df62" font-size="13" font-weight="700" font-family="JetBrains Mono, monospace">running &#183; iframe revealed</text>
+
+  <!-- retryable exit (gold, right side) -->
+  <line x1="720" y1="350" x2="730" y2="350" stroke="#e2b33a" stroke-width="0"/>
+  <text x="734" y="300" fill="#eec854" font-size="10.5" font-family="IBM Plex Sans, sans-serif" transform="rotate(90 734 300)" text-anchor="middle">temporary &#8594; pending &#183; re-enqueue</text>
+  <line x1="720" y1="218" x2="734" y2="218" stroke="#e2b33a" stroke-width="2" marker-end="url(#arrowDPgold)"/>
+  <line x1="734" y1="218" x2="734" y2="482" stroke="#e2b33a" stroke-width="2"/>
+  <line x1="720" y1="350" x2="734" y2="350" stroke="#e2b33a" stroke-width="2"/>
+  <line x1="720" y1="482" x2="734" y2="482" stroke="#e2b33a" stroke-width="2"/>
+  <line x1="720" y1="284" x2="734" y2="284" stroke="#e2b33a" stroke-width="2"/>
+
+  <!-- non-retryable exit (ember, left side) -->
+  <line x1="20" y1="218" x2="8" y2="218" stroke="#f08760" stroke-width="2"/>
+  <line x1="8" y1="218" x2="8" y2="350" stroke="#f08760" stroke-width="2"/>
+  <line x1="20" y1="350" x2="8" y2="350" stroke="#f08760" stroke-width="2"/>
+  <line x1="8" y1="350" x2="8" y2="540" stroke="#f08760" stroke-width="2"/>
+  <line x1="8" y1="540" x2="272" y2="540" stroke="#f08760" stroke-width="0"/>
+  <text x="6" y="430" fill="#f08760" font-size="10.5" font-family="IBM Plex Sans, sans-serif" transform="rotate(90 6 430)" text-anchor="middle">non-retryable &#8594; error</text>
+</svg>

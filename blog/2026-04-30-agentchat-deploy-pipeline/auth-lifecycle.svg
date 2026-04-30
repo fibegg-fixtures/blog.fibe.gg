@@ -1,0 +1,56 @@
+<svg viewBox="0 0 740 280" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The Agent auth lifecycle: created pending, then authenticated, with edges to expired, back to authenticated on re-auth, to revoked which wipes credentials, and to deleting which tears down chats">
+  <defs>
+    <marker id="arrowAL" markerWidth="9" markerHeight="9" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#757d5e"/>
+    </marker>
+    <marker id="arrowALg" markerWidth="9" markerHeight="9" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#5cb43a"/>
+    </marker>
+  </defs>
+
+  <text x="20" y="28" fill="#f3f0e0" font-size="16" font-weight="700" font-family="IBM Plex Sans, sans-serif">Agent auth lifecycle (config, not runtime)</text>
+
+  <!-- pending -->
+  <rect x="30" y="110" width="130" height="50" rx="8" fill="#252a1e" stroke="#eec854"/>
+  <text x="95" y="140" text-anchor="middle" fill="#eec854" font-size="14" font-weight="700" font-family="JetBrains Mono, monospace">pending</text>
+
+  <!-- authenticated -->
+  <rect x="250" y="110" width="160" height="50" rx="8" fill="#252a1e" stroke="#92df62"/>
+  <text x="330" y="140" text-anchor="middle" fill="#92df62" font-size="14" font-weight="700" font-family="JetBrains Mono, monospace">authenticated</text>
+
+  <!-- expired -->
+  <rect x="500" y="40" width="130" height="50" rx="8" fill="#252a1e" stroke="#99761f"/>
+  <text x="565" y="70" text-anchor="middle" fill="#eec854" font-size="14" font-weight="700" font-family="JetBrains Mono, monospace">expired</text>
+
+  <!-- revoked -->
+  <rect x="500" y="180" width="130" height="50" rx="8" fill="#252a1e" stroke="#f08760"/>
+  <text x="565" y="210" text-anchor="middle" fill="#f08760" font-size="14" font-weight="700" font-family="JetBrains Mono, monospace">revoked</text>
+
+  <!-- deleting -->
+  <rect x="250" y="210" width="160" height="50" rx="8" fill="#252a1e" stroke="#757d5e"/>
+  <text x="330" y="240" text-anchor="middle" fill="#c7c4ae" font-size="14" font-weight="700" font-family="JetBrains Mono, monospace">deleting</text>
+
+  <!-- pending -> authenticated -->
+  <line x1="160" y1="135" x2="247" y2="135" stroke="#5cb43a" stroke-width="2" marker-end="url(#arrowALg)"/>
+  <text x="203" y="127" text-anchor="middle" fill="#92df62" font-size="10" font-family="IBM Plex Sans, sans-serif">authenticate</text>
+
+  <!-- authenticated -> expired -->
+  <line x1="410" y1="124" x2="500" y2="78" stroke="#757d5e" stroke-width="1.6" marker-end="url(#arrowAL)"/>
+  <text x="470" y="96" text-anchor="middle" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">token expiry</text>
+
+  <!-- expired -> authenticated (re-auth) -->
+  <path d="M 500 70 C 430 70, 420 105, 412 120" fill="none" stroke="#5cb43a" stroke-width="1.6" marker-end="url(#arrowALg)"/>
+  <text x="445" y="64" text-anchor="middle" fill="#92df62" font-size="10" font-family="IBM Plex Sans, sans-serif">re-auth</text>
+
+  <!-- authenticated -> revoked -->
+  <line x1="410" y1="146" x2="500" y2="195" stroke="#757d5e" stroke-width="1.6" marker-end="url(#arrowAL)"/>
+  <text x="470" y="186" text-anchor="middle" fill="#f08760" font-size="10" font-family="IBM Plex Sans, sans-serif">revoke (wipes creds)</text>
+
+  <!-- authenticated -> deleting -->
+  <line x1="330" y1="160" x2="330" y2="207" stroke="#757d5e" stroke-width="1.6" marker-end="url(#arrowAL)"/>
+  <text x="338" y="188" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">delete</text>
+
+  <!-- deleting -> end -->
+  <line x1="250" y1="235" x2="170" y2="235" stroke="#757d5e" stroke-width="1.6" marker-end="url(#arrowAL)"/>
+  <text x="155" y="239" text-anchor="end" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">background teardown &#183; chats torn down</text>
+</svg>

@@ -1,0 +1,45 @@
+<svg viewBox="0 0 740 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The six outcomes of the external reachability probe and how each is classified: healthy is viewable, an SSL handshake error is still issuing and not a failure, a probe timeout is ignored as transient, and connection refused, DNS failure and unreachable are recoverable once past the grace window">
+  <defs>
+    <marker id="arrowRE" markerWidth="9" markerHeight="9" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#757d5e"/>
+    </marker>
+  </defs>
+
+  <text x="20" y="28" fill="#f3f0e0" font-size="16" font-weight="700" font-family="IBM Plex Sans, sans-serif">External probe: GET /api/health &#183; 2s timeouts &#183; six outcomes</text>
+
+  <!-- probe node -->
+  <rect x="280" y="46" width="180" height="44" rx="8" fill="#252a1e" stroke="#56d8c0"/>
+  <text x="370" y="73" text-anchor="middle" fill="#56d8c0" font-size="13" font-weight="700" font-family="JetBrains Mono, monospace">reachability probe</text>
+
+  <!-- ok -->
+  <line x1="320" y1="90" x2="120" y2="128" stroke="#757d5e" stroke-width="1.6" marker-end="url(#arrowRE)"/>
+  <rect x="20" y="130" width="210" height="64" rx="8" fill="#20251a" stroke="#5cb43a"/>
+  <text x="36" y="154" fill="#92df62" font-size="13" font-weight="700" font-family="IBM Plex Sans, sans-serif">Healthy</text>
+  <text x="36" y="174" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">&#8594; running, viewable</text>
+  <text x="36" y="189" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">clears stale recovery message</text>
+
+  <!-- ssl -->
+  <line x1="370" y1="90" x2="370" y2="128" stroke="#757d5e" stroke-width="1.6" marker-end="url(#arrowRE)"/>
+  <rect x="265" y="130" width="210" height="64" rx="8" fill="#20251a" stroke="#99761f"/>
+  <text x="281" y="154" fill="#eec854" font-size="13" font-weight="700" font-family="IBM Plex Sans, sans-serif">SSL handshake error</text>
+  <text x="281" y="174" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">&#8594; still issuing</text>
+  <text x="281" y="189" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">never a failure (cert still issuing)</text>
+
+  <!-- timeout -->
+  <line x1="420" y1="90" x2="620" y2="128" stroke="#757d5e" stroke-width="1.6" marker-end="url(#arrowRE)"/>
+  <rect x="510" y="130" width="210" height="64" rx="8" fill="#20251a" stroke="#545c42"/>
+  <text x="526" y="154" fill="#c7c4ae" font-size="13" font-weight="700" font-family="IBM Plex Sans, sans-serif">Probe timeout</text>
+  <text x="526" y="174" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">IGNORED &#183; transient no-op</text>
+  <text x="526" y="189" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">reconcilers return early</text>
+
+  <!-- refused/dns/unreachable group -->
+  <line x1="370" y1="194" x2="370" y2="232" stroke="#757d5e" stroke-width="0"/>
+  <rect x="160" y="232" width="420" height="100" rx="8" fill="#20251a" stroke="#f08760"/>
+  <text x="180" y="258" fill="#f08760" font-size="13" font-weight="700" font-family="IBM Plex Sans, sans-serif">Connection refused &#183; DNS failure &#183; unreachable</text>
+  <text x="180" y="282" fill="#c7c4ae" font-size="11.5" font-family="IBM Plex Sans, sans-serif">recoverable &#8212; but only if the chat started longer ago</text>
+  <text x="180" y="300" fill="#c7c4ae" font-size="11.5" font-family="IBM Plex Sans, sans-serif">than the 2-minute grace window.</text>
+  <text x="180" y="320" fill="#a19f89" font-size="11.5" font-family="IBM Plex Sans, sans-serif">sustained &#8594; mark for redeploy &#183; back to pending &#183; enqueue start</text>
+
+  <!-- connector from probe area to recoverable group -->
+  <line x1="320" y1="194" x2="320" y2="232" stroke="#757d5e" stroke-width="1.6" marker-end="url(#arrowRE)"/>
+</svg>

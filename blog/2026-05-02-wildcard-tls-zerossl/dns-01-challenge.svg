@@ -1,0 +1,54 @@
+<svg viewBox="0 0 740 380" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="DNS-01 challenge flow: Traefik asks ZeroSSL for a wildcard cert, ZeroSSL returns a challenge token, acme-dns publishes the TXT record, ZeroSSL verifies it and issues the certificate">
+  <defs>
+    <marker id="arrR" markerWidth="11" markerHeight="11" refX="9" refY="5" orient="auto">
+      <path d="M1,1 L9,5 L1,9" fill="none" stroke="#56d8c0" stroke-width="1.6"/>
+    </marker>
+    <marker id="arrG" markerWidth="11" markerHeight="11" refX="9" refY="5" orient="auto">
+      <path d="M1,1 L9,5 L1,9" fill="none" stroke="#79d44e" stroke-width="1.6"/>
+    </marker>
+  </defs>
+
+  <text x="20" y="30" fill="#f3f0e0" font-size="17" font-weight="700" font-family="IBM Plex Sans, sans-serif">Why DNS-01: you can prove *.domain you can't serve</text>
+
+  <!-- Actors -->
+  <rect x="30" y="60" width="150" height="44" rx="6" fill="#252a1e" stroke="#545c42"/>
+  <text x="105" y="80" text-anchor="middle" fill="#f3f0e0" font-size="12.5" font-weight="700" font-family="IBM Plex Sans, sans-serif">Traefik</text>
+  <text x="105" y="96" text-anchor="middle" fill="#a19f89" font-size="10.5" font-family="JetBrains Mono, monospace">on the Marquee</text>
+
+  <rect x="295" y="60" width="150" height="44" rx="6" fill="#252a1e" stroke="#545c42"/>
+  <text x="370" y="80" text-anchor="middle" fill="#eec854" font-size="12.5" font-weight="700" font-family="IBM Plex Sans, sans-serif">ZeroSSL ACME CA</text>
+  <text x="370" y="96" text-anchor="middle" fill="#a19f89" font-size="10.5" font-family="JetBrains Mono, monospace">acme.zerossl.com/v2/DV90</text>
+
+  <rect x="560" y="60" width="150" height="44" rx="6" fill="#252a1e" stroke="#545c42"/>
+  <text x="635" y="80" text-anchor="middle" fill="#56d8c0" font-size="12.5" font-weight="700" font-family="IBM Plex Sans, sans-serif">acme-dns</text>
+  <text x="635" y="96" text-anchor="middle" fill="#a19f89" font-size="10.5" font-family="JetBrains Mono, monospace">auth.fibe.gg</text>
+
+  <!-- lifelines -->
+  <line x1="105" y1="104" x2="105" y2="350" stroke="#434a35" stroke-width="1" stroke-dasharray="3 4"/>
+  <line x1="370" y1="104" x2="370" y2="350" stroke="#434a35" stroke-width="1" stroke-dasharray="3 4"/>
+  <line x1="635" y1="104" x2="635" y2="350" stroke="#434a35" stroke-width="1" stroke-dasharray="3 4"/>
+
+  <!-- 1 order -->
+  <line x1="105" y1="138" x2="362" y2="138" stroke="#56d8c0" stroke-width="1.6" marker-end="url(#arrR)"/>
+  <text x="115" y="132" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">1 &#183; order cert for domain + *.domain (EAB-bound)</text>
+
+  <!-- 2 challenge -->
+  <line x1="370" y1="172" x2="113" y2="172" stroke="#eec854" stroke-width="1.6" marker-end="url(#arrR)"/>
+  <text x="135" y="166" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">2 &#183; here is your DNS-01 token</text>
+
+  <!-- 3 publish TXT -->
+  <line x1="105" y1="206" x2="627" y2="206" stroke="#79d44e" stroke-width="1.6" marker-end="url(#arrG)"/>
+  <text x="200" y="200" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">3 &#183; publish _acme-challenge TXT = token</text>
+
+  <!-- 4 verify -->
+  <line x1="370" y1="244" x2="627" y2="244" stroke="#eec854" stroke-width="1.6" marker-end="url(#arrR)"/>
+  <text x="380" y="238" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">4 &#183; resolve the TXT, confirm token</text>
+
+  <!-- 5 issue -->
+  <line x1="370" y1="278" x2="113" y2="278" stroke="#79d44e" stroke-width="1.6" marker-end="url(#arrG)"/>
+  <text x="135" y="272" fill="#92df62" font-size="11" font-weight="700" font-family="IBM Plex Sans, sans-serif">5 &#183; issue wildcard certificate</text>
+
+  <rect x="30" y="304" width="680" height="46" rx="6" fill="#20251a" stroke="#434a35"/>
+  <text x="50" y="324" fill="#a19f89" font-size="11.5" font-family="IBM Plex Sans, sans-serif">HTTP-01 would need every subdomain reachable first. DNS-01 proves control of the whole zone with</text>
+  <text x="50" y="340" fill="#a19f89" font-size="11.5" font-family="IBM Plex Sans, sans-serif">one TXT record &#8212; the only challenge type that can cover a wildcard. acme-dns isolates that record.</text>
+</svg>

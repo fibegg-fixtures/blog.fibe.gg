@@ -1,0 +1,49 @@
+<svg viewBox="0 0 740 380" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The two healthchecks: an in-container compose healthcheck and a platform-external reachability probe">
+  <defs>
+    <marker id="th-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#757d5e"/>
+    </marker>
+  </defs>
+
+  <text x="370" y="26" text-anchor="middle" fill="#f3f0e0" font-size="16" font-weight="700" font-family="IBM Plex Sans, sans-serif">Two healthchecks, two jobs</text>
+
+  <!-- Layer 1: in-container -->
+  <rect x="24" y="52" width="688" height="138" rx="8" fill="#20251a" stroke="#434a35"/>
+  <text x="44" y="78" fill="#92df62" font-size="13" font-weight="700" font-family="JetBrains Mono, monospace">1 &#183; IN-CONTAINER</text>
+  <text x="44" y="98" fill="#a19f89" font-size="12" font-family="IBM Plex Sans, sans-serif">Docker Compose healthcheck &#183; keeps the container alive</text>
+
+  <!-- host box -->
+  <rect x="44" y="112" width="320" height="60" rx="6" fill="#252a1e" stroke="#545c42"/>
+  <text x="204" y="134" text-anchor="middle" fill="#c7c4ae" font-size="12" font-family="IBM Plex Sans, sans-serif">Genie container on the Marquee</text>
+  <text x="204" y="156" text-anchor="middle" fill="#abe87f" font-size="11.5" font-family="JetBrains Mono, monospace">curl -f http://localhost/api/health</text>
+
+  <!-- self loop -->
+  <line x1="372" y1="142" x2="430" y2="142" stroke="#757d5e" stroke-width="1.5" marker-end="url(#th-arrow)"/>
+  <rect x="438" y="112" width="252" height="60" rx="6" fill="#252a1e" stroke="#545c42"/>
+  <text x="564" y="132" text-anchor="middle" fill="#c7c4ae" font-size="11.5" font-family="IBM Plex Sans, sans-serif">interval 2s &#183; timeout 3s &#183; 15 retries</text>
+  <text x="564" y="152" text-anchor="middle" fill="#eec854" font-size="11.5" font-family="JetBrains Mono, monospace">restart: on-failure:10</text>
+  <text x="564" y="166" text-anchor="middle" fill="#a19f89" font-size="10.5" font-family="IBM Plex Sans, sans-serif">unhealthy &#8594; Docker restarts it</text>
+
+  <!-- Layer 2: external -->
+  <rect x="24" y="206" width="688" height="150" rx="8" fill="#20251a" stroke="#434a35"/>
+  <text x="44" y="232" fill="#56d8c0" font-size="13" font-weight="700" font-family="JetBrains Mono, monospace">2 &#183; PLATFORM-EXTERNAL</text>
+  <text x="44" y="252" fill="#a19f89" font-size="12" font-family="IBM Plex Sans, sans-serif">Reachability probe from Rails &#183; decides whether to redeploy</text>
+
+  <rect x="44" y="266" width="200" height="72" rx="6" fill="#252a1e" stroke="#545c42"/>
+  <text x="144" y="290" text-anchor="middle" fill="#c7c4ae" font-size="12" font-family="IBM Plex Sans, sans-serif">Playguard reconciler</text>
+  <text x="144" y="308" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">+ live status poll</text>
+  <text x="144" y="326" text-anchor="middle" fill="#abe87f" font-size="10.5" font-family="JetBrains Mono, monospace">every 60s</text>
+
+  <line x1="252" y1="302" x2="306" y2="302" stroke="#757d5e" stroke-width="1.5" marker-end="url(#th-arrow)"/>
+
+  <rect x="314" y="266" width="222" height="72" rx="6" fill="#252a1e" stroke="#545c42"/>
+  <text x="425" y="290" text-anchor="middle" fill="#abe87f" font-size="11.5" font-family="JetBrains Mono, monospace">GET /api/health</text>
+  <text x="425" y="308" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">open + read timeout: 2s each</text>
+  <text x="425" y="326" text-anchor="middle" fill="#a19f89" font-size="10.5" font-family="IBM Plex Sans, sans-serif">through Traefik &#183; real network</text>
+
+  <line x1="544" y1="302" x2="598" y2="302" stroke="#757d5e" stroke-width="1.5" marker-end="url(#th-arrow)"/>
+
+  <rect x="606" y="266" width="84" height="72" rx="6" fill="#252a1e" stroke="#545c42"/>
+  <text x="648" y="296" text-anchor="middle" fill="#f5da79" font-size="22" font-weight="700" font-family="JetBrains Mono, monospace">6</text>
+  <text x="648" y="318" text-anchor="middle" fill="#a19f89" font-size="10.5" font-family="IBM Plex Sans, sans-serif">results</text>
+</svg>

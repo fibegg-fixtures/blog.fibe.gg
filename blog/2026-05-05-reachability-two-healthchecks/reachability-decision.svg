@@ -1,0 +1,75 @@
+<svg viewBox="0 0 740 470" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Reachability decision flow: six probe results route to stay running, ignore, or redeploy, gated by a two-minute grace window">
+  <defs>
+    <marker id="rd-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#757d5e"/>
+    </marker>
+  </defs>
+
+  <text x="370" y="26" text-anchor="middle" fill="#f3f0e0" font-size="16" font-weight="700" font-family="IBM Plex Sans, sans-serif">What the reconciler does with each probe result</text>
+
+  <!-- probe -->
+  <rect x="296" y="44" width="148" height="44" rx="6" fill="#252a1e" stroke="#545c42"/>
+  <text x="370" y="63" text-anchor="middle" fill="#abe87f" font-size="11.5" font-family="JetBrains Mono, monospace">GET /api/health</text>
+  <text x="370" y="80" text-anchor="middle" fill="#a19f89" font-size="10.5" font-family="IBM Plex Sans, sans-serif">running chat</text>
+
+  <!-- three result groups -->
+  <!-- ok -->
+  <rect x="40" y="120" width="180" height="40" rx="6" fill="#20251a" stroke="#5cb43a"/>
+  <text x="130" y="145" text-anchor="middle" fill="#92df62" font-size="12.5" font-family="IBM Plex Sans, sans-serif">clean pass</text>
+  <!-- ssl -->
+  <rect x="40" y="172" width="180" height="40" rx="6" fill="#20251a" stroke="#e2b33a"/>
+  <text x="130" y="197" text-anchor="middle" fill="#eec854" font-size="12.5" font-family="IBM Plex Sans, sans-serif">TLS handshake error</text>
+  <!-- timeout -->
+  <rect x="280" y="120" width="180" height="40" rx="6" fill="#20251a" stroke="#56d8c0"/>
+  <text x="370" y="145" text-anchor="middle" fill="#56d8c0" font-size="12.5" font-family="IBM Plex Sans, sans-serif">timeout</text>
+  <!-- bad group -->
+  <rect x="520" y="112" width="184" height="56" rx="6" fill="#20251a" stroke="#f08760"/>
+  <text x="612" y="134" text-anchor="middle" fill="#f08760" font-size="11" font-family="IBM Plex Sans, sans-serif">refused connection</text>
+  <text x="612" y="150" text-anchor="middle" fill="#f08760" font-size="11" font-family="IBM Plex Sans, sans-serif">DNS error &#183; unreachable</text>
+
+  <!-- arrows from probe -->
+  <line x1="320" y1="88" x2="150" y2="118" stroke="#757d5e" stroke-width="1.4" marker-end="url(#rd-arrow)"/>
+  <line x1="370" y1="88" x2="370" y2="118" stroke="#757d5e" stroke-width="1.4" marker-end="url(#rd-arrow)"/>
+  <line x1="420" y1="88" x2="600" y2="110" stroke="#757d5e" stroke-width="1.4" marker-end="url(#rd-arrow)"/>
+
+  <!-- ok -> stay -->
+  <line x1="130" y1="160" x2="130" y2="270" stroke="#5cb43a" stroke-width="1.4" marker-end="url(#rd-arrow)"/>
+  <text x="138" y="240" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">clear stale msg</text>
+
+  <!-- ssl -> stay (curve into same outcome region) -->
+  <line x1="220" y1="192" x2="250" y2="270" stroke="#e2b33a" stroke-width="1.4" marker-end="url(#rd-arrow)"/>
+
+  <!-- timeout -> ignore -->
+  <line x1="370" y1="160" x2="370" y2="380" stroke="#56d8c0" stroke-width="1.4" marker-end="url(#rd-arrow)"/>
+
+  <!-- bad -> grace gate -->
+  <line x1="612" y1="168" x2="612" y2="208" stroke="#f08760" stroke-width="1.4" marker-end="url(#rd-arrow)"/>
+
+  <!-- grace gate diamond-ish -->
+  <rect x="512" y="212" width="200" height="58" rx="6" fill="#252a1e" stroke="#757d5e"/>
+  <text x="612" y="236" text-anchor="middle" fill="#f3f0e0" font-size="11.5" font-weight="700" font-family="IBM Plex Sans, sans-serif">recovery due?</text>
+  <text x="612" y="254" text-anchor="middle" fill="#a19f89" font-size="10.5" font-family="IBM Plex Sans, sans-serif">running &gt; 2 minutes</text>
+
+  <!-- gate: no -> ignore -->
+  <line x1="512" y1="241" x2="430" y2="241" stroke="#56d8c0" stroke-width="1.4" marker-end="url(#rd-arrow)"/>
+  <text x="470" y="232" text-anchor="middle" fill="#56d8c0" font-size="10.5" font-family="JetBrains Mono, monospace">no</text>
+  <line x1="430" y1="241" x2="404" y2="241" stroke="#56d8c0" stroke-width="1.4"/>
+  <line x1="404" y1="241" x2="404" y2="380" stroke="#56d8c0" stroke-width="1.4" marker-end="url(#rd-arrow)"/>
+
+  <!-- gate: yes -> redeploy -->
+  <line x1="612" y1="270" x2="612" y2="380" stroke="#f08760" stroke-width="1.4" marker-end="url(#rd-arrow)"/>
+  <text x="624" y="320" fill="#f08760" font-size="10.5" font-family="JetBrains Mono, monospace">yes &#183; sustained</text>
+
+  <!-- outcome row -->
+  <rect x="60" y="272" width="220" height="56" rx="6" fill="#20251a" stroke="#5cb43a"/>
+  <text x="170" y="296" text-anchor="middle" fill="#92df62" font-size="13" font-weight="700" font-family="IBM Plex Sans, sans-serif">STAY RUNNING</text>
+  <text x="170" y="316" text-anchor="middle" fill="#a19f89" font-size="10.5" font-family="IBM Plex Sans, sans-serif">no-op &#183; cert still warming on ssl</text>
+
+  <rect x="300" y="382" width="208" height="56" rx="6" fill="#20251a" stroke="#56d8c0"/>
+  <text x="404" y="406" text-anchor="middle" fill="#56d8c0" font-size="13" font-weight="700" font-family="IBM Plex Sans, sans-serif">IGNORE</text>
+  <text x="404" y="426" text-anchor="middle" fill="#a19f89" font-size="10.5" font-family="IBM Plex Sans, sans-serif">transient blip &#183; chat untouched</text>
+
+  <rect x="520" y="382" width="184" height="56" rx="6" fill="#20251a" stroke="#f08760"/>
+  <text x="612" y="406" text-anchor="middle" fill="#f08760" font-size="13" font-weight="700" font-family="IBM Plex Sans, sans-serif">REDEPLOY</text>
+  <text x="612" y="426" text-anchor="middle" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">&#8594; pending &#183; re-enqueue start</text>
+</svg>

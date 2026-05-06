@@ -1,0 +1,36 @@
+<svg viewBox="0 0 740 372" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Comparison of inline dollar-dollar-var tokens for string fragments versus path and paths whole-node binding for full scalar values">
+  <rect x="0" y="0" width="740" height="372" fill="#20251a"/>
+  <text x="370" y="30" text-anchor="middle" fill="#f3f0e0" font-size="17" font-weight="700" font-family="IBM Plex Sans, sans-serif">Two ways a value gets written &#8212; pick by what you are replacing</text>
+
+  <!-- INLINE -->
+  <rect x="20" y="52" width="345" height="288" rx="8" fill="#252a1e" stroke="#545c42"/>
+  <text x="38" y="80" fill="#56d8c0" font-size="15" font-weight="700" font-family="JetBrains Mono, monospace">$$var__NAME</text>
+  <text x="38" y="100" fill="#a19f89" font-size="11.5" font-family="IBM Plex Sans, sans-serif">String-level substitution, runs FIRST</text>
+  <line x1="38" y1="112" x2="347" y2="112" stroke="#434a35" stroke-width="1"/>
+  <text x="38" y="134" fill="#92df62" font-size="12.5" font-weight="700" font-family="IBM Plex Sans, sans-serif">Use for a FRAGMENT of a string</text>
+  <rect x="38" y="146" width="309" height="74" rx="4" fill="#20251a" stroke="#434a35"/>
+  <text x="50" y="168" fill="#c7c4ae" font-size="11" font-family="JetBrains Mono, monospace">image: ghcr.io/acme/app:$$var__TAG</text>
+  <text x="50" y="188" fill="#c7c4ae" font-size="11" font-family="JetBrains Mono, monospace">fibe.gg/path_rule:</text>
+  <text x="50" y="206" fill="#c7c4ae" font-size="11" font-family="JetBrains Mono, monospace">  PathPrefix(`/$$var__PREFIX`)</text>
+  <text x="38" y="246" fill="#a19f89" font-size="11.5" font-family="IBM Plex Sans, sans-serif">&#183; Image tags, connection strings,</text>
+  <text x="38" y="263" fill="#a19f89" font-size="11.5" font-family="IBM Plex Sans, sans-serif">  command lines, prefix/suffix.</text>
+  <text x="38" y="284" fill="#a19f89" font-size="11.5" font-family="IBM Plex Sans, sans-serif">&#183; Stays a string &#8212; never typed.</text>
+  <text x="38" y="305" fill="#f08760" font-size="11.5" font-family="IBM Plex Sans, sans-serif">&#183; Missing value &#8594; literal "placeholder".</text>
+  <text x="38" y="326" fill="#f08760" font-size="11.5" font-family="IBM Plex Sans, sans-serif">&#183; Don't use as a whole label/env value.</text>
+
+  <!-- PATH -->
+  <rect x="375" y="52" width="345" height="288" rx="8" fill="#252a1e" stroke="#79d44e"/>
+  <text x="393" y="80" fill="#92df62" font-size="15" font-weight="700" font-family="JetBrains Mono, monospace">path: / paths:</text>
+  <text x="393" y="100" fill="#a19f89" font-size="11.5" font-family="IBM Plex Sans, sans-serif">Whole-node replacement, runs AFTER inline</text>
+  <line x1="393" y1="112" x2="702" y2="112" stroke="#434a35" stroke-width="1"/>
+  <text x="393" y="134" fill="#92df62" font-size="12.5" font-weight="700" font-family="IBM Plex Sans, sans-serif">Use for a WHOLE scalar node (default)</text>
+  <rect x="393" y="146" width="309" height="74" rx="4" fill="#20251a" stroke="#434a35"/>
+  <text x="405" y="168" fill="#c7c4ae" font-size="11" font-family="JetBrains Mono, monospace">REPLICAS:</text>
+  <text x="405" y="186" fill="#c7c4ae" font-size="11" font-family="JetBrains Mono, monospace">  default: 2</text>
+  <text x="405" y="204" fill="#abe87f" font-size="11" font-family="JetBrains Mono, monospace">  path: services.web.deploy.replicas</text>
+  <text x="393" y="246" fill="#a19f89" font-size="11.5" font-family="IBM Plex Sans, sans-serif">&#183; Env values, label values, ports,</text>
+  <text x="393" y="263" fill="#a19f89" font-size="11.5" font-family="IBM Plex Sans, sans-serif">  subdomains, public URLs, replicas.</text>
+  <text x="393" y="284" fill="#92df62" font-size="11.5" font-family="IBM Plex Sans, sans-serif">&#183; Typed: all-digits &#8594; int, true/false &#8594; bool.</text>
+  <text x="393" y="305" fill="#a19f89" font-size="11.5" font-family="IBM Plex Sans, sans-serif">&#183; paths: array &#8594; one value, many spots.</text>
+  <text x="393" y="326" fill="#f08760" font-size="11.5" font-family="IBM Plex Sans, sans-serif">&#183; Missing services.&lt;name&gt; root &#8594; rejected.</text>
+</svg>

@@ -1,0 +1,40 @@
+<svg viewBox="0 0 720 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The five variable flags: required, default, random, validation, and secret or sensitive, with what each one does at compile time">
+  <rect x="0" y="0" width="720" height="360" fill="#20251a"/>
+  <text x="360" y="32" text-anchor="middle" fill="#f3f0e0" font-size="17" font-weight="700" font-family="IBM Plex Sans, sans-serif">Five flags on a variable declaration</text>
+  <text x="360" y="52" text-anchor="middle" fill="#a19f89" font-size="12" font-family="IBM Plex Sans, sans-serif">all optional &#183; mix freely &#183; resolved in a fixed order</text>
+
+  <!-- required -->
+  <rect x="20" y="72" width="212" height="80" rx="6" fill="#252a1e" stroke="#545c42"/>
+  <text x="36" y="98" fill="#92df62" font-size="15" font-weight="700" font-family="JetBrains Mono, monospace">required: true</text>
+  <text x="36" y="120" fill="#c7c4ae" font-size="11.5" font-family="IBM Plex Sans, sans-serif">No value, no default, no random</text>
+  <text x="36" y="137" fill="#f08760" font-size="11.5" font-family="IBM Plex Sans, sans-serif">&#8594; compile fails: "is required"</text>
+
+  <!-- default -->
+  <rect x="254" y="72" width="212" height="80" rx="6" fill="#252a1e" stroke="#545c42"/>
+  <text x="270" y="98" fill="#eec854" font-size="15" font-weight="700" font-family="JetBrains Mono, monospace">default: "..."</text>
+  <text x="270" y="120" fill="#c7c4ae" font-size="11.5" font-family="IBM Plex Sans, sans-serif">Literal fallback when launcher</text>
+  <text x="270" y="137" fill="#c7c4ae" font-size="11.5" font-family="IBM Plex Sans, sans-serif">omits the value. No tokens inside.</text>
+
+  <!-- random -->
+  <rect x="488" y="72" width="212" height="80" rx="6" fill="#252a1e" stroke="#545c42"/>
+  <text x="504" y="98" fill="#56d8c0" font-size="15" font-weight="700" font-family="JetBrains Mono, monospace">random: true</text>
+  <text x="504" y="120" fill="#c7c4ae" font-size="11.5" font-family="IBM Plex Sans, sans-serif">Generates a 32-char hex value,</text>
+  <text x="504" y="137" fill="#c7c4ae" font-size="11.5" font-family="IBM Plex Sans, sans-serif">persisted with the launch.</text>
+
+  <!-- validation -->
+  <rect x="20" y="170" width="324" height="80" rx="6" fill="#252a1e" stroke="#545c42"/>
+  <text x="36" y="196" fill="#eec854" font-size="15" font-weight="700" font-family="JetBrains Mono, monospace">validation: "/regex/"</text>
+  <text x="36" y="218" fill="#c7c4ae" font-size="11.5" font-family="IBM Plex Sans, sans-serif">Must be wrapped in slashes. Checked AFTER</text>
+  <text x="36" y="235" fill="#c7c4ae" font-size="11.5" font-family="IBM Plex Sans, sans-serif">default/random resolve. Blank value skips it.</text>
+
+  <!-- secret -->
+  <rect x="366" y="170" width="334" height="80" rx="6" fill="#252a1e" stroke="#545c42"/>
+  <text x="382" y="196" fill="#56d8c0" font-size="15" font-weight="700" font-family="JetBrains Mono, monospace">secret: true / sensitive: true</text>
+  <text x="382" y="218" fill="#c7c4ae" font-size="11.5" font-family="IBM Plex Sans, sans-serif">Launcher-UI hints only &#8212; they mask the field.</text>
+  <text x="382" y="235" fill="#a19f89" font-size="11.5" font-family="IBM Plex Sans, sans-serif">Not storage. Use the Secret Vault for that.</text>
+
+  <!-- resolution order band -->
+  <rect x="20" y="268" width="680" height="74" rx="6" fill="#20251a" stroke="#434a35"/>
+  <text x="36" y="292" fill="#f3f0e0" font-size="13" font-weight="700" font-family="IBM Plex Sans, sans-serif">Resolution order, per variable</text>
+  <text x="36" y="320" fill="#abe87f" font-size="12.5" font-family="JetBrains Mono, monospace">user value  &#8594;  default  &#8594;  random  &#8594;  (required? error)  &#8594;  empty / placeholder</text>
+</svg>

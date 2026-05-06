@@ -1,0 +1,45 @@
+<svg viewBox="0 0 740 392" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Before and after panels showing a Compose dollar-VAR interpolation lifted into an x-fibe.gg variable with a concrete placeholder and a path binding">
+  <defs>
+    <marker id="ee_arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#79d44e"/>
+    </marker>
+  </defs>
+  <rect x="0" y="0" width="740" height="392" fill="#20251a"/>
+  <text x="370" y="30" text-anchor="middle" fill="#f3f0e0" font-size="17" font-weight="700" font-family="IBM Plex Sans, sans-serif">Lifting a Compose interpolation into a launch variable</text>
+
+  <!-- BEFORE -->
+  <rect x="20" y="52" width="320" height="300" rx="8" fill="#252a1e" stroke="#545c42"/>
+  <text x="36" y="78" fill="#f08760" font-size="13" font-weight="700" font-family="IBM Plex Sans, sans-serif">BEFORE &#183; laptop-only</text>
+  <rect x="36" y="92" width="288" height="86" rx="4" fill="#20251a" stroke="#434a35"/>
+  <text x="48" y="114" fill="#a19f89" font-size="11" font-family="JetBrains Mono, monospace">services:</text>
+  <text x="48" y="132" fill="#a19f89" font-size="11" font-family="JetBrains Mono, monospace">  web:</text>
+  <text x="48" y="150" fill="#a19f89" font-size="11" font-family="JetBrains Mono, monospace">    environment:</text>
+  <text x="48" y="168" fill="#c7c4ae" font-size="11" font-family="JetBrains Mono, monospace">      RAILS_ENV: ${RAILS_ENV:-development}</text>
+  <text x="36" y="208" fill="#a19f89" font-size="11.5" font-family="IBM Plex Sans, sans-serif">Reads from a local .env via the</text>
+  <text x="36" y="225" fill="#a19f89" font-size="11.5" font-family="IBM Plex Sans, sans-serif">Compose engine at container start.</text>
+  <text x="36" y="252" fill="#f08760" font-size="11.5" font-family="IBM Plex Sans, sans-serif">On Fibe, launch values are NOT in</text>
+  <text x="36" y="269" fill="#f08760" font-size="11.5" font-family="IBM Plex Sans, sans-serif">that environment &#8212; ${...} resolves</text>
+  <text x="36" y="286" fill="#f08760" font-size="11.5" font-family="IBM Plex Sans, sans-serif">to the literal default or empty.</text>
+  <text x="36" y="320" fill="#a19f89" font-size="11.5" font-family="IBM Plex Sans, sans-serif">The launcher cannot configure it.</text>
+
+  <!-- arrow -->
+  <line x1="346" y1="200" x2="392" y2="200" stroke="#79d44e" stroke-width="2.5" marker-end="url(#ee_arrow)"/>
+
+  <!-- AFTER -->
+  <rect x="400" y="52" width="320" height="300" rx="8" fill="#252a1e" stroke="#79d44e"/>
+  <text x="416" y="78" fill="#92df62" font-size="13" font-weight="700" font-family="IBM Plex Sans, sans-serif">AFTER &#183; placeholder + path</text>
+  <rect x="416" y="92" width="288" height="68" rx="4" fill="#20251a" stroke="#434a35"/>
+  <text x="428" y="114" fill="#a19f89" font-size="11" font-family="JetBrains Mono, monospace">    environment:</text>
+  <text x="428" y="132" fill="#c7c4ae" font-size="11" font-family="JetBrains Mono, monospace">      RAILS_ENV: development</text>
+  <text x="428" y="150" fill="#757d5e" font-size="10" font-family="JetBrains Mono, monospace">      # local parity placeholder</text>
+  <rect x="416" y="170" width="288" height="124" rx="4" fill="#20251a" stroke="#434a35"/>
+  <text x="428" y="192" fill="#eec854" font-size="11" font-family="JetBrains Mono, monospace">x-fibe.gg:</text>
+  <text x="428" y="210" fill="#eec854" font-size="11" font-family="JetBrains Mono, monospace">  variables:</text>
+  <text x="428" y="228" fill="#c7c4ae" font-size="11" font-family="JetBrains Mono, monospace">    RAILS_ENV:</text>
+  <text x="428" y="246" fill="#c7c4ae" font-size="11" font-family="JetBrains Mono, monospace">      required: true</text>
+  <text x="428" y="264" fill="#c7c4ae" font-size="11" font-family="JetBrains Mono, monospace">      default: "development"</text>
+  <text x="428" y="282" fill="#abe87f" font-size="11" font-family="JetBrains Mono, monospace">      path: ...environment.RAILS_ENV</text>
+  <text x="416" y="320" fill="#92df62" font-size="11.5" font-family="IBM Plex Sans, sans-serif">Launcher sets it; path write replaces</text>
+  <text x="416" y="337" fill="#92df62" font-size="11.5" font-family="IBM Plex Sans, sans-serif">the whole node at compile. Still runs</text>
+  <text x="416" y="354" fill="#92df62" font-size="11.5" font-family="IBM Plex Sans, sans-serif">under plain docker compose up.</text>
+</svg>

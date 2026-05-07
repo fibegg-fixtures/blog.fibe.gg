@@ -1,0 +1,69 @@
+<svg viewBox="0 0 720 430" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Wildcard TLS bootstrap: acme-dns, ZeroSSL EAB, warm-up router, readiness probe">
+  <defs>
+    <marker id="tls-arrow" markerWidth="9" markerHeight="9" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#757d5e"/>
+    </marker>
+  </defs>
+
+  <text x="20" y="28" fill="#f3f0e0" font-size="15" font-weight="700" font-family="IBM Plex Sans, sans-serif">How one cert covers every subdomain</text>
+
+  <!-- Traefik -->
+  <rect x="20" y="52" width="200" height="120" rx="6" fill="#20251a" stroke="#5cb43a" stroke-width="1.5"/>
+  <text x="120" y="76" text-anchor="middle" fill="#92df62" font-size="13" font-weight="700" font-family="IBM Plex Sans, sans-serif">Traefik on the VM</text>
+  <text x="36" y="100" fill="#a19f89" font-size="11" font-family="JetBrains Mono, monospace">resolver: acme-dns</text>
+  <text x="36" y="118" fill="#a19f89" font-size="11" font-family="JetBrains Mono, monospace">caServer: zerossl /v2/DV90</text>
+  <text x="36" y="136" fill="#a19f89" font-size="11" font-family="JetBrains Mono, monospace">eab.kid + eab.hmacEncoded</text>
+  <text x="36" y="158" fill="#56d8c0" font-size="11" font-family="JetBrains Mono, monospace">warm-up router</text>
+
+  <!-- acme-dns -->
+  <rect x="280" y="52" width="180" height="56" rx="6" fill="#252a1e" stroke="#545c42"/>
+  <text x="370" y="76" text-anchor="middle" fill="#f3f0e0" font-size="12" font-weight="700" font-family="IBM Plex Sans, sans-serif">acme-dns</text>
+  <text x="370" y="96" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">answers _acme-challenge</text>
+
+  <!-- ZeroSSL -->
+  <rect x="280" y="124" width="180" height="56" rx="6" fill="#252a1e" stroke="#e2b33a"/>
+  <text x="370" y="148" text-anchor="middle" fill="#f5da79" font-size="12" font-weight="700" font-family="IBM Plex Sans, sans-serif">ZeroSSL (ACME)</text>
+  <text x="370" y="168" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">DV90, EAB-bound account</text>
+
+  <!-- wildcard cert -->
+  <rect x="520" y="88" width="180" height="56" rx="6" fill="#20251a" stroke="#5cb43a"/>
+  <text x="610" y="112" text-anchor="middle" fill="#abe87f" font-size="12" font-weight="700" font-family="JetBrains Mono, monospace">*.{domain}</text>
+  <text x="610" y="132" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">one wildcard cert</text>
+
+  <line x1="220" y1="88" x2="276" y2="80" stroke="#757d5e" stroke-width="1.5" marker-end="url(#tls-arrow)"/>
+  <text x="222" y="74" fill="#a19f89" font-size="9" font-family="JetBrains Mono, monospace">DNS-01</text>
+  <line x1="220" y1="140" x2="276" y2="150" stroke="#757d5e" stroke-width="1.5" marker-end="url(#tls-arrow)"/>
+  <text x="222" y="166" fill="#a19f89" font-size="9" font-family="JetBrains Mono, monospace">order</text>
+  <line x1="460" y1="150" x2="516" y2="124" stroke="#757d5e" stroke-width="1.5" marker-end="url(#tls-arrow)"/>
+  <line x1="610" y1="144" x2="610" y2="170" stroke="#5cb43a" stroke-width="1.5"/>
+  <line x1="610" y1="170" x2="124" y2="170" stroke="#5cb43a" stroke-width="0"/>
+  <path d="M610,144 L610,196 L120,196 L120,176" fill="none" stroke="#5cb43a" stroke-width="1.5" marker-end="url(#tls-arrow)"/>
+  <text x="330" y="212" text-anchor="middle" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">cert installed back into Traefik</text>
+
+  <!-- probe gate -->
+  <rect x="20" y="234" width="320" height="96" rx="6" fill="#20251a" stroke="#434a35"/>
+  <text x="36" y="258" fill="#f5da79" font-size="13" font-weight="700" font-family="IBM Plex Sans, sans-serif">TLS readiness probe</text>
+  <text x="36" y="280" fill="#a19f89" font-size="11" font-family="JetBrains Mono, monospace">GET https://tls-probe-{id}.{domain}/</text>
+  <text x="36" y="298" fill="#a19f89" font-size="11" font-family="JetBrains Mono, monospace">full chain verification</text>
+  <text x="36" y="314" fill="#a19f89" font-size="11" font-family="JetBrains Mono, monospace">+ hostname verification</text>
+
+  <!-- decision -->
+  <rect x="380" y="234" width="150" height="44" rx="6" fill="#252a1e" stroke="#5cb43a" stroke-width="1.5"/>
+  <text x="455" y="261" text-anchor="middle" fill="#abe87f" font-size="12" font-weight="700" font-family="JetBrains Mono, monospace">ready &#8594; active</text>
+
+  <rect x="380" y="286" width="150" height="44" rx="6" fill="#252a1e" stroke="#e2b33a"/>
+  <text x="455" y="307" text-anchor="middle" fill="#f5da79" font-size="11" font-family="JetBrains Mono, monospace">not ready &#8594; retry</text>
+  <text x="455" y="322" text-anchor="middle" fill="#a19f89" font-size="9" font-family="JetBrains Mono, monospace">backoff, up to 15 tries</text>
+
+  <rect x="556" y="234" width="144" height="44" rx="6" fill="#252a1e" stroke="#f08760"/>
+  <text x="628" y="261" text-anchor="middle" fill="#f08760" font-size="11" font-family="JetBrains Mono, monospace">exhausted &#8594; failed</text>
+
+  <line x1="340" y1="268" x2="376" y2="256" stroke="#757d5e" stroke-width="1.5" marker-end="url(#tls-arrow)"/>
+  <line x1="340" y1="296" x2="376" y2="308" stroke="#757d5e" stroke-width="1.5" marker-end="url(#tls-arrow)"/>
+  <line x1="530" y1="308" x2="554" y2="290" stroke="#757d5e" stroke-width="1.2" stroke-dasharray="4 3" marker-end="url(#tls-arrow)"/>
+
+  <!-- footnote -->
+  <rect x="20" y="350" width="680" height="58" rx="6" fill="#20251a" stroke="#434a35"/>
+  <text x="36" y="372" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">The warm-up router forces issuance up front, so the first real Playground request already finds a valid cert.</text>
+  <text x="36" y="392" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">The probe is a real client doing full chain + hostname verification &#8212; not a port check.</text>
+</svg>

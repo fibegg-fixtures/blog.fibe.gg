@@ -1,0 +1,78 @@
+<svg viewBox="0 0 720 470" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Dual-axis Marquee state: runtime status versus infrastructure lifecycle">
+  <defs>
+    <marker id="dax-arrow" markerWidth="9" markerHeight="9" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#757d5e"/>
+    </marker>
+  </defs>
+
+  <text x="20" y="28" fill="#f3f0e0" font-size="15" font-weight="700" font-family="IBM Plex Sans, sans-serif">Two axes, one Marquee</text>
+  <text x="20" y="48" fill="#a19f89" font-size="12" font-family="JetBrains Mono, monospace">runtime status &#215; infra lifecycle (+ sub-step)</text>
+
+  <!-- status axis -->
+  <rect x="20" y="70" width="320" height="120" rx="6" fill="#20251a" stroke="#434a35"/>
+  <text x="36" y="92" fill="#56d8c0" font-size="12" font-weight="700" font-family="JetBrains Mono, monospace">runtime status</text>
+  <rect x="36" y="104" width="86" height="34" rx="5" fill="#252a1e" stroke="#5cb43a"/>
+  <text x="79" y="126" text-anchor="middle" fill="#abe87f" font-size="12" font-family="JetBrains Mono, monospace">active</text>
+  <rect x="134" y="104" width="92" height="34" rx="5" fill="#252a1e" stroke="#757d5e"/>
+  <text x="180" y="126" text-anchor="middle" fill="#c7c4ae" font-size="12" font-family="JetBrains Mono, monospace">disabled</text>
+  <rect x="238" y="104" width="86" height="34" rx="5" fill="#252a1e" stroke="#f08760"/>
+  <text x="281" y="126" text-anchor="middle" fill="#f08760" font-size="12" font-family="JetBrains Mono, monospace">error</text>
+  <text x="36" y="166" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">Can a Player use it right now?</text>
+  <text x="36" y="182" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">Drives runtime + UI.</text>
+
+  <!-- terraform axis -->
+  <rect x="380" y="70" width="320" height="120" rx="6" fill="#20251a" stroke="#434a35"/>
+  <text x="396" y="92" fill="#f5da79" font-size="12" font-weight="700" font-family="JetBrains Mono, monospace">infra lifecycle</text>
+  <rect x="396" y="104" width="98" height="34" rx="5" fill="#252a1e" stroke="#e2b33a"/>
+  <text x="445" y="126" text-anchor="middle" fill="#f5da79" font-size="11" font-family="JetBrains Mono, monospace">provisioning</text>
+  <rect x="504" y="104" width="98" height="34" rx="5" fill="#252a1e" stroke="#5cb43a"/>
+  <text x="553" y="126" text-anchor="middle" fill="#abe87f" font-size="11" font-family="JetBrains Mono, monospace">provisioned</text>
+  <rect x="396" y="146" width="84" height="30" rx="5" fill="#252a1e" stroke="#757d5e"/>
+  <text x="438" y="166" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="JetBrains Mono, monospace">destroying</text>
+  <rect x="490" y="146" width="80" height="30" rx="5" fill="#252a1e" stroke="#757d5e"/>
+  <text x="530" y="166" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="JetBrains Mono, monospace">destroyed</text>
+  <rect x="580" y="146" width="64" height="30" rx="5" fill="#252a1e" stroke="#f08760"/>
+  <text x="612" y="166" text-anchor="middle" fill="#f08760" font-size="11" font-family="JetBrains Mono, monospace">failed</text>
+
+  <!-- BYO note -->
+  <rect x="380" y="204" width="320" height="48" rx="6" fill="#20251a" stroke="#434a35" stroke-dasharray="4 3"/>
+  <text x="396" y="226" fill="#56d8c0" font-size="11" font-weight="700" font-family="JetBrains Mono, monospace">BYO host:</text>
+  <text x="468" y="226" fill="#a19f89" font-size="11" font-family="JetBrains Mono, monospace">no infra lifecycle axis</text>
+  <text x="396" y="244" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">not Terraform-managed; jumps straight to active</text>
+
+  <!-- combined journey -->
+  <text x="20" y="232" fill="#f3f0e0" font-size="13" font-weight="700" font-family="IBM Plex Sans, sans-serif">A tutorial Marquee's path</text>
+
+  <rect x="20" y="252" width="150" height="60" rx="6" fill="#252a1e" stroke="#545c42"/>
+  <text x="95" y="276" text-anchor="middle" fill="#c7c4ae" font-size="12" font-family="JetBrains Mono, monospace">disabled</text>
+  <text x="95" y="294" text-anchor="middle" fill="#f5da79" font-size="11" font-family="JetBrains Mono, monospace">provisioning</text>
+  <text x="95" y="307" text-anchor="middle" fill="#a19f89" font-size="10" font-family="JetBrains Mono, monospace">sub-step: queued</text>
+
+  <rect x="206" y="252" width="150" height="60" rx="6" fill="#252a1e" stroke="#545c42"/>
+  <text x="281" y="276" text-anchor="middle" fill="#c7c4ae" font-size="12" font-family="JetBrains Mono, monospace">disabled</text>
+  <text x="281" y="294" text-anchor="middle" fill="#f5da79" font-size="11" font-family="JetBrains Mono, monospace">provisioning</text>
+  <text x="281" y="307" text-anchor="middle" fill="#a19f89" font-size="10" font-family="JetBrains Mono, monospace">sub-step: TLS provisioning</text>
+
+  <rect x="392" y="252" width="150" height="60" rx="6" fill="#252a1e" stroke="#5cb43a" stroke-width="1.5"/>
+  <text x="467" y="276" text-anchor="middle" fill="#abe87f" font-size="12" font-family="JetBrains Mono, monospace">active</text>
+  <text x="467" y="294" text-anchor="middle" fill="#abe87f" font-size="11" font-family="JetBrains Mono, monospace">provisioned</text>
+  <text x="467" y="307" text-anchor="middle" fill="#a19f89" font-size="10" font-family="JetBrains Mono, monospace">sub-step: none</text>
+
+  <rect x="578" y="252" width="122" height="60" rx="6" fill="#252a1e" stroke="#f08760"/>
+  <text x="639" y="276" text-anchor="middle" fill="#f08760" font-size="12" font-family="JetBrains Mono, monospace">error</text>
+  <text x="639" y="294" text-anchor="middle" fill="#f08760" font-size="11" font-family="JetBrains Mono, monospace">failed</text>
+  <text x="639" y="307" text-anchor="middle" fill="#a19f89" font-size="10" font-family="JetBrains Mono, monospace">timeout / null</text>
+
+  <line x1="170" y1="282" x2="202" y2="282" stroke="#757d5e" stroke-width="1.5" marker-end="url(#dax-arrow)"/>
+  <line x1="356" y1="282" x2="388" y2="282" stroke="#5cb43a" stroke-width="1.5" marker-end="url(#dax-arrow)"/>
+  <line x1="542" y1="282" x2="574" y2="282" stroke="#f08760" stroke-width="1.2" stroke-dasharray="4 3" marker-end="url(#dax-arrow)"/>
+
+  <text x="20" y="346" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">The webhook moves the right axis; the bootstrap job flips both to green only after the probe passes.</text>
+
+  <!-- timeout band -->
+  <rect x="20" y="366" width="680" height="40" rx="6" fill="#20251a" stroke="#434a35"/>
+  <text x="36" y="390" fill="#f5da79" font-size="11" font-family="JetBrains Mono, monospace">30-minute provisioning timeout</text>
+  <text x="320" y="390" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">&#8594; a stuck provisioning Marquee is swept to failed; none waits forever.</text>
+
+  <text x="20" y="438" fill="#757d5e" font-size="10" font-family="JetBrains Mono, monospace">A Marquee is never described by one word. Read both axes to know what it is.</text>
+</svg>

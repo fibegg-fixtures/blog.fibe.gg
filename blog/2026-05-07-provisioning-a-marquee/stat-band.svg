@@ -1,0 +1,17 @@
+<svg viewBox="0 0 720 100" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Provisioning at a glance: timeout, steps, retries, generation guard">
+  <rect x="0" y="10" width="172" height="80" rx="6" fill="#20251a" stroke="#434a35"/>
+  <text x="86" y="48" text-anchor="middle" fill="#f5da79" font-size="30" font-weight="700" font-family="JetBrains Mono, monospace">30m</text>
+  <text x="86" y="72" text-anchor="middle" fill="#a19f89" font-size="12" font-family="IBM Plex Sans, sans-serif">provisioning timeout</text>
+
+  <rect x="183" y="10" width="172" height="80" rx="6" fill="#20251a" stroke="#434a35"/>
+  <text x="269" y="48" text-anchor="middle" fill="#92df62" font-size="30" font-weight="700" font-family="JetBrains Mono, monospace">6</text>
+  <text x="269" y="72" text-anchor="middle" fill="#a19f89" font-size="12" font-family="IBM Plex Sans, sans-serif">provisioning sub-steps</text>
+
+  <rect x="366" y="10" width="172" height="80" rx="6" fill="#20251a" stroke="#434a35"/>
+  <text x="452" y="48" text-anchor="middle" fill="#56d8c0" font-size="30" font-weight="700" font-family="JetBrains Mono, monospace">15</text>
+  <text x="452" y="72" text-anchor="middle" fill="#a19f89" font-size="12" font-family="IBM Plex Sans, sans-serif">TLS bootstrap attempts</text>
+
+  <rect x="549" y="10" width="171" height="80" rx="6" fill="#20251a" stroke="#434a35"/>
+  <text x="634" y="48" text-anchor="middle" fill="#f08760" font-size="30" font-weight="700" font-family="JetBrains Mono, monospace">2&#215;</text>
+  <text x="634" y="72" text-anchor="middle" fill="#a19f89" font-size="12" font-family="IBM Plex Sans, sans-serif">null confirmation needed</text>
+</svg>

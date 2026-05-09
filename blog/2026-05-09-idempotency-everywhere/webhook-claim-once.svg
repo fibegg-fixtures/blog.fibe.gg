@@ -1,0 +1,54 @@
+<svg viewBox="0 0 720 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Webhook claim-once flow: a provider event is claimed exactly once per provider event id; duplicates are ignored">
+  <defs>
+    <marker id="wh-arrow" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 z" fill="#757d5e"/>
+    </marker>
+    <marker id="wh-arrow-green" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 z" fill="#5cb43a"/>
+    </marker>
+    <marker id="wh-arrow-ember" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 z" fill="#f08760"/>
+    </marker>
+  </defs>
+
+  <text x="360" y="26" text-anchor="middle" fill="#f3f0e0" font-size="16" font-weight="700" font-family="IBM Plex Sans, sans-serif">Claim once per provider event id</text>
+
+  <!-- provider -->
+  <rect x="40" y="56" width="150" height="64" rx="6" fill="#20251a" stroke="#434a35"/>
+  <text x="115" y="82" text-anchor="middle" fill="#c7c4ae" font-size="12" font-family="IBM Plex Sans, sans-serif">Stripe / Creem</text>
+  <text x="115" y="100" text-anchor="middle" fill="#c7c4ae" font-size="12" font-family="IBM Plex Sans, sans-serif">/ Paddle</text>
+
+  <text x="320" y="78" text-anchor="middle" fill="#a19f89" font-size="10.5" font-family="JetBrains Mono, monospace">evt_abc (delivered 1..N times)</text>
+  <line x1="190" y1="92" x2="448" y2="92" stroke="#757d5e" stroke-width="1.6" marker-end="url(#wh-arrow)"/>
+
+  <!-- verify -->
+  <rect x="452" y="56" width="228" height="64" rx="6" fill="#20251a" stroke="#545c42"/>
+  <text x="566" y="80" text-anchor="middle" fill="#f3f0e0" font-size="12" font-weight="700" font-family="IBM Plex Sans, sans-serif">verify signature</text>
+  <text x="566" y="100" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="JetBrains Mono, monospace">verify provider signature</text>
+
+  <!-- claim gate -->
+  <line x1="566" y1="120" x2="566" y2="150" stroke="#757d5e" stroke-width="1.6" marker-end="url(#wh-arrow)"/>
+  <rect x="412" y="152" width="308" height="78" rx="6" fill="#20251a" stroke="#eec854" stroke-width="1.6"/>
+  <text x="566" y="178" text-anchor="middle" fill="#f5da79" font-size="12" font-weight="700" font-family="IBM Plex Sans, sans-serif">claim the event</text>
+  <text x="566" y="198" text-anchor="middle" fill="#c7c4ae" font-size="10.5" font-family="JetBrains Mono, monospace">INSERT audit row</text>
+  <text x="566" y="216" text-anchor="middle" fill="#c7c4ae" font-size="10.5" font-family="JetBrains Mono, monospace">UNIQUE(provider, event id)</text>
+
+  <!-- first time -->
+  <line x1="412" y1="180" x2="300" y2="180" stroke="#5cb43a" stroke-width="2" marker-end="url(#wh-arrow-green)"/>
+  <text x="356" y="172" text-anchor="middle" fill="#92df62" font-size="10.5" font-family="JetBrains Mono, monospace">claimed</text>
+  <rect x="40" y="150" width="256" height="60" rx="6" fill="#20251a" stroke="#5cb43a" stroke-width="1.6"/>
+  <text x="168" y="174" text-anchor="middle" fill="#92df62" font-size="12.5" font-weight="700" font-family="IBM Plex Sans, sans-serif">first claim &#8594; dispatch</text>
+  <text x="168" y="195" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">fulfill order, mint Mana...</text>
+
+  <!-- duplicate -->
+  <line x1="566" y1="230" x2="566" y2="266" stroke="#f08760" stroke-width="1.6" marker-end="url(#wh-arrow-ember)"/>
+  <text x="566" y="252" text-anchor="middle" fill="#f08760" font-size="10.5" font-family="JetBrains Mono, monospace">unique collision &#8594; already claimed</text>
+  <rect x="412" y="268" width="308" height="56" rx="6" fill="#20251a" stroke="#f08760" stroke-width="1.4"/>
+  <text x="566" y="292" text-anchor="middle" fill="#f08760" font-size="12.5" font-weight="700" font-family="IBM Plex Sans, sans-serif">duplicate &#8594; return early</text>
+  <text x="566" y="312" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">no second fulfilment</text>
+
+  <!-- footer -->
+  <rect x="40" y="268" width="256" height="56" rx="6" fill="#252a1e" stroke="#434a35"/>
+  <text x="168" y="290" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">The DB index is the referee.</text>
+  <text x="168" y="309" text-anchor="middle" fill="#56d8c0" font-size="11" font-weight="700" font-family="IBM Plex Sans, sans-serif">Exactly one writer wins.</text>
+</svg>

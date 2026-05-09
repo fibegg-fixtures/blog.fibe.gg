@@ -1,0 +1,44 @@
+<svg viewBox="0 0 720 340" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Mana to Sparks conversion as two independently idempotent legs derived from one parent key">
+  <defs>
+    <marker id="conv-arrow" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 z" fill="#757d5e"/>
+    </marker>
+    <marker id="conv-arrow-gold" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 z" fill="#eec854"/>
+    </marker>
+  </defs>
+
+  <text x="360" y="28" text-anchor="middle" fill="#f3f0e0" font-size="16" font-weight="700" font-family="IBM Plex Sans, sans-serif">One conversion, two idempotent legs</text>
+
+  <!-- parent key -->
+  <rect x="252" y="50" width="216" height="48" rx="6" fill="#20251a" stroke="#eec854" stroke-width="1.6"/>
+  <text x="360" y="70" text-anchor="middle" fill="#f5da79" font-size="12" font-weight="700" font-family="IBM Plex Sans, sans-serif">parent idempotency key</text>
+  <text x="360" y="88" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="JetBrains Mono, monospace">one conversion intent</text>
+
+  <!-- branch lines -->
+  <line x1="320" y1="98" x2="190" y2="138" stroke="#eec854" stroke-width="1.6" marker-end="url(#conv-arrow-gold)"/>
+  <line x1="400" y1="98" x2="530" y2="138" stroke="#eec854" stroke-width="1.6" marker-end="url(#conv-arrow-gold)"/>
+
+  <!-- leg 1: mana debit -->
+  <rect x="40" y="142" width="260" height="90" rx="6" fill="#20251a" stroke="#545c42"/>
+  <text x="170" y="166" text-anchor="middle" fill="#f3f0e0" font-size="13" font-weight="700" font-family="IBM Plex Sans, sans-serif">Leg 1 &#183; debit Mana</text>
+  <text x="170" y="188" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="JetBrains Mono, monospace">parent key + debit suffix</text>
+  <rect x="64" y="200" width="212" height="22" rx="4" fill="#252a1e" stroke="#434a35"/>
+  <text x="170" y="215" text-anchor="middle" fill="#abe87f" font-size="10.5" font-family="JetBrains Mono, monospace">- mana &#183; own UNIQUE key</text>
+
+  <!-- leg 2: sparks credit -->
+  <rect x="420" y="142" width="260" height="90" rx="6" fill="#20251a" stroke="#545c42"/>
+  <text x="550" y="166" text-anchor="middle" fill="#f3f0e0" font-size="13" font-weight="700" font-family="IBM Plex Sans, sans-serif">Leg 2 &#183; credit Sparks</text>
+  <text x="550" y="188" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="JetBrains Mono, monospace">parent key + credit suffix</text>
+  <rect x="444" y="200" width="212" height="22" rx="4" fill="#252a1e" stroke="#434a35"/>
+  <text x="550" y="215" text-anchor="middle" fill="#56d8c0" font-size="10.5" font-family="JetBrains Mono, monospace">+ sparks &#183; own UNIQUE key</text>
+
+  <!-- transaction wrapper -->
+  <rect x="40" y="248" width="640" height="40" rx="6" fill="#252a1e" stroke="#5cb43a"/>
+  <text x="360" y="266" text-anchor="middle" fill="#92df62" font-size="12" font-weight="700" font-family="IBM Plex Sans, sans-serif">both legs run inside one DB transaction</text>
+  <text x="360" y="283" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">all-or-nothing: you never end up with Mana gone and no Sparks</text>
+
+  <!-- replay note -->
+  <rect x="40" y="300" width="640" height="28" rx="6" fill="#20251a" stroke="#434a35"/>
+  <text x="360" y="318" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">Replay: both child keys already exist &#8594; return the two existing transactions, do nothing</text>
+</svg>

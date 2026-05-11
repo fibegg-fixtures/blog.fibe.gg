@@ -1,0 +1,33 @@
+<svg viewBox="0 0 740 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Four non-edges: changes that deliberately do not ripple, each grounded by absence of code">
+  <rect x="0" y="0" width="740" height="320" fill="#20251a"/>
+  <text x="24" y="34" fill="#f3f0e0" font-size="18" font-weight="700" font-family="IBM Plex Sans, sans-serif">Four edges that deliberately don't exist</text>
+  <text x="24" y="54" fill="#a19f89" font-size="12" font-family="IBM Plex Sans, sans-serif">each is proven by an empty grep, not by a comment that says "do nothing"</text>
+
+  <!-- tile 1 -->
+  <rect x="24" y="74" width="340" height="106" rx="8" fill="#252a1e" stroke="#545c42" stroke-dasharray="6 4"/>
+  <text x="40" y="100" fill="#56d8c0" font-size="13" font-weight="700" font-family="JetBrains Mono, monospace">Disable a Prop</text>
+  <text x="40" y="124" fill="#c7c4ae" font-size="12" font-family="IBM Plex Sans, sans-serif">Running Playgrounds keep running.</text>
+  <text x="40" y="142" fill="#c7c4ae" font-size="12" font-family="IBM Plex Sans, sans-serif">Builds keep building.</text>
+  <text x="40" y="166" fill="#a19f89" font-size="11" font-family="JetBrains Mono, monospace">no sync hook; pure status flip</text>
+
+  <!-- tile 2 -->
+  <rect x="376" y="74" width="340" height="106" rx="8" fill="#252a1e" stroke="#545c42" stroke-dasharray="6 4"/>
+  <text x="392" y="100" fill="#56d8c0" font-size="13" font-weight="700" font-family="JetBrains Mono, monospace">Edit the Secret vault</text>
+  <text x="392" y="124" fill="#c7c4ae" font-size="12" font-family="IBM Plex Sans, sans-serif">The running Genie is not redeployed.</text>
+  <text x="392" y="142" fill="#c7c4ae" font-size="12" font-family="IBM Plex Sans, sans-serif">New value lands on next deploy.</text>
+  <text x="392" y="166" fill="#a19f89" font-size="11" font-family="JetBrains Mono, monospace">no event subscriber, no callback</text>
+
+  <!-- tile 3 -->
+  <rect x="24" y="194" width="340" height="106" rx="8" fill="#252a1e" stroke="#545c42" stroke-dasharray="6 4"/>
+  <text x="40" y="220" fill="#56d8c0" font-size="13" font-weight="700" font-family="JetBrains Mono, monospace">Revoke a team role</text>
+  <text x="40" y="244" fill="#c7c4ae" font-size="12" font-family="IBM Plex Sans, sans-serif">Mid-session work is not killed.</text>
+  <text x="40" y="262" fill="#c7c4ae" font-size="12" font-family="IBM Plex Sans, sans-serif">Access recomputed per request.</text>
+  <text x="40" y="286" fill="#a19f89" font-size="11" font-family="JetBrains Mono, monospace">no cascade; access joined live per request</text>
+
+  <!-- tile 4 -->
+  <rect x="376" y="194" width="340" height="106" rx="8" fill="#252a1e" stroke="#545c42" stroke-dasharray="6 4"/>
+  <text x="392" y="220" fill="#56d8c0" font-size="13" font-weight="700" font-family="JetBrains Mono, monospace">Change API-key scope</text>
+  <text x="392" y="244" fill="#c7c4ae" font-size="12" font-family="IBM Plex Sans, sans-serif">No chat redeploy.</text>
+  <text x="392" y="262" fill="#c7c4ae" font-size="12" font-family="IBM Plex Sans, sans-serif">Enforced on the next request.</text>
+  <text x="392" y="286" fill="#a19f89" font-size="11" font-family="JetBrains Mono, monospace">invalidation ignores scope &amp; rate-limit</text>
+</svg>

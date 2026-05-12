@@ -1,0 +1,49 @@
+<svg viewBox="0 0 740 372" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Memory import and recall loop: conversations are imported as player-scoped, searchable memories that a future Genie can recall">
+  <defs>
+    <marker id="mem-arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#757d5e"/>
+    </marker>
+  </defs>
+
+  <text x="370" y="28" text-anchor="middle" fill="#f3f0e0" font-size="18" font-weight="700" font-family="IBM Plex Sans, sans-serif">Import &#8594; store &#8594; recall</text>
+  <text x="370" y="48" text-anchor="middle" fill="#a19f89" font-size="12" font-family="IBM Plex Sans, sans-serif">Memories are player-scoped &#183; searchable &#183; grounded back to source messages</text>
+
+  <!-- conversation -->
+  <rect x="40" y="90" width="170" height="76" rx="8" fill="#20251a" stroke="#56d8c0"/>
+  <text x="125" y="120" text-anchor="middle" fill="#56d8c0" font-size="14" font-weight="700" font-family="JetBrains Mono, monospace">Conversation</text>
+  <text x="125" y="142" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">a finished chat thread</text>
+
+  <!-- memorize -->
+  <rect x="285" y="90" width="170" height="76" rx="8" fill="#252a1e" stroke="#eec854" stroke-width="2"/>
+  <text x="370" y="116" text-anchor="middle" fill="#eec854" font-size="13" font-weight="700" font-family="IBM Plex Sans, sans-serif">Import &amp; dedupe</text>
+  <text x="370" y="136" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">dedupe by similarity</text>
+  <text x="370" y="153" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">+ overlapping tags</text>
+
+  <!-- memory store -->
+  <rect x="530" y="90" width="180" height="76" rx="8" fill="#252a1e" stroke="#79d44e" stroke-width="2"/>
+  <text x="620" y="116" text-anchor="middle" fill="#92df62" font-size="14" font-weight="700" font-family="JetBrains Mono, monospace">Memory</text>
+  <text x="620" y="136" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">content + tags +</text>
+  <text x="620" y="153" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">confidence, per player</text>
+
+  <line x1="210" y1="128" x2="281" y2="128" stroke="#757d5e" marker-end="url(#mem-arrow)"/>
+  <line x1="455" y1="128" x2="526" y2="128" stroke="#757d5e" marker-end="url(#mem-arrow)"/>
+
+  <!-- grounding band -->
+  <rect x="40" y="196" width="670" height="42" rx="6" fill="#20251a" stroke="#434a35"/>
+  <text x="375" y="222" text-anchor="middle" fill="#c7c4ae" font-size="11.5" font-family="IBM Plex Sans, sans-serif">Each memory keeps groundings &#8594; the exact source message spans it came from. Provenance, not vibes.</text>
+
+  <!-- recall -->
+  <rect x="530" y="266" width="180" height="76" rx="8" fill="#20251a" stroke="#56d8c0"/>
+  <text x="620" y="294" text-anchor="middle" fill="#56d8c0" font-size="13" font-weight="700" font-family="JetBrains Mono, monospace">full-text search</text>
+  <text x="620" y="314" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">tsvector + tags +</text>
+  <text x="620" y="331" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">ILIKE fallback</text>
+
+  <!-- next genie -->
+  <rect x="40" y="266" width="430" height="76" rx="8" fill="#252a1e" stroke="#79d44e" stroke-width="2"/>
+  <text x="255" y="296" text-anchor="middle" fill="#92df62" font-size="14" font-weight="700" font-family="IBM Plex Sans, sans-serif">A later Genie recalls prior context</text>
+  <text x="255" y="320" text-anchor="middle" fill="#c7c4ae" font-size="11.5" font-family="IBM Plex Sans, sans-serif">queries its player's memories &#183; picks up where the last session left off</text>
+
+  <!-- arrows down to recall -->
+  <line x1="620" y1="166" x2="620" y2="262" stroke="#757d5e" marker-end="url(#mem-arrow)"/>
+  <line x1="526" y1="304" x2="474" y2="304" stroke="#757d5e" marker-end="url(#mem-arrow)"/>
+</svg>

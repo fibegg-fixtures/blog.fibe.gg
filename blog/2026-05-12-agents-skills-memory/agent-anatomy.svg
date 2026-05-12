@@ -1,0 +1,59 @@
+<svg viewBox="0 0 740 430" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Anatomy of an Agent: the persistent configuration a Genie reads before it runs">
+  <defs>
+    <marker id="anat-arrow" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 Z" fill="#757d5e"/>
+    </marker>
+  </defs>
+
+  <text x="370" y="28" text-anchor="middle" fill="#f3f0e0" font-size="18" font-weight="700" font-family="IBM Plex Sans, sans-serif">Anatomy of an Agent</text>
+  <text x="370" y="48" text-anchor="middle" fill="#a19f89" font-size="12" font-family="IBM Plex Sans, sans-serif">Persistent, player-owned config &#183; the same row backs many chats</text>
+
+  <!-- center node -->
+  <rect x="295" y="190" width="150" height="64" rx="8" fill="#252a1e" stroke="#79d44e" stroke-width="2"/>
+  <text x="370" y="218" text-anchor="middle" fill="#92df62" font-size="16" font-weight="700" font-family="JetBrains Mono, monospace">Agent</text>
+  <text x="370" y="238" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">one DB row</text>
+
+  <!-- provider -->
+  <rect x="40" y="72" width="190" height="62" rx="6" fill="#20251a" stroke="#434a35"/>
+  <text x="135" y="96" text-anchor="middle" fill="#abe87f" font-size="13" font-weight="700" font-family="JetBrains Mono, monospace">provider</text>
+  <text x="135" y="116" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">1 of 6 Genie runtimes</text>
+
+  <!-- credentials -->
+  <rect x="40" y="166" width="190" height="62" rx="6" fill="#20251a" stroke="#434a35"/>
+  <text x="135" y="190" text-anchor="middle" fill="#eec854" font-size="13" font-weight="700" font-family="JetBrains Mono, monospace">credentials</text>
+  <text x="135" y="210" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">encrypted at rest</text>
+
+  <!-- auth mode -->
+  <rect x="40" y="260" width="190" height="62" rx="6" fill="#20251a" stroke="#434a35"/>
+  <text x="135" y="284" text-anchor="middle" fill="#56d8c0" font-size="13" font-weight="700" font-family="JetBrains Mono, monospace">auth mode</text>
+  <text x="135" y="304" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">oauth &#183; api-key &#183; fibe-mana</text>
+
+  <!-- skills -->
+  <rect x="510" y="72" width="190" height="62" rx="6" fill="#20251a" stroke="#434a35"/>
+  <text x="605" y="96" text-anchor="middle" fill="#abe87f" font-size="13" font-weight="700" font-family="JetBrains Mono, monospace">skills</text>
+  <text x="605" y="116" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">main.md + enabled skills</text>
+
+  <!-- mcp -->
+  <rect x="510" y="166" width="190" height="62" rx="6" fill="#20251a" stroke="#434a35"/>
+  <text x="605" y="190" text-anchor="middle" fill="#56d8c0" font-size="13" font-weight="700" font-family="JetBrains Mono, monospace">MCP config</text>
+  <text x="605" y="210" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">docker always &#183; fibe/gh/gitea</text>
+
+  <!-- mounted files -->
+  <rect x="510" y="260" width="190" height="62" rx="6" fill="#20251a" stroke="#434a35"/>
+  <text x="605" y="284" text-anchor="middle" fill="#abe87f" font-size="13" font-weight="700" font-family="JetBrains Mono, monospace">mounted files</text>
+  <text x="605" y="304" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">re-fetched each deploy</text>
+
+  <!-- quotas (bottom center) -->
+  <rect x="280" y="344" width="180" height="56" rx="6" fill="#20251a" stroke="#434a35"/>
+  <text x="370" y="368" text-anchor="middle" fill="#eec854" font-size="13" font-weight="700" font-family="JetBrains Mono, monospace">resource quotas</text>
+  <text x="370" y="386" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">how many, how big</text>
+
+  <!-- connectors -->
+  <line x1="230" y1="103" x2="300" y2="196" stroke="#757d5e" marker-end="url(#anat-arrow)"/>
+  <line x1="230" y1="197" x2="293" y2="214" stroke="#757d5e" marker-end="url(#anat-arrow)"/>
+  <line x1="230" y1="291" x2="300" y2="244" stroke="#757d5e" marker-end="url(#anat-arrow)"/>
+  <line x1="510" y1="103" x2="440" y2="196" stroke="#757d5e" marker-end="url(#anat-arrow)"/>
+  <line x1="510" y1="197" x2="447" y2="214" stroke="#757d5e" marker-end="url(#anat-arrow)"/>
+  <line x1="510" y1="291" x2="440" y2="244" stroke="#757d5e" marker-end="url(#anat-arrow)"/>
+  <line x1="370" y1="254" x2="370" y2="340" stroke="#757d5e" marker-end="url(#anat-arrow)"/>
+</svg>

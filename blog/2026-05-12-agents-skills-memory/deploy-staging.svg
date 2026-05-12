@@ -1,0 +1,47 @@
+<svg viewBox="0 0 740 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Deploy-time staging: the platform assembles main.md, skills and mounted files, rsyncs them to the Marquee, and the container bind-mounts them read-only">
+  <defs>
+    <marker id="stage-arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#5cb43a"/>
+    </marker>
+  </defs>
+
+  <text x="370" y="28" text-anchor="middle" fill="#f3f0e0" font-size="18" font-weight="700" font-family="IBM Plex Sans, sans-serif">Staging files at deploy</text>
+  <text x="370" y="48" text-anchor="middle" fill="#a19f89" font-size="12" font-family="IBM Plex Sans, sans-serif">File sync runs on every deploy &#183; failure is retryable, never fatal</text>
+
+  <!-- column 1: sources -->
+  <text x="120" y="84" text-anchor="middle" fill="#abe87f" font-size="12" font-weight="700" font-family="JetBrains Mono, monospace">1 &#183; ASSEMBLE</text>
+  <rect x="30" y="98" width="180" height="40" rx="6" fill="#20251a" stroke="#434a35"/>
+  <text x="120" y="123" text-anchor="middle" fill="#f3f0e0" font-size="12" font-family="JetBrains Mono, monospace">main.md (effective)</text>
+  <rect x="30" y="146" width="180" height="40" rx="6" fill="#20251a" stroke="#434a35"/>
+  <text x="120" y="171" text-anchor="middle" fill="#f3f0e0" font-size="12" font-family="JetBrains Mono, monospace">enabled skills</text>
+  <rect x="30" y="194" width="180" height="40" rx="6" fill="#20251a" stroke="#434a35"/>
+  <text x="120" y="219" text-anchor="middle" fill="#f3f0e0" font-size="12" font-family="JetBrains Mono, monospace">mounted files (signed URL)</text>
+
+  <text x="120" y="262" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">local staging tree</text>
+
+  <!-- column 2: rsync to marquee -->
+  <text x="370" y="84" text-anchor="middle" fill="#56d8c0" font-size="12" font-weight="700" font-family="JetBrains Mono, monospace">2 &#183; RSYNC TO HOST</text>
+  <rect x="280" y="120" width="180" height="96" rx="8" fill="#252a1e" stroke="#56d8c0" stroke-width="2"/>
+  <text x="370" y="152" text-anchor="middle" fill="#f3f0e0" font-size="13" font-weight="700" font-family="IBM Plex Sans, sans-serif">Marquee host</text>
+  <text x="370" y="174" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">per-agent host directory</text>
+  <text x="370" y="194" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">remote staging tree</text>
+
+  <!-- column 3: container -->
+  <text x="620" y="84" text-anchor="middle" fill="#92df62" font-size="12" font-weight="700" font-family="JetBrains Mono, monospace">3 &#183; BIND-MOUNT</text>
+  <rect x="530" y="110" width="180" height="118" rx="8" fill="#252a1e" stroke="#79d44e" stroke-width="2"/>
+  <text x="620" y="140" text-anchor="middle" fill="#92df62" font-size="13" font-weight="700" font-family="IBM Plex Sans, sans-serif">Genie container</text>
+  <text x="620" y="164" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">skills mounted</text>
+  <text x="620" y="182" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">read-only</text>
+  <text x="620" y="206" text-anchor="middle" fill="#eec854" font-size="11" font-family="JetBrains Mono, monospace">fibe.yml + creds env</text>
+
+  <!-- arrows -->
+  <line x1="210" y1="118" x2="276" y2="150" stroke="#5cb43a" marker-end="url(#stage-arrow)"/>
+  <line x1="210" y1="166" x2="276" y2="166" stroke="#5cb43a" marker-end="url(#stage-arrow)"/>
+  <line x1="210" y1="214" x2="276" y2="182" stroke="#5cb43a" marker-end="url(#stage-arrow)"/>
+  <line x1="460" y1="168" x2="526" y2="168" stroke="#5cb43a" marker-end="url(#stage-arrow)"/>
+
+  <!-- footnote -->
+  <rect x="30" y="296" width="680" height="44" rx="6" fill="#20251a" stroke="#434a35"/>
+  <text x="370" y="316" text-anchor="middle" fill="#c7c4ae" font-size="11.5" font-family="IBM Plex Sans, sans-serif">Re-staged every deploy &#8594; the staged tree IS the desired state. Drift (skill toggled, file changed, key rotated)</text>
+  <text x="370" y="332" text-anchor="middle" fill="#c7c4ae" font-size="11.5" font-family="IBM Plex Sans, sans-serif">is repaired by re-running this pipeline and recreating the container.</text>
+</svg>

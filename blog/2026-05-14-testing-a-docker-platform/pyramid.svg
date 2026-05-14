@@ -1,0 +1,31 @@
+<svg viewBox="0 0 720 470" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Fibe testing pyramid: a wide base of fast Ruby and Rust unit specs, then contract and component tests, then SDK integration and browser end-to-end, then a thin tip of full Docker-in-Docker end-to-end runs, with formal Alloy models off to the side">
+  <text x="360" y="28" text-anchor="middle" fill="#f3f0e0" font-size="17" font-weight="700" font-family="IBM Plex Sans, sans-serif">The pyramid, mapped to five stacks</text>
+
+  <!-- Layer 4 tip -->
+  <polygon points="360,52 430,118 290,118" fill="#3a2a22" stroke="#f08760"/>
+  <text x="360" y="92" text-anchor="middle" fill="#f08760" font-size="13" font-weight="700" font-family="IBM Plex Sans, sans-serif">Docker E2E</text>
+  <text x="360" y="108" text-anchor="middle" fill="#c7c4ae" font-size="10" font-family="JetBrains Mono, monospace">DinD &#183; ~10m &#183; handful</text>
+
+  <!-- Layer 3 -->
+  <polygon points="290,122 430,122 500,210 220,210" fill="#2a2a1c" stroke="#eec854"/>
+  <text x="360" y="158" text-anchor="middle" fill="#eec854" font-size="13" font-weight="700" font-family="IBM Plex Sans, sans-serif">Browser E2E &amp; SDK integration</text>
+  <text x="360" y="176" text-anchor="middle" fill="#c7c4ae" font-size="10" font-family="JetBrains Mono, monospace">Playwright (86 files) &#183; mage integrationTest</text>
+  <text x="360" y="194" text-anchor="middle" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">real UX, real API as a client &#183; minutes</text>
+
+  <!-- Layer 2 -->
+  <polygon points="220,214 500,214 565,300 155,300" fill="#222a1a" stroke="#92df62"/>
+  <text x="360" y="250" text-anchor="middle" fill="#92df62" font-size="13" font-weight="700" font-family="IBM Plex Sans, sans-serif">Contract, request &amp; component specs</text>
+  <text x="360" y="268" text-anchor="middle" fill="#c7c4ae" font-size="10" font-family="JetBrains Mono, monospace">RSpec request/job &#183; Go SDK unit &#183; Phlex</text>
+  <text x="360" y="286" text-anchor="middle" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">auth, status codes, payload shape &#183; seconds</text>
+
+  <!-- Layer 1 base -->
+  <polygon points="155,304 565,304 635,400 85,400" fill="#20251a" stroke="#5cb43a"/>
+  <text x="360" y="342" text-anchor="middle" fill="#abe87f" font-size="14" font-weight="700" font-family="IBM Plex Sans, sans-serif">Pure unit specs &#183; the wide base</text>
+  <text x="360" y="362" text-anchor="middle" fill="#c7c4ae" font-size="10" font-family="JetBrains Mono, monospace">RSpec models/services (1100+ files) &#183; cargo test (Rust core)</text>
+  <text x="360" y="382" text-anchor="middle" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">business rules &amp; pure transforms &#183; milliseconds, no Docker</text>
+
+  <!-- Alloy off to the side -->
+  <rect x="85" y="420" width="550" height="38" rx="6" fill="#1c241f" stroke="#56d8c0" stroke-dasharray="4 3"/>
+  <text x="360" y="438" text-anchor="middle" fill="#56d8c0" font-size="12" font-weight="700" font-family="IBM Plex Sans, sans-serif">Alloy formal models &#183; off the pyramid entirely</text>
+  <text x="360" y="452" text-anchor="middle" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">prove lifecycle/convergence invariants once, so fewer tests have to chase them</text>
+</svg>

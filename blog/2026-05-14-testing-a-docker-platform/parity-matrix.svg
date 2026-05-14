@@ -1,0 +1,72 @@
+<svg viewBox="0 0 720 348" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Parity matrix: each capability must be reachable and tested across Rails UI, Rails API, SDK CLI, and SDK MCP, with the test surface that guards each cell">
+  <text x="360" y="28" text-anchor="middle" fill="#f3f0e0" font-size="17" font-weight="700" font-family="IBM Plex Sans, sans-serif">Capability parity is a rule, so we test all four columns</text>
+
+  <!-- Column headers -->
+  <rect x="200" y="48" width="120" height="40" rx="5" fill="#252a1e" stroke="#757d5e"/>
+  <text x="260" y="68" text-anchor="middle" fill="#eec854" font-size="12" font-weight="700" font-family="IBM Plex Sans, sans-serif">Rails UI</text>
+  <text x="260" y="82" text-anchor="middle" fill="#a19f89" font-size="9" font-family="JetBrains Mono, monospace">Playwright</text>
+
+  <rect x="324" y="48" width="120" height="40" rx="5" fill="#252a1e" stroke="#757d5e"/>
+  <text x="384" y="68" text-anchor="middle" fill="#92df62" font-size="12" font-weight="700" font-family="IBM Plex Sans, sans-serif">Rails API</text>
+  <text x="384" y="82" text-anchor="middle" fill="#a19f89" font-size="9" font-family="JetBrains Mono, monospace">request specs</text>
+
+  <rect x="448" y="48" width="120" height="40" rx="5" fill="#252a1e" stroke="#757d5e"/>
+  <text x="508" y="68" text-anchor="middle" fill="#56d8c0" font-size="12" font-weight="700" font-family="IBM Plex Sans, sans-serif">SDK CLI</text>
+  <text x="508" y="82" text-anchor="middle" fill="#a19f89" font-size="9" font-family="JetBrains Mono, monospace">mage test</text>
+
+  <rect x="572" y="48" width="120" height="40" rx="5" fill="#252a1e" stroke="#757d5e"/>
+  <text x="632" y="68" text-anchor="middle" fill="#abe87f" font-size="12" font-weight="700" font-family="IBM Plex Sans, sans-serif">SDK MCP</text>
+  <text x="632" y="82" text-anchor="middle" fill="#a19f89" font-size="9" font-family="JetBrains Mono, monospace">mage test</text>
+
+  <!-- Row: Deploy Playground -->
+  <rect x="24" y="96" width="172" height="44" rx="5" fill="#20251a" stroke="#434a35"/>
+  <text x="36" y="123" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">Deploy a Playground</text>
+  <rect x="200" y="96" width="120" height="44" rx="5" fill="#1f2a1c" stroke="#5cb43a"/>
+  <text x="260" y="123" text-anchor="middle" fill="#92df62" font-size="13" font-family="JetBrains Mono, monospace">&#10003;</text>
+  <rect x="324" y="96" width="120" height="44" rx="5" fill="#1f2a1c" stroke="#5cb43a"/>
+  <text x="384" y="123" text-anchor="middle" fill="#92df62" font-size="13" font-family="JetBrains Mono, monospace">&#10003;</text>
+  <rect x="448" y="96" width="120" height="44" rx="5" fill="#1f2a1c" stroke="#5cb43a"/>
+  <text x="508" y="123" text-anchor="middle" fill="#92df62" font-size="13" font-family="JetBrains Mono, monospace">&#10003;</text>
+  <rect x="572" y="96" width="120" height="44" rx="5" fill="#1f2a1c" stroke="#5cb43a"/>
+  <text x="632" y="123" text-anchor="middle" fill="#92df62" font-size="13" font-family="JetBrains Mono, monospace">&#10003;</text>
+
+  <!-- Row: Run a Trick -->
+  <rect x="24" y="146" width="172" height="44" rx="5" fill="#20251a" stroke="#434a35"/>
+  <text x="36" y="173" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">Run a Trick (job mode)</text>
+  <rect x="200" y="146" width="120" height="44" rx="5" fill="#1f2a1c" stroke="#5cb43a"/>
+  <text x="260" y="173" text-anchor="middle" fill="#92df62" font-size="13" font-family="JetBrains Mono, monospace">&#10003;</text>
+  <rect x="324" y="146" width="120" height="44" rx="5" fill="#1f2a1c" stroke="#5cb43a"/>
+  <text x="384" y="173" text-anchor="middle" fill="#92df62" font-size="13" font-family="JetBrains Mono, monospace">&#10003;</text>
+  <rect x="448" y="146" width="120" height="44" rx="5" fill="#1f2a1c" stroke="#5cb43a"/>
+  <text x="508" y="173" text-anchor="middle" fill="#92df62" font-size="13" font-family="JetBrains Mono, monospace">&#10003;</text>
+  <rect x="572" y="146" width="120" height="44" rx="5" fill="#1f2a1c" stroke="#5cb43a"/>
+  <text x="632" y="173" text-anchor="middle" fill="#92df62" font-size="13" font-family="JetBrains Mono, monospace">&#10003;</text>
+
+  <!-- Row: Bind Props -->
+  <rect x="24" y="196" width="172" height="44" rx="5" fill="#20251a" stroke="#434a35"/>
+  <text x="36" y="223" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">Bind a Props source</text>
+  <rect x="200" y="196" width="120" height="44" rx="5" fill="#1f2a1c" stroke="#5cb43a"/>
+  <text x="260" y="223" text-anchor="middle" fill="#92df62" font-size="13" font-family="JetBrains Mono, monospace">&#10003;</text>
+  <rect x="324" y="196" width="120" height="44" rx="5" fill="#1f2a1c" stroke="#5cb43a"/>
+  <text x="384" y="223" text-anchor="middle" fill="#92df62" font-size="13" font-family="JetBrains Mono, monospace">&#10003;</text>
+  <rect x="448" y="196" width="120" height="44" rx="5" fill="#1f2a1c" stroke="#5cb43a"/>
+  <text x="508" y="223" text-anchor="middle" fill="#92df62" font-size="13" font-family="JetBrains Mono, monospace">&#10003;</text>
+  <rect x="572" y="196" width="120" height="44" rx="5" fill="#1f2a1c" stroke="#5cb43a"/>
+  <text x="632" y="223" text-anchor="middle" fill="#92df62" font-size="13" font-family="JetBrains Mono, monospace">&#10003;</text>
+
+  <!-- Row: 402 gate -->
+  <rect x="24" y="246" width="172" height="44" rx="5" fill="#20251a" stroke="#434a35"/>
+  <text x="36" y="267" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">Unfunded Marquee</text>
+  <text x="36" y="281" fill="#a19f89" font-size="9" font-family="JetBrains Mono, monospace">402 payment-required</text>
+  <rect x="200" y="246" width="120" height="44" rx="5" fill="#2a2218" stroke="#eec854"/>
+  <text x="260" y="273" text-anchor="middle" fill="#eec854" font-size="13" font-family="JetBrains Mono, monospace">&#10003;</text>
+  <rect x="324" y="246" width="120" height="44" rx="5" fill="#2a2218" stroke="#eec854"/>
+  <text x="384" y="273" text-anchor="middle" fill="#eec854" font-size="13" font-family="JetBrains Mono, monospace">&#10003;</text>
+  <rect x="448" y="246" width="120" height="44" rx="5" fill="#2a2218" stroke="#eec854"/>
+  <text x="508" y="273" text-anchor="middle" fill="#eec854" font-size="13" font-family="JetBrains Mono, monospace">&#10003;</text>
+  <rect x="572" y="246" width="120" height="44" rx="5" fill="#2a2218" stroke="#eec854"/>
+  <text x="632" y="273" text-anchor="middle" fill="#eec854" font-size="13" font-family="JetBrains Mono, monospace">&#10003;</text>
+
+  <text x="360" y="318" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">A green cell means the capability exists AND a test enforces it. A missing cell is a parity bug, not a backlog item.</text>
+  <text x="360" y="336" text-anchor="middle" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">Gold row: the same error code must surface identically across all four surfaces.</text>
+</svg>

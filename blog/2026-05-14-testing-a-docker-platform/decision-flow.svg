@@ -1,0 +1,70 @@
+<svg viewBox="0 0 720 560" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Decision flow for choosing a test surface: start from the contract that moved and escalate only as far as the risk requires, ending at unit specs, contract specs, formal models, SDK integration, browser end-to-end, or Docker end-to-end">
+  <defs>
+    <marker id="df-arrow" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 z" fill="#757d5e"/>
+    </marker>
+  </defs>
+  <text x="360" y="26" text-anchor="middle" fill="#f3f0e0" font-size="17" font-weight="700" font-family="IBM Plex Sans, sans-serif">Which surface? Escalate only as far as the risk requires</text>
+
+  <!-- Start -->
+  <rect x="270" y="44" width="180" height="40" rx="20" fill="#252a1e" stroke="#757d5e"/>
+  <text x="360" y="69" text-anchor="middle" fill="#f3f0e0" font-size="12" font-family="IBM Plex Sans, sans-serif">What contract moved?</text>
+
+  <!-- Q1: pure transform? -->
+  <polygon points="360,100 470,140 360,180 250,140" fill="#20251a" stroke="#5cb43a"/>
+  <text x="360" y="138" text-anchor="middle" fill="#abe87f" font-size="11" font-family="IBM Plex Sans, sans-serif">Pure transform?</text>
+  <text x="360" y="153" text-anchor="middle" fill="#a19f89" font-size="9" font-family="IBM Plex Sans, sans-serif">parse / compile / validate</text>
+  <line x1="360" y1="84" x2="360" y2="98" stroke="#757d5e" marker-end="url(#df-arrow)"/>
+
+  <rect x="500" y="120" width="190" height="42" rx="6" fill="#20251a" stroke="#5cb43a"/>
+  <text x="595" y="138" text-anchor="middle" fill="#abe87f" font-size="11" font-weight="700" font-family="IBM Plex Sans, sans-serif">cargo test / Ruby unit</text>
+  <text x="595" y="153" text-anchor="middle" fill="#a19f89" font-size="9" font-family="JetBrains Mono, monospace">Rust core or service spec</text>
+  <line x1="470" y1="140" x2="498" y2="141" stroke="#757d5e" marker-end="url(#df-arrow)"/>
+  <text x="484" y="132" text-anchor="middle" fill="#92df62" font-size="9" font-family="JetBrains Mono, monospace">yes</text>
+
+  <!-- Q2: state machine / lifecycle? -->
+  <polygon points="360,196 470,236 360,276 250,236" fill="#1c241f" stroke="#56d8c0"/>
+  <text x="360" y="234" text-anchor="middle" fill="#56d8c0" font-size="11" font-family="IBM Plex Sans, sans-serif">Lifecycle invariant?</text>
+  <text x="360" y="249" text-anchor="middle" fill="#a19f89" font-size="9" font-family="IBM Plex Sans, sans-serif">states, convergence, access</text>
+  <line x1="360" y1="180" x2="360" y2="194" stroke="#757d5e" marker-end="url(#df-arrow)"/>
+  <text x="372" y="192" text-anchor="middle" fill="#a19f89" font-size="9" font-family="JetBrains Mono, monospace">no</text>
+
+  <rect x="500" y="216" width="190" height="42" rx="6" fill="#1c241f" stroke="#56d8c0"/>
+  <text x="595" y="234" text-anchor="middle" fill="#56d8c0" font-size="11" font-weight="700" font-family="IBM Plex Sans, sans-serif">Alloy model + spec</text>
+  <text x="595" y="249" text-anchor="middle" fill="#a19f89" font-size="9" font-family="JetBrains Mono, monospace">prove, then guard</text>
+  <line x1="470" y1="236" x2="498" y2="237" stroke="#757d5e" marker-end="url(#df-arrow)"/>
+  <text x="484" y="228" text-anchor="middle" fill="#56d8c0" font-size="9" font-family="JetBrains Mono, monospace">yes</text>
+
+  <!-- Q3: external client contract? -->
+  <polygon points="360,292 470,332 360,372 250,332" fill="#222a1a" stroke="#92df62"/>
+  <text x="360" y="330" text-anchor="middle" fill="#92df62" font-size="11" font-family="IBM Plex Sans, sans-serif">External contract?</text>
+  <text x="360" y="345" text-anchor="middle" fill="#a19f89" font-size="9" font-family="IBM Plex Sans, sans-serif">API / CLI / MCP payload</text>
+  <line x1="360" y1="276" x2="360" y2="290" stroke="#757d5e" marker-end="url(#df-arrow)"/>
+  <text x="372" y="288" text-anchor="middle" fill="#a19f89" font-size="9" font-family="JetBrains Mono, monospace">no</text>
+
+  <rect x="500" y="312" width="190" height="42" rx="6" fill="#222a1a" stroke="#92df62"/>
+  <text x="595" y="330" text-anchor="middle" fill="#92df62" font-size="11" font-weight="700" font-family="IBM Plex Sans, sans-serif">Request spec + mage test</text>
+  <text x="595" y="345" text-anchor="middle" fill="#a19f89" font-size="9" font-family="JetBrains Mono, monospace">all parity surfaces</text>
+  <line x1="470" y1="332" x2="498" y2="333" stroke="#757d5e" marker-end="url(#df-arrow)"/>
+  <text x="484" y="324" text-anchor="middle" fill="#92df62" font-size="9" font-family="JetBrains Mono, monospace">yes</text>
+
+  <!-- Q4: user-visible browser behavior? -->
+  <polygon points="360,388 470,428 360,468 250,428" fill="#2a2a1c" stroke="#eec854"/>
+  <text x="360" y="426" text-anchor="middle" fill="#eec854" font-size="11" font-family="IBM Plex Sans, sans-serif">User sees it in a browser?</text>
+  <text x="360" y="441" text-anchor="middle" fill="#a19f89" font-size="9" font-family="IBM Plex Sans, sans-serif">Turbo, terminal, forms</text>
+  <line x1="360" y1="372" x2="360" y2="386" stroke="#757d5e" marker-end="url(#df-arrow)"/>
+  <text x="372" y="384" text-anchor="middle" fill="#a19f89" font-size="9" font-family="JetBrains Mono, monospace">no</text>
+
+  <rect x="500" y="408" width="190" height="42" rx="6" fill="#2a2a1c" stroke="#eec854"/>
+  <text x="595" y="426" text-anchor="middle" fill="#eec854" font-size="11" font-weight="700" font-family="IBM Plex Sans, sans-serif">Playwright lane</text>
+  <text x="595" y="441" text-anchor="middle" fill="#a19f89" font-size="9" font-family="JetBrains Mono, monospace">node server.js</text>
+  <line x1="470" y1="428" x2="498" y2="429" stroke="#757d5e" marker-end="url(#df-arrow)"/>
+  <text x="484" y="420" text-anchor="middle" fill="#eec854" font-size="9" font-family="JetBrains Mono, monospace">yes</text>
+
+  <!-- Terminal: Docker E2E -->
+  <rect x="255" y="492" width="210" height="50" rx="6" fill="#3a2a22" stroke="#f08760"/>
+  <text x="360" y="512" text-anchor="middle" fill="#f08760" font-size="12" font-weight="700" font-family="IBM Plex Sans, sans-serif">Docker E2E (the last resort)</text>
+  <text x="360" y="528" text-anchor="middle" fill="#a19f89" font-size="9" font-family="JetBrains Mono, monospace">only orchestration / DinD / cross-repo runtime</text>
+  <line x1="360" y1="468" x2="360" y2="490" stroke="#757d5e" marker-end="url(#df-arrow)"/>
+  <text x="384" y="484" text-anchor="middle" fill="#f08760" font-size="9" font-family="JetBrains Mono, monospace">still no</text>
+</svg>

@@ -1,0 +1,72 @@
+<svg viewBox="0 0 740 500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Docker end-to-end topology: a Compose project on the CI host wires together packed Fibe, registries, internal DNS, a Playwright runner and a per-lane Docker-in-Docker Marquee simulator, inside which a real Playground or Trick is deployed">
+  <defs>
+    <marker id="dind-arrow" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 z" fill="#757d5e"/>
+    </marker>
+  </defs>
+  <text x="370" y="28" text-anchor="middle" fill="#f3f0e0" font-size="17" font-weight="700" font-family="IBM Plex Sans, sans-serif">Docker E2E: one Compose project, a real Marquee inside DinD</text>
+
+  <!-- Host compose boundary -->
+  <rect x="24" y="46" width="692" height="438" rx="10" fill="#181c14" stroke="#545c42"/>
+  <text x="40" y="68" fill="#a19f89" font-size="11" font-family="JetBrains Mono, monospace">one Docker-Compose project on the CI host</text>
+
+  <!-- Packed Fibe -->
+  <rect x="48" y="84" width="200" height="74" rx="6" fill="#20251a" stroke="#5cb43a"/>
+  <text x="148" y="108" text-anchor="middle" fill="#abe87f" font-size="12" font-weight="700" font-family="IBM Plex Sans, sans-serif">Packed Fibe app</text>
+  <text x="148" y="126" text-anchor="middle" fill="#c7c4ae" font-size="9" font-family="JetBrains Mono, monospace">self-contained packed image</text>
+  <text x="148" y="142" text-anchor="middle" fill="#a19f89" font-size="9" font-family="IBM Plex Sans, sans-serif">Rails + Sidekiq + AnyCable</text>
+
+  <!-- Supporting services -->
+  <rect x="268" y="84" width="200" height="74" rx="6" fill="#252a1e" stroke="#757d5e"/>
+  <text x="368" y="106" text-anchor="middle" fill="#f3f0e0" font-size="12" font-weight="700" font-family="IBM Plex Sans, sans-serif">Platform deps</text>
+  <text x="368" y="124" text-anchor="middle" fill="#c7c4ae" font-size="9" font-family="JetBrains Mono, monospace">Gitea &#183; MinIO &#183; Redis</text>
+  <text x="368" y="140" text-anchor="middle" fill="#a19f89" font-size="9" font-family="JetBrains Mono, monospace">acme-dns &#183; Traefik routing</text>
+
+  <!-- Registries + DNS -->
+  <rect x="488" y="84" width="204" height="74" rx="6" fill="#252a1e" stroke="#757d5e"/>
+  <text x="590" y="106" text-anchor="middle" fill="#f3f0e0" font-size="12" font-weight="700" font-family="IBM Plex Sans, sans-serif">Registry &amp; DNS lanes</text>
+  <text x="590" y="124" text-anchor="middle" fill="#c7c4ae" font-size="9" font-family="JetBrains Mono, monospace">local image registries</text>
+  <text x="590" y="140" text-anchor="middle" fill="#a19f89" font-size="9" font-family="JetBrains Mono, monospace">registry warmup &#183; internal DNS</text>
+
+  <!-- Playwright runner -->
+  <rect x="48" y="184" width="200" height="64" rx="6" fill="#2a2a1c" stroke="#eec854"/>
+  <text x="148" y="208" text-anchor="middle" fill="#eec854" font-size="12" font-weight="700" font-family="IBM Plex Sans, sans-serif">Playwright runner</text>
+  <text x="148" y="226" text-anchor="middle" fill="#a19f89" font-size="9" font-family="JetBrains Mono, monospace">api,ui,integration,thirdparty,bazaar</text>
+  <text x="148" y="240" text-anchor="middle" fill="#a19f89" font-size="9" font-family="IBM Plex Sans, sans-serif">drives the real packed UI</text>
+
+  <!-- Results aggregator -->
+  <rect x="268" y="184" width="200" height="64" rx="6" fill="#20251a" stroke="#56d8c0"/>
+  <text x="368" y="208" text-anchor="middle" fill="#56d8c0" font-size="12" font-weight="700" font-family="IBM Plex Sans, sans-serif">results aggregator</text>
+  <text x="368" y="226" text-anchor="middle" fill="#a19f89" font-size="9" font-family="JetBrains Mono, monospace">aggregates lane outcomes</text>
+  <text x="368" y="240" text-anchor="middle" fill="#a19f89" font-size="9" font-family="JetBrains Mono, monospace">healthcheck on a done-marker file</text>
+
+  <!-- SDK / agent CI -->
+  <rect x="488" y="184" width="204" height="64" rx="6" fill="#20251a" stroke="#92df62"/>
+  <text x="590" y="208" text-anchor="middle" fill="#92df62" font-size="12" font-weight="700" font-family="IBM Plex Sans, sans-serif">SDK + agent CI</text>
+  <text x="590" y="226" text-anchor="middle" fill="#a19f89" font-size="9" font-family="JetBrains Mono, monospace">integration against packed Fibe</text>
+  <text x="590" y="240" text-anchor="middle" fill="#a19f89" font-size="9" font-family="IBM Plex Sans, sans-serif">same API the SDK ships against</text>
+
+  <!-- DinD Marquee -->
+  <rect x="60" y="280" width="620" height="184" rx="8" fill="#1a1410" stroke="#f08760"/>
+  <text x="80" y="302" fill="#f08760" font-size="12" font-weight="700" font-family="JetBrains Mono, monospace">per-lane DinD Marquee &#183; docker:29.3.0-dind &#183; privileged</text>
+  <text x="80" y="318" fill="#a19f89" font-size="9" font-family="IBM Plex Sans, sans-serif">a real Docker daemon, mirrored from the in-cluster registries, with its own SSH</text>
+
+  <!-- inner: real playground -->
+  <rect x="96" y="334" width="248" height="106" rx="6" fill="#20251a" stroke="#5cb43a"/>
+  <text x="220" y="360" text-anchor="middle" fill="#abe87f" font-size="12" font-weight="700" font-family="IBM Plex Sans, sans-serif">Real Playground / Trick</text>
+  <text x="220" y="380" text-anchor="middle" fill="#c7c4ae" font-size="9" font-family="JetBrains Mono, monospace">deployed as a Compose project</text>
+  <text x="220" y="396" text-anchor="middle" fill="#a19f89" font-size="9" font-family="IBM Plex Sans, sans-serif">routed by Traefik, healed by</text>
+  <text x="220" y="410" text-anchor="middle" fill="#a19f89" font-size="9" font-family="IBM Plex Sans, sans-serif">the Playguard reconciler</text>
+
+  <rect x="392" y="334" width="248" height="106" rx="6" fill="#20251a" stroke="#56d8c0"/>
+  <text x="516" y="360" text-anchor="middle" fill="#56d8c0" font-size="12" font-weight="700" font-family="IBM Plex Sans, sans-serif">AgentChat sidecar (Genie)</text>
+  <text x="516" y="380" text-anchor="middle" fill="#c7c4ae" font-size="9" font-family="JetBrains Mono, monospace">NestJS runtime container</text>
+  <text x="516" y="396" text-anchor="middle" fill="#a19f89" font-size="9" font-family="IBM Plex Sans, sans-serif">exercised end-to-end against</text>
+  <text x="516" y="410" text-anchor="middle" fill="#a19f89" font-size="9" font-family="IBM Plex Sans, sans-serif">the live packed control plane</text>
+
+  <!-- arrows -->
+  <line x1="148" y1="158" x2="148" y2="182" stroke="#757d5e" marker-end="url(#dind-arrow)"/>
+  <line x1="248" y1="216" x2="266" y2="216" stroke="#757d5e" marker-end="url(#dind-arrow)"/>
+  <line x1="148" y1="248" x2="148" y2="278" stroke="#f08760" marker-end="url(#dind-arrow)"/>
+  <text x="200" y="270" fill="#f08760" font-size="9" font-family="JetBrains Mono, monospace">deploys into</text>
+</svg>

@@ -1,0 +1,64 @@
+<svg viewBox="0 0 740 380" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The bin/check-full gate: a parallel band of static analysis and architecture checks runs alongside parallel RSpec, then a sequential phase runs the Rust core, long specs, N plus one analysis, coverage merge and quality score">
+  <defs>
+    <marker id="cf-arrow" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 z" fill="#757d5e"/>
+    </marker>
+  </defs>
+  <text x="370" y="28" text-anchor="middle" fill="#f3f0e0" font-size="17" font-weight="700" font-family="IBM Plex Sans, sans-serif">The check gate: one command, two phases</text>
+
+  <!-- Parallel band -->
+  <rect x="24" y="46" width="692" height="160" rx="8" fill="#181c14" stroke="#545c42"/>
+  <text x="40" y="68" fill="#92df62" font-size="12" font-weight="700" font-family="JetBrains Mono, monospace">parallel band &#183; runs concurrently</text>
+
+  <!-- parallel: static analysis tiles -->
+  <rect x="40" y="80" width="150" height="34" rx="5" fill="#20251a" stroke="#5cb43a"/>
+  <text x="115" y="101" text-anchor="middle" fill="#abe87f" font-size="10" font-family="JetBrains Mono, monospace">parallel RSpec &#215;8</text>
+
+  <rect x="200" y="80" width="150" height="34" rx="5" fill="#252a1e" stroke="#757d5e"/>
+  <text x="275" y="101" text-anchor="middle" fill="#c7c4ae" font-size="10" font-family="JetBrains Mono, monospace">rubocop &#183; reek &#183; flog</text>
+
+  <rect x="360" y="80" width="150" height="34" rx="5" fill="#252a1e" stroke="#757d5e"/>
+  <text x="435" y="101" text-anchor="middle" fill="#c7c4ae" font-size="10" font-family="JetBrains Mono, monospace">sorbet type checks</text>
+
+  <rect x="520" y="80" width="180" height="34" rx="5" fill="#252a1e" stroke="#757d5e"/>
+  <text x="610" y="101" text-anchor="middle" fill="#c7c4ae" font-size="10" font-family="JetBrains Mono, monospace">brakeman &#183; bundler-audit</text>
+
+  <rect x="40" y="124" width="150" height="34" rx="5" fill="#252a1e" stroke="#757d5e"/>
+  <text x="115" y="145" text-anchor="middle" fill="#c7c4ae" font-size="10" font-family="JetBrains Mono, monospace">packwerk &#183; architecture check</text>
+
+  <rect x="200" y="124" width="150" height="34" rx="5" fill="#252a1e" stroke="#757d5e"/>
+  <text x="275" y="145" text-anchor="middle" fill="#c7c4ae" font-size="10" font-family="JetBrains Mono, monospace">i18n-tasks &#183; env access</text>
+
+  <rect x="360" y="124" width="150" height="34" rx="5" fill="#252a1e" stroke="#757d5e"/>
+  <text x="435" y="145" text-anchor="middle" fill="#c7c4ae" font-size="10" font-family="JetBrains Mono, monospace">production boot &#183; flay</text>
+
+  <rect x="520" y="124" width="180" height="34" rx="5" fill="#1c241f" stroke="#56d8c0"/>
+  <text x="610" y="145" text-anchor="middle" fill="#56d8c0" font-size="10" font-family="JetBrains Mono, monospace">alloy-analyze</text>
+
+  <text x="370" y="186" text-anchor="middle" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">tests and static analysis are peers here &#183; the Alloy proofs run in CI, not on a whiteboard</text>
+
+  <!-- arrow down -->
+  <line x1="370" y1="206" x2="370" y2="234" stroke="#757d5e" marker-end="url(#cf-arrow)"/>
+  <text x="436" y="226" text-anchor="middle" fill="#a19f89" font-size="9" font-family="JetBrains Mono, monospace">then, in sequence</text>
+
+  <!-- Sequential band -->
+  <rect x="24" y="240" width="692" height="116" rx="8" fill="#181c14" stroke="#545c42"/>
+  <text x="40" y="262" fill="#eec854" font-size="12" font-weight="700" font-family="JetBrains Mono, monospace">sequential band &#183; runs in order</text>
+
+  <rect x="40" y="276" width="124" height="36" rx="5" fill="#20251a" stroke="#5cb43a"/>
+  <text x="102" y="298" text-anchor="middle" fill="#abe87f" font-size="10" font-family="JetBrains Mono, monospace">Rust core suite</text>
+
+  <rect x="176" y="276" width="124" height="36" rx="5" fill="#20251a" stroke="#5cb43a"/>
+  <text x="238" y="298" text-anchor="middle" fill="#abe87f" font-size="10" font-family="JetBrains Mono, monospace">long RSpec tier</text>
+
+  <rect x="312" y="276" width="136" height="36" rx="5" fill="#2a2a1c" stroke="#eec854"/>
+  <text x="380" y="298" text-anchor="middle" fill="#eec854" font-size="10" font-family="JetBrains Mono, monospace">N+1 analysis</text>
+
+  <rect x="460" y="276" width="120" height="36" rx="5" fill="#252a1e" stroke="#757d5e"/>
+  <text x="520" y="298" text-anchor="middle" fill="#c7c4ae" font-size="10" font-family="JetBrains Mono, monospace">coverage merge</text>
+
+  <rect x="592" y="276" width="108" height="36" rx="5" fill="#252a1e" stroke="#757d5e"/>
+  <text x="646" y="298" text-anchor="middle" fill="#c7c4ae" font-size="10" font-family="JetBrains Mono, monospace">skunk</text>
+
+  <text x="370" y="338" text-anchor="middle" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">coverage is merged across processes; N+1 queries fail the build via Prosopite, not a code review nit</text>
+</svg>

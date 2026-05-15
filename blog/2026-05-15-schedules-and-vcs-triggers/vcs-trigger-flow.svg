@@ -1,0 +1,63 @@
+<svg viewBox="0 0 740 340" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A git push or pull request sends a webhook to Fibe, which matches it to an active trigger, launches a job-mode Playground on a Marquee, runs to completion, and records the result without posting a status back to GitHub">
+  <defs>
+    <marker id="vcsArrow" markerWidth="10" markerHeight="10" refX="8" refY="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 Z" fill="#56d8c0"/>
+    </marker>
+    <marker id="vcsArrowEmber" markerWidth="10" markerHeight="10" refX="8" refY="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 Z" fill="#f08760"/>
+    </marker>
+  </defs>
+
+  <text x="24" y="32" fill="#f3f0e0" font-size="16" font-weight="700" font-family="IBM Plex Sans, sans-serif">trigger_config: push / pull_request &#8594; Trick</text>
+
+  <!-- Step 1: git event -->
+  <rect x="24" y="56" width="150" height="92" rx="6" fill="#252a1e" stroke="#545c42"/>
+  <text x="99" y="82" text-anchor="middle" fill="#f3f0e0" font-size="13" font-weight="700" font-family="IBM Plex Sans, sans-serif">Git event</text>
+  <text x="99" y="104" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="JetBrains Mono, monospace">push to main</text>
+  <text x="99" y="122" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">or PR opened /</text>
+  <text x="99" y="138" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">synchronized</text>
+
+  <!-- Step 2: Prop / webhook -->
+  <rect x="210" y="56" width="150" height="92" rx="6" fill="#20251a" stroke="#434a35"/>
+  <text x="285" y="82" text-anchor="middle" fill="#eec854" font-size="13" font-weight="700" font-family="IBM Plex Sans, sans-serif">Prop webhook</text>
+  <text x="285" y="104" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">the Git binding</text>
+  <text x="285" y="122" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">delivers event</text>
+  <text x="285" y="138" text-anchor="middle" fill="#a19f89" font-size="11" font-family="JetBrains Mono, monospace">prop_id: 1</text>
+
+  <!-- Step 3: match -->
+  <rect x="396" y="56" width="150" height="92" rx="6" fill="#20251a" stroke="#434a35"/>
+  <text x="471" y="82" text-anchor="middle" fill="#92df62" font-size="13" font-weight="700" font-family="IBM Plex Sans, sans-serif">Fibe matches</text>
+  <text x="471" y="104" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">event &#8594; active</text>
+  <text x="471" y="122" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">trigger_config</text>
+  <text x="471" y="138" text-anchor="middle" fill="#a19f89" font-size="11" font-family="JetBrains Mono, monospace">branch match</text>
+
+  <!-- Step 4: launch on marquee -->
+  <rect x="582" y="56" width="150" height="92" rx="6" fill="#20251a" stroke="#434a35"/>
+  <text x="657" y="82" text-anchor="middle" fill="#92df62" font-size="13" font-weight="700" font-family="IBM Plex Sans, sans-serif">Launch Trick</text>
+  <text x="657" y="104" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">job-mode</text>
+  <text x="657" y="122" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">Playground on</text>
+  <text x="657" y="138" text-anchor="middle" fill="#a19f89" font-size="11" font-family="JetBrains Mono, monospace">marquee_id: 1</text>
+
+  <!-- arrows row 1 -->
+  <line x1="176" y1="102" x2="206" y2="102" stroke="#56d8c0" stroke-width="2" marker-end="url(#vcsArrow)"/>
+  <line x1="362" y1="102" x2="392" y2="102" stroke="#56d8c0" stroke-width="2" marker-end="url(#vcsArrow)"/>
+  <line x1="548" y1="102" x2="578" y2="102" stroke="#56d8c0" stroke-width="2" marker-end="url(#vcsArrow)"/>
+
+  <!-- down to result row -->
+  <line x1="657" y1="150" x2="657" y2="206" stroke="#56d8c0" stroke-width="2" marker-end="url(#vcsArrow)"/>
+
+  <!-- Step 5: run + result -->
+  <rect x="396" y="212" width="336" height="96" rx="6" fill="#252a1e" stroke="#545c42"/>
+  <text x="564" y="238" text-anchor="middle" fill="#f3f0e0" font-size="13" font-weight="700" font-family="IBM Plex Sans, sans-serif">Run to completion &#183; record result</text>
+  <text x="564" y="260" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">restart: "no" &#183; replicas: 1 forced &#183; watched services run</text>
+  <text x="564" y="278" text-anchor="middle" fill="#abe87f" font-size="11" font-family="JetBrains Mono, monospace">success / failure + logs + duration &#8594; run history</text>
+  <text x="564" y="296" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">checks out the triggering branch / PR head commit</text>
+
+  <!-- caution: no status back -->
+  <rect x="24" y="212" width="336" height="96" rx="6" fill="#20251a" stroke="#545c42"/>
+  <text x="40" y="238" fill="#f08760" font-size="13" font-weight="700" font-family="IBM Plex Sans, sans-serif">No commit status posted back</text>
+  <text x="40" y="260" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">GitHub / Gitea see no green check or red X.</text>
+  <text x="40" y="278" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">Pass / fail lives in Fibe run history +</text>
+  <text x="40" y="296" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">in-Fibe notifications.</text>
+  <line x1="396" y1="260" x2="364" y2="260" stroke="#f08760" stroke-width="2" marker-end="url(#vcsArrowEmber)"/>
+</svg>

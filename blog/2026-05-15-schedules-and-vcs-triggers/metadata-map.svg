@@ -1,0 +1,51 @@
+<svg viewBox="0 0 720 470" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Annotated map of the x-fibe.gg metadata block showing job_mode, schedule_config fields, and trigger_config fields, with notes on which keys are required by runtime and which auto-fill from the source Prop">
+  <text x="24" y="32" fill="#f3f0e0" font-size="16" font-weight="700" font-family="IBM Plex Sans, sans-serif">x-fibe.gg.metadata: the automation block</text>
+
+  <!-- code panel -->
+  <rect x="24" y="48" width="392" height="404" rx="6" fill="#20251a" stroke="#434a35"/>
+  <g font-family="JetBrains Mono, monospace" font-size="12">
+    <text x="40" y="76" fill="#a19f89">x-fibe.gg:</text>
+    <text x="56" y="96" fill="#a19f89">metadata:</text>
+    <text x="72" y="116" fill="#92df62">job_mode: <tspan fill="#abe87f">true</tspan></text>
+    <text x="72" y="140" fill="#56d8c0">schedule_config:</text>
+    <text x="88" y="160" fill="#c7c4ae">enabled: <tspan fill="#abe87f">true</tspan></text>
+    <text x="88" y="180" fill="#c7c4ae">cron: <tspan fill="#eec854">"0 3 * * *"</tspan></text>
+    <text x="88" y="200" fill="#c7c4ae">marquee_id: <tspan fill="#abe87f">1</tspan></text>
+    <text x="72" y="232" fill="#56d8c0">trigger_config:</text>
+    <text x="88" y="252" fill="#c7c4ae">enabled: <tspan fill="#abe87f">true</tspan></text>
+    <text x="88" y="272" fill="#c7c4ae">event_type: <tspan fill="#eec854">pull_request</tspan></text>
+    <text x="88" y="292" fill="#c7c4ae">branch: <tspan fill="#eec854">develop</tspan></text>
+    <text x="88" y="312" fill="#c7c4ae">prop_id: <tspan fill="#abe87f">1</tspan></text>
+    <text x="88" y="332" fill="#c7c4ae">marquee_id: <tspan fill="#abe87f">1</tspan></text>
+    <text x="72" y="364" fill="#c7c4ae">source_defaults: <tspan fill="#abe87f">true</tspan></text>
+  </g>
+
+  <text x="40" y="404" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">Plus: one service with</text>
+  <text x="40" y="422" fill="#92df62" font-size="11" font-family="JetBrains Mono, monospace">fibe.gg/job_watch: "true"</text>
+  <text x="40" y="440" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">defines "done" for the run.</text>
+
+  <!-- annotation column -->
+  <g font-family="IBM Plex Sans, sans-serif" font-size="11">
+    <rect x="440" y="106" width="256" height="34" rx="4" fill="#252a1e" stroke="#79d44e"/>
+    <text x="452" y="121" fill="#92df62" font-size="11" font-weight="700">job_mode: true</text>
+    <text x="452" y="135" fill="#c7c4ae">required for any automation to fire</text>
+
+    <rect x="440" y="148" width="256" height="58" rx="4" fill="#252a1e" stroke="#56d8c0"/>
+    <text x="452" y="163" fill="#56d8c0" font-size="11" font-weight="700">schedule_config</text>
+    <text x="452" y="177" fill="#c7c4ae">cron is 5-field POSIX, UTC by default</text>
+    <text x="452" y="191" fill="#eec854">marquee_id required by runtime</text>
+
+    <rect x="440" y="232" width="256" height="100" rx="4" fill="#252a1e" stroke="#56d8c0"/>
+    <text x="452" y="247" fill="#56d8c0" font-size="11" font-weight="700">trigger_config</text>
+    <text x="452" y="261" fill="#c7c4ae">event_type: push | pull_request</text>
+    <text x="452" y="275" fill="#c7c4ae">give repo_url OR prop_id</text>
+    <text x="452" y="289" fill="#eec854">PR matches source (head) branch</text>
+    <text x="452" y="305" fill="#c7c4ae">prop_id + marquee_id must be yours</text>
+    <text x="452" y="321" fill="#a19f89">branch: "*" is NOT supported</text>
+
+    <rect x="440" y="348" width="256" height="48" rx="4" fill="#252a1e" stroke="#eec854"/>
+    <text x="452" y="363" fill="#eec854" font-size="11" font-weight="700">source_defaults: true</text>
+    <text x="452" y="377" fill="#c7c4ae">auto-fills repo_url / branch from</text>
+    <text x="452" y="391" fill="#c7c4ae">the source Prop on import</text>
+  </g>
+</svg>

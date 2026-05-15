@@ -1,0 +1,58 @@
+<svg viewBox="0 0 720 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A cron schedule fires a fresh job-mode Playground at each interval; each run starts, watched services exit, and a result is recorded">
+  <defs>
+    <marker id="cronArrow" markerWidth="9" markerHeight="9" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#79d44e"/>
+    </marker>
+    <marker id="cronArrowGold" markerWidth="9" markerHeight="9" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#e2b33a"/>
+    </marker>
+  </defs>
+
+  <text x="24" y="34" fill="#f3f0e0" font-size="16" font-weight="700" font-family="IBM Plex Sans, sans-serif">schedule_config: cron "0 3 * * *"</text>
+  <text x="24" y="54" fill="#a19f89" font-size="12" font-family="IBM Plex Sans, sans-serif">The scheduler fires once at 03:00 UTC every day. Each fire is independent.</text>
+
+  <!-- timeline -->
+  <line x1="40" y1="110" x2="680" y2="110" stroke="#545c42" stroke-width="2"/>
+  <text x="40" y="98" fill="#757d5e" font-size="11" font-family="JetBrains Mono, monospace">UTC timeline &#8594;</text>
+
+  <!-- tick marks -->
+  <g font-family="JetBrains Mono, monospace" font-size="11" fill="#a19f89" text-anchor="middle">
+    <line x1="150" y1="104" x2="150" y2="116" stroke="#79d44e" stroke-width="2"/>
+    <text x="150" y="132">Mon 03:00</text>
+    <line x1="335" y1="104" x2="335" y2="116" stroke="#79d44e" stroke-width="2"/>
+    <text x="335" y="132">Tue 03:00</text>
+    <line x1="520" y1="104" x2="520" y2="116" stroke="#79d44e" stroke-width="2"/>
+    <text x="520" y="132">Wed 03:00</text>
+  </g>
+
+  <!-- fire arrows down to runs -->
+  <line x1="150" y1="138" x2="150" y2="172" stroke="#79d44e" stroke-width="2" marker-end="url(#cronArrow)"/>
+  <line x1="335" y1="138" x2="335" y2="172" stroke="#79d44e" stroke-width="2" marker-end="url(#cronArrow)"/>
+  <line x1="520" y1="138" x2="520" y2="172" stroke="#79d44e" stroke-width="2" marker-end="url(#cronArrow)"/>
+
+  <!-- run boxes -->
+  <g font-family="JetBrains Mono, monospace" text-anchor="middle">
+    <rect x="86" y="178" width="128" height="86" rx="6" fill="#20251a" stroke="#434a35"/>
+    <text x="150" y="200" fill="#92df62" font-size="12" font-weight="700">Trick run #1</text>
+    <text x="150" y="220" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">fresh Playground</text>
+    <text x="150" y="238" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">job_watch exits</text>
+    <text x="150" y="256" fill="#abe87f" font-size="11">result: ok</text>
+
+    <rect x="271" y="178" width="128" height="86" rx="6" fill="#20251a" stroke="#434a35"/>
+    <text x="335" y="200" fill="#92df62" font-size="12" font-weight="700">Trick run #2</text>
+    <text x="335" y="220" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">fresh Playground</text>
+    <text x="335" y="238" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">job_watch exits</text>
+    <text x="335" y="256" fill="#abe87f" font-size="11">result: ok</text>
+
+    <rect x="456" y="178" width="128" height="86" rx="6" fill="#20251a" stroke="#434a35"/>
+    <text x="520" y="200" fill="#92df62" font-size="12" font-weight="700">Trick run #3</text>
+    <text x="520" y="220" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">fresh Playground</text>
+    <text x="520" y="238" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">job_watch exits</text>
+    <text x="520" y="256" fill="#f08760" font-size="11">result: failed</text>
+  </g>
+
+  <!-- recorded note -->
+  <line x1="584" y1="221" x2="664" y2="221" stroke="#e2b33a" stroke-width="2" marker-end="url(#cronArrowGold)"/>
+  <text x="672" y="217" fill="#eec854" font-size="11" text-anchor="end" font-family="IBM Plex Sans, sans-serif">run</text>
+  <text x="672" y="231" fill="#eec854" font-size="11" text-anchor="end" font-family="IBM Plex Sans, sans-serif">history</text>
+</svg>

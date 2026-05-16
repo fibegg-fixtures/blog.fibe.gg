@@ -1,0 +1,69 @@
+<svg viewBox="0 0 760 560" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Failure classification decision tree: a creation error is routed to disk-full, retry, user-error, recoverable, or fatal based on its category">
+  <defs>
+    <marker id="ar-tree" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 z" fill="#757d5e"/>
+    </marker>
+  </defs>
+
+  <text x="380" y="28" text-anchor="middle" fill="#f3f0e0" font-size="17" font-weight="700" font-family="IBM Plex Sans, sans-serif">A creation error walks into the classifier</text>
+
+  <!-- root -->
+  <rect x="280" y="46" width="200" height="46" rx="6" fill="#252a1e" stroke="#545c42"/>
+  <text x="380" y="68" text-anchor="middle" fill="#f3f0e0" font-size="13" font-weight="700" font-family="IBM Plex Sans, sans-serif">A creation error</text>
+  <text x="380" y="84" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">message + step + details</text>
+
+  <!-- check 1: disk full -->
+  <line x1="380" y1="92" x2="380" y2="116" stroke="#757d5e" stroke-width="1.5" marker-end="url(#ar-tree)"/>
+  <rect x="262" y="118" width="236" height="40" rx="6" fill="#20251a" stroke="#99761f"/>
+  <text x="380" y="143" text-anchor="middle" fill="#eec854" font-size="12" font-family="JetBrains Mono, monospace">no space left on device?</text>
+
+  <!-- disk full leaf -->
+  <line x1="498" y1="138" x2="612" y2="138" stroke="#757d5e" stroke-width="1.5" marker-end="url(#ar-tree)"/>
+  <rect x="614" y="116" width="140" height="46" rx="6" fill="#20251a" stroke="#e2b33a"/>
+  <text x="684" y="135" text-anchor="middle" fill="#eec854" font-size="12" font-weight="700" font-family="IBM Plex Sans, sans-serif">DISK FULL</text>
+  <text x="684" y="151" text-anchor="middle" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">friendly msg &#183; stays</text>
+
+  <!-- check 2: retryable infra -->
+  <line x1="380" y1="158" x2="380" y2="182" stroke="#757d5e" stroke-width="1.5" marker-end="url(#ar-tree)"/>
+  <text x="372" y="174" text-anchor="end" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">no</text>
+  <rect x="246" y="184" width="268" height="56" rx="6" fill="#20251a" stroke="#5cb43a"/>
+  <text x="380" y="206" text-anchor="middle" fill="#92df62" font-size="12" font-weight="700" font-family="IBM Plex Sans, sans-serif">Transient infrastructure?</text>
+  <text x="380" y="224" text-anchor="middle" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">perm denied &#183; conn refused &#183; timed out</text>
+  <text x="380" y="236" text-anchor="middle" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">&#183; network &#183; worker shutting down</text>
+
+  <!-- retry leaf -->
+  <line x1="514" y1="212" x2="612" y2="212" stroke="#757d5e" stroke-width="1.5" marker-end="url(#ar-tree)"/>
+  <text x="563" y="205" text-anchor="middle" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">yes</text>
+  <rect x="614" y="190" width="140" height="46" rx="6" fill="#20251a" stroke="#5cb43a"/>
+  <text x="684" y="209" text-anchor="middle" fill="#92df62" font-size="12" font-weight="700" font-family="IBM Plex Sans, sans-serif">RETRY</text>
+  <text x="684" y="225" text-anchor="middle" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">requeue &#8594; pending</text>
+
+  <!-- check 3: user error -->
+  <line x1="380" y1="240" x2="380" y2="264" stroke="#757d5e" stroke-width="1.5" marker-end="url(#ar-tree)"/>
+  <text x="372" y="256" text-anchor="end" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">no</text>
+  <rect x="252" y="266" width="256" height="56" rx="6" fill="#20251a" stroke="#f08760"/>
+  <text x="380" y="288" text-anchor="middle" fill="#f08760" font-size="12" font-weight="700" font-family="IBM Plex Sans, sans-serif">A recognized user error?</text>
+  <text x="380" y="306" text-anchor="middle" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">clone &#183; image build</text>
+  <text x="380" y="318" text-anchor="middle" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">unset placeholder &#183; compose won&#39;t come up</text>
+
+  <!-- user error leaf -->
+  <line x1="508" y1="294" x2="612" y2="294" stroke="#757d5e" stroke-width="1.5" marker-end="url(#ar-tree)"/>
+  <text x="560" y="287" text-anchor="middle" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">yes</text>
+  <rect x="614" y="272" width="140" height="46" rx="6" fill="#20251a" stroke="#f08760"/>
+  <text x="684" y="291" text-anchor="middle" fill="#f08760" font-size="12" font-weight="700" font-family="IBM Plex Sans, sans-serif">USER ERROR</text>
+  <text x="684" y="307" text-anchor="middle" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">mark error &#183; no auto-retry</text>
+
+  <!-- fallthrough: fatal -->
+  <line x1="380" y1="322" x2="380" y2="346" stroke="#757d5e" stroke-width="1.5" marker-end="url(#ar-tree)"/>
+  <text x="372" y="338" text-anchor="end" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">no</text>
+  <rect x="300" y="348" width="160" height="46" rx="6" fill="#20251a" stroke="#757d5e"/>
+  <text x="380" y="367" text-anchor="middle" fill="#f3f0e0" font-size="12" font-weight="700" font-family="IBM Plex Sans, sans-serif">UNKNOWN / FATAL</text>
+  <text x="380" y="383" text-anchor="middle" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">re-raise &#8594; Sidekiq retry</text>
+
+  <!-- recoverable, the separate lane (docker-truth) -->
+  <rect x="40" y="430" width="680" height="106" rx="8" fill="#252a1e" stroke="#56d8c0" stroke-dasharray="4 3"/>
+  <text x="60" y="456" fill="#56d8c0" font-size="13" font-weight="700" font-family="IBM Plex Sans, sans-serif">A fifth lane that the tree never sees: RECOVERABLE</text>
+  <text x="60" y="478" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">Some compose failures are marked error first, then quietly healed by docker-truth reconciliation</text>
+  <text x="60" y="494" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">once the daemon says the project is actually healthy.</text>
+  <text x="60" y="518" fill="#56d8c0" font-size="11" font-family="IBM Plex Sans, sans-serif">a timeout &#183; a container-name conflict &#183; a healthcheck wait &#183; a one-shot container that exited 0</text>
+</svg>

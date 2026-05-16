@@ -1,0 +1,68 @@
+<svg viewBox="0 0 760 392" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Table mapping each error category to its status, whether it auto-retries, and what the player sees">
+  <text x="380" y="26" text-anchor="middle" fill="#f3f0e0" font-size="17" font-weight="700" font-family="IBM Plex Sans, sans-serif">The category is the decision</text>
+
+  <!-- header -->
+  <rect x="20" y="44" width="720" height="34" rx="5" fill="#252a1e" stroke="#545c42"/>
+  <text x="36" y="66" fill="#abe87f" font-size="12" font-weight="700" font-family="JetBrains Mono, monospace">category</text>
+  <text x="330" y="66" fill="#abe87f" font-size="12" font-weight="700" font-family="IBM Plex Sans, sans-serif">status</text>
+  <text x="470" y="66" fill="#abe87f" font-size="12" font-weight="700" font-family="IBM Plex Sans, sans-serif">auto-retry?</text>
+  <text x="600" y="66" fill="#abe87f" font-size="12" font-weight="700" font-family="IBM Plex Sans, sans-serif">player sees</text>
+
+  <!-- row 1: temporary infra -->
+  <rect x="20" y="80" width="720" height="42" rx="0" fill="#20251a" stroke="#434a35"/>
+  <text x="36" y="100" fill="#92df62" font-size="11" font-weight="700" font-family="IBM Plex Sans, sans-serif">Transient infrastructure</text>
+  <text x="36" y="115" fill="#a19f89" font-size="9.5" font-family="IBM Plex Sans, sans-serif">perm denied, conn refused, timed out, worker shutdown</text>
+  <text x="330" y="106" fill="#92df62" font-size="11" font-family="JetBrains Mono, monospace">pending</text>
+  <text x="470" y="106" fill="#92df62" font-size="11" font-weight="700" font-family="IBM Plex Sans, sans-serif">yes &#183; backoff</text>
+  <text x="600" y="106" fill="#c7c4ae" font-size="10.5" font-family="IBM Plex Sans, sans-serif">nothing &#8594; it heals</text>
+
+  <!-- row 2: disk full -->
+  <rect x="20" y="122" width="720" height="38" rx="0" fill="#1c2017" stroke="#434a35"/>
+  <text x="36" y="146" fill="#eec854" font-size="11" font-weight="700" font-family="IBM Plex Sans, sans-serif">Out of disk</text>
+  <text x="330" y="146" fill="#f08760" font-size="11" font-family="JetBrains Mono, monospace">error</text>
+  <text x="470" y="146" fill="#f08760" font-size="11" font-family="IBM Plex Sans, sans-serif">no</text>
+  <text x="600" y="146" fill="#c7c4ae" font-size="10.5" font-family="IBM Plex Sans, sans-serif">&quot;ran out of disk space&quot;</text>
+
+  <!-- row 3: branch clone failed -->
+  <rect x="20" y="160" width="720" height="38" rx="0" fill="#20251a" stroke="#434a35"/>
+  <text x="36" y="184" fill="#f08760" font-size="11" font-weight="700" font-family="IBM Plex Sans, sans-serif">Branch clone failed</text>
+  <text x="330" y="184" fill="#f08760" font-size="11" font-family="JetBrains Mono, monospace">error</text>
+  <text x="470" y="184" fill="#f08760" font-size="11" font-family="IBM Plex Sans, sans-serif">no</text>
+  <text x="600" y="184" fill="#c7c4ae" font-size="10.5" font-family="IBM Plex Sans, sans-serif">clone error, fix &amp; retry</text>
+
+  <!-- row 4: image_build -->
+  <rect x="20" y="198" width="720" height="38" rx="0" fill="#1c2017" stroke="#434a35"/>
+  <text x="36" y="222" fill="#f08760" font-size="11" font-weight="700" font-family="IBM Plex Sans, sans-serif">Image build failed</text>
+  <text x="330" y="222" fill="#f08760" font-size="11" font-family="JetBrains Mono, monospace">error</text>
+  <text x="470" y="222" fill="#f08760" font-size="11" font-family="IBM Plex Sans, sans-serif">no</text>
+  <text x="600" y="222" fill="#c7c4ae" font-size="10.5" font-family="IBM Plex Sans, sans-serif">build log, fix &amp; retry</text>
+
+  <!-- row 5: unresolved placeholders -->
+  <rect x="20" y="236" width="720" height="38" rx="0" fill="#20251a" stroke="#434a35"/>
+  <text x="36" y="260" fill="#f08760" font-size="11" font-weight="700" font-family="IBM Plex Sans, sans-serif">Unset template placeholder</text>
+  <text x="330" y="260" fill="#f08760" font-size="11" font-family="JetBrains Mono, monospace">error</text>
+  <text x="470" y="260" fill="#f08760" font-size="11" font-family="IBM Plex Sans, sans-serif">no</text>
+  <text x="600" y="260" fill="#c7c4ae" font-size="10.5" font-family="IBM Plex Sans, sans-serif">missing ${...} var</text>
+
+  <!-- row 6: compose_up -->
+  <rect x="20" y="274" width="720" height="38" rx="0" fill="#1c2017" stroke="#434a35"/>
+  <text x="36" y="298" fill="#f08760" font-size="11" font-weight="700" font-family="IBM Plex Sans, sans-serif">Compose won&#39;t come up</text>
+  <text x="330" y="298" fill="#f08760" font-size="11" font-family="JetBrains Mono, monospace">error</text>
+  <text x="470" y="298" fill="#f08760" font-size="11" font-family="IBM Plex Sans, sans-serif">no</text>
+  <text x="600" y="298" fill="#c7c4ae" font-size="10.5" font-family="IBM Plex Sans, sans-serif">compose diagnostics</text>
+
+  <!-- row 7: recoverable -->
+  <rect x="20" y="312" width="720" height="38" rx="0" fill="#20251a" stroke="#434a35"/>
+  <text x="36" y="336" fill="#56d8c0" font-size="11" font-weight="700" font-family="IBM Plex Sans, sans-serif">Recoverable compose hiccup</text>
+  <text x="330" y="331" fill="#f08760" font-size="11" font-family="JetBrains Mono, monospace">error</text>
+  <text x="330" y="344" fill="#56d8c0" font-size="9.5" font-family="IBM Plex Sans, sans-serif">&#8594; running</text>
+  <text x="470" y="336" fill="#56d8c0" font-size="11" font-weight="700" font-family="IBM Plex Sans, sans-serif">self-heals</text>
+  <text x="600" y="336" fill="#c7c4ae" font-size="10.5" font-family="IBM Plex Sans, sans-serif">a brief flicker</text>
+
+  <!-- row 8: unknown -->
+  <rect x="20" y="350" width="720" height="30" rx="0" fill="#1c2017" stroke="#434a35"/>
+  <text x="36" y="370" fill="#f3f0e0" font-size="11" font-weight="700" font-family="IBM Plex Sans, sans-serif">Unknown (no category)</text>
+  <text x="330" y="370" fill="#f3f0e0" font-size="11" font-family="JetBrains Mono, monospace">error</text>
+  <text x="470" y="370" fill="#f3f0e0" font-size="11" font-family="IBM Plex Sans, sans-serif">Sidekiq</text>
+  <text x="600" y="370" fill="#c7c4ae" font-size="10.5" font-family="IBM Plex Sans, sans-serif">re-raised &amp; retried</text>
+</svg>

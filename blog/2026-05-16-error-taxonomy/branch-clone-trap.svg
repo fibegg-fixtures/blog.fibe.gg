@@ -1,0 +1,54 @@
+<svg viewBox="0 0 760 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The branch-clone trap: a transient clone failure is hard-excluded from the retryable set and lands in error with no auto-requeue">
+  <defs>
+    <marker id="ar-trap" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 z" fill="#757d5e"/>
+    </marker>
+    <marker id="ar-bad" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 z" fill="#f08760"/>
+    </marker>
+  </defs>
+
+  <text x="380" y="28" text-anchor="middle" fill="#f3f0e0" font-size="17" font-weight="700" font-family="IBM Plex Sans, sans-serif">The one honest gap: the branch-clone trap</text>
+
+  <!-- transient cause -->
+  <rect x="40" y="58" width="220" height="64" rx="6" fill="#20251a" stroke="#56d8c0"/>
+  <text x="150" y="82" text-anchor="middle" fill="#56d8c0" font-size="12" font-weight="700" font-family="IBM Plex Sans, sans-serif">A genuinely transient blip</text>
+  <text x="150" y="100" text-anchor="middle" fill="#a19f89" font-size="10.5" font-family="IBM Plex Sans, sans-serif">network glitch mid-clone,</text>
+  <text x="150" y="114" text-anchor="middle" fill="#a19f89" font-size="10.5" font-family="IBM Plex Sans, sans-serif">Gitea slow for a second</text>
+
+  <line x1="260" y1="90" x2="338" y2="90" stroke="#757d5e" stroke-width="1.5" marker-end="url(#ar-trap)"/>
+
+  <!-- step -->
+  <rect x="340" y="58" width="200" height="64" rx="6" fill="#252a1e" stroke="#545c42"/>
+  <text x="440" y="82" text-anchor="middle" fill="#f3f0e0" font-size="12" font-weight="700" font-family="IBM Plex Sans, sans-serif">the branch-clone step</text>
+  <text x="440" y="100" text-anchor="middle" fill="#a19f89" font-size="10.5" font-family="IBM Plex Sans, sans-serif">raises a creation error with</text>
+  <text x="440" y="114" text-anchor="middle" fill="#a19f89" font-size="10.5" font-family="IBM Plex Sans, sans-serif">message &quot;...clone failed...&quot;</text>
+
+  <!-- two guards -->
+  <line x1="440" y1="122" x2="440" y2="150" stroke="#757d5e" stroke-width="1.5" marker-end="url(#ar-trap)"/>
+
+  <rect x="120" y="152" width="520" height="96" rx="8" fill="#1c2017" stroke="#99761f"/>
+  <text x="380" y="176" text-anchor="middle" fill="#eec854" font-size="12" font-weight="700" font-family="IBM Plex Sans, sans-serif">Two independent guards both say &quot;not retryable&quot;</text>
+
+  <rect x="140" y="188" width="230" height="48" rx="5" fill="#20251a" stroke="#545c42"/>
+  <text x="255" y="207" text-anchor="middle" fill="#c7c4ae" font-size="10.5" font-family="IBM Plex Sans, sans-serif">the step stamps the error as</text>
+  <text x="255" y="223" text-anchor="middle" fill="#f08760" font-size="11" font-weight="700" font-family="IBM Plex Sans, sans-serif">the user&#39;s fault</text>
+
+  <rect x="390" y="188" width="230" height="48" rx="5" fill="#20251a" stroke="#545c42"/>
+  <text x="505" y="207" text-anchor="middle" fill="#c7c4ae" font-size="10.5" font-family="IBM Plex Sans, sans-serif">classifier hard-excludes</text>
+  <text x="505" y="223" text-anchor="middle" fill="#f08760" font-size="11" font-weight="700" font-family="IBM Plex Sans, sans-serif">any clone failure</text>
+
+  <!-- to error -->
+  <line x1="380" y1="248" x2="380" y2="278" stroke="#f08760" stroke-width="2" marker-end="url(#ar-bad)"/>
+  <text x="396" y="266" fill="#f08760" font-size="10.5" font-family="IBM Plex Sans, sans-serif">routed as USER ERROR</text>
+
+  <rect x="270" y="280" width="220" height="50" rx="6" fill="#20251a" stroke="#f08760"/>
+  <text x="380" y="300" text-anchor="middle" fill="#f08760" font-size="13" font-weight="700" font-family="IBM Plex Sans, sans-serif">lands in the error state</text>
+  <text x="380" y="318" text-anchor="middle" fill="#a19f89" font-size="10.5" font-family="IBM Plex Sans, sans-serif">marked as an error &#183; no auto-requeue</text>
+
+  <!-- consequence band -->
+  <rect x="40" y="350" width="680" height="56" rx="8" fill="#252a1e" stroke="#f08760" stroke-dasharray="4 3"/>
+  <text x="60" y="374" fill="#f08760" font-size="12" font-weight="700" font-family="IBM Plex Sans, sans-serif">Result:</text>
+  <text x="118" y="374" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">a transient blip looks identical to a typo in your branch name. It waits</text>
+  <text x="60" y="392" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">for a Playguard sweep, a startup-recovery pass, or a human hitting retry &#8212; instead of healing on its own.</text>
+</svg>

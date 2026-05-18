@@ -1,0 +1,53 @@
+<svg viewBox="0 0 720 380" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Profile-based authentication: named local profiles map to environments, the MCP server resolves credentials per session with fibe_auth_set able to override at runtime, and bare API keys are the fallback of last resort.">
+  <defs>
+    <marker id="prArrow" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 z" fill="#757d5e"/>
+    </marker>
+  </defs>
+
+  <text x="360" y="28" text-anchor="middle" fill="#f3f0e0" font-size="18" font-weight="700" font-family="IBM Plex Sans, sans-serif">Profiles over raw keys</text>
+  <text x="360" y="48" text-anchor="middle" fill="#a19f89" font-size="12" font-family="IBM Plex Sans, sans-serif">Pick an environment by name; the server resolves the credential.</text>
+
+  <!-- profiles column -->
+  <rect x="28" y="74" width="200" height="270" rx="8" fill="#20251a" stroke="#434a35"/>
+  <text x="128" y="98" text-anchor="middle" fill="#abe87f" font-size="13" font-weight="700" font-family="IBM Plex Sans, sans-serif">local profiles</text>
+
+  <rect x="48" y="116" width="160" height="58" rx="5" fill="#252a1e" stroke="#79d44e"/>
+  <text x="62" y="140" fill="#92df62" font-size="13" font-family="JetBrains Mono, monospace">default</text>
+  <text x="62" y="160" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">fibe.gg (production)</text>
+
+  <rect x="48" y="182" width="160" height="58" rx="5" fill="#252a1e" stroke="#56d8c0"/>
+  <text x="62" y="206" fill="#56d8c0" font-size="13" font-family="JetBrains Mono, monospace">like</text>
+  <text x="62" y="226" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">next.fibe.live (staging)</text>
+
+  <rect x="48" y="248" width="160" height="58" rx="5" fill="#252a1e" stroke="#eec854"/>
+  <text x="62" y="272" fill="#f5da79" font-size="13" font-family="JetBrains Mono, monospace">local</text>
+  <text x="62" y="292" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">rails.test:3000</text>
+
+  <!-- server -->
+  <rect x="288" y="120" width="170" height="170" rx="8" fill="#20251a" stroke="#5cb43a" stroke-width="1.5"/>
+  <text x="373" y="150" text-anchor="middle" fill="#92df62" font-size="13" font-weight="700" font-family="JetBrains Mono, monospace">fibe mcp serve</text>
+  <text x="373" y="176" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">resolves credential</text>
+  <text x="373" y="194" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">&amp; domain per session</text>
+  <line x1="312" y1="210" x2="434" y2="210" stroke="#434a35"/>
+  <text x="373" y="234" text-anchor="middle" fill="#56d8c0" font-size="11" font-family="JetBrains Mono, monospace">fibe_auth_set</text>
+  <text x="373" y="252" text-anchor="middle" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">session override,</text>
+  <text x="373" y="268" text-anchor="middle" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">validated before commit</text>
+
+  <line x1="228" y1="205" x2="286" y2="205" stroke="#757d5e" stroke-width="1.5" marker-end="url(#prArrow)"/>
+
+  <!-- sessions -->
+  <rect x="512" y="120" width="180" height="170" rx="8" fill="#20251a" stroke="#434a35"/>
+  <text x="602" y="148" text-anchor="middle" fill="#abe87f" font-size="13" font-weight="700" font-family="IBM Plex Sans, sans-serif">per-session state</text>
+  <rect x="528" y="164" width="148" height="34" rx="4" fill="#252a1e" stroke="#545c42"/>
+  <text x="602" y="186" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="JetBrains Mono, monospace">tenant A &#8594; key A</text>
+  <rect x="528" y="206" width="148" height="34" rx="4" fill="#252a1e" stroke="#545c42"/>
+  <text x="602" y="228" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="JetBrains Mono, monospace">tenant B &#8594; key B</text>
+  <text x="602" y="266" text-anchor="middle" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">one server, many tenants</text>
+
+  <line x1="458" y1="205" x2="510" y2="205" stroke="#757d5e" stroke-width="1.5" marker-end="url(#prArrow)"/>
+
+  <!-- footer note -->
+  <rect x="28" y="316" width="664" height="44" rx="6" fill="#1b1f16" stroke="#434a35" stroke-dasharray="4 3"/>
+  <text x="360" y="343" text-anchor="middle" fill="#757d5e" font-size="11" font-family="IBM Plex Sans, sans-serif">Raw FIBE_API_KEY still works as a fallback &#8212; but a profile name is what you should reach for.</text>
+</svg>

@@ -1,0 +1,40 @@
+<svg viewBox="0 0 720 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The escape-hatch chain: try the native advertised tool first, fall back to fibe_call for a registered but hidden tool, and use fibe_run only as a last resort to invoke the raw CLI.">
+  <defs>
+    <marker id="fcArrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#79d44e"/>
+    </marker>
+  </defs>
+
+  <text x="360" y="30" text-anchor="middle" fill="#f3f0e0" font-size="18" font-weight="700" font-family="IBM Plex Sans, sans-serif">The fallback chain</text>
+  <text x="360" y="50" text-anchor="middle" fill="#a19f89" font-size="12" font-family="IBM Plex Sans, sans-serif">Cheapest and most reliable first; raw CLI last.</text>
+
+  <!-- step 1 -->
+  <rect x="40" y="78" width="640" height="64" rx="7" fill="#20251a" stroke="#5cb43a" stroke-width="1.5"/>
+  <circle cx="72" cy="110" r="16" fill="#252a1e" stroke="#79d44e"/>
+  <text x="72" y="115" text-anchor="middle" fill="#92df62" font-size="15" font-weight="700" font-family="JetBrains Mono, monospace">1</text>
+  <text x="104" y="104" fill="#abe87f" font-size="14" font-weight="700" font-family="JetBrains Mono, monospace">native tool</text>
+  <text x="104" y="126" fill="#c7c4ae" font-size="11.5" font-family="IBM Plex Sans, sans-serif">advertised in this tier &#183; full schema in ToolSearch &#183; fibe_launch, fibe_status, ...</text>
+  <text x="664" y="115" text-anchor="end" fill="#56d8c0" font-size="11" font-family="IBM Plex Sans, sans-serif">preferred</text>
+
+  <line x1="360" y1="142" x2="360" y2="166" stroke="#79d44e" stroke-width="2" marker-end="url(#fcArrow)"/>
+  <text x="376" y="160" fill="#757d5e" font-size="10" font-family="IBM Plex Sans, sans-serif">tool not advertised here</text>
+
+  <!-- step 2 -->
+  <rect x="40" y="170" width="640" height="64" rx="7" fill="#20251a" stroke="#e2b33a" stroke-width="1.5"/>
+  <circle cx="72" cy="202" r="16" fill="#252a1e" stroke="#eec854"/>
+  <text x="72" y="207" text-anchor="middle" fill="#f5da79" font-size="15" font-weight="700" font-family="JetBrains Mono, monospace">2</text>
+  <text x="104" y="196" fill="#f5da79" font-size="14" font-weight="700" font-family="JetBrains Mono, monospace">fibe_call</text>
+  <text x="104" y="218" fill="#c7c4ae" font-size="11.5" font-family="IBM Plex Sans, sans-serif">invoke a hidden registered tool by name &#183; same dispatcher, same gating</text>
+  <text x="664" y="207" text-anchor="end" fill="#a19f89" font-size="10" font-family="JetBrains Mono, monospace">{tool, args}</text>
+
+  <line x1="360" y1="234" x2="360" y2="258" stroke="#79d44e" stroke-width="2" marker-end="url(#fcArrow)"/>
+  <text x="376" y="252" fill="#757d5e" font-size="10" font-family="IBM Plex Sans, sans-serif">no MCP tool fits at all</text>
+
+  <!-- step 3 -->
+  <rect x="40" y="262" width="640" height="64" rx="7" fill="#20251a" stroke="#f08760" stroke-width="1.5"/>
+  <circle cx="72" cy="294" r="16" fill="#252a1e" stroke="#f08760"/>
+  <text x="72" y="299" text-anchor="middle" fill="#f08760" font-size="15" font-weight="700" font-family="JetBrains Mono, monospace">3</text>
+  <text x="104" y="288" fill="#f08760" font-size="14" font-weight="700" font-family="JetBrains Mono, monospace">fibe_run</text>
+  <text x="104" y="310" fill="#c7c4ae" font-size="11.5" font-family="IBM Plex Sans, sans-serif">last-resort escape hatch &#183; shells out to the installed fibe CLI binary</text>
+  <text x="664" y="299" text-anchor="end" fill="#f08760" font-size="10" font-family="IBM Plex Sans, sans-serif">use sparingly</text>
+</svg>

@@ -1,0 +1,56 @@
+<svg viewBox="0 0 720 470" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Core versus full tool surface: with --tools core only meta, base, greenfield and brownfield tiers are advertised natively, while overseer, local and other stay registered but hidden and reachable through fibe_call.">
+  <defs>
+    <marker id="ttArrow" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 z" fill="#757d5e"/>
+    </marker>
+  </defs>
+
+  <text x="360" y="28" text-anchor="middle" fill="#f3f0e0" font-size="18" font-weight="700" font-family="IBM Plex Sans, sans-serif">One registry, two surfaces</text>
+  <text x="360" y="48" text-anchor="middle" fill="#a19f89" font-size="12" font-family="IBM Plex Sans, sans-serif">Every tool is always registered. --tools only changes what is advertised.</text>
+
+  <!-- core panel -->
+  <rect x="24" y="70" width="320" height="360" rx="8" fill="#20251a" stroke="#5cb43a" stroke-width="1.5"/>
+  <text x="184" y="96" text-anchor="middle" fill="#92df62" font-size="15" font-weight="700" font-family="JetBrains Mono, monospace">--tools core</text>
+  <text x="184" y="116" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">advertised natively to the client</text>
+
+  <rect x="44" y="132" width="280" height="40" rx="5" fill="#252a1e" stroke="#79d44e"/>
+  <text x="58" y="157" fill="#abe87f" font-size="13" font-family="JetBrains Mono, monospace">meta</text>
+  <text x="318" y="157" text-anchor="end" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">catalog &#183; call &#183; pipeline &#183; help</text>
+
+  <rect x="44" y="180" width="280" height="40" rx="5" fill="#252a1e" stroke="#79d44e"/>
+  <text x="58" y="205" fill="#abe87f" font-size="13" font-family="JetBrains Mono, monospace">base</text>
+  <text x="318" y="205" text-anchor="end" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">status &#183; resource read/list/delete</text>
+
+  <rect x="44" y="228" width="280" height="40" rx="5" fill="#252a1e" stroke="#79d44e"/>
+  <text x="58" y="253" fill="#abe87f" font-size="13" font-family="JetBrains Mono, monospace">greenfield</text>
+  <text x="318" y="253" text-anchor="end" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">launch from scratch</text>
+
+  <rect x="44" y="276" width="280" height="40" rx="5" fill="#252a1e" stroke="#79d44e"/>
+  <text x="58" y="301" fill="#abe87f" font-size="13" font-family="JetBrains Mono, monospace">brownfield</text>
+  <text x="318" y="301" text-anchor="end" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">connect existing repo &amp; Props</text>
+
+  <rect x="44" y="332" width="280" height="78" rx="5" fill="#1b1f16" stroke="#434a35" stroke-dasharray="4 3"/>
+  <text x="184" y="358" text-anchor="middle" fill="#757d5e" font-size="11" font-family="IBM Plex Sans, sans-serif">overseer &#183; local &#183; other</text>
+  <text x="184" y="378" text-anchor="middle" fill="#757d5e" font-size="11" font-family="IBM Plex Sans, sans-serif">registered, not advertised</text>
+  <text x="184" y="398" text-anchor="middle" fill="#56d8c0" font-size="11" font-family="JetBrains Mono, monospace">reach via fibe_call</text>
+
+  <!-- full panel -->
+  <rect x="376" y="70" width="320" height="360" rx="8" fill="#20251a" stroke="#e2b33a" stroke-width="1.5"/>
+  <text x="536" y="96" text-anchor="middle" fill="#eec854" font-size="15" font-weight="700" font-family="JetBrains Mono, monospace">--tools full</text>
+  <text x="536" y="116" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">every tier advertised natively</text>
+
+  <rect x="396" y="132" width="280" height="278" rx="5" fill="#252a1e" stroke="#99761f"/>
+  <text x="536" y="160" text-anchor="middle" fill="#f5da79" font-size="12" font-family="JetBrains Mono, monospace">meta &#183; base &#183; greenfield</text>
+  <text x="536" y="182" text-anchor="middle" fill="#f5da79" font-size="12" font-family="JetBrains Mono, monospace">brownfield &#183; overseer</text>
+  <text x="536" y="204" text-anchor="middle" fill="#f5da79" font-size="12" font-family="JetBrains Mono, monospace">local &#183; other</text>
+  <line x1="436" y1="226" x2="636" y2="226" stroke="#434a35"/>
+  <text x="536" y="256" text-anchor="middle" fill="#f3f0e0" font-size="22" font-weight="700" font-family="JetBrains Mono, monospace">all of it</text>
+  <text x="536" y="290" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">hundreds of native tools</text>
+  <text x="536" y="332" text-anchor="middle" fill="#f08760" font-size="11" font-family="IBM Plex Sans, sans-serif">noisier ToolSearch,</text>
+  <text x="536" y="350" text-anchor="middle" fill="#f08760" font-size="11" font-family="IBM Plex Sans, sans-serif">weaker tool selection</text>
+  <text x="536" y="388" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">use only when a client</text>
+  <text x="536" y="404" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">needs every tool native</text>
+
+  <line x1="344" y1="371" x2="394" y2="371" stroke="#757d5e" stroke-width="1.5" marker-end="url(#ttArrow)"/>
+  <text x="360" y="452" text-anchor="middle" fill="#757d5e" font-size="10" font-family="IBM Plex Sans, sans-serif">same dispatcher, same auth and destructive gating on both sides</text>
+</svg>

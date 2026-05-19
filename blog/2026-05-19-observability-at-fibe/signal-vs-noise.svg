@@ -1,0 +1,41 @@
+<svg viewBox="0 0 720 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Signal versus noise: what we keep and act on versus the dashboards we deliberately skipped">
+  <text x="360" y="30" text-anchor="middle" fill="#f3f0e0" font-size="18" font-weight="700" font-family="IBM Plex Sans, sans-serif">Instrument what you'll act on</text>
+  <text x="360" y="50" text-anchor="middle" fill="#a19f89" font-size="12" font-family="IBM Plex Sans, sans-serif">The test for every signal: when this fires, do we change something?</text>
+
+  <!-- SIGNAL column -->
+  <rect x="32" y="72" width="320" height="262" rx="10" fill="#20251a" stroke="#5cb43a"/>
+  <text x="192" y="100" text-anchor="middle" fill="#92df62" font-size="15" font-weight="700" font-family="IBM Plex Sans, sans-serif">Kept &#183; acted on</text>
+
+  <text x="56" y="132" fill="#abe87f" font-size="12" font-family="JetBrains Mono, monospace">&#10003;</text>
+  <text x="78" y="132" fill="#c7c4ae" font-size="12" font-family="IBM Plex Sans, sans-serif">Exceptions &#8594; Sentry, with a trace</text>
+  <text x="56" y="162" fill="#abe87f" font-size="12" font-family="JetBrains Mono, monospace">&#10003;</text>
+  <text x="78" y="162" fill="#c7c4ae" font-size="12" font-family="IBM Plex Sans, sans-serif">Is the box alive? &#8594; GET /up</text>
+  <text x="56" y="192" fill="#abe87f" font-size="12" font-family="JetBrains Mono, monospace">&#10003;</text>
+  <text x="78" y="192" fill="#c7c4ae" font-size="12" font-family="IBM Plex Sans, sans-serif">Right build deployed? &#8594; /up identity</text>
+  <text x="56" y="222" fill="#abe87f" font-size="12" font-family="JetBrains Mono, monospace">&#10003;</text>
+  <text x="78" y="222" fill="#c7c4ae" font-size="12" font-family="IBM Plex Sans, sans-serif">What happened, in order &#8594; logs by request ID</text>
+  <text x="56" y="252" fill="#abe87f" font-size="12" font-family="JetBrains Mono, monospace">&#10003;</text>
+  <text x="78" y="252" fill="#c7c4ae" font-size="12" font-family="IBM Plex Sans, sans-serif">Who did what &#8594; audit log</text>
+  <text x="56" y="282" fill="#abe87f" font-size="12" font-family="JetBrains Mono, monospace">&#10003;</text>
+  <text x="78" y="282" fill="#c7c4ae" font-size="12" font-family="IBM Plex Sans, sans-serif">Is reality drifting? &#8594; Playguard counters</text>
+  <text x="56" y="312" fill="#abe87f" font-size="12" font-family="JetBrains Mono, monospace">&#10003;</text>
+  <text x="78" y="312" fill="#c7c4ae" font-size="12" font-family="IBM Plex Sans, sans-serif">Did the webhook land? &#8594; delivery rows</text>
+
+  <!-- NOISE column -->
+  <rect x="368" y="72" width="320" height="262" rx="10" fill="#20251a" stroke="#757d5e"/>
+  <text x="528" y="100" text-anchor="middle" fill="#a19f89" font-size="15" font-weight="700" font-family="IBM Plex Sans, sans-serif">Skipped &#183; on purpose</text>
+
+  <text x="392" y="132" fill="#f08760" font-size="12" font-family="JetBrains Mono, monospace">&#215;</text>
+  <text x="412" y="132" fill="#a19f89" font-size="12" font-family="IBM Plex Sans, sans-serif">A Prometheus + Grafana stack</text>
+  <text x="392" y="162" fill="#f08760" font-size="12" font-family="JetBrains Mono, monospace">&#215;</text>
+  <text x="412" y="162" fill="#a19f89" font-size="12" font-family="IBM Plex Sans, sans-serif">A /metrics endpoint nobody scrapes</text>
+  <text x="392" y="192" fill="#f08760" font-size="12" font-family="JetBrains Mono, monospace">&#215;</text>
+  <text x="412" y="192" fill="#a19f89" font-size="12" font-family="IBM Plex Sans, sans-serif">Wall-of-graphs dashboards</text>
+  <text x="392" y="222" fill="#f08760" font-size="12" font-family="JetBrains Mono, monospace">&#215;</text>
+  <text x="412" y="222" fill="#a19f89" font-size="12" font-family="IBM Plex Sans, sans-serif">p99 alerts with no runbook</text>
+  <text x="392" y="252" fill="#f08760" font-size="12" font-family="JetBrains Mono, monospace">&#215;</text>
+  <text x="412" y="252" fill="#a19f89" font-size="12" font-family="IBM Plex Sans, sans-serif">Logging PII "just in case"</text>
+  <text x="392" y="282" fill="#f08760" font-size="12" font-family="JetBrains Mono, monospace">&#215;</text>
+  <text x="412" y="282" fill="#a19f89" font-size="12" font-family="IBM Plex Sans, sans-serif">Pages that fire while everyone sleeps</text>
+  <text x="412" y="313" fill="#757d5e" font-size="10.5" font-family="IBM Plex Sans, sans-serif" font-style="italic">(revisit when the team &#8212; or the blast radius &#8212; grows)</text>
+</svg>

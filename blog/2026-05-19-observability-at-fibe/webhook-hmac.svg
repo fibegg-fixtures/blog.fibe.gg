@@ -1,0 +1,52 @@
+<svg viewBox="0 0 720 392" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Signed webhook delivery: Fibe computes an HMAC-SHA256 of the payload with a shared secret, sends it in the X-Webhook-Signature header, and the receiver recomputes and compares before trusting the body">
+  <defs>
+    <marker id="wh-arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L10,5 L0,10 Z" fill="#757d5e"/>
+    </marker>
+  </defs>
+
+  <text x="360" y="30" text-anchor="middle" fill="#f3f0e0" font-size="18" font-weight="700" font-family="IBM Plex Sans, sans-serif">A webhook a receiver can trust</text>
+  <text x="360" y="50" text-anchor="middle" fill="#a19f89" font-size="12" font-family="IBM Plex Sans, sans-serif">Same secret on both sides. The signature is the proof, not the URL.</text>
+
+  <!-- Fibe side -->
+  <rect x="32" y="80" width="248" height="232" rx="10" fill="#252a1e" stroke="#545c42"/>
+  <text x="156" y="106" text-anchor="middle" fill="#92df62" font-size="14" font-weight="700" font-family="IBM Plex Sans, sans-serif">Fibe (sender)</text>
+
+  <rect x="52" y="122" width="208" height="40" rx="6" fill="#20251a" stroke="#434a35"/>
+  <text x="156" y="140" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">1 &#183; serialize event payload</text>
+  <text x="156" y="155" text-anchor="middle" fill="#a19f89" font-size="10" font-family="JetBrains Mono, monospace">the exact body bytes</text>
+
+  <rect x="52" y="172" width="208" height="48" rx="6" fill="#20251a" stroke="#eec854"/>
+  <text x="156" y="191" text-anchor="middle" fill="#eec854" font-size="11" font-family="IBM Plex Sans, sans-serif">2 &#183; HMAC-SHA256(secret, body)</text>
+  <text x="156" y="208" text-anchor="middle" fill="#a19f89" font-size="9.5" font-family="JetBrains Mono, monospace">hex digest of the payload</text>
+
+  <rect x="52" y="230" width="208" height="68" rx="6" fill="#20251a" stroke="#434a35"/>
+  <text x="156" y="249" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">3 &#183; attach headers</text>
+  <text x="156" y="267" text-anchor="middle" fill="#56d8c0" font-size="9.5" font-family="JetBrains Mono, monospace">X-Webhook-Signature: sha256=...</text>
+  <text x="156" y="282" text-anchor="middle" fill="#a19f89" font-size="9.5" font-family="JetBrains Mono, monospace">X-Webhook-Event &#183; X-Idempotency-Key</text>
+
+  <!-- wire -->
+  <line x1="280" y1="196" x2="440" y2="196" stroke="#757d5e" stroke-width="2" marker-end="url(#wh-arrow)"/>
+  <text x="360" y="186" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="JetBrains Mono, monospace">POST over the open internet</text>
+  <text x="360" y="214" text-anchor="middle" fill="#757d5e" font-size="10" font-family="IBM Plex Sans, sans-serif">body is visible &#183; signature can't be forged without the secret</text>
+
+  <!-- Receiver side -->
+  <rect x="440" y="80" width="248" height="232" rx="10" fill="#252a1e" stroke="#545c42"/>
+  <text x="564" y="106" text-anchor="middle" fill="#56d8c0" font-size="14" font-weight="700" font-family="IBM Plex Sans, sans-serif">Your endpoint (receiver)</text>
+
+  <rect x="460" y="122" width="208" height="40" rx="6" fill="#20251a" stroke="#434a35"/>
+  <text x="564" y="140" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">4 &#183; read body + header</text>
+  <text x="564" y="155" text-anchor="middle" fill="#a19f89" font-size="10" font-family="JetBrains Mono, monospace">same shared secret</text>
+
+  <rect x="460" y="172" width="208" height="48" rx="6" fill="#20251a" stroke="#eec854"/>
+  <text x="564" y="191" text-anchor="middle" fill="#eec854" font-size="11" font-family="IBM Plex Sans, sans-serif">5 &#183; recompute the digest</text>
+  <text x="564" y="208" text-anchor="middle" fill="#a19f89" font-size="9.5" font-family="JetBrains Mono, monospace">over the exact bytes received</text>
+
+  <rect x="460" y="230" width="208" height="68" rx="6" fill="#20251a" stroke="#92df62"/>
+  <text x="564" y="252" text-anchor="middle" fill="#92df62" font-size="11" font-family="IBM Plex Sans, sans-serif">6 &#183; constant-time compare</text>
+  <text x="564" y="270" text-anchor="middle" fill="#abe87f" font-size="10.5" font-family="JetBrains Mono, monospace">match &#8594; trust &#183; act</text>
+  <text x="564" y="287" text-anchor="middle" fill="#f08760" font-size="10.5" font-family="JetBrains Mono, monospace">mismatch &#8594; drop</text>
+
+  <text x="360" y="346" text-anchor="middle" fill="#c7c4ae" font-size="11.5" font-family="IBM Plex Sans, sans-serif">The delivery is also recorded on our side: status, response code, attempt count.</text>
+  <text x="360" y="368" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">So a webhook is observability that leaves the building &#8212; and we can see whether it landed.</text>
+</svg>

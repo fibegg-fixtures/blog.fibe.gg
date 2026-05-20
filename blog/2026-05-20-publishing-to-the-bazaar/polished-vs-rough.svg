@@ -1,0 +1,52 @@
+<svg viewBox="0 0 720 326" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Side-by-side comparison of a rough template versus a polished one across metadata, variables, secrets, exposure, and images">
+  <text x="360" y="26" text-anchor="middle" fill="#f3f0e0" font-size="16" font-weight="700" font-family="IBM Plex Sans, sans-serif">Rough vs polished — what a launcher feels</text>
+
+  <!-- ROUGH header -->
+  <rect x="18" y="42" width="334" height="34" rx="6" fill="#252a1e" stroke="#f08760"/>
+  <text x="185" y="64" text-anchor="middle" fill="#f08760" font-size="14" font-weight="700" font-family="IBM Plex Sans, sans-serif">Rough &#8594; launcher reads your mind</text>
+
+  <!-- POLISHED header -->
+  <rect x="368" y="42" width="334" height="34" rx="6" fill="#20251a" stroke="#79d44e"/>
+  <text x="535" y="64" text-anchor="middle" fill="#92df62" font-size="14" font-weight="700" font-family="IBM Plex Sans, sans-serif">Polished &#8594; succeeds first try</text>
+
+  <!-- rows -->
+  <!-- metadata -->
+  <rect x="18" y="84" width="334" height="44" rx="5" fill="#20251a" stroke="#434a35"/>
+  <text x="30" y="102" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">METADATA</text>
+  <text x="30" y="120" fill="#c7c4ae" font-size="11.5" font-family="JetBrains Mono, monospace">description: "Stack" &#183; no category</text>
+  <rect x="368" y="84" width="334" height="44" rx="5" fill="#20251a" stroke="#434a35"/>
+  <text x="380" y="102" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">METADATA</text>
+  <text x="380" y="120" fill="#abe87f" font-size="11.5" font-family="JetBrains Mono, monospace">"Wiki.js + Postgres" &#183; Productivity</text>
+
+  <!-- variables -->
+  <rect x="18" y="132" width="334" height="44" rx="5" fill="#20251a" stroke="#434a35"/>
+  <text x="30" y="150" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">VARIABLES</text>
+  <text x="30" y="168" fill="#c7c4ae" font-size="11.5" font-family="JetBrains Mono, monospace">DB_HOST with no name, blank default</text>
+  <rect x="368" y="132" width="334" height="44" rx="5" fill="#20251a" stroke="#434a35"/>
+  <text x="380" y="150" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">VARIABLES</text>
+  <text x="380" y="168" fill="#abe87f" font-size="11.5" font-family="JetBrains Mono, monospace">clear name + pasteable default</text>
+
+  <!-- secrets -->
+  <rect x="18" y="180" width="334" height="44" rx="5" fill="#20251a" stroke="#434a35"/>
+  <text x="30" y="198" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">SECRETS</text>
+  <text x="30" y="216" fill="#f08760" font-size="11.5" font-family="JetBrains Mono, monospace">default: "hunter2" baked in</text>
+  <rect x="368" y="180" width="334" height="44" rx="5" fill="#20251a" stroke="#434a35"/>
+  <text x="380" y="198" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">SECRETS</text>
+  <text x="380" y="216" fill="#abe87f" font-size="11.5" font-family="JetBrains Mono, monospace">random: true &#183; secret &#183; Vault</text>
+
+  <!-- exposure -->
+  <rect x="18" y="228" width="334" height="44" rx="5" fill="#20251a" stroke="#434a35"/>
+  <text x="30" y="246" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">EXPOSURE</text>
+  <text x="30" y="264" fill="#f08760" font-size="11.5" font-family="JetBrains Mono, monospace">admin console on ports: 8080</text>
+  <rect x="368" y="228" width="334" height="44" rx="5" fill="#20251a" stroke="#434a35"/>
+  <text x="380" y="246" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">EXPOSURE</text>
+  <text x="380" y="264" fill="#abe87f" font-size="11.5" font-family="JetBrains Mono, monospace">fibe.gg/port &#183; internal for admin</text>
+
+  <!-- images -->
+  <rect x="18" y="276" width="334" height="44" rx="5" fill="#20251a" stroke="#434a35"/>
+  <text x="30" y="294" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">IMAGES</text>
+  <text x="30" y="312" fill="#f08760" font-size="11.5" font-family="JetBrains Mono, monospace">image: app:latest (drifts)</text>
+  <rect x="368" y="276" width="334" height="44" rx="5" fill="#20251a" stroke="#434a35"/>
+  <text x="380" y="294" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">IMAGES</text>
+  <text x="380" y="312" fill="#abe87f" font-size="11.5" font-family="JetBrains Mono, monospace">image: app:2.5.6 (pinned)</text>
+</svg>

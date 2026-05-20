@@ -1,0 +1,47 @@
+<svg viewBox="0 0 720 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The five pre-publish checks: metadata, variables, secrets, first-launch, and versioning">
+  <text x="360" y="28" text-anchor="middle" fill="#f3f0e0" font-size="17" font-weight="700" font-family="IBM Plex Sans, sans-serif">Five checks before you click Make public</text>
+
+  <!-- 1 metadata -->
+  <rect x="20" y="52" width="334" height="88" rx="7" fill="#20251a" stroke="#545c42"/>
+  <circle cx="48" cy="78" r="13" fill="#252a1e" stroke="#eec854"/>
+  <text x="48" y="83" text-anchor="middle" fill="#eec854" font-size="14" font-weight="700" font-family="JetBrains Mono, monospace">1</text>
+  <text x="72" y="76" fill="#f3f0e0" font-size="14" font-weight="700" font-family="IBM Plex Sans, sans-serif">Metadata</text>
+  <text x="72" y="96" fill="#c7c4ae" font-size="11.5" font-family="JetBrains Mono, monospace">description + category set,</text>
+  <text x="72" y="112" fill="#c7c4ae" font-size="11.5" font-family="JetBrains Mono, monospace">broad + discoverable, plain text</text>
+  <text x="72" y="130" fill="#a19f89" font-size="10.5" font-family="IBM Plex Sans, sans-serif">Bazaar rejects a missing description</text>
+
+  <!-- 2 variables -->
+  <rect x="366" y="52" width="334" height="88" rx="7" fill="#20251a" stroke="#545c42"/>
+  <circle cx="394" cy="78" r="13" fill="#252a1e" stroke="#eec854"/>
+  <text x="394" y="83" text-anchor="middle" fill="#eec854" font-size="14" font-weight="700" font-family="JetBrains Mono, monospace">2</text>
+  <text x="418" y="76" fill="#f3f0e0" font-size="14" font-weight="700" font-family="IBM Plex Sans, sans-serif">Variables</text>
+  <text x="418" y="96" fill="#c7c4ae" font-size="11.5" font-family="JetBrains Mono, monospace">clear name, honest required,</text>
+  <text x="418" y="112" fill="#c7c4ae" font-size="11.5" font-family="JetBrains Mono, monospace">defaults pasteable as-is</text>
+  <text x="418" y="130" fill="#a19f89" font-size="10.5" font-family="IBM Plex Sans, sans-serif">no undeclared / unused refs</text>
+
+  <!-- 3 secrets -->
+  <rect x="20" y="152" width="334" height="88" rx="7" fill="#20251a" stroke="#545c42"/>
+  <circle cx="48" cy="178" r="13" fill="#252a1e" stroke="#f08760"/>
+  <text x="48" y="183" text-anchor="middle" fill="#f08760" font-size="14" font-weight="700" font-family="JetBrains Mono, monospace">3</text>
+  <text x="72" y="176" fill="#f3f0e0" font-size="14" font-weight="700" font-family="IBM Plex Sans, sans-serif">No leaked secrets</text>
+  <text x="72" y="196" fill="#c7c4ae" font-size="11.5" font-family="JetBrains Mono, monospace">random: true / secret / Vault,</text>
+  <text x="72" y="212" fill="#c7c4ae" font-size="11.5" font-family="JetBrains Mono, monospace">nothing real in default:</text>
+  <text x="72" y="230" fill="#a19f89" font-size="10.5" font-family="IBM Plex Sans, sans-serif">env, configs, scripts all clean</text>
+
+  <!-- 4 first launch -->
+  <rect x="366" y="152" width="334" height="88" rx="7" fill="#20251a" stroke="#545c42"/>
+  <circle cx="394" cy="178" r="13" fill="#252a1e" stroke="#79d44e"/>
+  <text x="394" y="183" text-anchor="middle" fill="#79d44e" font-size="14" font-weight="700" font-family="JetBrains Mono, monospace">4</text>
+  <text x="418" y="176" fill="#f3f0e0" font-size="14" font-weight="700" font-family="IBM Plex Sans, sans-serif">Clean first launch</text>
+  <text x="418" y="196" fill="#c7c4ae" font-size="11.5" font-family="JetBrains Mono, monospace">fresh Player + fresh Marquee,</text>
+  <text x="418" y="212" fill="#c7c4ae" font-size="11.5" font-family="JetBrains Mono, monospace">exposure correct, no leftover state</text>
+  <text x="418" y="230" fill="#a19f89" font-size="10.5" font-family="IBM Plex Sans, sans-serif">succeeds first try, no mind-reading</text>
+
+  <!-- 5 versioning -->
+  <rect x="20" y="252" width="680" height="88" rx="7" fill="#20251a" stroke="#545c42"/>
+  <circle cx="48" cy="296" r="13" fill="#252a1e" stroke="#56d8c0"/>
+  <text x="48" y="301" text-anchor="middle" fill="#56d8c0" font-size="14" font-weight="700" font-family="JetBrains Mono, monospace">5</text>
+  <text x="72" y="286" fill="#f3f0e0" font-size="14" font-weight="700" font-family="IBM Plex Sans, sans-serif">Pin the version, then publish</text>
+  <text x="72" y="306" fill="#c7c4ae" font-size="11.5" font-family="JetBrains Mono, monospace">images on stable tags (no :latest) &#183; publish is per-version &#183; Make public is</text>
+  <text x="72" y="324" fill="#c7c4ae" font-size="11.5" font-family="JetBrains Mono, monospace">immediate, no review queue &#183; unpublish leaves other versions and forks untouched</text>
+</svg>

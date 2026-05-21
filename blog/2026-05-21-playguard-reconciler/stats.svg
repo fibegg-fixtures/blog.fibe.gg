@@ -1,0 +1,17 @@
+<svg viewBox="0 0 720 110" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Playguard at a glance: 60-second cycle, 15-minute lock, 5-strike quarantine, 3 recreations per cycle">
+  <rect x="0" y="10" width="168" height="90" rx="6" fill="#20251a" stroke="#434a35"/>
+  <text x="84" y="52" text-anchor="middle" fill="#92df62" font-size="30" font-weight="700" font-family="JetBrains Mono, monospace">60s</text>
+  <text x="84" y="78" text-anchor="middle" fill="#a19f89" font-size="12" font-family="IBM Plex Sans, sans-serif">cycle cadence</text>
+
+  <rect x="184" y="10" width="168" height="90" rx="6" fill="#20251a" stroke="#434a35"/>
+  <text x="268" y="52" text-anchor="middle" fill="#eec854" font-size="30" font-weight="700" font-family="JetBrains Mono, monospace">15m</text>
+  <text x="268" y="78" text-anchor="middle" fill="#a19f89" font-size="12" font-family="IBM Plex Sans, sans-serif">Redis token lock</text>
+
+  <rect x="368" y="10" width="168" height="90" rx="6" fill="#20251a" stroke="#434a35"/>
+  <text x="452" y="52" text-anchor="middle" fill="#f08760" font-size="30" font-weight="700" font-family="JetBrains Mono, monospace">5</text>
+  <text x="452" y="78" text-anchor="middle" fill="#a19f89" font-size="12" font-family="IBM Plex Sans, sans-serif">strikes to quarantine</text>
+
+  <rect x="552" y="10" width="168" height="90" rx="6" fill="#20251a" stroke="#434a35"/>
+  <text x="636" y="52" text-anchor="middle" fill="#56d8c0" font-size="30" font-weight="700" font-family="JetBrains Mono, monospace">3</text>
+  <text x="636" y="78" text-anchor="middle" fill="#a19f89" font-size="12" font-family="IBM Plex Sans, sans-serif">recreations / cycle</text>
+</svg>

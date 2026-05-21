@@ -1,0 +1,67 @@
+<svg viewBox="0 0 720 430" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The five-guard rollout gate: a drifted playground must pass dirty check, recreation budget, post-apply grace, rollout cooldown, and pending eligibility before a rollout is queued">
+  <defs>
+    <marker id="rg-arrow" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 z" fill="#79d44e"/>
+    </marker>
+    <marker id="rg-arrow-ember" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 z" fill="#f08760"/>
+    </marker>
+  </defs>
+
+  <rect x="260" y="12" width="200" height="44" rx="6" fill="#252a1e" stroke="#545c42"/>
+  <text x="360" y="31" text-anchor="middle" fill="#f3f0e0" font-size="13" font-weight="700" font-family="IBM Plex Sans, sans-serif">drift detected on a</text>
+  <text x="360" y="48" text-anchor="middle" fill="#abe87f" font-size="13" font-weight="700" font-family="JetBrains Mono, monospace">running playground</text>
+
+  <!-- 5 gates stacked -->
+  <!-- gate 1 -->
+  <line x1="360" y1="56" x2="360" y2="76" stroke="#79d44e" stroke-width="1.6" marker-end="url(#rg-arrow)"/>
+  <rect x="170" y="78" width="380" height="40" rx="6" fill="#20251a" stroke="#545c42"/>
+  <text x="190" y="103" fill="#f3f0e0" font-size="12" font-weight="700" font-family="JetBrains Mono, monospace">1</text>
+  <text x="210" y="98" fill="#c7c4ae" font-size="12" font-family="IBM Plex Sans, sans-serif">not dirty?</text>
+  <text x="210" y="112" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">dirty services present &#8594; skip, log hourly</text>
+  <line x1="550" y1="98" x2="640" y2="98" stroke="#f08760" stroke-width="1.4" marker-end="url(#rg-arrow-ember)"/>
+
+  <!-- gate 2 -->
+  <line x1="360" y1="118" x2="360" y2="138" stroke="#79d44e" stroke-width="1.6" marker-end="url(#rg-arrow)"/>
+  <rect x="170" y="140" width="380" height="40" rx="6" fill="#20251a" stroke="#545c42"/>
+  <text x="190" y="165" fill="#f3f0e0" font-size="12" font-weight="700" font-family="JetBrains Mono, monospace">2</text>
+  <text x="210" y="160" fill="#c7c4ae" font-size="12" font-family="IBM Plex Sans, sans-serif">budget left this cycle?</text>
+  <text x="210" y="174" fill="#a19f89" font-size="10" font-family="JetBrains Mono, monospace">fewer than 3 rollouts queued</text>
+  <line x1="550" y1="160" x2="640" y2="160" stroke="#f08760" stroke-width="1.4" marker-end="url(#rg-arrow-ember)"/>
+
+  <!-- gate 3 -->
+  <line x1="360" y1="180" x2="360" y2="200" stroke="#79d44e" stroke-width="1.6" marker-end="url(#rg-arrow)"/>
+  <rect x="170" y="202" width="380" height="40" rx="6" fill="#20251a" stroke="#545c42"/>
+  <text x="190" y="227" fill="#f3f0e0" font-size="12" font-weight="700" font-family="JetBrains Mono, monospace">3</text>
+  <text x="210" y="222" fill="#c7c4ae" font-size="12" font-family="IBM Plex Sans, sans-serif">past the 3-min apply grace?</text>
+  <text x="210" y="236" fill="#a19f89" font-size="10" font-family="JetBrains Mono, monospace">let the last change settle first</text>
+  <line x1="550" y1="222" x2="640" y2="222" stroke="#f08760" stroke-width="1.4" marker-end="url(#rg-arrow-ember)"/>
+
+  <!-- gate 4 -->
+  <line x1="360" y1="242" x2="360" y2="262" stroke="#79d44e" stroke-width="1.6" marker-end="url(#rg-arrow)"/>
+  <rect x="170" y="264" width="380" height="40" rx="6" fill="#20251a" stroke="#545c42"/>
+  <text x="190" y="289" fill="#f3f0e0" font-size="12" font-weight="700" font-family="JetBrains Mono, monospace">4</text>
+  <text x="210" y="284" fill="#c7c4ae" font-size="12" font-family="IBM Plex Sans, sans-serif">no rollout cooldown active?</text>
+  <text x="210" y="298" fill="#a19f89" font-size="10" font-family="JetBrains Mono, monospace">10-min anti-flap cooldown</text>
+  <line x1="550" y1="284" x2="640" y2="284" stroke="#f08760" stroke-width="1.4" marker-end="url(#rg-arrow-ember)"/>
+
+  <!-- gate 5 -->
+  <line x1="360" y1="304" x2="360" y2="324" stroke="#79d44e" stroke-width="1.6" marker-end="url(#rg-arrow)"/>
+  <rect x="170" y="326" width="380" height="40" rx="6" fill="#20251a" stroke="#545c42"/>
+  <text x="190" y="351" fill="#f3f0e0" font-size="12" font-weight="700" font-family="JetBrains Mono, monospace">5</text>
+  <text x="210" y="346" fill="#c7c4ae" font-size="12" font-family="IBM Plex Sans, sans-serif">moved to pending / in-progress?</text>
+  <text x="210" y="360" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">else don't count it against budget</text>
+
+  <!-- pass -->
+  <line x1="360" y1="366" x2="360" y2="386" stroke="#79d44e" stroke-width="1.6" marker-end="url(#rg-arrow)"/>
+  <rect x="200" y="388" width="320" height="40" rx="6" fill="#20251a" stroke="#79d44e"/>
+  <text x="360" y="408" text-anchor="middle" fill="#92df62" font-size="12" font-weight="700" font-family="JetBrains Mono, monospace">roll out, preserving production images</text>
+  <text x="360" y="422" text-anchor="middle" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">bump budget &#183; mark cooldown</text>
+
+  <!-- skip label -->
+  <rect x="600" y="78" width="100" height="40" rx="6" fill="#20251a" stroke="#f08760"/>
+  <text x="650" y="103" text-anchor="middle" fill="#f08760" font-size="12" font-weight="700" font-family="IBM Plex Sans, sans-serif">skip</text>
+  <text x="650" y="200" text-anchor="middle" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">any guard</text>
+  <text x="650" y="214" text-anchor="middle" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">fails &#8594; wait</text>
+  <text x="650" y="228" text-anchor="middle" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">for next cycle</text>
+</svg>

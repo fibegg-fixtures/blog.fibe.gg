@@ -1,0 +1,71 @@
+<svg viewBox="0 0 740 470" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The 60-second Playguard cycle: dispatcher fans out one job per launchable Marquee, each acquires a lock, probes Docker, runs sync phases renewing the lock between each, then per-resource decisions, then releases the lock">
+  <defs>
+    <marker id="cyc-arrow" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 z" fill="#757d5e"/>
+    </marker>
+    <marker id="cyc-arrow-ember" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 z" fill="#f08760"/>
+    </marker>
+  </defs>
+
+  <!-- dispatcher -->
+  <rect x="250" y="14" width="240" height="48" rx="6" fill="#252a1e" stroke="#545c42"/>
+  <text x="370" y="35" text-anchor="middle" fill="#f3f0e0" font-size="14" font-weight="700" font-family="IBM Plex Sans, sans-serif">dispatcher &#183; every 60s</text>
+  <text x="370" y="53" text-anchor="middle" fill="#a19f89" font-size="11" font-family="JetBrains Mono, monospace">each launchable Marquee &#8594; one job</text>
+
+  <line x1="370" y1="62" x2="370" y2="84" stroke="#757d5e" stroke-width="1.5" marker-end="url(#cyc-arrow)"/>
+
+  <!-- acquire lock -->
+  <rect x="250" y="86" width="240" height="44" rx="6" fill="#20251a" stroke="#eec854"/>
+  <text x="370" y="105" text-anchor="middle" fill="#eec854" font-size="13" font-weight="700" font-family="IBM Plex Sans, sans-serif">acquire token lock (SET NX EX 15m)</text>
+  <text x="370" y="121" text-anchor="middle" fill="#a19f89" font-size="11" font-family="JetBrains Mono, monospace">already locked &#8594; return</text>
+
+  <line x1="370" y1="130" x2="370" y2="152" stroke="#757d5e" stroke-width="1.5" marker-end="url(#cyc-arrow)"/>
+
+  <!-- docker probe -->
+  <rect x="230" y="154" width="280" height="48" rx="6" fill="#20251a" stroke="#92df62"/>
+  <text x="370" y="174" text-anchor="middle" fill="#92df62" font-size="13" font-weight="700" font-family="IBM Plex Sans, sans-serif">Docker availability probe (FIRST)</text>
+  <text x="370" y="192" text-anchor="middle" fill="#a19f89" font-size="11" font-family="JetBrains Mono, monospace">unavailable &#8594; bail &#183; 5 strikes &#8594; quarantine</text>
+
+  <!-- bail branch -->
+  <line x1="510" y1="178" x2="640" y2="178" stroke="#f08760" stroke-width="1.5" marker-end="url(#cyc-arrow-ember)"/>
+  <rect x="600" y="154" width="128" height="48" rx="6" fill="#20251a" stroke="#f08760"/>
+  <text x="664" y="174" text-anchor="middle" fill="#f08760" font-size="12" font-weight="700" font-family="IBM Plex Sans, sans-serif">return</text>
+  <text x="664" y="191" text-anchor="middle" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">no destructive work</text>
+
+  <line x1="370" y1="202" x2="370" y2="224" stroke="#757d5e" stroke-width="1.5" marker-end="url(#cyc-arrow)"/>
+
+  <!-- sync phases band -->
+  <rect x="80" y="226" width="580" height="110" rx="6" fill="#252a1e" stroke="#545c42"/>
+  <text x="370" y="246" text-anchor="middle" fill="#f3f0e0" font-size="13" font-weight="700" font-family="IBM Plex Sans, sans-serif">sync phases &#183; renew the lock between each</text>
+
+  <rect x="96" y="258" width="120" height="30" rx="4" fill="#20251a" stroke="#434a35"/>
+  <text x="156" y="277" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="JetBrains Mono, monospace">git-dirty</text>
+  <rect x="224" y="258" width="120" height="30" rx="4" fill="#20251a" stroke="#434a35"/>
+  <text x="284" y="277" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="JetBrains Mono, monospace">branch pull</text>
+  <rect x="352" y="258" width="120" height="30" rx="4" fill="#20251a" stroke="#434a35"/>
+  <text x="412" y="277" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="JetBrains Mono, monospace">cred refresh</text>
+  <rect x="480" y="258" width="120" height="30" rx="4" fill="#20251a" stroke="#434a35"/>
+  <text x="540" y="277" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="JetBrains Mono, monospace">image pull</text>
+
+  <rect x="96" y="296" width="120" height="30" rx="4" fill="#20251a" stroke="#434a35"/>
+  <text x="156" y="315" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="JetBrains Mono, monospace">auth reconcile</text>
+  <rect x="224" y="296" width="120" height="30" rx="4" fill="#20251a" stroke="#eec854"/>
+  <text x="284" y="315" text-anchor="middle" fill="#eec854" font-size="11" font-family="JetBrains Mono, monospace">expirations</text>
+  <rect x="352" y="296" width="120" height="30" rx="4" fill="#20251a" stroke="#79d44e"/>
+  <text x="412" y="315" text-anchor="middle" fill="#abe87f" font-size="11" font-family="JetBrains Mono, monospace">playgrounds</text>
+  <rect x="480" y="296" width="120" height="30" rx="4" fill="#20251a" stroke="#56d8c0"/>
+  <text x="540" y="315" text-anchor="middle" fill="#56d8c0" font-size="11" font-family="JetBrains Mono, monospace">agent chats</text>
+
+  <line x1="370" y1="336" x2="370" y2="358" stroke="#757d5e" stroke-width="1.5" marker-end="url(#cyc-arrow)"/>
+
+  <!-- orphans -->
+  <rect x="270" y="360" width="200" height="40" rx="6" fill="#20251a" stroke="#434a35"/>
+  <text x="370" y="385" text-anchor="middle" fill="#c7c4ae" font-size="12" font-family="JetBrains Mono, monospace">cleanup orphans</text>
+
+  <line x1="370" y1="400" x2="370" y2="422" stroke="#757d5e" stroke-width="1.5" marker-end="url(#cyc-arrow)"/>
+
+  <!-- release -->
+  <rect x="250" y="424" width="240" height="40" rx="6" fill="#20251a" stroke="#eec854"/>
+  <text x="370" y="449" text-anchor="middle" fill="#eec854" font-size="13" font-weight="700" font-family="IBM Plex Sans, sans-serif">release lock (always)</text>
+</svg>

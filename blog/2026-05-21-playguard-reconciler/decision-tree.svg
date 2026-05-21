@@ -1,0 +1,80 @@
+<svg viewBox="0 0 740 480" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Per-playground decision tree by status: running goes to the drift detector, stale in_progress recovers to pending, error checks temporary then container-conflict, destroying re-enqueues the destroy job">
+  <defs>
+    <marker id="dt-arrow" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 z" fill="#757d5e"/>
+    </marker>
+  </defs>
+
+  <!-- root -->
+  <rect x="290" y="14" width="160" height="42" rx="6" fill="#252a1e" stroke="#545c42"/>
+  <text x="370" y="33" text-anchor="middle" fill="#f3f0e0" font-size="13" font-weight="700" font-family="IBM Plex Sans, sans-serif">branch on status</text>
+  <text x="370" y="49" text-anchor="middle" fill="#a19f89" font-size="10" font-family="JetBrains Mono, monospace">per playground, shuffled</text>
+
+  <!-- four branch lines -->
+  <line x1="370" y1="56" x2="100" y2="92" stroke="#757d5e" stroke-width="1.4" marker-end="url(#dt-arrow)"/>
+  <line x1="370" y1="56" x2="300" y2="92" stroke="#757d5e" stroke-width="1.4" marker-end="url(#dt-arrow)"/>
+  <line x1="370" y1="56" x2="470" y2="92" stroke="#757d5e" stroke-width="1.4" marker-end="url(#dt-arrow)"/>
+  <line x1="370" y1="56" x2="650" y2="92" stroke="#757d5e" stroke-width="1.4" marker-end="url(#dt-arrow)"/>
+
+  <!-- RUNNING column -->
+  <rect x="20" y="94" width="180" height="36" rx="6" fill="#20251a" stroke="#79d44e"/>
+  <text x="110" y="117" text-anchor="middle" fill="#abe87f" font-size="13" font-weight="700" font-family="JetBrains Mono, monospace">running</text>
+  <line x1="110" y1="130" x2="110" y2="150" stroke="#757d5e" stroke-width="1.4" marker-end="url(#dt-arrow)"/>
+  <rect x="20" y="152" width="180" height="44" rx="6" fill="#20251a" stroke="#434a35"/>
+  <text x="110" y="172" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">detect drift</text>
+  <text x="110" y="188" text-anchor="middle" fill="#a19f89" font-size="10" font-family="JetBrains Mono, monospace">job mode &#8594; skip</text>
+  <line x1="110" y1="196" x2="110" y2="216" stroke="#757d5e" stroke-width="1.4" marker-end="url(#dt-arrow)"/>
+
+  <rect x="20" y="218" width="180" height="42" rx="6" fill="#20251a" stroke="#92df62"/>
+  <text x="110" y="238" text-anchor="middle" fill="#92df62" font-size="11" font-weight="700" font-family="IBM Plex Sans, sans-serif">no drift</text>
+  <text x="110" y="253" text-anchor="middle" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">repair host artifacts</text>
+
+  <rect x="20" y="270" width="180" height="42" rx="6" fill="#20251a" stroke="#5cb43a"/>
+  <text x="110" y="290" text-anchor="middle" fill="#92df62" font-size="11" font-weight="700" font-family="IBM Plex Sans, sans-serif">drift, not dirty</text>
+  <text x="110" y="305" text-anchor="middle" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">rollout (preserve images)</text>
+
+  <rect x="20" y="322" width="180" height="42" rx="6" fill="#20251a" stroke="#eec854"/>
+  <text x="110" y="342" text-anchor="middle" fill="#eec854" font-size="11" font-weight="700" font-family="IBM Plex Sans, sans-serif">drift + DIRTY</text>
+  <text x="110" y="357" text-anchor="middle" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">SKIP &#183; preserve work</text>
+
+  <!-- IN_PROGRESS column -->
+  <rect x="220" y="94" width="160" height="36" rx="6" fill="#20251a" stroke="#56d8c0"/>
+  <text x="300" y="117" text-anchor="middle" fill="#56d8c0" font-size="13" font-weight="700" font-family="JetBrains Mono, monospace">in_progress</text>
+  <line x1="300" y1="130" x2="300" y2="150" stroke="#757d5e" stroke-width="1.4" marker-end="url(#dt-arrow)"/>
+  <rect x="220" y="152" width="160" height="44" rx="6" fill="#20251a" stroke="#434a35"/>
+  <text x="300" y="172" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">stale &gt; 30m ?</text>
+  <text x="300" y="188" text-anchor="middle" fill="#a19f89" font-size="10" font-family="JetBrains Mono, monospace">no worker + budget</text>
+  <line x1="300" y1="196" x2="300" y2="216" stroke="#757d5e" stroke-width="1.4" marker-end="url(#dt-arrow)"/>
+  <rect x="220" y="218" width="160" height="42" rx="6" fill="#20251a" stroke="#5cb43a"/>
+  <text x="300" y="238" text-anchor="middle" fill="#92df62" font-size="11" font-weight="700" font-family="IBM Plex Sans, sans-serif">recover &#8594; pending</text>
+  <text x="300" y="253" text-anchor="middle" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">re-enqueue create</text>
+
+  <!-- ERROR column -->
+  <rect x="400" y="94" width="160" height="36" rx="6" fill="#20251a" stroke="#f08760"/>
+  <text x="480" y="117" text-anchor="middle" fill="#f08760" font-size="13" font-weight="700" font-family="JetBrains Mono, monospace">error</text>
+  <line x1="480" y1="130" x2="480" y2="150" stroke="#757d5e" stroke-width="1.4" marker-end="url(#dt-arrow)"/>
+  <rect x="400" y="152" width="160" height="44" rx="6" fill="#20251a" stroke="#434a35"/>
+  <text x="480" y="172" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">temporary ?</text>
+  <text x="480" y="188" text-anchor="middle" fill="#a19f89" font-size="10" font-family="JetBrains Mono, monospace">job mode &#8594; skip</text>
+  <line x1="480" y1="196" x2="480" y2="216" stroke="#757d5e" stroke-width="1.4" marker-end="url(#dt-arrow)"/>
+  <rect x="400" y="218" width="160" height="42" rx="6" fill="#20251a" stroke="#5cb43a"/>
+  <text x="480" y="238" text-anchor="middle" fill="#92df62" font-size="11" font-weight="700" font-family="IBM Plex Sans, sans-serif">queue repair</text>
+  <text x="480" y="253" text-anchor="middle" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">refresh docker state</text>
+
+  <rect x="400" y="270" width="160" height="46" rx="6" fill="#20251a" stroke="#eec854"/>
+  <text x="480" y="289" text-anchor="middle" fill="#eec854" font-size="11" font-weight="700" font-family="IBM Plex Sans, sans-serif">container conflict</text>
+  <text x="480" y="304" text-anchor="middle" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">retry &#183; 10m &#183; max 2/h</text>
+
+  <!-- DESTROYING column -->
+  <rect x="580" y="94" width="140" height="36" rx="6" fill="#20251a" stroke="#757d5e"/>
+  <text x="650" y="117" text-anchor="middle" fill="#c7c4ae" font-size="13" font-weight="700" font-family="JetBrains Mono, monospace">destroying</text>
+  <line x1="650" y1="130" x2="650" y2="150" stroke="#757d5e" stroke-width="1.4" marker-end="url(#dt-arrow)"/>
+  <rect x="580" y="152" width="140" height="44" rx="6" fill="#20251a" stroke="#434a35"/>
+  <text x="650" y="172" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">re-enqueue</text>
+  <text x="650" y="188" text-anchor="middle" fill="#a19f89" font-size="10" font-family="JetBrains Mono, monospace">destroy (idempotent)</text>
+
+  <!-- footer rule -->
+  <rect x="120" y="410" width="500" height="46" rx="6" fill="#252a1e" stroke="#545c42"/>
+  <text x="370" y="431" text-anchor="middle" fill="#f3f0e0" font-size="12" font-weight="700" font-family="IBM Plex Sans, sans-serif">Two invariants, every branch</text>
+  <text x="370" y="448" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">never destructive on a blind daemon &#183; never auto-destroy dirty work</text>
+</svg>

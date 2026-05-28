@@ -1,0 +1,50 @@
+<svg viewBox="0 0 740 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The Alloy workflow at Fibe: model the lifecycle, assert an invariant, let the solver search for a counterexample, then ground the result back to real code as a fix or a tracked Finding.">
+  <defs>
+    <marker id="aw-arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#757d5e"/>
+    </marker>
+  </defs>
+
+  <text x="370" y="28" text-anchor="middle" fill="#f3f0e0" font-size="17" font-weight="700" font-family="IBM Plex Sans, sans-serif">From design idea to grounded contract</text>
+
+  <!-- 1 model -->
+  <rect x="24" y="60" width="160" height="92" rx="8" fill="#20251a" stroke="#434a35"/>
+  <text x="104" y="86" text-anchor="middle" fill="#92df62" font-size="13" font-weight="700" font-family="IBM Plex Sans, sans-serif">1 &#183; Model the lifecycle</text>
+  <text x="104" y="110" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">states, transitions,</text>
+  <text x="104" y="126" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">actors, observations</text>
+  <text x="104" y="144" text-anchor="middle" fill="#a19f89" font-size="10" font-family="JetBrains Mono, monospace">sig / pred / fact</text>
+
+  <!-- 2 assert -->
+  <rect x="216" y="60" width="160" height="92" rx="8" fill="#20251a" stroke="#434a35"/>
+  <text x="296" y="86" text-anchor="middle" fill="#92df62" font-size="13" font-weight="700" font-family="IBM Plex Sans, sans-serif">2 &#183; Assert an invariant</text>
+  <text x="296" y="110" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">a property that must</text>
+  <text x="296" y="126" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">hold for all worlds</text>
+  <text x="296" y="144" text-anchor="middle" fill="#a19f89" font-size="10" font-family="JetBrains Mono, monospace">assert &#183; check</text>
+
+  <!-- 3 solver -->
+  <rect x="408" y="60" width="160" height="92" rx="8" fill="#20251a" stroke="#545c42"/>
+  <text x="488" y="86" text-anchor="middle" fill="#eec854" font-size="13" font-weight="700" font-family="IBM Plex Sans, sans-serif">3 &#183; Solver searches</text>
+  <text x="488" y="110" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">bounded SAT over</text>
+  <text x="488" y="126" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">every small instance</text>
+  <text x="488" y="144" text-anchor="middle" fill="#a19f89" font-size="10" font-family="JetBrains Mono, monospace">UNSAT = no bug</text>
+
+  <!-- 4 ground -->
+  <rect x="600" y="60" width="160" height="92" rx="8" fill="#20251a" stroke="#434a35"/>
+  <text x="680" y="86" text-anchor="middle" fill="#56d8c0" font-size="13" font-weight="700" font-family="IBM Plex Sans, sans-serif">4 &#183; Ground to code</text>
+  <text x="680" y="110" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">map every claim to</text>
+  <text x="680" y="126" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">a real file:line</text>
+  <text x="680" y="144" text-anchor="middle" fill="#a19f89" font-size="10" font-family="JetBrains Mono, monospace">fix &#183; or Finding</text>
+
+  <line x1="186" y1="106" x2="212" y2="106" stroke="#757d5e" stroke-width="2" marker-end="url(#aw-arrow)"/>
+  <line x1="378" y1="106" x2="404" y2="106" stroke="#757d5e" stroke-width="2" marker-end="url(#aw-arrow)"/>
+  <line x1="570" y1="106" x2="596" y2="106" stroke="#757d5e" stroke-width="2" marker-end="url(#aw-arrow)"/>
+
+  <!-- counterexample branch -->
+  <rect x="300" y="196" width="320" height="78" rx="8" fill="#20251a" stroke="#545c42"/>
+  <text x="460" y="220" text-anchor="middle" fill="#f08760" font-size="13" font-weight="700" font-family="IBM Plex Sans, sans-serif">Counterexample (SAT where we wanted UNSAT)</text>
+  <text x="460" y="242" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">a concrete world that breaks the invariant</text>
+  <text x="460" y="262" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">decide: fix the code, or accept &amp; record it as a Finding</text>
+
+  <line x1="488" y1="152" x2="488" y2="192" stroke="#757d5e" stroke-width="2" marker-end="url(#aw-arrow)"/>
+  <text x="540" y="178" text-anchor="middle" fill="#a19f89" font-size="10" font-family="JetBrains Mono, monospace">if bug found</text>
+</svg>

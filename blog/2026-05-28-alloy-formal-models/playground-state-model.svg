@@ -1,0 +1,69 @@
+<svg viewBox="0 0 740 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A simplified Playground status model. Pending and in-progress are creation states; running is the healthy goal; the error state branches into temporary failures that retry and irrecoverable failures that are terminal. Some edges, like error to running, are reconciler writes that live outside the declared transition table.">
+  <defs>
+    <marker id="sm-arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#757d5e"/>
+    </marker>
+    <marker id="sm-arrow-gold" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#e2b33a"/>
+    </marker>
+  </defs>
+
+  <text x="370" y="28" text-anchor="middle" fill="#f3f0e0" font-size="17" font-weight="700" font-family="IBM Plex Sans, sans-serif">A Playground, as the model sees it</text>
+
+  <!-- Pending -->
+  <rect x="40" y="64" width="120" height="48" rx="8" fill="#20251a" stroke="#434a35"/>
+  <text x="100" y="93" text-anchor="middle" fill="#c7c4ae" font-size="13" font-family="IBM Plex Sans, sans-serif">Pending</text>
+
+  <!-- In progress -->
+  <rect x="220" y="64" width="120" height="48" rx="8" fill="#20251a" stroke="#434a35"/>
+  <text x="280" y="93" text-anchor="middle" fill="#c7c4ae" font-size="13" font-family="IBM Plex Sans, sans-serif">In progress</text>
+
+  <!-- Running -->
+  <rect x="400" y="64" width="120" height="48" rx="8" fill="#20251a" stroke="#5cb43a"/>
+  <text x="460" y="93" text-anchor="middle" fill="#92df62" font-size="13" font-weight="700" font-family="IBM Plex Sans, sans-serif">Running</text>
+
+  <!-- Error -->
+  <rect x="220" y="184" width="120" height="48" rx="8" fill="#20251a" stroke="#545c42"/>
+  <text x="280" y="213" text-anchor="middle" fill="#f08760" font-size="13" font-family="IBM Plex Sans, sans-serif">Error</text>
+
+  <!-- temporary -->
+  <rect x="40" y="280" width="170" height="56" rx="8" fill="#20251a" stroke="#434a35"/>
+  <text x="125" y="304" text-anchor="middle" fill="#eec854" font-size="12" font-weight="700" font-family="IBM Plex Sans, sans-serif">temporary failure</text>
+  <text x="125" y="324" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">auto-retry &#8594; not converged</text>
+
+  <!-- irrecoverable -->
+  <rect x="360" y="280" width="170" height="56" rx="8" fill="#20251a" stroke="#434a35"/>
+  <text x="445" y="304" text-anchor="middle" fill="#56d8c0" font-size="12" font-weight="700" font-family="IBM Plex Sans, sans-serif">irrecoverable failure</text>
+  <text x="445" y="324" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">terminal &#8594; converged</text>
+
+  <!-- Stopped (manual hold) -->
+  <rect x="580" y="64" width="120" height="48" rx="8" fill="#20251a" stroke="#434a35"/>
+  <text x="640" y="93" text-anchor="middle" fill="#c7c4ae" font-size="13" font-family="IBM Plex Sans, sans-serif">Stopped</text>
+
+  <!-- edges -->
+  <line x1="160" y1="88" x2="216" y2="88" stroke="#757d5e" stroke-width="2" marker-end="url(#sm-arrow)"/>
+  <line x1="340" y1="88" x2="396" y2="88" stroke="#757d5e" stroke-width="2" marker-end="url(#sm-arrow)"/>
+
+  <!-- In progress -> Error -->
+  <line x1="280" y1="112" x2="280" y2="180" stroke="#757d5e" stroke-width="2" marker-end="url(#sm-arrow)"/>
+  <text x="298" y="150" fill="#a19f89" font-size="10" font-family="JetBrains Mono, monospace">failure</text>
+
+  <!-- Error -> temporary -->
+  <line x1="250" y1="232" x2="160" y2="278" stroke="#757d5e" stroke-width="2" marker-end="url(#sm-arrow)"/>
+  <!-- Error -> irrecoverable -->
+  <line x1="330" y1="232" x2="410" y2="278" stroke="#757d5e" stroke-width="2" marker-end="url(#sm-arrow)"/>
+
+  <!-- temporary retry back up to Pending (dashed gold = out-of-table reconcile) -->
+  <path d="M 60 280 C 30 200, 30 140, 70 113" fill="none" stroke="#e2b33a" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#sm-arrow-gold)"/>
+
+  <!-- Error -> Running (reconciler heal, dashed gold) -->
+  <path d="M 340 196 C 430 170, 450 150, 458 113" fill="none" stroke="#e2b33a" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#sm-arrow-gold)"/>
+
+  <!-- Running -> Stopped manual -->
+  <line x1="520" y1="88" x2="576" y2="88" stroke="#757d5e" stroke-width="2" marker-end="url(#sm-arrow)"/>
+
+  <!-- legend -->
+  <line x1="560" y1="300" x2="592" y2="300" stroke="#e2b33a" stroke-width="2" stroke-dasharray="5 4"/>
+  <text x="600" y="304" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">reconciler write, outside the</text>
+  <text x="600" y="320" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">declared transition table</text>
+</svg>

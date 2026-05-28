@@ -1,0 +1,39 @@
+<svg viewBox="0 0 740 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Two columns. Left: an invariant the solver proves holds, checked UNSAT and grounded in code. Right: a Finding, a counterexample the solver found that the team accepted and tracked as a known divergence.">
+  <text x="370" y="28" text-anchor="middle" fill="#f3f0e0" font-size="17" font-weight="700" font-family="IBM Plex Sans, sans-serif">Invariant vs. Finding</text>
+
+  <!-- invariant column -->
+  <rect x="24" y="48" width="340" height="248" rx="8" fill="#20251a" stroke="#434a35"/>
+  <rect x="24" y="48" width="340" height="36" rx="8" fill="#252a1e" stroke="#434a35"/>
+  <text x="194" y="72" text-anchor="middle" fill="#92df62" font-size="14" font-weight="700" font-family="IBM Plex Sans, sans-serif">Invariant &#183; proven safe</text>
+
+  <text x="44" y="112" fill="#c7c4ae" font-size="12" font-family="IBM Plex Sans, sans-serif">A property that must hold in every world.</text>
+  <rect x="44" y="124" width="300" height="56" rx="6" fill="#252a1e" stroke="#434a35"/>
+  <text x="56" y="146" fill="#abe87f" font-size="11" font-family="IBM Plex Sans, sans-serif">&#8220;A Playground that says it's running</text>
+  <text x="56" y="162" fill="#abe87f" font-size="11" font-family="IBM Plex Sans, sans-serif">but whose Docker is unhealthy</text>
+  <text x="56" y="174" fill="#abe87f" font-size="11" font-family="IBM Plex Sans, sans-serif">is not yet converged.&#8221;</text>
+
+  <text x="44" y="208" fill="#c7c4ae" font-size="12" font-family="IBM Plex Sans, sans-serif">Solver result</text>
+  <rect x="44" y="218" width="300" height="30" rx="6" fill="#252a1e" stroke="#5cb43a"/>
+  <text x="194" y="238" text-anchor="middle" fill="#92df62" font-size="13" font-weight="700" font-family="JetBrains Mono, monospace">check &#8594; UNSAT &#10003;</text>
+
+  <text x="44" y="276" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">No counterexample exists in the bounds.</text>
+  <text x="44" y="290" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">Grounded to the real Docker code path.</text>
+
+  <!-- finding column -->
+  <rect x="376" y="48" width="340" height="248" rx="8" fill="#20251a" stroke="#545c42"/>
+  <rect x="376" y="48" width="340" height="36" rx="8" fill="#252a1e" stroke="#545c42"/>
+  <text x="546" y="72" text-anchor="middle" fill="#eec854" font-size="14" font-weight="700" font-family="IBM Plex Sans, sans-serif">Finding &#183; tracked divergence</text>
+
+  <text x="396" y="112" fill="#c7c4ae" font-size="12" font-family="IBM Plex Sans, sans-serif">A world we wish were impossible &#8212; but isn't.</text>
+  <rect x="396" y="124" width="300" height="56" rx="6" fill="#252a1e" stroke="#545c42"/>
+  <text x="408" y="146" fill="#f5da79" font-size="11" font-family="IBM Plex Sans, sans-serif">&#8220;A temporary error can leave a</text>
+  <text x="408" y="162" fill="#f5da79" font-size="11" font-family="IBM Plex Sans, sans-serif">Playground stuck forever when</text>
+  <text x="408" y="174" fill="#f5da79" font-size="11" font-family="IBM Plex Sans, sans-serif">nothing is left to retry it.&#8221;</text>
+
+  <text x="396" y="208" fill="#c7c4ae" font-size="12" font-family="IBM Plex Sans, sans-serif">Solver result</text>
+  <rect x="396" y="218" width="300" height="30" rx="6" fill="#252a1e" stroke="#e2b33a"/>
+  <text x="546" y="238" text-anchor="middle" fill="#eec854" font-size="13" font-weight="700" font-family="JetBrains Mono, monospace">run &#8594; SAT (on purpose)</text>
+
+  <text x="396" y="276" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">Witnesses real behavior we haven't fixed</text>
+  <text x="396" y="290" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">yet. Lives in the Findings registry.</text>
+</svg>

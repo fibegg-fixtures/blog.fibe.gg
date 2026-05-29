@@ -1,0 +1,44 @@
+<svg viewBox="0 0 740 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Before and after: the raw laptop docker-compose.yml on the left with host ports, hardcoded secrets and short-form depends_on, versus the Fibe template on the right with routing labels, bound variables, healthchecks and a setup service">
+  <defs>
+    <marker id="arrBA" markerWidth="11" markerHeight="11" refX="8" refY="3.5" orient="auto">
+      <path d="M0,0 L8,3.5 L0,7 Z" fill="#92df62"/>
+    </marker>
+  </defs>
+
+  <text x="370" y="28" text-anchor="middle" fill="#f3f0e0" font-size="17" font-weight="700" font-family="IBM Plex Sans, sans-serif">Raw compose &#8594; Fibe template</text>
+
+  <!-- BEFORE panel -->
+  <rect x="28" y="52" width="300" height="284" rx="8" fill="#20251a" stroke="#f08760"/>
+  <text x="48" y="76" fill="#f08760" font-size="13" font-weight="700" font-family="JetBrains Mono, monospace">BEFORE &#183; laptop</text>
+
+  <text x="48" y="106" fill="#c7c4ae" font-size="11.5" font-family="JetBrains Mono, monospace">ports: ["3000:3000"]</text>
+  <text x="48" y="130" fill="#c7c4ae" font-size="11.5" font-family="JetBrains Mono, monospace">build: .</text>
+  <text x="48" y="154" fill="#c7c4ae" font-size="11.5" font-family="JetBrains Mono, monospace">PASSWORD: secret</text>
+  <text x="48" y="178" fill="#c7c4ae" font-size="11.5" font-family="JetBrains Mono, monospace">MASTER_KEY: abc123</text>
+  <text x="48" y="202" fill="#c7c4ae" font-size="11.5" font-family="JetBrains Mono, monospace">depends_on: [db, redis]</text>
+  <text x="48" y="226" fill="#c7c4ae" font-size="11.5" font-family="JetBrains Mono, monospace">(no healthcheck)</text>
+  <text x="48" y="250" fill="#c7c4ae" font-size="11.5" font-family="JetBrains Mono, monospace">(no setup service)</text>
+
+  <text x="48" y="290" fill="#f08760" font-size="10.5" font-family="IBM Plex Sans, sans-serif">Assumes your laptop's</text>
+  <text x="48" y="306" fill="#f08760" font-size="10.5" font-family="IBM Plex Sans, sans-serif">ports, files, and secrets.</text>
+  <text x="48" y="322" fill="#f08760" font-size="10.5" font-family="IBM Plex Sans, sans-serif">Breaks off the machine.</text>
+
+  <!-- arrow -->
+  <line x1="332" y1="194" x2="406" y2="194" stroke="#92df62" stroke-width="2.5" marker-end="url(#arrBA)"/>
+
+  <!-- AFTER panel -->
+  <rect x="412" y="52" width="300" height="284" rx="8" fill="#20251a" stroke="#79d44e"/>
+  <text x="432" y="76" fill="#92df62" font-size="13" font-weight="700" font-family="JetBrains Mono, monospace">AFTER &#183; Fibe template</text>
+
+  <text x="432" y="106" fill="#abe87f" font-size="11.5" font-family="JetBrains Mono, monospace">fibe.gg/port: 3000</text>
+  <text x="432" y="130" fill="#abe87f" font-size="11.5" font-family="JetBrains Mono, monospace">fibe.gg/repo_url + branch</text>
+  <text x="432" y="154" fill="#eec854" font-size="11.5" font-family="JetBrains Mono, monospace">DB_PASSWORD: random+secret</text>
+  <text x="432" y="178" fill="#eec854" font-size="11.5" font-family="JetBrains Mono, monospace">MASTER_KEY: secret (bound)</text>
+  <text x="432" y="202" fill="#abe87f" font-size="11.5" font-family="JetBrains Mono, monospace">depends_on: service_healthy</text>
+  <text x="432" y="226" fill="#56d8c0" font-size="11.5" font-family="JetBrains Mono, monospace">healthcheck: pg_isready</text>
+  <text x="432" y="250" fill="#eec854" font-size="11.5" font-family="JetBrains Mono, monospace">setup: db:prepare, exit 0</text>
+
+  <text x="432" y="290" fill="#92df62" font-size="10.5" font-family="IBM Plex Sans, sans-serif">Declares intent with labels;</text>
+  <text x="432" y="306" fill="#92df62" font-size="10.5" font-family="IBM Plex Sans, sans-serif">Marquee supplies the rest.</text>
+  <text x="432" y="322" fill="#92df62" font-size="10.5" font-family="IBM Plex Sans, sans-serif">Still valid Compose.</text>
+</svg>

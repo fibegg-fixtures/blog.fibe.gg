@@ -1,0 +1,56 @@
+<svg viewBox="0 0 720 372" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The labels on the web service grouped by purpose: source-backed build labels, public routing labels, and live-dev plus rollout labels, each annotated with what it does">
+  <defs>
+    <marker id="arrWL" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto">
+      <path d="M0,0 L7,3 L0,6 Z" fill="#757d5e"/>
+    </marker>
+  </defs>
+
+  <text x="360" y="28" text-anchor="middle" fill="#f3f0e0" font-size="17" font-weight="700" font-family="IBM Plex Sans, sans-serif">The labels on the web service</text>
+
+  <!-- the service node -->
+  <rect x="280" y="50" width="160" height="44" rx="6" fill="#20251a" stroke="#79d44e" stroke-width="2"/>
+  <text x="360" y="78" text-anchor="middle" fill="#92df62" font-size="15" font-weight="700" font-family="JetBrains Mono, monospace">services.web</text>
+
+  <!-- group: source/build -->
+  <rect x="28" y="120" width="210" height="224" rx="8" fill="none" stroke="#545c42"/>
+  <text x="133" y="142" text-anchor="middle" fill="#c7c4ae" font-size="12" font-weight="700" font-family="IBM Plex Sans, sans-serif">Source-backed build</text>
+  <text x="44" y="170" fill="#abe87f" font-size="11" font-family="JetBrains Mono, monospace">repo_url</text>
+  <text x="44" y="186" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">your Git source (Prop)</text>
+  <text x="44" y="212" fill="#abe87f" font-size="11" font-family="JetBrains Mono, monospace">branch</text>
+  <text x="44" y="228" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">which branch to build</text>
+  <text x="44" y="254" fill="#abe87f" font-size="11" font-family="JetBrains Mono, monospace">dockerfile</text>
+  <text x="44" y="270" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">path inside the repo</text>
+  <text x="44" y="296" fill="#abe87f" font-size="11" font-family="JetBrains Mono, monospace">start_command</text>
+  <text x="44" y="312" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">bin/rails server -b 0.0.0.0</text>
+
+  <!-- group: routing -->
+  <rect x="255" y="120" width="210" height="224" rx="8" fill="none" stroke="#79d44e"/>
+  <text x="360" y="142" text-anchor="middle" fill="#92df62" font-size="12" font-weight="700" font-family="IBM Plex Sans, sans-serif">Public routing</text>
+  <text x="271" y="170" fill="#92df62" font-size="11" font-family="JetBrains Mono, monospace">port: 3000</text>
+  <text x="271" y="186" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">container HTTP port</text>
+  <text x="271" y="212" fill="#92df62" font-size="11" font-family="JetBrains Mono, monospace">visibility: external</text>
+  <text x="271" y="228" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">makes it public</text>
+  <text x="271" y="254" fill="#92df62" font-size="11" font-family="JetBrains Mono, monospace">subdomain: app</text>
+  <text x="271" y="270" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">app.&lt;root-domain&gt; via Traefik</text>
+  <text x="271" y="296" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">omit port &#8594; service stays</text>
+  <text x="271" y="310" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">private (the default)</text>
+
+  <!-- group: rollout -->
+  <rect x="482" y="120" width="210" height="224" rx="8" fill="none" stroke="#eec854"/>
+  <text x="587" y="142" text-anchor="middle" fill="#eec854" font-size="12" font-weight="700" font-family="IBM Plex Sans, sans-serif">Mode &amp; rollout</text>
+  <text x="498" y="170" fill="#f5da79" font-size="11" font-family="JetBrains Mono, monospace">production: "true"</text>
+  <text x="498" y="186" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">live dev mode</text>
+  <text x="498" y="212" fill="#f5da79" font-size="11" font-family="JetBrains Mono, monospace">zerodowntime: "true"</text>
+  <text x="498" y="228" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">rolling replacement</text>
+  <text x="498" y="254" fill="#f5da79" font-size="11" font-family="JetBrains Mono, monospace">healthcheck_path: /up</text>
+  <text x="498" y="270" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">gate the rollout on /up</text>
+  <text x="498" y="296" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">source_mount: /rails</text>
+  <text x="498" y="310" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">optional, dev only</text>
+
+  <!-- connectors -->
+  <line x1="320" y1="94" x2="150" y2="118" stroke="#757d5e" stroke-width="1.4" marker-end="url(#arrWL)"/>
+  <line x1="360" y1="94" x2="360" y2="118" stroke="#757d5e" stroke-width="1.4" marker-end="url(#arrWL)"/>
+  <line x1="400" y1="94" x2="570" y2="118" stroke="#757d5e" stroke-width="1.4" marker-end="url(#arrWL)"/>
+
+  <text x="360" y="362" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">All keys live under the fibe.gg/* namespace on the service's labels:.</text>
+</svg>

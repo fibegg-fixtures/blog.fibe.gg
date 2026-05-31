@@ -1,0 +1,47 @@
+<svg viewBox="0 0 720 430" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Layered structure of the e2e suite: shared lib, per-lane fixtures, page surfaces and waiters, and specs">
+  <text x="360" y="26" text-anchor="middle" fill="#f3f0e0" font-size="16" font-weight="700" font-family="IBM Plex Sans, sans-serif">How the suite is layered</text>
+  <text x="360" y="46" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">a spec only knows the layer directly above it</text>
+
+  <!-- Layer 4: specs -->
+  <rect x="24" y="62" width="672" height="78" rx="6" fill="#20251a" stroke="#434a35"/>
+  <text x="40" y="84" fill="#92df62" font-size="12" font-weight="700" font-family="JetBrains Mono, monospace">SPECS &#183; one file per user journey</text>
+  <rect x="40" y="94" width="148" height="36" rx="4" fill="#252a1e" stroke="#545c42"/>
+  <text x="114" y="116" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">full lifecycle</text>
+  <rect x="200" y="94" width="148" height="36" rx="4" fill="#252a1e" stroke="#545c42"/>
+  <text x="274" y="116" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">job-mode Tricks</text>
+  <rect x="360" y="94" width="148" height="36" rx="4" fill="#252a1e" stroke="#545c42"/>
+  <text x="434" y="116" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">Bridge &amp; Agent</text>
+  <rect x="520" y="94" width="156" height="36" rx="4" fill="#252a1e" stroke="#545c42"/>
+  <text x="598" y="116" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">Turbo reliability</text>
+
+  <!-- Layer 3: surfaces + waiters -->
+  <rect x="24" y="156" width="672" height="84" rx="6" fill="#20251a" stroke="#434a35"/>
+  <text x="40" y="178" fill="#56d8c0" font-size="12" font-weight="700" font-family="JetBrains Mono, monospace">SURFACES &amp; WAITERS</text>
+  <rect x="40" y="190" width="200" height="40" rx="4" fill="#252a1e" stroke="#545c42"/>
+  <text x="140" y="206" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">screen helpers</text>
+  <text x="140" y="222" text-anchor="middle" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">form fills, Marquee select</text>
+  <rect x="252" y="190" width="200" height="40" rx="4" fill="#252a1e" stroke="#545c42"/>
+  <text x="352" y="206" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">status waiters</text>
+  <text x="352" y="222" text-anchor="middle" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">wait for a Playground state</text>
+  <rect x="464" y="190" width="212" height="40" rx="4" fill="#252a1e" stroke="#545c42"/>
+  <text x="570" y="206" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">Turbo helpers</text>
+  <text x="570" y="222" text-anchor="middle" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">wait for idle, init hooks</text>
+
+  <!-- Layer 2: fixtures -->
+  <rect x="24" y="256" width="672" height="84" rx="6" fill="#20251a" stroke="#434a35"/>
+  <text x="40" y="278" fill="#f5da79" font-size="12" font-weight="700" font-family="JetBrains Mono, monospace">FIXTURES &#183; per-lane test builder</text>
+  <rect x="40" y="290" width="200" height="40" rx="4" fill="#252a1e" stroke="#99761f"/>
+  <text x="140" y="306" text-anchor="middle" fill="#f3f0e0" font-size="11" font-family="IBM Plex Sans, sans-serif">authenticated page</text>
+  <text x="140" y="322" text-anchor="middle" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">logged-in, idle, deterministic</text>
+  <rect x="252" y="290" width="200" height="40" rx="4" fill="#252a1e" stroke="#99761f"/>
+  <text x="352" y="306" text-anchor="middle" fill="#f3f0e0" font-size="11" font-family="IBM Plex Sans, sans-serif">unique names</text>
+  <text x="352" y="322" text-anchor="middle" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">collision-free, no wall clock</text>
+  <rect x="464" y="290" width="212" height="40" rx="4" fill="#252a1e" stroke="#99761f"/>
+  <text x="570" y="306" text-anchor="middle" fill="#f3f0e0" font-size="11" font-family="IBM Plex Sans, sans-serif">resource tracker</text>
+  <text x="570" y="322" text-anchor="middle" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">creates, registers, deletes</text>
+
+  <!-- Layer 1: lib -->
+  <rect x="24" y="356" width="672" height="62" rx="6" fill="#252a1e" stroke="#79d44e"/>
+  <text x="40" y="378" fill="#92df62" font-size="12" font-weight="700" font-family="JetBrains Mono, monospace">SHARED LIB &#183; lane-agnostic core</text>
+  <text x="40" y="400" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">polling with hard deadlines  &#183;  per-worker Player isolation  &#183;  resource tracking  &#183;  run ids</text>
+</svg>

@@ -1,0 +1,60 @@
+<svg viewBox="0 0 720 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Rolling update timeline with maxUnavailable 0: a new pod is created and passes its readiness probe before any old pod drains, so capacity never drops below two">
+  <defs>
+    <marker id="ru-arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#757d5e"/>
+    </marker>
+  </defs>
+
+  <text x="20" y="26" fill="#f3f0e0" font-size="16" font-weight="700" font-family="IBM Plex Sans, sans-serif">RollingUpdate &#183; maxSurge 1 &#183; maxUnavailable 0</text>
+  <text x="20" y="46" fill="#a19f89" font-size="12" font-family="IBM Plex Sans, sans-serif">Ready capacity never drops below the 2 replicas you started with.</text>
+
+  <!-- column headers (timeline) -->
+  <text x="120" y="78" text-anchor="middle" fill="#c7c4ae" font-size="12" font-family="JetBrains Mono, monospace">t0 start</text>
+  <text x="300" y="78" text-anchor="middle" fill="#c7c4ae" font-size="12" font-family="JetBrains Mono, monospace">t1 surge</text>
+  <text x="480" y="78" text-anchor="middle" fill="#c7c4ae" font-size="12" font-family="JetBrains Mono, monospace">t2 /up green</text>
+  <text x="650" y="78" text-anchor="middle" fill="#c7c4ae" font-size="12" font-family="JetBrains Mono, monospace">t3 old drains</text>
+
+  <line x1="40" y1="90" x2="680" y2="90" stroke="#434a35" stroke-width="1"/>
+
+  <!-- t0: two old pods -->
+  <rect x="80" y="110" width="80" height="34" rx="5" fill="#20251a" stroke="#545c42"/>
+  <text x="120" y="132" text-anchor="middle" fill="#92df62" font-size="12" font-family="JetBrains Mono, monospace">web v1</text>
+  <rect x="80" y="154" width="80" height="34" rx="5" fill="#20251a" stroke="#545c42"/>
+  <text x="120" y="176" text-anchor="middle" fill="#92df62" font-size="12" font-family="JetBrains Mono, monospace">web v1</text>
+
+  <!-- t1: surge new pod (not ready) -->
+  <rect x="260" y="110" width="80" height="34" rx="5" fill="#20251a" stroke="#545c42"/>
+  <text x="300" y="132" text-anchor="middle" fill="#92df62" font-size="12" font-family="JetBrains Mono, monospace">web v1</text>
+  <rect x="260" y="154" width="80" height="34" rx="5" fill="#20251a" stroke="#545c42"/>
+  <text x="300" y="176" text-anchor="middle" fill="#92df62" font-size="12" font-family="JetBrains Mono, monospace">web v1</text>
+  <rect x="260" y="198" width="80" height="34" rx="5" fill="#252a1e" stroke="#e2b33a" stroke-dasharray="4 3"/>
+  <text x="300" y="216" text-anchor="middle" fill="#eec854" font-size="12" font-family="JetBrains Mono, monospace">web v2</text>
+  <text x="300" y="248" text-anchor="middle" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">probing /up</text>
+
+  <!-- t2: new pod ready -->
+  <rect x="440" y="110" width="80" height="34" rx="5" fill="#20251a" stroke="#545c42"/>
+  <text x="480" y="132" text-anchor="middle" fill="#92df62" font-size="12" font-family="JetBrains Mono, monospace">web v1</text>
+  <rect x="440" y="154" width="80" height="34" rx="5" fill="#20251a" stroke="#545c42"/>
+  <text x="480" y="176" text-anchor="middle" fill="#92df62" font-size="12" font-family="JetBrains Mono, monospace">web v1</text>
+  <rect x="440" y="198" width="80" height="34" rx="5" fill="#20251a" stroke="#5cb43a"/>
+  <text x="480" y="220" text-anchor="middle" fill="#abe87f" font-size="12" font-family="JetBrains Mono, monospace">web v2 &#10003;</text>
+
+  <!-- t3: old pod gone, second v2 surging -->
+  <rect x="610" y="110" width="80" height="34" rx="5" fill="#252a1e" stroke="#757d5e" stroke-dasharray="3 3"/>
+  <text x="650" y="132" text-anchor="middle" fill="#a19f89" font-size="11" font-family="JetBrains Mono, monospace">v1 SIGTERM</text>
+  <rect x="610" y="154" width="80" height="34" rx="5" fill="#20251a" stroke="#5cb43a"/>
+  <text x="650" y="176" text-anchor="middle" fill="#abe87f" font-size="12" font-family="JetBrains Mono, monospace">web v2 &#10003;</text>
+  <rect x="610" y="198" width="80" height="34" rx="5" fill="#20251a" stroke="#5cb43a"/>
+  <text x="650" y="220" text-anchor="middle" fill="#abe87f" font-size="12" font-family="JetBrains Mono, monospace">web v2 &#10003;</text>
+
+  <!-- flow arrows -->
+  <line x1="164" y1="149" x2="254" y2="149" stroke="#757d5e" stroke-width="1.5" marker-end="url(#ru-arrow)"/>
+  <line x1="344" y1="171" x2="434" y2="171" stroke="#757d5e" stroke-width="1.5" marker-end="url(#ru-arrow)"/>
+  <line x1="524" y1="171" x2="604" y2="171" stroke="#757d5e" stroke-width="1.5" marker-end="url(#ru-arrow)"/>
+
+  <!-- ready-capacity band -->
+  <rect x="40" y="280" width="640" height="56" rx="6" fill="#20251a" stroke="#434a35"/>
+  <text x="56" y="302" fill="#c7c4ae" font-size="12" font-family="IBM Plex Sans, sans-serif">Ready pods serving traffic:</text>
+  <text x="240" y="302" fill="#92df62" font-size="13" font-weight="700" font-family="JetBrains Mono, monospace">2 &#8594; 2 &#8594; 2 &#8594; 2</text>
+  <text x="56" y="324" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">Kubernetes only counts a pod toward capacity once /up returns green &#183; pre-stop sleep 5 lets the LB stop routing before the old pod exits.</text>
+</svg>

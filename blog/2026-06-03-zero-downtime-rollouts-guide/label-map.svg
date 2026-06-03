@@ -1,0 +1,45 @@
+<svg viewBox="0 0 720 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The labels on a zero-downtime Compose service: two required labels to route and roll, five optional healthcheck labels to tune the readiness gate, and deploy.replicas to give the rollout something to roll against.">
+  <defs>
+    <marker id="lm-arrow" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto">
+      <path d="M0,0 L7,3 L0,6 Z" fill="#757d5e"/>
+    </marker>
+  </defs>
+  <rect x="0" y="0" width="720" height="360" fill="#20251a"/>
+  <text x="24" y="32" fill="#f3f0e0" font-size="17" font-weight="700" font-family="IBM Plex Sans, sans-serif">What goes on the service</text>
+
+  <!-- the service block -->
+  <rect x="24" y="52" width="300" height="288" rx="8" fill="#252a1e" stroke="#434a35"/>
+  <text x="44" y="76" fill="#c7c4ae" font-size="12" font-family="JetBrains Mono, monospace">services:</text>
+  <text x="60" y="96" fill="#c7c4ae" font-size="12" font-family="JetBrains Mono, monospace">web:</text>
+  <text x="76" y="116" fill="#a19f89" font-size="11.5" font-family="JetBrains Mono, monospace">deploy:</text>
+  <text x="92" y="134" fill="#92df62" font-size="11.5" font-family="JetBrains Mono, monospace">replicas: 4</text>
+  <text x="76" y="156" fill="#a19f89" font-size="11.5" font-family="JetBrains Mono, monospace">labels:</text>
+  <text x="92" y="176" fill="#abe87f" font-size="11.5" font-family="JetBrains Mono, monospace">fibe.gg/port: 3000</text>
+  <text x="92" y="194" fill="#abe87f" font-size="11.5" font-family="JetBrains Mono, monospace">fibe.gg/visibility: external</text>
+  <text x="92" y="212" fill="#92df62" font-size="11.5" font-weight="700" font-family="JetBrains Mono, monospace">fibe.gg/zerodowntime: "true"</text>
+  <text x="92" y="234" fill="#f5da79" font-size="11.5" font-family="JetBrains Mono, monospace">fibe.gg/healthcheck_path: /up</text>
+  <text x="92" y="252" fill="#f5da79" font-size="11.5" font-family="JetBrains Mono, monospace">fibe.gg/healthcheck_interval: 10s</text>
+  <text x="92" y="270" fill="#f5da79" font-size="11.5" font-family="JetBrains Mono, monospace">fibe.gg/healthcheck_timeout: 10s</text>
+  <text x="92" y="288" fill="#f5da79" font-size="11.5" font-family="JetBrains Mono, monospace">fibe.gg/healthcheck_retries: "12"</text>
+  <text x="92" y="306" fill="#f5da79" font-size="11.5" font-family="JetBrains Mono, monospace">fibe.gg/healthcheck_start_period:</text>
+  <text x="92" y="322" fill="#f5da79" font-size="11.5" font-family="JetBrains Mono, monospace">  120s</text>
+
+  <!-- callouts -->
+  <line x1="324" y1="134" x2="430" y2="120" stroke="#757d5e" stroke-width="1.3" marker-end="url(#lm-arrow)"/>
+  <rect x="436" y="96" width="262" height="50" rx="6" fill="#20251a" stroke="#5cb43a"/>
+  <text x="448" y="116" fill="#92df62" font-size="11.5" font-weight="700" font-family="IBM Plex Sans, sans-serif">replicas &#8805; 2</text>
+  <text x="448" y="134" fill="#a19f89" font-size="10.5" font-family="IBM Plex Sans, sans-serif">so it doesn't roll one instance vs itself</text>
+
+  <line x1="324" y1="203" x2="430" y2="190" stroke="#757d5e" stroke-width="1.3" marker-end="url(#lm-arrow)"/>
+  <rect x="436" y="160" width="262" height="64" rx="6" fill="#20251a" stroke="#5cb43a"/>
+  <text x="448" y="180" fill="#92df62" font-size="11.5" font-weight="700" font-family="IBM Plex Sans, sans-serif">required: route + roll</text>
+  <text x="448" y="198" fill="#a19f89" font-size="10.5" font-family="IBM Plex Sans, sans-serif">port routes HTTP; zerodowntime flips</text>
+  <text x="448" y="212" fill="#a19f89" font-size="10.5" font-family="IBM Plex Sans, sans-serif">restart &#8594; rolling update</text>
+
+  <line x1="324" y1="280" x2="430" y2="280" stroke="#757d5e" stroke-width="1.3" marker-end="url(#lm-arrow)"/>
+  <rect x="436" y="244" width="262" height="80" rx="6" fill="#20251a" stroke="#e2b33a"/>
+  <text x="448" y="264" fill="#eec854" font-size="11.5" font-weight="700" font-family="IBM Plex Sans, sans-serif">optional: tune the gate</text>
+  <text x="448" y="282" fill="#a19f89" font-size="10.5" font-family="IBM Plex Sans, sans-serif">omit all five &#8594; defaults /up, 10s,</text>
+  <text x="448" y="296" fill="#a19f89" font-size="10.5" font-family="IBM Plex Sans, sans-serif">5s, 3, 30s. Override to match</text>
+  <text x="448" y="310" fill="#a19f89" font-size="10.5" font-family="IBM Plex Sans, sans-serif">real boot time and latency.</text>
+</svg>

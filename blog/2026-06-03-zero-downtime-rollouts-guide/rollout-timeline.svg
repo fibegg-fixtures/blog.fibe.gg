@@ -1,0 +1,58 @@
+<svg viewBox="0 0 740 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Rollout timeline: old replicas keep serving while new replicas boot and pass the healthcheck, then traffic cuts over and old replicas are drained.">
+  <defs>
+    <marker id="rt-arrow" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto">
+      <path d="M0,0 L7,3 L0,6 Z" fill="#757d5e"/>
+    </marker>
+  </defs>
+  <rect x="0" y="0" width="740" height="320" fill="#20251a"/>
+  <text x="24" y="34" fill="#f3f0e0" font-size="17" font-weight="700" font-family="IBM Plex Sans, sans-serif">A rolling update, left to right</text>
+  <text x="24" y="56" fill="#a19f89" font-size="12" font-family="IBM Plex Sans, sans-serif">Old replicas never stop serving until new ones pass the readiness check.</text>
+
+  <!-- timeline axis -->
+  <line x1="40" y1="290" x2="710" y2="290" stroke="#545c42" stroke-width="1.5" marker-end="url(#rt-arrow)"/>
+  <text x="40" y="310" fill="#a19f89" font-size="11" font-family="JetBrains Mono, monospace">t0</text>
+  <text x="700" y="310" fill="#a19f89" font-size="11" text-anchor="end" font-family="JetBrains Mono, monospace">time &#8594;</text>
+
+  <!-- Phase 1: old serving -->
+  <rect x="40" y="80" width="150" height="190" rx="6" fill="#252a1e" stroke="#434a35"/>
+  <text x="115" y="104" text-anchor="middle" fill="#92df62" font-size="13" font-weight="700" font-family="IBM Plex Sans, sans-serif">1. Steady</text>
+  <rect x="62" y="120" width="106" height="38" rx="4" fill="#20251a" stroke="#5cb43a"/>
+  <text x="115" y="144" text-anchor="middle" fill="#abe87f" font-size="12" font-family="JetBrains Mono, monospace">web v1</text>
+  <rect x="62" y="166" width="106" height="38" rx="4" fill="#20251a" stroke="#5cb43a"/>
+  <text x="115" y="190" text-anchor="middle" fill="#abe87f" font-size="12" font-family="JetBrains Mono, monospace">web v1</text>
+  <text x="115" y="234" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">all traffic</text>
+  <text x="115" y="250" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">on v1</text>
+
+  <!-- Phase 2: new starts -->
+  <rect x="208" y="80" width="150" height="190" rx="6" fill="#252a1e" stroke="#434a35"/>
+  <text x="283" y="104" text-anchor="middle" fill="#eec854" font-size="13" font-weight="700" font-family="IBM Plex Sans, sans-serif">2. New boots</text>
+  <rect x="230" y="120" width="106" height="38" rx="4" fill="#20251a" stroke="#5cb43a"/>
+  <text x="283" y="144" text-anchor="middle" fill="#abe87f" font-size="12" font-family="JetBrains Mono, monospace">web v1</text>
+  <rect x="230" y="166" width="106" height="38" rx="4" fill="#20251a" stroke="#e2b33a" stroke-dasharray="4 3"/>
+  <text x="283" y="186" text-anchor="middle" fill="#f5da79" font-size="12" font-family="JetBrains Mono, monospace">web v2</text>
+  <text x="283" y="200" text-anchor="middle" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">starting</text>
+  <text x="283" y="234" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">no traffic to v2</text>
+  <text x="283" y="250" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">start_period</text>
+
+  <!-- Phase 3: healthcheck passes -->
+  <rect x="376" y="80" width="150" height="190" rx="6" fill="#252a1e" stroke="#434a35"/>
+  <text x="451" y="104" text-anchor="middle" fill="#56d8c0" font-size="13" font-weight="700" font-family="IBM Plex Sans, sans-serif">3. Probe passes</text>
+  <rect x="398" y="120" width="106" height="38" rx="4" fill="#20251a" stroke="#5cb43a"/>
+  <text x="451" y="144" text-anchor="middle" fill="#abe87f" font-size="12" font-family="JetBrains Mono, monospace">web v1</text>
+  <rect x="398" y="166" width="106" height="38" rx="4" fill="#20251a" stroke="#56d8c0"/>
+  <text x="451" y="186" text-anchor="middle" fill="#56d8c0" font-size="12" font-family="JetBrains Mono, monospace">web v2</text>
+  <text x="451" y="200" text-anchor="middle" fill="#56d8c0" font-size="10" font-family="JetBrains Mono, monospace">2xx /up</text>
+  <text x="451" y="234" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">v2 marked</text>
+  <text x="451" y="250" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">healthy</text>
+
+  <!-- Phase 4: cutover -->
+  <rect x="544" y="80" width="166" height="190" rx="6" fill="#252a1e" stroke="#434a35"/>
+  <text x="627" y="104" text-anchor="middle" fill="#92df62" font-size="13" font-weight="700" font-family="IBM Plex Sans, sans-serif">4. Cutover</text>
+  <rect x="566" y="120" width="120" height="38" rx="4" fill="#20251a" stroke="#f08760" stroke-dasharray="4 3"/>
+  <text x="626" y="140" text-anchor="middle" fill="#f08760" font-size="12" font-family="JetBrains Mono, monospace">web v1</text>
+  <text x="626" y="153" text-anchor="middle" fill="#a19f89" font-size="9" font-family="IBM Plex Sans, sans-serif">draining</text>
+  <rect x="566" y="166" width="120" height="38" rx="4" fill="#20251a" stroke="#5cb43a"/>
+  <text x="626" y="190" text-anchor="middle" fill="#abe87f" font-size="12" font-family="JetBrains Mono, monospace">web v2</text>
+  <text x="627" y="234" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">traffic shifts</text>
+  <text x="627" y="250" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">to v2, v1 stops</text>
+</svg>

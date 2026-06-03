@@ -1,0 +1,66 @@
+<svg viewBox="0 0 720 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Decision tree for whether a service can do zero-downtime rolling updates, based on whether it is HTTP-exposed, stateless, and free of fixed container names and preserved ports.">
+  <defs>
+    <marker id="ctr-arrow" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto">
+      <path d="M0,0 L7,3 L0,6 Z" fill="#757d5e"/>
+    </marker>
+  </defs>
+  <rect x="0" y="0" width="720" height="400" fill="#20251a"/>
+  <text x="24" y="32" fill="#f3f0e0" font-size="17" font-weight="700" font-family="IBM Plex Sans, sans-serif">Can this service roll?</text>
+
+  <!-- Q1 -->
+  <rect x="220" y="50" width="280" height="46" rx="6" fill="#252a1e" stroke="#545c42"/>
+  <text x="360" y="72" text-anchor="middle" fill="#f3f0e0" font-size="12.5" font-family="IBM Plex Sans, sans-serif">Exposed via fibe.gg/port over HTTP?</text>
+  <text x="360" y="88" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">(so a path healthcheck makes sense)</text>
+
+  <!-- Q1 no -->
+  <line x1="220" y1="73" x2="120" y2="73" stroke="#757d5e" stroke-width="1.4" marker-end="url(#ctr-arrow)"/>
+  <text x="168" y="66" text-anchor="middle" fill="#f08760" font-size="11" font-family="JetBrains Mono, monospace">no</text>
+  <rect x="20" y="100" width="180" height="58" rx="6" fill="#252a1e" stroke="#f08760"/>
+  <text x="110" y="124" text-anchor="middle" fill="#f08760" font-size="12.5" font-weight="700" font-family="IBM Plex Sans, sans-serif">Leave it unset</text>
+  <text x="110" y="142" text-anchor="middle" fill="#a19f89" font-size="10.5" font-family="IBM Plex Sans, sans-serif">workers, brokers,</text>
+  <text x="110" y="154" text-anchor="middle" fill="#a19f89" font-size="10.5" font-family="IBM Plex Sans, sans-serif">private backends</text>
+
+  <!-- Q1 yes down to Q2 -->
+  <line x1="360" y1="96" x2="360" y2="128" stroke="#757d5e" stroke-width="1.4" marker-end="url(#ctr-arrow)"/>
+  <text x="378" y="118" fill="#92df62" font-size="11" font-family="JetBrains Mono, monospace">yes</text>
+
+  <!-- Q2 -->
+  <rect x="220" y="132" width="280" height="46" rx="6" fill="#252a1e" stroke="#545c42"/>
+  <text x="360" y="154" text-anchor="middle" fill="#f3f0e0" font-size="12.5" font-family="IBM Plex Sans, sans-serif">Old + new can run concurrently?</text>
+  <text x="360" y="170" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">stateless, or session shared externally</text>
+
+  <!-- Q2 no -->
+  <line x1="500" y1="155" x2="600" y2="155" stroke="#757d5e" stroke-width="1.4" marker-end="url(#ctr-arrow)"/>
+  <text x="552" y="148" text-anchor="middle" fill="#f08760" font-size="11" font-family="JetBrains Mono, monospace">no</text>
+  <rect x="520" y="182" width="184" height="58" rx="6" fill="#252a1e" stroke="#f08760"/>
+  <text x="612" y="206" text-anchor="middle" fill="#f08760" font-size="12.5" font-weight="700" font-family="IBM Plex Sans, sans-serif">Different strategy</text>
+  <text x="612" y="224" text-anchor="middle" fill="#a19f89" font-size="10.5" font-family="IBM Plex Sans, sans-serif">Postgres, MySQL,</text>
+  <text x="612" y="236" text-anchor="middle" fill="#a19f89" font-size="10.5" font-family="IBM Plex Sans, sans-serif">single-writer DBs</text>
+
+  <!-- Q2 yes -->
+  <line x1="360" y1="178" x2="360" y2="210" stroke="#757d5e" stroke-width="1.4" marker-end="url(#ctr-arrow)"/>
+  <text x="378" y="200" fill="#92df62" font-size="11" font-family="JetBrains Mono, monospace">yes</text>
+
+  <!-- Q3 -->
+  <rect x="220" y="214" width="280" height="46" rx="6" fill="#252a1e" stroke="#545c42"/>
+  <text x="360" y="236" text-anchor="middle" fill="#f3f0e0" font-size="12.5" font-family="IBM Plex Sans, sans-serif">No fixed container_name?</text>
+  <text x="360" y="252" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">and no preserved raw ports:</text>
+
+  <!-- Q3 no -->
+  <line x1="220" y1="237" x2="120" y2="237" stroke="#757d5e" stroke-width="1.4" marker-end="url(#ctr-arrow)"/>
+  <text x="168" y="230" text-anchor="middle" fill="#f08760" font-size="11" font-family="JetBrains Mono, monospace">no</text>
+  <rect x="20" y="264" width="180" height="58" rx="6" fill="#252a1e" stroke="#eec854"/>
+  <text x="110" y="288" text-anchor="middle" fill="#eec854" font-size="12.5" font-weight="700" font-family="IBM Plex Sans, sans-serif">Remove them first</text>
+  <text x="110" y="306" text-anchor="middle" fill="#a19f89" font-size="10.5" font-family="IBM Plex Sans, sans-serif">validator rejects</text>
+  <text x="110" y="318" text-anchor="middle" fill="#a19f89" font-size="10.5" font-family="IBM Plex Sans, sans-serif">both at launch</text>
+
+  <!-- Q3 yes -->
+  <line x1="360" y1="260" x2="360" y2="298" stroke="#757d5e" stroke-width="1.4" marker-end="url(#ctr-arrow)"/>
+  <text x="378" y="284" fill="#92df62" font-size="11" font-family="JetBrains Mono, monospace">yes</text>
+
+  <!-- Result -->
+  <rect x="200" y="302" width="320" height="74" rx="6" fill="#20251a" stroke="#79d44e" stroke-width="2"/>
+  <text x="360" y="330" text-anchor="middle" fill="#92df62" font-size="14" font-weight="700" font-family="JetBrains Mono, monospace">fibe.gg/zerodowntime: "true"</text>
+  <text x="360" y="352" text-anchor="middle" fill="#abe87f" font-size="11.5" font-family="IBM Plex Sans, sans-serif">Roll it. Tune the healthcheck to match boot time.</text>
+  <text x="360" y="368" text-anchor="middle" fill="#a19f89" font-size="10.5" font-family="IBM Plex Sans, sans-serif">set deploy.replicas &#8805; 2 so it has something to roll against</text>
+</svg>

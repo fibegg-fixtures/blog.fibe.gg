@@ -1,0 +1,36 @@
+<svg viewBox="0 0 740 330" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Before and after of a readiness healthcheck. A too-lax check returns 200 the moment the process is up so cold replicas take traffic. A meaningful check returns 200 only after DB and cache are ready.">
+  <rect x="0" y="0" width="740" height="330" fill="#20251a"/>
+  <text x="24" y="32" fill="#f3f0e0" font-size="17" font-weight="700" font-family="IBM Plex Sans, sans-serif">A healthcheck that means something</text>
+
+  <!-- BEFORE panel -->
+  <rect x="24" y="52" width="338" height="256" rx="8" fill="#252a1e" stroke="#f08760"/>
+  <text x="44" y="78" fill="#f08760" font-size="13" font-weight="700" font-family="IBM Plex Sans, sans-serif">Too lax &#183; defeats the point</text>
+
+  <rect x="44" y="92" width="298" height="74" rx="5" fill="#20251a" stroke="#545c42"/>
+  <text x="58" y="113" fill="#a19f89" font-size="11" font-family="JetBrains Mono, monospace">GET /up</text>
+  <text x="58" y="132" fill="#f5da79" font-size="11" font-family="JetBrains Mono, monospace">def up; head :ok; end</text>
+  <text x="58" y="152" fill="#f08760" font-size="10.5" font-family="IBM Plex Sans, sans-serif">200 the instant the process boots</text>
+
+  <text x="44" y="190" fill="#c7c4ae" font-size="11.5" font-family="IBM Plex Sans, sans-serif">Probe passes before:</text>
+  <text x="58" y="210" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">&#183; DB pool connected</text>
+  <text x="58" y="228" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">&#183; migrations / cache warm</text>
+  <rect x="44" y="244" width="298" height="50" rx="5" fill="#20251a" stroke="#f08760"/>
+  <text x="193" y="266" text-anchor="middle" fill="#f08760" font-size="11.5" font-weight="700" font-family="IBM Plex Sans, sans-serif">Cutover to a cold replica</text>
+  <text x="193" y="284" text-anchor="middle" fill="#a19f89" font-size="10.5" font-family="IBM Plex Sans, sans-serif">first users hit 500s &#183; zero-downtime, lots of errors</text>
+
+  <!-- AFTER panel -->
+  <rect x="378" y="52" width="338" height="256" rx="8" fill="#252a1e" stroke="#79d44e"/>
+  <text x="398" y="78" fill="#92df62" font-size="13" font-weight="700" font-family="IBM Plex Sans, sans-serif">Meaningful &#183; gate works</text>
+
+  <rect x="398" y="92" width="298" height="74" rx="5" fill="#20251a" stroke="#545c42"/>
+  <text x="412" y="113" fill="#a19f89" font-size="11" font-family="JetBrains Mono, monospace">GET /up</text>
+  <text x="412" y="132" fill="#abe87f" font-size="11" font-family="JetBrains Mono, monospace">check DB + cache, then 200</text>
+  <text x="412" y="152" fill="#92df62" font-size="10.5" font-family="IBM Plex Sans, sans-serif">2xx ONLY when ready to serve</text>
+
+  <text x="398" y="190" fill="#c7c4ae" font-size="11.5" font-family="IBM Plex Sans, sans-serif">Probe stays red until:</text>
+  <text x="412" y="210" fill="#abe87f" font-size="11" font-family="IBM Plex Sans, sans-serif">&#183; DB pool connected</text>
+  <text x="412" y="228" fill="#abe87f" font-size="11" font-family="IBM Plex Sans, sans-serif">&#183; dependencies reachable</text>
+  <rect x="398" y="244" width="298" height="50" rx="5" fill="#20251a" stroke="#79d44e"/>
+  <text x="547" y="266" text-anchor="middle" fill="#92df62" font-size="11.5" font-weight="700" font-family="IBM Plex Sans, sans-serif">Cutover only to warm replicas</text>
+  <text x="547" y="284" text-anchor="middle" fill="#a19f89" font-size="10.5" font-family="IBM Plex Sans, sans-serif">old v1 keeps serving meanwhile &#183; truly zero-downtime</text>
+</svg>

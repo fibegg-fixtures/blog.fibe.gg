@@ -1,0 +1,45 @@
+<svg viewBox="0 0 720 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Rate-limit budget: every response carries X-RateLimit-Limit, X-RateLimit-Remaining and X-RateLimit-Reset; the client tracks remaining against the ceiling, and on a 429 it obeys the exact Retry-After delay instead of computing exponential backoff">
+  <defs>
+    <marker id="rl-arrow" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L7,3 L0,6 Z" fill="#56d8c0"/>
+    </marker>
+    <marker id="rl-arrow-ember" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L7,3 L0,6 Z" fill="#f08760"/>
+    </marker>
+  </defs>
+
+  <text x="360" y="28" text-anchor="middle" fill="#f3f0e0" font-size="15" font-weight="700" font-family="IBM Plex Sans, sans-serif">Every response carries the budget; a 429 carries the answer</text>
+
+  <!-- headers panel -->
+  <rect x="24" y="48" width="312" height="148" rx="6" fill="#20251a" stroke="#434a35"/>
+  <text x="40" y="70" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">on every response</text>
+  <text x="40" y="98" fill="#56d8c0" font-size="12.5" font-family="JetBrains Mono, monospace">X-RateLimit-Limit: 600</text>
+  <text x="40" y="120" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">the ceiling for this window</text>
+  <text x="40" y="146" fill="#56d8c0" font-size="12.5" font-family="JetBrains Mono, monospace">X-RateLimit-Remaining: 142</text>
+  <text x="40" y="168" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">what's left &#8212; ease off as it nears 0</text>
+  <text x="40" y="190" fill="#56d8c0" font-size="12.5" font-family="JetBrains Mono, monospace">X-RateLimit-Reset: &#8230;</text>
+
+  <!-- budget bar -->
+  <text x="384" y="66" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">client tracks remaining / limit</text>
+  <rect x="384" y="78" width="312" height="22" rx="4" fill="#252a1e" stroke="#434a35"/>
+  <rect x="384" y="78" width="238" height="22" rx="4" fill="#56d8c0" opacity="0.35"/>
+  <line x1="622" y1="74" x2="622" y2="104" stroke="#56d8c0" stroke-width="2"/>
+  <text x="392" y="124" fill="#c7c4ae" font-size="11" font-family="JetBrains Mono, monospace">used</text>
+  <text x="688" y="124" text-anchor="end" fill="#56d8c0" font-size="11" font-family="JetBrains Mono, monospace">142 left of 600</text>
+  <text x="384" y="170" fill="#c7c4ae" font-size="12" font-family="IBM Plex Sans, sans-serif">A well-behaved client slows down</text>
+  <text x="384" y="188" fill="#c7c4ae" font-size="12" font-family="IBM Plex Sans, sans-serif">before it ever hits the wall.</text>
+
+  <!-- 429 path -->
+  <rect x="24" y="224" width="672" height="116" rx="6" fill="#252a1e" stroke="#434a35"/>
+  <text x="44" y="252" fill="#f08760" font-size="13" font-weight="700" font-family="JetBrains Mono, monospace">429 Too Many Requests</text>
+  <text x="44" y="274" fill="#f08760" font-size="12.5" font-family="JetBrains Mono, monospace">Retry-After: 8</text>
+
+  <line x1="210" y1="268" x2="318" y2="268" stroke="#f08760" stroke-width="2" marker-end="url(#rl-arrow-ember)"/>
+
+  <text x="332" y="252" fill="#f3f0e0" font-size="12.5" font-weight="700" font-family="IBM Plex Sans, sans-serif">backoff: first rule wins</text>
+  <text x="332" y="274" fill="#92df62" font-size="12" font-family="IBM Plex Sans, sans-serif">a Retry-After short-circuits the math</text>
+  <text x="332" y="296" fill="#a19f89" font-size="11.5" font-family="IBM Plex Sans, sans-serif">no doubling, no random jitter &#8212;</text>
+  <text x="332" y="314" fill="#a19f89" font-size="11.5" font-family="IBM Plex Sans, sans-serif">obey the exact wait (capped at the ceiling).</text>
+  <text x="44" y="320" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">the server prints</text>
+  <text x="44" y="334" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">the answer.</text>
+</svg>

@@ -1,0 +1,68 @@
+<svg viewBox="0 0 720 372" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Error classification decision tree: a failed call is first checked for transport errors, then by HTTP status. Caller cancellation and network timeouts are terminal. Status 429 is rate-limited and waits on Retry-After. 500, 502, 503, 504 are retryable with backoff. Everything else, including 401, 403, 404, 409, 422, and the 402 not-funded case, is terminal.">
+  <defs>
+    <marker id="ec-arrow" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L7,3 L0,6 Z" fill="#757d5e"/>
+    </marker>
+  </defs>
+
+  <!-- root -->
+  <rect x="280" y="16" width="160" height="44" rx="6" fill="#252a1e" stroke="#545c42"/>
+  <text x="360" y="42" text-anchor="middle" fill="#f3f0e0" font-size="13" font-weight="700" font-family="JetBrains Mono, monospace">call failed</text>
+
+  <!-- transport vs http -->
+  <line x1="360" y1="60" x2="170" y2="96" stroke="#757d5e" stroke-width="1.6" marker-end="url(#ec-arrow)"/>
+  <line x1="360" y1="60" x2="540" y2="96" stroke="#757d5e" stroke-width="1.6" marker-end="url(#ec-arrow)"/>
+  <text x="240" y="82" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">transport error</text>
+  <text x="475" y="82" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">HTTP response</text>
+
+  <!-- transport node -->
+  <rect x="60" y="100" width="220" height="48" rx="6" fill="#20251a" stroke="#434a35"/>
+  <text x="170" y="120" text-anchor="middle" fill="#c7c4ae" font-size="12" font-family="JetBrains Mono, monospace">caller cancelled / deadline?</text>
+  <text x="170" y="138" text-anchor="middle" fill="#c7c4ae" font-size="12" font-family="JetBrains Mono, monospace">network timeout?</text>
+
+  <line x1="120" y1="148" x2="100" y2="196" stroke="#757d5e" stroke-width="1.6" marker-end="url(#ec-arrow)"/>
+  <line x1="220" y1="148" x2="250" y2="196" stroke="#757d5e" stroke-width="1.6" marker-end="url(#ec-arrow)"/>
+  <text x="92" y="178" text-anchor="middle" fill="#f08760" font-size="11" font-family="IBM Plex Sans, sans-serif">yes</text>
+  <text x="252" y="178" text-anchor="middle" fill="#92df62" font-size="11" font-family="IBM Plex Sans, sans-serif">no (e.g. dropped conn)</text>
+
+  <!-- http status node -->
+  <rect x="440" y="100" width="220" height="48" rx="6" fill="#20251a" stroke="#434a35"/>
+  <text x="550" y="129" text-anchor="middle" fill="#c7c4ae" font-size="13" font-family="JetBrains Mono, monospace">branch on status code</text>
+
+  <line x1="500" y1="148" x2="430" y2="196" stroke="#757d5e" stroke-width="1.6" marker-end="url(#ec-arrow)"/>
+  <line x1="560" y1="148" x2="560" y2="196" stroke="#757d5e" stroke-width="1.6" marker-end="url(#ec-arrow)"/>
+  <line x1="620" y1="148" x2="668" y2="196" stroke="#757d5e" stroke-width="1.6" marker-end="url(#ec-arrow)"/>
+  <text x="430" y="178" text-anchor="middle" fill="#eec854" font-size="11" font-family="JetBrains Mono, monospace">429</text>
+  <text x="560" y="178" text-anchor="middle" fill="#92df62" font-size="11" font-family="JetBrains Mono, monospace">5xx</text>
+  <text x="672" y="178" text-anchor="middle" fill="#f08760" font-size="11" font-family="JetBrains Mono, monospace">else</text>
+
+  <!-- outcome: terminal (transport timeout) -->
+  <rect x="20" y="200" width="160" height="56" rx="6" fill="#2a1f1c" stroke="#f08760"/>
+  <text x="100" y="224" text-anchor="middle" fill="#f08760" font-size="12" font-weight="700" font-family="JetBrains Mono, monospace">TERMINAL</text>
+  <text x="100" y="242" text-anchor="middle" fill="#c7c4ae" font-size="10" font-family="IBM Plex Sans, sans-serif">give up &#183; surface it</text>
+
+  <!-- outcome: retry (transport) -->
+  <rect x="195" y="200" width="160" height="56" rx="6" fill="#1c2a1e" stroke="#5cb43a"/>
+  <text x="275" y="224" text-anchor="middle" fill="#92df62" font-size="12" font-weight="700" font-family="JetBrains Mono, monospace">RETRY</text>
+  <text x="275" y="242" text-anchor="middle" fill="#c7c4ae" font-size="10" font-family="IBM Plex Sans, sans-serif">backoff + jitter</text>
+
+  <!-- outcome: rate limited -->
+  <rect x="365" y="200" width="160" height="56" rx="6" fill="#2a261a" stroke="#eec854"/>
+  <text x="445" y="224" text-anchor="middle" fill="#eec854" font-size="12" font-weight="700" font-family="JetBrains Mono, monospace">RATE-LIMITED</text>
+  <text x="445" y="242" text-anchor="middle" fill="#c7c4ae" font-size="10" font-family="IBM Plex Sans, sans-serif">wait Retry-After</text>
+
+  <!-- outcome: retry (5xx) -->
+  <rect x="480" y="200" width="160" height="56" rx="6" fill="#1c2a1e" stroke="#5cb43a"/>
+  <text x="560" y="224" text-anchor="middle" fill="#92df62" font-size="12" font-weight="700" font-family="JetBrains Mono, monospace">RETRY</text>
+  <text x="560" y="242" text-anchor="middle" fill="#c7c4ae" font-size="10" font-family="IBM Plex Sans, sans-serif">+ breaker counts it</text>
+
+  <!-- outcome: terminal (4xx) -->
+  <rect x="560" y="200" width="150" height="56" rx="6" fill="#2a1f1c" stroke="#f08760"/>
+  <text x="635" y="224" text-anchor="middle" fill="#f08760" font-size="12" font-weight="700" font-family="JetBrains Mono, monospace">TERMINAL</text>
+  <text x="635" y="242" text-anchor="middle" fill="#c7c4ae" font-size="10" font-family="IBM Plex Sans, sans-serif">typed code to caller</text>
+
+  <!-- footer note -->
+  <rect x="60" y="296" width="600" height="56" rx="6" fill="#20251a" stroke="#434a35"/>
+  <text x="360" y="318" text-anchor="middle" fill="#c7c4ae" font-size="12" font-family="IBM Plex Sans, sans-serif">Terminal codes carry meaning &#8212; you branch on them, you don't hammer them:</text>
+  <text x="360" y="340" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">unauthorized &#183; forbidden &#183; not found &#183; conflict &#183; validation failed &#183; not funded</text>
+</svg>

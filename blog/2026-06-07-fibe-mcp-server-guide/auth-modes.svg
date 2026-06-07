@@ -1,0 +1,31 @@
+<svg viewBox="0 0 720 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Three auth modes that stack: bearer header, the fibe_auth_set tool, and default profile fallback, with require-auth enforced for shared servers">
+  <text x="360" y="32" text-anchor="middle" fill="#f3f0e0" font-size="16" font-weight="700" font-family="IBM Plex Sans, sans-serif">How the server knows who the agent is</text>
+
+  <!-- mode 1 -->
+  <rect x="24" y="56" width="216" height="120" rx="8" fill="#252a1e" stroke="#79d44e"/>
+  <text x="132" y="84" text-anchor="middle" fill="#92df62" font-size="13" font-weight="700" font-family="JetBrains Mono, monospace">1. Bearer header</text>
+  <text x="132" y="108" text-anchor="middle" fill="#c7c4ae" font-size="10" font-family="JetBrains Mono, monospace">Authorization: Bearer</text>
+  <text x="132" y="124" text-anchor="middle" fill="#abe87f" font-size="10" font-family="JetBrains Mono, monospace">fibe_live_...</text>
+  <text x="132" y="150" text-anchor="middle" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">key known up front</text>
+
+  <!-- mode 2 -->
+  <rect x="252" y="56" width="216" height="120" rx="8" fill="#252a1e" stroke="#eec854"/>
+  <text x="360" y="84" text-anchor="middle" fill="#f5da79" font-size="13" font-weight="700" font-family="JetBrains Mono, monospace">2. fibe_auth_set</text>
+  <text x="360" y="108" text-anchor="middle" fill="#c7c4ae" font-size="10" font-family="IBM Plex Sans, sans-serif">agent sets its creds</text>
+  <text x="360" y="124" text-anchor="middle" fill="#c7c4ae" font-size="10" font-family="IBM Plex Sans, sans-serif">for the session</text>
+  <text x="360" y="150" text-anchor="middle" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">discovered at run time</text>
+
+  <!-- mode 3 -->
+  <rect x="480" y="56" width="216" height="120" rx="8" fill="#20251a" stroke="#545c42"/>
+  <text x="588" y="84" text-anchor="middle" fill="#c7c4ae" font-size="13" font-weight="700" font-family="JetBrains Mono, monospace">3. Default profile</text>
+  <text x="588" y="108" text-anchor="middle" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">the host's CLI profile</text>
+  <text x="588" y="124" text-anchor="middle" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">single-tenant only</text>
+  <text x="588" y="150" text-anchor="middle" fill="#f08760" font-size="10" font-family="IBM Plex Sans, sans-serif">not for shared servers</text>
+
+  <!-- enforce band -->
+  <rect x="24" y="194" width="672" height="44" rx="6" fill="#20251a" stroke="#434a35"/>
+  <text x="40" y="214" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">On a shared/HTTP server, set</text>
+  <text x="218" y="214" fill="#92df62" font-size="11" font-family="JetBrains Mono, monospace">FIBE_MCP_REQUIRE_AUTH=1</text>
+  <text x="416" y="214" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">&#8212; requests without credentials are refused.</text>
+  <text x="40" y="230" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">No accidental privilege escalation from the host's default profile.</text>
+</svg>

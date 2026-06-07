@@ -1,0 +1,45 @@
+<svg viewBox="0 0 720 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="MCP topology: an AI client talks to the local fibe MCP server over stdio, which calls the Fibe platform API which drives your Marquee">
+  <defs>
+    <marker id="arrTopo" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0,0 L9,5 L0,10 z" fill="#79d44e"/>
+    </marker>
+  </defs>
+
+  <!-- AI client -->
+  <rect x="24" y="116" width="156" height="88" rx="8" fill="#20251a" stroke="#545c42"/>
+  <text x="102" y="148" text-anchor="middle" fill="#f3f0e0" font-size="15" font-weight="700" font-family="IBM Plex Sans, sans-serif">AI client</text>
+  <text x="102" y="170" text-anchor="middle" fill="#a19f89" font-size="11" font-family="JetBrains Mono, monospace">Claude Code</text>
+  <text x="102" y="186" text-anchor="middle" fill="#a19f89" font-size="11" font-family="JetBrains Mono, monospace">Cursor &#183; Codex</text>
+
+  <!-- fibe mcp serve -->
+  <rect x="262" y="100" width="180" height="120" rx="8" fill="#252a1e" stroke="#79d44e"/>
+  <text x="352" y="130" text-anchor="middle" fill="#92df62" font-size="14" font-weight="700" font-family="JetBrains Mono, monospace">fibe mcp serve</text>
+  <text x="352" y="152" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">60+ typed tools</text>
+  <text x="352" y="172" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">as fibe_* functions</text>
+  <text x="352" y="198" text-anchor="middle" fill="#eec854" font-size="10" font-family="JetBrains Mono, monospace">uses your CLI profile</text>
+
+  <!-- platform -->
+  <rect x="524" y="100" width="172" height="120" rx="8" fill="#20251a" stroke="#545c42"/>
+  <text x="610" y="130" text-anchor="middle" fill="#f3f0e0" font-size="14" font-weight="700" font-family="IBM Plex Sans, sans-serif">Fibe platform</text>
+  <text x="610" y="152" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">REST API</text>
+  <text x="610" y="180" text-anchor="middle" fill="#56d8c0" font-size="11" font-family="JetBrains Mono, monospace">Marquee (host)</text>
+  <text x="610" y="198" text-anchor="middle" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">Playgrounds &#183; Tricks &#183; Genies</text>
+
+  <!-- arrows -->
+  <line x1="180" y1="160" x2="256" y2="160" stroke="#79d44e" stroke-width="2" marker-end="url(#arrTopo)"/>
+  <text x="218" y="150" text-anchor="middle" fill="#a19f89" font-size="10" font-family="JetBrains Mono, monospace">stdio</text>
+  <text x="218" y="180" text-anchor="middle" fill="#757d5e" font-size="9" font-family="IBM Plex Sans, sans-serif">JSON-RPC</text>
+
+  <line x1="442" y1="160" x2="518" y2="160" stroke="#79d44e" stroke-width="2" marker-end="url(#arrTopo)"/>
+  <text x="480" y="150" text-anchor="middle" fill="#a19f89" font-size="10" font-family="JetBrains Mono, monospace">HTTPS</text>
+
+  <!-- title -->
+  <text x="360" y="40" text-anchor="middle" fill="#f3f0e0" font-size="17" font-weight="700" font-family="IBM Plex Sans, sans-serif">One process. Same surface as the CLI, exposed as tools.</text>
+  <text x="360" y="66" text-anchor="middle" fill="#a19f89" font-size="12" font-family="IBM Plex Sans, sans-serif">The agent calls a function instead of parsing your help text.</text>
+
+  <!-- footer band -->
+  <rect x="24" y="252" width="672" height="48" rx="6" fill="#20251a" stroke="#434a35"/>
+  <text x="40" y="282" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">No subprocess overhead &#183; no shell parsing &#183; funding failures arrive as a structured</text>
+  <text x="556" y="282" fill="#f08760" font-size="11" font-family="JetBrains Mono, monospace">402 error</text>
+  <text x="616" y="282" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">.</text>
+</svg>

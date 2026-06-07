@@ -1,0 +1,48 @@
+<svg viewBox="0 0 720 380" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Core versus full tool tiers: a small advertised set keeps the agent reliable while the whole catalog stays reachable through fibe_tools_catalog and fibe_call">
+  <text x="360" y="34" text-anchor="middle" fill="#f3f0e0" font-size="17" font-weight="700" font-family="IBM Plex Sans, sans-serif">Advertise few. Keep all of them reachable.</text>
+
+  <!-- CORE panel -->
+  <rect x="24" y="58" width="320" height="280" rx="8" fill="#252a1e" stroke="#79d44e"/>
+  <text x="184" y="86" text-anchor="middle" fill="#92df62" font-size="14" font-weight="700" font-family="JetBrains Mono, monospace">FIBE_MCP_TOOLS=core</text>
+  <text x="184" y="106" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">~40 advertised: meta + base + greenfield + brownfield</text>
+
+  <rect x="44" y="124" width="280" height="28" rx="4" fill="#20251a" stroke="#434a35"/>
+  <text x="56" y="143" fill="#abe87f" font-size="11" font-family="JetBrains Mono, monospace">fibe_launch</text>
+  <text x="312" y="143" text-anchor="end" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">greenfield</text>
+  <rect x="44" y="158" width="280" height="28" rx="4" fill="#20251a" stroke="#434a35"/>
+  <text x="56" y="177" fill="#abe87f" font-size="11" font-family="JetBrains Mono, monospace">fibe_playgrounds_wait</text>
+  <text x="312" y="177" text-anchor="end" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">brownfield</text>
+  <rect x="44" y="192" width="280" height="28" rx="4" fill="#20251a" stroke="#434a35"/>
+  <text x="56" y="211" fill="#abe87f" font-size="11" font-family="JetBrains Mono, monospace">fibe_logs_follow</text>
+  <text x="312" y="211" text-anchor="end" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">brownfield</text>
+  <rect x="44" y="226" width="280" height="28" rx="4" fill="#20251a" stroke="#434a35"/>
+  <text x="56" y="245" fill="#abe87f" font-size="11" font-family="JetBrains Mono, monospace">fibe_resource_mutate</text>
+  <text x="312" y="245" text-anchor="end" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">base</text>
+  <rect x="44" y="260" width="280" height="28" rx="4" fill="#20251a" stroke="#434a35"/>
+  <text x="56" y="279" fill="#abe87f" font-size="11" font-family="JetBrains Mono, monospace">fibe_status &#183; fibe_doctor</text>
+  <text x="312" y="279" text-anchor="end" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">meta</text>
+
+  <text x="184" y="316" text-anchor="middle" fill="#5cb43a" font-size="11" font-family="IBM Plex Sans, sans-serif">Small surface &#8594; tool-search stays reliable</text>
+
+  <!-- escape hatch -->
+  <text x="368" y="200" fill="#eec854" font-size="22" font-family="JetBrains Mono, monospace">&#8594;</text>
+
+  <!-- FULL panel -->
+  <rect x="404" y="58" width="292" height="280" rx="8" fill="#20251a" stroke="#545c42"/>
+  <text x="550" y="86" text-anchor="middle" fill="#eec854" font-size="14" font-weight="700" font-family="JetBrains Mono, monospace">the full catalog</text>
+  <text x="550" y="106" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">60+ tools &#183; always callable on demand</text>
+
+  <rect x="424" y="128" width="252" height="60" rx="6" fill="#252a1e" stroke="#56d8c0"/>
+  <text x="550" y="152" text-anchor="middle" fill="#56d8c0" font-size="12" font-weight="700" font-family="JetBrains Mono, monospace">fibe_tools_catalog</text>
+  <text x="550" y="172" text-anchor="middle" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">"what tools exist?" &#8212; list every tool</text>
+
+  <rect x="424" y="200" width="252" height="60" rx="6" fill="#252a1e" stroke="#56d8c0"/>
+  <text x="550" y="224" text-anchor="middle" fill="#56d8c0" font-size="12" font-weight="700" font-family="JetBrains Mono, monospace">fibe_call</text>
+  <text x="550" y="244" text-anchor="middle" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">invoke any hidden tool by name</text>
+
+  <rect x="424" y="272" width="252" height="48" rx="6" fill="#252a1e" stroke="#545c42"/>
+  <text x="550" y="294" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="JetBrains Mono, monospace">fibe_schema &#183; fibe_run</text>
+  <text x="550" y="310" text-anchor="middle" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">introspect args &#183; last-resort CLI</text>
+
+  <text x="360" y="366" text-anchor="middle" fill="#757d5e" font-size="10" font-family="IBM Plex Sans, sans-serif">An unknown tier name makes the server refuse to start &#8212; that is the typo guardrail.</text>
+</svg>

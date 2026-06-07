@@ -1,0 +1,45 @@
+<svg viewBox="0 0 720 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Agent task sequence: launch the rails template, wait until the playground reports running, then return the URL, with progress notifications streaming during the wait">
+  <defs>
+    <marker id="arrSeq" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0,0 L9,5 L0,10 z" fill="#79d44e"/>
+    </marker>
+  </defs>
+
+  <text x="360" y="34" text-anchor="middle" fill="#f3f0e0" font-size="17" font-weight="700" font-family="IBM Plex Sans, sans-serif">"launch the rails template, wait until reachable, give me the URL"</text>
+
+  <!-- Step 1 -->
+  <rect x="28" y="70" width="200" height="150" rx="8" fill="#252a1e" stroke="#79d44e"/>
+  <text x="128" y="98" text-anchor="middle" fill="#92df62" font-size="13" font-weight="700" font-family="JetBrains Mono, monospace">1. fibe_launch</text>
+  <text x="128" y="124" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">template_id_or_name:</text>
+  <text x="128" y="142" text-anchor="middle" fill="#abe87f" font-size="11" font-family="JetBrains Mono, monospace">"rails"</text>
+  <text x="128" y="166" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">marquee_id_or_name: 1</text>
+  <text x="128" y="194" text-anchor="middle" fill="#eec854" font-size="10" font-family="JetBrains Mono, monospace">&#8594; playground_id: 456</text>
+  <text x="128" y="210" text-anchor="middle" fill="#a19f89" font-size="9" font-family="IBM Plex Sans, sans-serif">needs a funded Marquee</text>
+
+  <!-- Step 2 -->
+  <rect x="260" y="70" width="200" height="150" rx="8" fill="#252a1e" stroke="#eec854"/>
+  <text x="360" y="98" text-anchor="middle" fill="#f5da79" font-size="13" font-weight="700" font-family="JetBrains Mono, monospace">2. playgrounds_wait</text>
+  <text x="360" y="124" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">id_or_name: 456</text>
+  <text x="360" y="142" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">status: "running"</text>
+  <text x="360" y="160" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">readiness: "services"</text>
+  <text x="360" y="186" text-anchor="middle" fill="#56d8c0" font-size="10" font-family="JetBrains Mono, monospace">progress tick every 3s</text>
+  <text x="360" y="204" text-anchor="middle" fill="#a19f89" font-size="9" font-family="IBM Plex Sans, sans-serif">errors fast on a terminal state</text>
+
+  <!-- Step 3 -->
+  <rect x="492" y="70" width="200" height="150" rx="8" fill="#252a1e" stroke="#56d8c0"/>
+  <text x="592" y="98" text-anchor="middle" fill="#56d8c0" font-size="13" font-weight="700" font-family="JetBrains Mono, monospace">3. resource_get</text>
+  <text x="592" y="124" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">resource: "playground"</text>
+  <text x="592" y="142" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">id: 456</text>
+  <text x="592" y="170" text-anchor="middle" fill="#abe87f" font-size="11" font-family="JetBrains Mono, monospace">&#8594; service URL</text>
+  <text x="592" y="196" text-anchor="middle" fill="#a19f89" font-size="9" font-family="IBM Plex Sans, sans-serif">Traefik wildcard-TLS route</text>
+
+  <!-- arrows between -->
+  <line x1="228" y1="145" x2="256" y2="145" stroke="#79d44e" stroke-width="2" marker-end="url(#arrSeq)"/>
+  <line x1="460" y1="145" x2="488" y2="145" stroke="#79d44e" stroke-width="2" marker-end="url(#arrSeq)"/>
+
+  <!-- pipeline band -->
+  <rect x="28" y="250" width="664" height="84" rx="8" fill="#20251a" stroke="#545c42"/>
+  <text x="360" y="278" text-anchor="middle" fill="#f3f0e0" font-size="13" font-weight="700" font-family="IBM Plex Sans, sans-serif">Or collapse all three into one fibe_pipeline call</text>
+  <text x="360" y="302" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="JetBrains Mono, monospace">id_or_name: "$.launch.playground_id"</text>
+  <text x="360" y="322" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">JSONPath threads the id from step 1 into step 2 &#8212; one round-trip, one result.</text>
+</svg>

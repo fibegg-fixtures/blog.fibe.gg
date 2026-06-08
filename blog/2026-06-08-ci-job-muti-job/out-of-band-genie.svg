@@ -1,0 +1,56 @@
+<svg viewBox="0 0 740 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Architecture: a job-mode Trick is a bare Docker Compose project with no Traefik and no Genie sidecar; the repair Genie is a separate, long-lived AgentChat that reacts to the completed job by reading its recorded job result and messaging itself">
+  <defs>
+    <marker id="og-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#757d5e"/>
+    </marker>
+  </defs>
+
+  <text x="370" y="28" text-anchor="middle" fill="#f3f0e0" font-size="17" font-weight="700" font-family="IBM Plex Sans, sans-serif">Where the Genie actually lives</text>
+
+  <!-- The Marquee container -->
+  <rect x="24" y="50" width="692" height="320" rx="8" fill="none" stroke="#434a35" stroke-dasharray="5 4"/>
+  <text x="44" y="72" fill="#a19f89" font-size="12" font-family="JetBrains Mono, monospace">Marquee (Docker host)</text>
+
+  <!-- Trick box -->
+  <rect x="50" y="92" width="300" height="252" rx="6" fill="#20251a" stroke="#545c42"/>
+  <text x="200" y="118" text-anchor="middle" fill="#abe87f" font-size="14" font-weight="700" font-family="IBM Plex Sans, sans-serif">CI Trick (job-mode Playground)</text>
+  <text x="200" y="136" text-anchor="middle" fill="#a19f89" font-size="11" font-family="JetBrains Mono, monospace">Compose project &#183; restart:no &#183; replicas:1</text>
+
+  <!-- watched service -->
+  <rect x="74" y="156" width="252" height="48" rx="5" fill="#252a1e" stroke="#5cb43a"/>
+  <text x="200" y="176" text-anchor="middle" fill="#92df62" font-size="12" font-weight="700" font-family="IBM Plex Sans, sans-serif">test runner (watched)</text>
+  <text x="200" y="194" text-anchor="middle" fill="#a19f89" font-size="11" font-family="JetBrains Mono, monospace">fibe.gg/job_watch=true</text>
+
+  <!-- skipped: no traefik -->
+  <rect x="74" y="216" width="252" height="40" rx="5" fill="#20251a" stroke="#434a35"/>
+  <text x="200" y="241" text-anchor="middle" fill="#f08760" font-size="12" font-family="IBM Plex Sans, sans-serif">&#10007; no Traefik labels &#183; not routed</text>
+
+  <!-- skipped: no genie -->
+  <rect x="74" y="266" width="252" height="40" rx="5" fill="#20251a" stroke="#434a35"/>
+  <text x="200" y="291" text-anchor="middle" fill="#f08760" font-size="12" font-family="IBM Plex Sans, sans-serif">&#10007; no Genie sidecar inside</text>
+
+  <text x="200" y="330" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">runs once &#183; records start time, exit code, logs</text>
+
+  <!-- The Genie box (separate) -->
+  <rect x="410" y="92" width="280" height="160" rx="6" fill="#252a1e" stroke="#56d8c0"/>
+  <text x="550" y="118" text-anchor="middle" fill="#56d8c0" font-size="14" font-weight="700" font-family="IBM Plex Sans, sans-serif">Repair Genie</text>
+  <text x="550" y="136" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">a long-lived AgentChat sidecar</text>
+  <text x="550" y="158" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">its own Compose project</text>
+  <text x="550" y="178" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">its own chat history &#183; its own clone</text>
+  <rect x="436" y="196" width="228" height="40" rx="5" fill="#20251a" stroke="#434a35"/>
+  <text x="550" y="221" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">receives an ordinary chat message</text>
+
+  <!-- recorded job result store -->
+  <rect x="410" y="276" width="280" height="68" rx="6" fill="#20251a" stroke="#eec854"/>
+  <text x="550" y="300" text-anchor="middle" fill="#eec854" font-size="13" font-weight="700" font-family="IBM Plex Sans, sans-serif">Recorded job result</text>
+  <text x="550" y="320" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">per-service exit codes + logs (5000 lines)</text>
+  <text x="550" y="336" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">kept on disk after teardown</text>
+
+  <!-- arrows: trick -> jobresult -->
+  <line x1="350" y1="280" x2="406" y2="300" stroke="#757d5e" stroke-width="1.5" marker-end="url(#og-arrow)"/>
+  <text x="378" y="278" text-anchor="middle" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">writes</text>
+
+  <!-- jobresult -> genie -->
+  <line x1="550" y1="276" x2="550" y2="240" stroke="#757d5e" stroke-width="1.5" marker-end="url(#og-arrow)"/>
+  <text x="600" y="262" text-anchor="middle" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">{{logs}} into prompt</text>
+</svg>

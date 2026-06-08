@@ -1,0 +1,52 @@
+<svg viewBox="0 0 720 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Job-ENV merge order: defaults, then account-wide entries, then entries for the triggering repo, then per-service entries, then playground values, then FIBE_ built-ins, then non-empty system values; later layers win, secrets are dropped on a pull request, and FIBE_ is reserved">
+  <text x="360" y="28" text-anchor="middle" fill="#f3f0e0" font-size="17" font-weight="700" font-family="IBM Plex Sans, sans-serif">Job-ENV merge order (later layer wins)</text>
+
+  <!-- layer rows -->
+  <!-- L1 -->
+  <rect x="60" y="48" width="600" height="38" rx="5" fill="#20251a" stroke="#434a35"/>
+  <text x="80" y="72" fill="#a19f89" font-size="12" font-family="JetBrains Mono, monospace">1</text>
+  <text x="110" y="72" fill="#c7c4ae" font-size="13" font-family="IBM Plex Sans, sans-serif">defaults</text>
+  <text x="640" y="72" text-anchor="end" fill="#757d5e" font-size="11" font-family="IBM Plex Sans, sans-serif">base</text>
+
+  <!-- L2 global -->
+  <rect x="60" y="92" width="600" height="38" rx="5" fill="#252a1e" stroke="#545c42"/>
+  <text x="80" y="116" fill="#a19f89" font-size="12" font-family="JetBrains Mono, monospace">2</text>
+  <text x="110" y="116" fill="#abe87f" font-size="13" font-weight="700" font-family="IBM Plex Sans, sans-serif">account-wide env</text>
+  <text x="640" y="116" text-anchor="end" fill="#757d5e" font-size="11" font-family="IBM Plex Sans, sans-serif">no Prop attached</text>
+
+  <!-- L3 primary -->
+  <rect x="60" y="136" width="600" height="38" rx="5" fill="#252a1e" stroke="#545c42"/>
+  <text x="80" y="160" fill="#a19f89" font-size="12" font-family="JetBrains Mono, monospace">3</text>
+  <text x="110" y="160" fill="#abe87f" font-size="13" font-weight="700" font-family="IBM Plex Sans, sans-serif">triggering-repo env</text>
+  <text x="640" y="160" text-anchor="end" fill="#757d5e" font-size="11" font-family="IBM Plex Sans, sans-serif">the repo that fired</text>
+
+  <!-- L4 service -->
+  <rect x="60" y="180" width="600" height="38" rx="5" fill="#252a1e" stroke="#545c42"/>
+  <text x="80" y="204" fill="#a19f89" font-size="12" font-family="JetBrains Mono, monospace">4</text>
+  <text x="110" y="204" fill="#abe87f" font-size="13" font-weight="700" font-family="IBM Plex Sans, sans-serif">per-service env</text>
+  <text x="640" y="204" text-anchor="end" fill="#757d5e" font-size="11" font-family="IBM Plex Sans, sans-serif">per-service Prop</text>
+
+  <!-- L5 playground -->
+  <rect x="60" y="224" width="600" height="38" rx="5" fill="#20251a" stroke="#434a35"/>
+  <text x="80" y="248" fill="#a19f89" font-size="12" font-family="JetBrains Mono, monospace">5</text>
+  <text x="110" y="248" fill="#c7c4ae" font-size="13" font-family="IBM Plex Sans, sans-serif">playground values</text>
+
+  <!-- L6 builtins -->
+  <rect x="60" y="268" width="600" height="38" rx="5" fill="#20251a" stroke="#e2b33a"/>
+  <text x="80" y="292" fill="#a19f89" font-size="12" font-family="JetBrains Mono, monospace">6</text>
+  <text x="110" y="292" fill="#eec854" font-size="13" font-weight="700" font-family="JetBrains Mono, monospace">FIBE_* built-ins</text>
+  <text x="640" y="292" text-anchor="end" fill="#99761f" font-size="11" font-family="IBM Plex Sans, sans-serif">override same-named keys</text>
+
+  <!-- L7 system -->
+  <rect x="60" y="312" width="600" height="38" rx="5" fill="#20251a" stroke="#434a35"/>
+  <text x="80" y="336" fill="#a19f89" font-size="12" font-family="JetBrains Mono, monospace">7</text>
+  <text x="110" y="336" fill="#c7c4ae" font-size="13" font-family="IBM Plex Sans, sans-serif">system values</text>
+  <text x="640" y="336" text-anchor="end" fill="#757d5e" font-size="11" font-family="IBM Plex Sans, sans-serif">non-empty only</text>
+
+  <!-- direction arrow -->
+  <text x="32" y="200" text-anchor="middle" fill="#92df62" font-size="11" font-family="IBM Plex Sans, sans-serif" transform="rotate(90 32 200)">precedence increases &#8594;</text>
+
+  <!-- footnotes -->
+  <text x="360" y="378" text-anchor="middle" fill="#f08760" font-size="12" font-family="IBM Plex Sans, sans-serif">On a pull-request trigger, every secret layer is dropped &#8212; PR jobs get no secrets.</text>
+  <text x="360" y="400" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">FIBE_ is a reserved prefix: user keys can't start with it &#183; an empty string is valid, only an unset value is rejected.</text>
+</svg>

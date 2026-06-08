@@ -1,0 +1,62 @@
+<svg viewBox="0 0 740 430" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The CI-Job self-healing loop: a push triggers a headless Trick; on failure an out-of-band Genie reads the logs, fixes the code, pushes a commit, and a fresh Trick re-runs until it passes or retries run out">
+  <defs>
+    <marker id="ci-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#757d5e"/>
+    </marker>
+    <marker id="ci-arrow-gold" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#e2b33a"/>
+    </marker>
+  </defs>
+
+  <text x="370" y="28" text-anchor="middle" fill="#f3f0e0" font-size="17" font-weight="700" font-family="IBM Plex Sans, sans-serif">The CI-Job loop</text>
+  <text x="370" y="48" text-anchor="middle" fill="#a19f89" font-size="12" font-family="IBM Plex Sans, sans-serif">the Trick has no Genie &#183; the repair Genie is out-of-band</text>
+
+  <!-- 1 push -->
+  <rect x="30" y="74" width="150" height="58" rx="6" fill="#20251a" stroke="#434a35"/>
+  <text x="105" y="98" text-anchor="middle" fill="#92df62" font-size="13" font-weight="700" font-family="IBM Plex Sans, sans-serif">git push</text>
+  <text x="105" y="118" text-anchor="middle" fill="#a19f89" font-size="11" font-family="JetBrains Mono, monospace">VCS webhook</text>
+
+  <!-- 2 trick runs -->
+  <rect x="295" y="74" width="150" height="58" rx="6" fill="#252a1e" stroke="#545c42"/>
+  <text x="370" y="98" text-anchor="middle" fill="#abe87f" font-size="13" font-weight="700" font-family="IBM Plex Sans, sans-serif">CI Trick runs</text>
+  <text x="370" y="118" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">a Playground in job mode</text>
+
+  <!-- 3 pass -->
+  <rect x="560" y="74" width="150" height="58" rx="6" fill="#20251a" stroke="#5cb43a"/>
+  <text x="635" y="98" text-anchor="middle" fill="#92df62" font-size="13" font-weight="700" font-family="IBM Plex Sans, sans-serif">completed</text>
+  <text x="635" y="118" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">exit 0 &#183; done</text>
+
+  <line x1="180" y1="103" x2="289" y2="103" stroke="#757d5e" stroke-width="1.5" marker-end="url(#ci-arrow)"/>
+  <line x1="445" y1="103" x2="554" y2="103" stroke="#757d5e" stroke-width="1.5" marker-end="url(#ci-arrow)"/>
+  <text x="500" y="95" text-anchor="middle" fill="#92df62" font-size="11" font-family="IBM Plex Sans, sans-serif">pass</text>
+
+  <!-- fail branch down -->
+  <line x1="370" y1="132" x2="370" y2="178" stroke="#f08760" stroke-width="1.5" marker-end="url(#ci-arrow)"/>
+  <text x="392" y="160" text-anchor="start" fill="#f08760" font-size="11" font-family="IBM Plex Sans, sans-serif">fail</text>
+
+  <!-- 4 event -->
+  <rect x="255" y="180" width="230" height="54" rx="6" fill="#20251a" stroke="#434a35"/>
+  <text x="370" y="202" text-anchor="middle" fill="#eec854" font-size="12" font-weight="700" font-family="IBM Plex Sans, sans-serif">internal job-failed event</text>
+  <text x="370" y="220" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">only if trigger enabled &#183; an Agent named</text>
+
+  <line x1="370" y1="234" x2="370" y2="278" stroke="#757d5e" stroke-width="1.5" marker-end="url(#ci-arrow)"/>
+
+  <!-- 5 genie -->
+  <rect x="225" y="280" width="290" height="66" rx="6" fill="#252a1e" stroke="#56d8c0"/>
+  <text x="370" y="304" text-anchor="middle" fill="#56d8c0" font-size="13" font-weight="700" font-family="IBM Plex Sans, sans-serif">Out-of-band Genie (separate Agent)</text>
+  <text x="370" y="324" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">gets a chat message with {{logs}} &#183; if idle</text>
+  <text x="370" y="340" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">reads logs &#183; edits code &#183; pushes a commit</text>
+
+  <!-- loop back up the left -->
+  <line x1="225" y1="313" x2="105" y2="313" stroke="#e2b33a" stroke-width="1.5"/>
+  <line x1="105" y1="313" x2="105" y2="132" stroke="#e2b33a" stroke-width="1.5" marker-end="url(#ci-arrow-gold)"/>
+  <text x="105" y="230" text-anchor="middle" fill="#e2b33a" font-size="11" font-family="IBM Plex Sans, sans-serif" transform="rotate(-90 105 230)">new push &#183; retry count +1 &#183; fresh Trick</text>
+
+  <!-- stop condition -->
+  <rect x="540" y="288" width="172" height="50" rx="6" fill="#20251a" stroke="#434a35"/>
+  <text x="626" y="310" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">loop ends on pass</text>
+  <text x="626" y="326" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">or retries run out</text>
+  <line x1="515" y1="313" x2="535" y2="313" stroke="#757d5e" stroke-width="1.5" marker-end="url(#ci-arrow)"/>
+
+  <text x="370" y="400" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">The Genie's only "injection" into the loop is a message. Busy Agent &#8594; backoff [30, 60, 120, 240, 480&#8230;] s.</text>
+</svg>

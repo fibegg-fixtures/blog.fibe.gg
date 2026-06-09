@@ -1,0 +1,19 @@
+<svg viewBox="0 0 720 132" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Verdict distribution: 674 claims total, 616 confirmed, 58 needing nuance, 0 contradictions left outstanding, about 91 percent confirmed verbatim">
+  <text x="360" y="22" text-anchor="middle" fill="#f3f0e0" font-size="15" font-weight="700" font-family="IBM Plex Sans, sans-serif">The atlas, by the numbers</text>
+
+  <rect x="8" y="36" width="170" height="80" rx="6" fill="#20251a" stroke="#434a35"/>
+  <text x="93" y="76" text-anchor="middle" fill="#f3f0e0" font-size="30" font-weight="700" font-family="JetBrains Mono, monospace">674</text>
+  <text x="93" y="100" text-anchor="middle" fill="#a19f89" font-size="12" font-family="IBM Plex Sans, sans-serif">claims grounded</text>
+
+  <rect x="186" y="36" width="170" height="80" rx="6" fill="#20251a" stroke="#5cb43a"/>
+  <text x="271" y="76" text-anchor="middle" fill="#92df62" font-size="30" font-weight="700" font-family="JetBrains Mono, monospace">616</text>
+  <text x="271" y="100" text-anchor="middle" fill="#a19f89" font-size="12" font-family="IBM Plex Sans, sans-serif">&#10003; confirmed in code</text>
+
+  <rect x="364" y="36" width="170" height="80" rx="6" fill="#20251a" stroke="#e2b33a"/>
+  <text x="449" y="76" text-anchor="middle" fill="#eec854" font-size="30" font-weight="700" font-family="JetBrains Mono, monospace">58</text>
+  <text x="449" y="100" text-anchor="middle" fill="#a19f89" font-size="12" font-family="IBM Plex Sans, sans-serif">needed nuance</text>
+
+  <rect x="542" y="36" width="170" height="80" rx="6" fill="#20251a" stroke="#545c42"/>
+  <text x="627" y="76" text-anchor="middle" fill="#abe87f" font-size="30" font-weight="700" font-family="JetBrains Mono, monospace">~91%</text>
+  <text x="627" y="100" text-anchor="middle" fill="#a19f89" font-size="12" font-family="IBM Plex Sans, sans-serif">confirmed verbatim</text>
+</svg>

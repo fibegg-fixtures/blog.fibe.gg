@@ -1,0 +1,50 @@
+<svg viewBox="0 0 720 340" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The drift-guard CI loop: code moves, a grounded row still cites an old line, the checker re-reads the cited window for the anchor symbol, and either passes or fails the build with the current candidate line">
+  <defs>
+    <marker id="dg-arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#757d5e"/>
+    </marker>
+    <marker id="dg-red" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#f08760"/>
+    </marker>
+    <marker id="dg-green" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#5cb43a"/>
+    </marker>
+  </defs>
+
+  <text x="360" y="26" text-anchor="middle" fill="#f3f0e0" font-size="16" font-weight="700" font-family="IBM Plex Sans, sans-serif">The drift guard: docs break loudly when code moves</text>
+
+  <!-- code changes -->
+  <rect x="40" y="50" width="200" height="64" rx="6" fill="#20251a" stroke="#434a35"/>
+  <text x="140" y="76" text-anchor="middle" fill="#c7c4ae" font-size="12" font-weight="700" font-family="IBM Plex Sans, sans-serif">A commit lands</text>
+  <text x="140" y="96" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">a cited method slides down</text>
+
+  <!-- stale row -->
+  <rect x="480" y="50" width="200" height="64" rx="6" fill="#20251a" stroke="#434a35"/>
+  <text x="580" y="76" text-anchor="middle" fill="#c7c4ae" font-size="12" font-weight="700" font-family="IBM Plex Sans, sans-serif">Grounded row still cites</text>
+  <text x="580" y="96" text-anchor="middle" fill="#eec854" font-size="11" font-family="IBM Plex Sans, sans-serif">the old line</text>
+
+  <line x1="240" y1="82" x2="478" y2="82" stroke="#757d5e" stroke-width="1.5" marker-end="url(#dg-arrow)"/>
+  <text x="360" y="74" text-anchor="middle" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">line numbers drift, nobody notices</text>
+
+  <!-- checker -->
+  <rect x="210" y="148" width="300" height="78" rx="6" fill="#252a1e" stroke="#56d8c0"/>
+  <text x="360" y="172" text-anchor="middle" fill="#56d8c0" font-size="13" font-weight="700" font-family="IBM Plex Sans, sans-serif">The drift guard</text>
+  <text x="360" y="193" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">re-read the cited window, a few lines.</text>
+  <text x="360" y="210" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">Is the anchor symbol still in it?</text>
+
+  <line x1="580" y1="114" x2="430" y2="146" stroke="#757d5e" stroke-width="1.5" marker-end="url(#dg-arrow)"/>
+
+  <!-- pass -->
+  <rect x="40" y="262" width="280" height="62" rx="6" fill="#20251a" stroke="#5cb43a"/>
+  <text x="180" y="288" text-anchor="middle" fill="#92df62" font-size="13" font-weight="700" font-family="IBM Plex Sans, sans-serif">&#10003; anchor still nearby &#8594; PASS</text>
+  <text x="180" y="308" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">CI green, docs trusted for another cycle</text>
+
+  <!-- fail -->
+  <rect x="400" y="262" width="280" height="62" rx="6" fill="#20251a" stroke="#f08760"/>
+  <text x="540" y="284" text-anchor="middle" fill="#f08760" font-size="13" font-weight="700" font-family="IBM Plex Sans, sans-serif">&#10007; anchor moved &#8594; FAIL</text>
+  <text x="540" y="304" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">reports the symbol's current line</text>
+  <text x="540" y="319" text-anchor="middle" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">a human updates the cite &#183; never the docs auto-rewrite</text>
+
+  <line x1="300" y1="226" x2="200" y2="260" stroke="#5cb43a" stroke-width="1.5" marker-end="url(#dg-green)"/>
+  <line x1="420" y1="226" x2="520" y2="260" stroke="#f08760" stroke-width="1.5" marker-end="url(#dg-red)"/>
+</svg>

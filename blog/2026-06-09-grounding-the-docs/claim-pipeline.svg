@@ -1,0 +1,61 @@
+<svg viewBox="0 0 720 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="How one claim becomes a grounded row: claim, then supporting file and line, then quoted code, then a verdict of confirmed, needs-nuance, or contradicted">
+  <defs>
+    <marker id="cp-arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#757d5e"/>
+    </marker>
+  </defs>
+
+  <text x="360" y="26" text-anchor="middle" fill="#f3f0e0" font-size="16" font-weight="700" font-family="IBM Plex Sans, sans-serif">One claim &#8594; one grounded row</text>
+
+  <!-- Step 1: claim -->
+  <rect x="20" y="50" width="150" height="74" rx="6" fill="#20251a" stroke="#434a35"/>
+  <text x="95" y="74" text-anchor="middle" fill="#92df62" font-size="12" font-weight="700" font-family="IBM Plex Sans, sans-serif">1 &#183; CLAIM</text>
+  <text x="95" y="96" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">the sentence on</text>
+  <text x="95" y="111" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">the diagram page</text>
+
+  <!-- Step 2: file:line -->
+  <rect x="200" y="50" width="150" height="74" rx="6" fill="#20251a" stroke="#434a35"/>
+  <text x="275" y="74" text-anchor="middle" fill="#56d8c0" font-size="12" font-weight="700" font-family="IBM Plex Sans, sans-serif">2 &#183; FILE:LINE</text>
+  <text x="275" y="96" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">the exact spot in</text>
+  <text x="275" y="111" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">real source</text>
+
+  <!-- Step 3: quoted code -->
+  <rect x="380" y="50" width="150" height="74" rx="6" fill="#20251a" stroke="#434a35"/>
+  <text x="455" y="74" text-anchor="middle" fill="#eec854" font-size="12" font-weight="700" font-family="IBM Plex Sans, sans-serif">3 &#183; QUOTED CODE</text>
+  <text x="455" y="96" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="JetBrains Mono, monospace">the actual</text>
+  <text x="455" y="111" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="JetBrains Mono, monospace">lines, verbatim</text>
+
+  <!-- Step 4: verdict -->
+  <rect x="560" y="50" width="150" height="74" rx="6" fill="#20251a" stroke="#545c42"/>
+  <text x="635" y="74" text-anchor="middle" fill="#f3f0e0" font-size="12" font-weight="700" font-family="IBM Plex Sans, sans-serif">4 &#183; VERDICT</text>
+  <text x="635" y="96" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">one of three,</text>
+  <text x="635" y="111" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">below</text>
+
+  <line x1="170" y1="87" x2="198" y2="87" stroke="#757d5e" stroke-width="1.5" marker-end="url(#cp-arrow)"/>
+  <line x1="350" y1="87" x2="378" y2="87" stroke="#757d5e" stroke-width="1.5" marker-end="url(#cp-arrow)"/>
+  <line x1="530" y1="87" x2="558" y2="87" stroke="#757d5e" stroke-width="1.5" marker-end="url(#cp-arrow)"/>
+
+  <!-- Verdict branches -->
+  <line x1="635" y1="124" x2="635" y2="158" stroke="#757d5e" stroke-width="1.5"/>
+  <line x1="150" y1="158" x2="635" y2="158" stroke="#757d5e" stroke-width="1.5"/>
+  <line x1="150" y1="158" x2="150" y2="180" stroke="#757d5e" stroke-width="1.5" marker-end="url(#cp-arrow)"/>
+  <line x1="360" y1="158" x2="360" y2="180" stroke="#757d5e" stroke-width="1.5" marker-end="url(#cp-arrow)"/>
+  <line x1="570" y1="158" x2="570" y2="180" stroke="#757d5e" stroke-width="1.5" marker-end="url(#cp-arrow)"/>
+
+  <rect x="40" y="184" width="220" height="74" rx="6" fill="#20251a" stroke="#5cb43a"/>
+  <text x="150" y="210" text-anchor="middle" fill="#92df62" font-size="14" font-weight="700" font-family="IBM Plex Sans, sans-serif">&#10003; CONFIRMED</text>
+  <text x="150" y="232" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">code says exactly this</text>
+  <text x="150" y="248" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">ship the claim as-is</text>
+
+  <rect x="280" y="184" width="160" height="74" rx="6" fill="#20251a" stroke="#e2b33a"/>
+  <text x="360" y="210" text-anchor="middle" fill="#eec854" font-size="14" font-weight="700" font-family="IBM Plex Sans, sans-serif">NEEDS NUANCE</text>
+  <text x="360" y="232" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">mostly right, but</text>
+  <text x="360" y="248" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">reword to match</text>
+
+  <rect x="460" y="184" width="220" height="74" rx="6" fill="#20251a" stroke="#f08760"/>
+  <text x="570" y="210" text-anchor="middle" fill="#f08760" font-size="14" font-weight="700" font-family="IBM Plex Sans, sans-serif">&#10007; CONTRADICTED</text>
+  <text x="570" y="232" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">code disagrees</text>
+  <text x="570" y="248" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">fix the page, cite proof</text>
+
+  <text x="360" y="282" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">No row leaves the table until the verdict and the source agree.</text>
+</svg>

@@ -1,0 +1,67 @@
+<svg viewBox="0 0 740 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Publish/subscribe decoupling: producers on the left know only how to raise a notification and publish an event; the bus sits in the middle; delivery channels are on the right. Producers never reference the right-hand column.">
+  <defs>
+    <marker id="ps-arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,1 L8,5 L0,9 Z" fill="#79d44e"/>
+    </marker>
+  </defs>
+
+  <text x="370" y="28" text-anchor="middle" fill="#f3f0e0" font-size="17" font-weight="700" font-family="IBM Plex Sans, sans-serif">Producers speak meaning. The bus owns mechanism.</text>
+
+  <!-- Column headers -->
+  <text x="125" y="62" text-anchor="middle" fill="#a19f89" font-size="11.5" font-weight="700" font-family="IBM Plex Sans, sans-serif">PRODUCERS</text>
+  <text x="370" y="62" text-anchor="middle" fill="#a19f89" font-size="11.5" font-weight="700" font-family="IBM Plex Sans, sans-serif">SEAM</text>
+  <text x="615" y="62" text-anchor="middle" fill="#a19f89" font-size="11.5" font-weight="700" font-family="IBM Plex Sans, sans-serif">DELIVERY CHANNELS</text>
+
+  <!-- Producers (left) -->
+  <rect x="40" y="78" width="170" height="40" rx="5" fill="#20251a" stroke="#545c42"/>
+  <text x="125" y="103" text-anchor="middle" fill="#92df62" font-size="11" font-family="IBM Plex Sans, sans-serif">agent-message notification</text>
+
+  <rect x="40" y="128" width="170" height="40" rx="5" fill="#20251a" stroke="#545c42"/>
+  <text x="125" y="153" text-anchor="middle" fill="#92df62" font-size="11" font-family="IBM Plex Sans, sans-serif">billing / provisioning</text>
+
+  <rect x="40" y="178" width="170" height="40" rx="5" fill="#20251a" stroke="#545c42"/>
+  <text x="125" y="203" text-anchor="middle" fill="#92df62" font-size="11" font-family="IBM Plex Sans, sans-serif">future producer</text>
+
+  <text x="125" y="246" text-anchor="middle" fill="#c7c4ae" font-size="10.5" font-family="IBM Plex Sans, sans-serif">vocabulary: type, message,</text>
+  <text x="125" y="261" text-anchor="middle" fill="#c7c4ae" font-size="10.5" font-family="IBM Plex Sans, sans-serif">category, action, target path</text>
+
+  <!-- Bus (middle) -->
+  <rect x="290" y="105" width="160" height="110" rx="7" fill="#252a1e" stroke="#56d8c0" stroke-width="1.5"/>
+  <text x="370" y="138" text-anchor="middle" fill="#56d8c0" font-size="13" font-weight="700" font-family="IBM Plex Sans, sans-serif">Event bus</text>
+  <text x="370" y="160" text-anchor="middle" fill="#c7c4ae" font-size="10.5" font-family="IBM Plex Sans, sans-serif">in-process pub/sub</text>
+  <text x="370" y="178" text-anchor="middle" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">per-subscriber errors</text>
+  <text x="370" y="192" text-anchor="middle" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">swallowed &#183; loop continues</text>
+  <text x="370" y="208" text-anchor="middle" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">no broker, zero ops</text>
+
+  <!-- arrows producers -> bus -->
+  <line x1="212" y1="98" x2="288" y2="130" stroke="#79d44e" stroke-width="1.8" marker-end="url(#ps-arrow)"/>
+  <line x1="212" y1="148" x2="288" y2="155" stroke="#79d44e" stroke-width="1.8" marker-end="url(#ps-arrow)"/>
+  <line x1="212" y1="198" x2="288" y2="180" stroke="#79d44e" stroke-width="1.8" marker-end="url(#ps-arrow)"/>
+
+  <!-- Channels (right) -->
+  <rect x="520" y="78" width="185" height="34" rx="5" fill="#20251a" stroke="#79d44e"/>
+  <text x="612" y="100" text-anchor="middle" fill="#abe87f" font-size="11" font-family="IBM Plex Sans, sans-serif">Turbo toast</text>
+
+  <rect x="520" y="120" width="185" height="34" rx="5" fill="#20251a" stroke="#79d44e"/>
+  <text x="612" y="142" text-anchor="middle" fill="#abe87f" font-size="11" font-family="IBM Plex Sans, sans-serif">FAB inbox (durable)</text>
+
+  <rect x="520" y="162" width="185" height="34" rx="5" fill="#20251a" stroke="#56d8c0"/>
+  <text x="612" y="184" text-anchor="middle" fill="#56d8c0" font-size="11" font-family="IBM Plex Sans, sans-serif">audit channel (JSON)</text>
+
+  <rect x="520" y="204" width="185" height="34" rx="5" fill="#20251a" stroke="#e2b33a"/>
+  <text x="612" y="226" text-anchor="middle" fill="#eec854" font-size="11" font-family="IBM Plex Sans, sans-serif">web push (opt-in)</text>
+
+  <!-- arrows bus -> channels -->
+  <line x1="452" y1="135" x2="518" y2="95" stroke="#79d44e" stroke-width="1.8" marker-end="url(#ps-arrow)"/>
+  <line x1="452" y1="150" x2="518" y2="137" stroke="#79d44e" stroke-width="1.8" marker-end="url(#ps-arrow)"/>
+  <line x1="452" y1="165" x2="518" y2="179" stroke="#56d8c0" stroke-width="1.8" marker-end="url(#ps-arrow)"/>
+  <line x1="452" y1="180" x2="518" y2="221" stroke="#e2b33a" stroke-width="1.8" marker-end="url(#ps-arrow)"/>
+
+  <!-- the wall -->
+  <line x1="475" y1="280" x2="475" y2="330" stroke="#f08760" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <text x="475" y="300" text-anchor="middle" fill="#f08760" font-size="10.5" font-family="IBM Plex Sans, sans-serif">producers never</text>
+  <text x="475" y="314" text-anchor="middle" fill="#f08760" font-size="10.5" font-family="IBM Plex Sans, sans-serif">reach across</text>
+
+  <text x="240" y="305" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">Add a fifth channel here &#8594;</text>
+  <text x="615" y="305" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">&#8230; and not one producer changes.</text>
+</svg>

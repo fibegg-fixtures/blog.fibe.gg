@@ -1,0 +1,51 @@
+<svg viewBox="0 0 740 380" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Per-resource self-healing matrix: for each resource type, the divergence detected, the repair the reconciler runs, and the stable outcome it converges to.">
+  <text x="370" y="26" text-anchor="middle" fill="#f3f0e0" font-size="17" font-weight="700" font-family="IBM Plex Sans, sans-serif">Same loop, four resources</text>
+
+  <!-- column headers -->
+  <text x="120" y="60" text-anchor="middle" fill="#a19f89" font-size="11" font-weight="700" font-family="IBM Plex Sans, sans-serif">RESOURCE</text>
+  <text x="320" y="60" text-anchor="middle" fill="#a19f89" font-size="11" font-weight="700" font-family="IBM Plex Sans, sans-serif">DIVERGENCE</text>
+  <text x="500" y="60" text-anchor="middle" fill="#a19f89" font-size="11" font-weight="700" font-family="IBM Plex Sans, sans-serif">REPAIR</text>
+  <text x="660" y="60" text-anchor="middle" fill="#a19f89" font-size="11" font-weight="700" font-family="IBM Plex Sans, sans-serif">CONVERGES TO</text>
+
+  <line x1="24" y1="70" x2="716" y2="70" stroke="#434a35" stroke-width="1"/>
+
+  <!-- Playground -->
+  <rect x="24" y="80" width="692" height="62" rx="6" fill="#20251a" stroke="#434a35"/>
+  <text x="40" y="106" fill="#92df62" font-size="13" font-weight="700" font-family="IBM Plex Sans, sans-serif">Playground</text>
+  <text x="40" y="125" fill="#757d5e" font-size="10" font-family="IBM Plex Sans, sans-serif">long-lived env</text>
+  <text x="240" y="106" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">container missing /</text>
+  <text x="240" y="121" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">unhealthy / image drift</text>
+  <text x="424" y="106" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">rollout (compose up)</text>
+  <text x="424" y="121" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">or queue repair</text>
+  <text x="596" y="113" fill="#92df62" font-size="11.5" font-weight="700" font-family="JetBrains Mono, monospace">running</text>
+
+  <!-- AgentChat -->
+  <rect x="24" y="150" width="692" height="62" rx="6" fill="#20251a" stroke="#434a35"/>
+  <text x="40" y="176" fill="#92df62" font-size="13" font-weight="700" font-family="IBM Plex Sans, sans-serif">AgentChat</text>
+  <text x="40" y="195" fill="#757d5e" font-size="10" font-family="IBM Plex Sans, sans-serif">Genie sidecar</text>
+  <text x="240" y="176" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">sustained-unreachable</text>
+  <text x="240" y="191" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">(missed healthcheck)</text>
+  <text x="424" y="176" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">idempotent redeploy</text>
+  <text x="424" y="191" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">(reuse volume)</text>
+  <text x="596" y="183" fill="#92df62" font-size="11.5" font-weight="700" font-family="JetBrains Mono, monospace">running</text>
+
+  <!-- Marquee -->
+  <rect x="24" y="220" width="692" height="62" rx="6" fill="#20251a" stroke="#434a35"/>
+  <text x="40" y="246" fill="#eec854" font-size="13" font-weight="700" font-family="IBM Plex Sans, sans-serif">Marquee</text>
+  <text x="40" y="265" fill="#757d5e" font-size="10" font-family="IBM Plex Sans, sans-serif">Docker host</text>
+  <text x="240" y="246" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">unfunded (402) /</text>
+  <text x="240" y="261" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">not operational</text>
+  <text x="424" y="246" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">freeze loop; quiesce</text>
+  <text x="424" y="261" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">(tutorial only)</text>
+  <text x="596" y="253" fill="#eec854" font-size="11.5" font-weight="700" font-family="JetBrains Mono, monospace">stable wait</text>
+
+  <!-- Prop / Build -->
+  <rect x="24" y="290" width="692" height="62" rx="6" fill="#20251a" stroke="#434a35"/>
+  <text x="40" y="316" fill="#56d8c0" font-size="13" font-weight="700" font-family="IBM Plex Sans, sans-serif">Prop / Build</text>
+  <text x="40" y="335" fill="#757d5e" font-size="10" font-family="IBM Plex Sans, sans-serif">source &amp; image</text>
+  <text x="240" y="316" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">new build success;</text>
+  <text x="240" y="331" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">eligible pgs stale</text>
+  <text x="424" y="316" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">flag updates available,</text>
+  <text x="424" y="331" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">offer rollout</text>
+  <text x="596" y="323" fill="#56d8c0" font-size="11.5" font-weight="700" font-family="JetBrains Mono, monospace">update offered</text>
+</svg>

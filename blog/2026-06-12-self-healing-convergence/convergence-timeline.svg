@@ -1,0 +1,47 @@
+<svg viewBox="0 0 740 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Convergence timeline: a host flaps at t0, the chat goes unreachable, Playguard detects it within one cycle, queues an idempotent redeploy that reuses the same volume, and the chat returns to running with no data loss.">
+  <defs>
+    <marker id="ct-arrow" markerWidth="9" markerHeight="9" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#757d5e"/>
+    </marker>
+  </defs>
+
+  <text x="370" y="28" text-anchor="middle" fill="#f3f0e0" font-size="17" font-weight="700" font-family="IBM Plex Sans, sans-serif">A host flap, start to finish</text>
+
+  <!-- timeline axis -->
+  <line x1="56" y1="150" x2="690" y2="150" stroke="#545c42" stroke-width="2" marker-end="url(#ct-arrow)"/>
+
+  <!-- t0: flap -->
+  <circle cx="96" cy="150" r="7" fill="#f08760"/>
+  <text x="96" y="120" text-anchor="middle" fill="#f08760" font-size="11" font-weight="700" font-family="JetBrains Mono, monospace">t0</text>
+  <text x="96" y="180" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">host flaps</text>
+  <text x="96" y="196" text-anchor="middle" fill="#757d5e" font-size="10" font-family="IBM Plex Sans, sans-serif">container down</text>
+
+  <!-- t1: unreachable -->
+  <circle cx="246" cy="150" r="7" fill="#eec854"/>
+  <text x="246" y="120" text-anchor="middle" fill="#eec854" font-size="11" font-weight="700" font-family="JetBrains Mono, monospace">t0 + &lt;60s</text>
+  <text x="246" y="180" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">Playguard probes</text>
+  <text x="246" y="196" text-anchor="middle" fill="#757d5e" font-size="10" font-family="IBM Plex Sans, sans-serif">healthcheck misses</text>
+
+  <!-- t2: detect / queue -->
+  <circle cx="416" cy="150" r="7" fill="#eec854"/>
+  <text x="416" y="120" text-anchor="middle" fill="#eec854" font-size="11" font-weight="700" font-family="JetBrains Mono, monospace">detect</text>
+  <text x="416" y="180" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">mark for redeploy</text>
+  <text x="416" y="196" text-anchor="middle" fill="#757d5e" font-size="10" font-family="IBM Plex Sans, sans-serif">enqueue (dedup)</text>
+
+  <!-- t3: redeploy -->
+  <circle cx="566" cy="150" r="7" fill="#92df62"/>
+  <text x="566" y="120" text-anchor="middle" fill="#92df62" font-size="11" font-weight="700" font-family="JetBrains Mono, monospace">redeploy</text>
+  <text x="566" y="180" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">compose up</text>
+  <text x="566" y="196" text-anchor="middle" fill="#757d5e" font-size="10" font-family="IBM Plex Sans, sans-serif">reuse same volume</text>
+
+  <!-- t4: running -->
+  <circle cx="676" cy="150" r="9" fill="#5cb43a" stroke="#abe87f" stroke-width="2"/>
+  <text x="676" y="120" text-anchor="middle" fill="#92df62" font-size="11" font-weight="700" font-family="JetBrains Mono, monospace">running</text>
+  <text x="676" y="180" text-anchor="middle" fill="#92df62" font-size="11" font-family="IBM Plex Sans, sans-serif">converged</text>
+  <text x="676" y="196" text-anchor="middle" fill="#757d5e" font-size="10" font-family="IBM Plex Sans, sans-serif">no data loss</text>
+
+  <!-- declared band -->
+  <rect x="56" y="232" width="634" height="40" rx="6" fill="#20251a" stroke="#434a35"/>
+  <text x="373" y="250" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">Declared status stayed <tspan fill="#92df62" font-family="JetBrains Mono, monospace">running</tspan> the entire time. The chat was never marked errored &#8212; a missed</text>
+  <text x="373" y="266" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">healthcheck cannot stop or error a running chat. The loop just kept driving actual back toward it.</text>
+</svg>

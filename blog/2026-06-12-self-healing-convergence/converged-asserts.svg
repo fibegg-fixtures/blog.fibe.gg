@@ -1,0 +1,45 @@
+<svg viewBox="0 0 740 340" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Defining converged with completeness assertions: running plus unhealthy Docker, filesystem drift, or a stale failure all count as NOT converged; an irrecoverable error is converged because it is terminal; Alloy checks these as UNSAT safety properties and exposes Findings as SAT.">
+  <text x="370" y="26" text-anchor="middle" fill="#f3f0e0" font-size="17" font-weight="700" font-family="IBM Plex Sans, sans-serif">&#8220;Converged&#8221; is a completeness assertion</text>
+
+  <!-- NOT converged column -->
+  <rect x="24" y="50" width="340" height="244" rx="8" fill="#20251a" stroke="#f08760"/>
+  <text x="194" y="76" text-anchor="middle" fill="#f08760" font-size="13" font-weight="700" font-family="IBM Plex Sans, sans-serif">NOT converged &#183; keep working</text>
+
+  <rect x="44" y="92" width="300" height="38" rx="5" fill="#252a1e" stroke="#545c42"/>
+  <text x="56" y="110" fill="#c7c4ae" font-size="11.5" font-family="JetBrains Mono, monospace">running</text>
+  <text x="56" y="124" fill="#a19f89" font-size="10.5" font-family="IBM Plex Sans, sans-serif">+ Docker unhealthy</text>
+
+  <rect x="44" y="138" width="300" height="38" rx="5" fill="#252a1e" stroke="#545c42"/>
+  <text x="56" y="156" fill="#c7c4ae" font-size="11.5" font-family="JetBrains Mono, monospace">running</text>
+  <text x="56" y="170" fill="#a19f89" font-size="10.5" font-family="IBM Plex Sans, sans-serif">+ filesystem drift</text>
+
+  <rect x="44" y="184" width="300" height="38" rx="5" fill="#252a1e" stroke="#545c42"/>
+  <text x="56" y="202" fill="#c7c4ae" font-size="11.5" font-family="JetBrains Mono, monospace">running</text>
+  <text x="56" y="216" fill="#a19f89" font-size="10.5" font-family="IBM Plex Sans, sans-serif">+ stale failure on record</text>
+
+  <rect x="44" y="230" width="300" height="38" rx="5" fill="#252a1e" stroke="#545c42"/>
+  <text x="56" y="248" fill="#c7c4ae" font-size="11.5" font-family="JetBrains Mono, monospace">temporary error</text>
+  <text x="56" y="262" fill="#a19f89" font-size="10.5" font-family="IBM Plex Sans, sans-serif">must retry (within budget)</text>
+
+  <!-- Converged column -->
+  <rect x="380" y="50" width="336" height="244" rx="8" fill="#20251a" stroke="#5cb43a"/>
+  <text x="548" y="76" text-anchor="middle" fill="#92df62" font-size="13" font-weight="700" font-family="IBM Plex Sans, sans-serif">Converged &#183; stable outcome</text>
+
+  <rect x="400" y="92" width="296" height="38" rx="5" fill="#252a1e" stroke="#545c42"/>
+  <text x="412" y="110" fill="#c7c4ae" font-size="11.5" font-family="JetBrains Mono, monospace">running</text>
+  <text x="412" y="124" fill="#a19f89" font-size="10.5" font-family="IBM Plex Sans, sans-serif">+ healthy + no drift + no failure</text>
+
+  <rect x="400" y="138" width="296" height="38" rx="5" fill="#252a1e" stroke="#545c42"/>
+  <text x="412" y="156" fill="#c7c4ae" font-size="11.5" font-family="JetBrains Mono, monospace">irrecoverable error</text>
+  <text x="412" y="170" fill="#a19f89" font-size="10.5" font-family="IBM Plex Sans, sans-serif">terminal &#8212; nothing left to do</text>
+
+  <rect x="400" y="184" width="296" height="38" rx="5" fill="#252a1e" stroke="#545c42"/>
+  <text x="412" y="202" fill="#c7c4ae" font-size="11.5" font-family="JetBrains Mono, monospace">quarantined</text>
+  <text x="412" y="216" fill="#a19f89" font-size="10.5" font-family="IBM Plex Sans, sans-serif">refusing unsafe work is valid</text>
+
+  <rect x="400" y="230" width="296" height="38" rx="5" fill="#252a1e" stroke="#545c42"/>
+  <text x="412" y="248" fill="#c7c4ae" font-size="11.5" font-family="JetBrains Mono, monospace">remote unavailable</text>
+  <text x="412" y="262" fill="#a19f89" font-size="10.5" font-family="IBM Plex Sans, sans-serif">no-op, no error written</text>
+
+  <text x="370" y="318" text-anchor="middle" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">Alloy:  scenario run = <tspan fill="#92df62" font-family="JetBrains Mono, monospace">SAT</tspan>   &#183;   safety check = <tspan fill="#92df62" font-family="JetBrains Mono, monospace">UNSAT</tspan>   &#183;   Finding = <tspan fill="#f08760" font-family="JetBrains Mono, monospace">SAT</tspan> (a divergence we admit)</text>
+</svg>

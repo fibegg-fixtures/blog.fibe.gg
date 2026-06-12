@@ -1,0 +1,47 @@
+<svg viewBox="0 0 720 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The control loop: declared desired state on the left is compared to observed Docker truth, and a reconciler emits one repair action that drives actual state toward desired.">
+  <defs>
+    <marker id="cl-arrow" markerWidth="9" markerHeight="9" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#79d44e"/>
+    </marker>
+    <marker id="cl-arrow-gold" markerWidth="9" markerHeight="9" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#eec854"/>
+    </marker>
+  </defs>
+
+  <text x="360" y="28" text-anchor="middle" fill="#f3f0e0" font-size="17" font-weight="700" font-family="IBM Plex Sans, sans-serif">One control loop, every 60 seconds</text>
+
+  <!-- Desired -->
+  <rect x="24" y="58" width="200" height="96" rx="8" fill="#20251a" stroke="#5cb43a"/>
+  <text x="124" y="86" text-anchor="middle" fill="#92df62" font-size="14" font-weight="700" font-family="IBM Plex Sans, sans-serif">DESIRED</text>
+  <text x="124" y="110" text-anchor="middle" fill="#c7c4ae" font-size="12" font-family="IBM Plex Sans, sans-serif">declared lifecycle status</text>
+  <text x="124" y="130" text-anchor="middle" fill="#a19f89" font-size="11" font-family="JetBrains Mono, monospace">running &#183; stopped &#183; error</text>
+  <text x="124" y="146" text-anchor="middle" fill="#757d5e" font-size="10" font-family="IBM Plex Sans, sans-serif">source of truth (Postgres)</text>
+
+  <!-- Actual -->
+  <rect x="496" y="58" width="200" height="96" rx="8" fill="#20251a" stroke="#56d8c0"/>
+  <text x="596" y="86" text-anchor="middle" fill="#56d8c0" font-size="14" font-weight="700" font-family="IBM Plex Sans, sans-serif">ACTUAL</text>
+  <text x="596" y="110" text-anchor="middle" fill="#c7c4ae" font-size="12" font-family="IBM Plex Sans, sans-serif">observed Docker truth</text>
+  <text x="596" y="130" text-anchor="middle" fill="#a19f89" font-size="11" font-family="JetBrains Mono, monospace">containers &#183; health &#183; fs</text>
+  <text x="596" y="146" text-anchor="middle" fill="#757d5e" font-size="10" font-family="IBM Plex Sans, sans-serif">on the remote Marquee</text>
+
+  <!-- Reconciler (center) -->
+  <rect x="270" y="208" width="180" height="84" rx="8" fill="#252a1e" stroke="#eec854"/>
+  <text x="360" y="236" text-anchor="middle" fill="#eec854" font-size="14" font-weight="700" font-family="IBM Plex Sans, sans-serif">RECONCILER</text>
+  <text x="360" y="258" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">diff &#8594; decide &#8594; act</text>
+  <text x="360" y="278" text-anchor="middle" fill="#a19f89" font-size="10.5" font-family="JetBrains Mono, monospace">Playguard &#183; startup recovery</text>
+
+  <!-- desired -> reconciler -->
+  <line x1="124" y1="154" x2="300" y2="214" stroke="#79d44e" stroke-width="1.6" marker-end="url(#cl-arrow)"/>
+  <text x="150" y="196" fill="#92df62" font-size="10.5" font-family="IBM Plex Sans, sans-serif">compare</text>
+
+  <!-- actual -> reconciler -->
+  <line x1="596" y1="154" x2="420" y2="214" stroke="#56d8c0" stroke-width="1.6" marker-end="url(#cl-arrow)"/>
+  <text x="540" y="196" fill="#56d8c0" font-size="10.5" font-family="IBM Plex Sans, sans-serif">observe</text>
+
+  <!-- reconciler -> actual (the repair) -->
+  <path d="M450 250 C 560 250, 600 210, 596 158" fill="none" stroke="#eec854" stroke-width="1.8" marker-end="url(#cl-arrow-gold)"/>
+  <text x="560" y="300" text-anchor="middle" fill="#eec854" font-size="10.5" font-family="IBM Plex Sans, sans-serif">one repair action</text>
+
+  <!-- bottom caption -->
+  <text x="360" y="338" text-anchor="middle" fill="#a19f89" font-size="11.5" font-family="IBM Plex Sans, sans-serif">Every recovery moves one evidence source closer to declared. Convergence is eventual, not magical.</text>
+</svg>

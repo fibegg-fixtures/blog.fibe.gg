@@ -1,0 +1,38 @@
+<svg viewBox="0 0 720 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Funding, grace, and expiry are three subsystems that all read from one shared service-day clock, so they never disagree about when today ends">
+  <defs>
+    <marker id="sc-arrow" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 Z" fill="#79d44e"/>
+    </marker>
+  </defs>
+
+  <text x="360" y="28" text-anchor="middle" fill="#f3f0e0" font-size="16" font-weight="700" font-family="IBM Plex Sans, sans-serif">One shared clock for the whole lifecycle</text>
+  <text x="360" y="48" text-anchor="middle" fill="#a19f89" font-size="12" font-family="IBM Plex Sans, sans-serif">All three ask the same question: when does today end?</text>
+
+  <!-- the shared clock in the center -->
+  <rect x="270" y="120" width="180" height="60" rx="8" fill="#252a1e" stroke="#eec854" stroke-width="1.5"/>
+  <text x="360" y="146" text-anchor="middle" fill="#f5da79" font-size="13" font-weight="700" font-family="IBM Plex Sans, sans-serif">the service-day</text>
+  <text x="360" y="166" text-anchor="middle" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">one definition of when a day ends</text>
+
+  <!-- three subsystems -->
+  <rect x="40" y="96" width="180" height="48" rx="6" fill="#20251a" stroke="#5cb43a"/>
+  <text x="130" y="116" text-anchor="middle" fill="#92df62" font-size="12" font-weight="700" font-family="IBM Plex Sans, sans-serif">funding</text>
+  <text x="130" y="134" text-anchor="middle" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">charge through end of today</text>
+
+  <rect x="40" y="156" width="180" height="48" rx="6" fill="#20251a" stroke="#56d8c0"/>
+  <text x="130" y="176" text-anchor="middle" fill="#56d8c0" font-size="12" font-weight="700" font-family="IBM Plex Sans, sans-serif">grace</text>
+  <text x="130" y="194" text-anchor="middle" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">unfunded window, in days</text>
+
+  <rect x="500" y="126" width="180" height="48" rx="6" fill="#20251a" stroke="#f08760"/>
+  <text x="590" y="146" text-anchor="middle" fill="#f08760" font-size="12" font-weight="700" font-family="IBM Plex Sans, sans-serif">expiry</text>
+  <text x="590" y="164" text-anchor="middle" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">winds down past grace</text>
+
+  <!-- arrows from subsystems into the clock -->
+  <line x1="220" y1="120" x2="268" y2="138" stroke="#79d44e" stroke-width="1.5" marker-end="url(#sc-arrow)"/>
+  <line x1="220" y1="180" x2="268" y2="162" stroke="#79d44e" stroke-width="1.5" marker-end="url(#sc-arrow)"/>
+  <line x1="500" y1="150" x2="452" y2="150" stroke="#79d44e" stroke-width="1.5" marker-end="url(#sc-arrow)"/>
+
+  <!-- footer -->
+  <rect x="120" y="240" width="480" height="40" rx="6" fill="#252a1e" stroke="#545c42"/>
+  <text x="360" y="258" text-anchor="middle" fill="#f3f0e0" font-size="12" font-family="IBM Plex Sans, sans-serif">They never coordinate with each other &#8230;</text>
+  <text x="360" y="274" text-anchor="middle" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">&#8230; they just read the same day, so they stay in step.</text>
+</svg>

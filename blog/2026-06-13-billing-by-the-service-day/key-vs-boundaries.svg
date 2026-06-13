@@ -1,0 +1,40 @@
+<svg viewBox="0 0 720 350" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="One authoritative definition of the service-day flows into two readings: a label that identifies which day a charge belongs to, and a window with a start and end on the timeline. Because both derive from one definition, they always describe the same span of real time">
+  <defs>
+    <marker id="kb-arrow" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 Z" fill="#79d44e"/>
+    </marker>
+  </defs>
+
+  <text x="360" y="28" text-anchor="middle" fill="#f3f0e0" font-size="16" font-weight="700" font-family="IBM Plex Sans, sans-serif">One day, defined once, read two ways</text>
+
+  <!-- the single definition -->
+  <rect x="256" y="48" width="208" height="52" rx="6" fill="#252a1e" stroke="#eec854" stroke-width="1.5"/>
+  <text x="360" y="72" text-anchor="middle" fill="#f5da79" font-size="12" font-weight="700" font-family="IBM Plex Sans, sans-serif">one definition of the day</text>
+  <text x="360" y="90" text-anchor="middle" fill="#a19f89" font-size="10" font-family="IBM Plex Sans, sans-serif">computed once &#183; read off one clock</text>
+
+  <!-- arrows down to two readings -->
+  <line x1="312" y1="100" x2="196" y2="144" stroke="#79d44e" stroke-width="1.5" marker-end="url(#kb-arrow)"/>
+  <line x1="408" y1="100" x2="524" y2="144" stroke="#79d44e" stroke-width="1.5" marker-end="url(#kb-arrow)"/>
+
+  <!-- LEFT: label -->
+  <rect x="36" y="150" width="300" height="150" rx="6" fill="#20251a" stroke="#5cb43a"/>
+  <text x="186" y="174" text-anchor="middle" fill="#92df62" font-size="13" font-weight="700" font-family="IBM Plex Sans, sans-serif">read as a LABEL</text>
+  <line x1="56" y1="184" x2="316" y2="184" stroke="#434a35"/>
+  <text x="56" y="208" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">tells today apart from yesterday</text>
+  <text x="56" y="232" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">stamps a charge so a day</text>
+  <text x="56" y="248" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">is never billed twice</text>
+  <text x="56" y="280" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">&#8220;which day is this?&#8221;</text>
+
+  <!-- RIGHT: window -->
+  <rect x="384" y="150" width="300" height="150" rx="6" fill="#20251a" stroke="#56d8c0"/>
+  <text x="534" y="174" text-anchor="middle" fill="#56d8c0" font-size="13" font-weight="700" font-family="IBM Plex Sans, sans-serif">read as a WINDOW</text>
+  <line x1="404" y1="184" x2="664" y2="184" stroke="#434a35"/>
+  <text x="404" y="208" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">an interval with a start and end</text>
+  <text x="404" y="232" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">where paid-through time should</text>
+  <text x="404" y="248" fill="#c7c4ae" font-size="11" font-family="IBM Plex Sans, sans-serif">reach &#183; when the day elapses</text>
+  <text x="404" y="280" fill="#a19f89" font-size="11" font-family="IBM Plex Sans, sans-serif">&#8220;when does this day begin &amp; end?&#8221;</text>
+
+  <!-- bottom agreement note -->
+  <rect x="120" y="318" width="480" height="22" rx="4" fill="#252a1e" stroke="#5cb43a"/>
+  <text x="360" y="333" text-anchor="middle" fill="#92df62" font-size="11" font-family="IBM Plex Sans, sans-serif">Same source, same clock &#8594; the label and the window always agree</text>
+</svg>

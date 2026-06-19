@@ -522,3 +522,31 @@ article::before {
     transition-duration: 0.001ms !important;
   }
 }
+
+/* ──────────────────────────────────────────────────────────────────────────
+   Gold "fibe →" CTA in the navbar — mirrors the .nav__cta button on the
+   satellite static sites (beveled gold chip, dark display-font label). The
+   default external-link icon is hidden so the arrow in the label stands alone.
+   ────────────────────────────────────────────────────────────────────────── */
+.navbar__fibe-cta {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  margin-left: 0.6rem;
+  padding: 0.4rem 0.95rem;
+  clip-path: polygon(7px 0, 100% 0, 100% calc(100% - 7px), calc(100% - 7px) 100%, 0 100%, 0 7px);
+  background: linear-gradient(180deg, var(--gold-300) 0%, var(--gold-500) 100%);
+  color: var(--ink-0) !important;
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  font-weight: 700;
+  white-space: nowrap;
+  transition: background 0.15s;
+}
+.navbar__fibe-cta:hover {
+  background: linear-gradient(180deg, var(--gold-200) 0%, var(--gold-400) 100%);
+  color: var(--ink-0) !important;
+  text-decoration: none;
+}
+.navbar__fibe-cta svg { display: none; }
+

@@ -88,15 +88,13 @@ const config = {
           height: 28,
         },
         items: [
+          // GitHub + fibe.gg now live in the footer; the navbar keeps only the
+          // gold "fibe →" CTA on the right.
           {
-            href: 'https://fibe.gg',
-            label: 'fibe.gg',
+            href: 'https://fibe.gg/',
+            label: 'fibe →',
             position: 'right',
-          },
-          {
-            href: 'https://github.com/fibegg',
-            label: 'GitHub',
-            position: 'right',
+            className: 'navbar__fibe-cta',
           },
         ],
       },
